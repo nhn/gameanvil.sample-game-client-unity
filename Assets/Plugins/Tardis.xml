@@ -1,0 +1,2023 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tardis</name>
+    </assembly>
+    <members>
+        <member name="M:Tardis.Agent.LvNetLogger(Tardis.Defines.NetLogLevel,System.String)">
+            <summary>
+            로그 콜백.
+            </summary>
+        </member>
+        <member name="M:Tardis.Agent.Logger(Tardis.Defines.LogLevel,System.String)">
+            <summary>
+            로그 콜백.
+            </summary>
+        </member>
+        <member name="T:Tardis.AgentHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tardis.Session.SessionAgent">
+            <summary>
+            SessionAgent는 Tardis Server의 Session Node와 관련된 작업을 담당합니다.<br></br>
+            접속(Connect()), 인증(Authentication()) 등 기본 세션 관리 기능 및 채널 목록 등을 제공하며, 서버 구현에 따라 채널 정보를 제공하거나 사용자 정의 기능을 추가적으로 제공할 수도 있습니다.<br></br>
+            SessionAgent는 Connector가 초기화 될 때 자동으로 생성되며 GetSessionAgent() 함수를 이용해 얻을 수 있습니다.<br></br>
+            <br></br>
+            SessionAgent의 기본 기능 사용<br></br>
+            SessionAgent가 제공하는 기본 기능은 모두 비동기 함수를 통해 제공됩니니다.<br></br>
+            그리고 각 기능의 결과를 얻기 위해 크게 나눠 2가지 방식을 제공하고 있습니다.<br></br>
+            첫째는 listener나 delegate를 미리 등록해 놓고 이를 통해 결과에 대한 알림을 받는 방법이고, 나머지는 기능을 요청 할 때 알림을 받을 delegate를 같이 전달하는 방법입니다.<br></br>
+            두가 방법을 같이 사용하는 것도 가능하고 목적에 따라 listener나 delegate는 여러개를 등록하여 사용할 수도 있습니다.
+            </summary>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.UpdateAuthenticationPayload(Tardis.Payload)">
+            <summary>
+            Auth에서 사용된 payload 값을 갱신할 때 사용.
+            ex) 주기적 인증정보 갱신시, OnReconnectStart 발생시 호출
+            </summary>
+            <param name="payload"></param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.Connect(System.String,System.Int32)">
+            <summary>
+            Tardis Server에 연결합니다.
+            </summary>
+            <param name="ip">ip address</param>
+            <param name="port">port</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.Connect(System.String,System.Int32,Tardis.Socket.ITardisSocket)">
+            <summary>
+            Tardis Server에 연결합니다.
+            </summary>
+            <param name="ip">ip address</param>
+            <param name="port">port</param>
+            <param name="tardisSocket">연결에 사용할 ITardisSocket 객체.(TardisTCPSecureSocket, TardisWebSocket)</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.Connect(System.String,System.Int32,Tardis.Session.Interface.DelSessionOnConnect)">
+            <summary>
+            Tardis Server에 연결합니다.
+            </summary>
+            <param name="ip">ip address</param>
+            <param name="port">port</param>
+            <param name="onConnect">결과를 전달 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.Connect(System.String,System.Int32,Tardis.Socket.ITardisSocket,Tardis.Session.Interface.DelSessionOnConnect)">
+            <summary>
+            Tardis Server에 연결합니다.
+            </summary>
+            <param name="ip">ip address</param>
+            <param name="port">port</param>
+            <param name="tardisSocket">연결에 사용할 ITardisSocket 객체.(TardisTCPSecureSocket, TardisWebSocket)</param>
+            <param name="onConnect">결과를 전달 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.Authenticate(System.String,System.String,System.String)">
+            <summary>
+            Tardis Server에 인증을 요청 합니다.<br></br>
+            인증에 성공해야 Tardis Connector의 다른 기능을 사용할 수 있습니다.
+            </summary>
+            <param name="deviceId">사용자 기기를 식별 할 수 있는 고유 ID.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="accountId">사용자 계정을 식별 할 수 있는 고유 ID.</param>
+            <param name="passwd">사용자 계정의 password. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.Authenticate(System.String,System.String,System.String,Tardis.Payload)">
+            <summary>
+            Tardis Server에 인증을 요청 합니다.<br></br>
+            인증에 성공해야 Tardis Connector의 다른 기능을 사용할 수 있습니다.
+            </summary>
+            <param name="deviceId">사용자 기기를 식별 할 수 있는 고유 ID.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="accountId">사용자 계정을 식별 할 수 있는 고유 ID.</param>
+            <param name="passwd">사용자 계정의 password. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="inPayload"></param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.Authenticate(System.String,System.String,System.String,Tardis.Session.Interface.DelSessionOnAuthentication)">
+            <summary>
+            Tardis Server에 인증을 요청 합니다.<br></br>
+            인증에 성공해야 Tardis Connector의 다른 기능을 사용할 수 있습니다.
+            </summary>
+            <param name="deviceId">사용자 기기를 식별 할 수 있는 고유 ID.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="accountId">사용자 계정을 식별 할 수 있는 고유 ID.</param>
+            <param name="passwd">사용자 계정의 password. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onAuthentication">결과를 전달 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.Authenticate(System.String,System.String,System.String,Tardis.Payload,Tardis.Session.Interface.DelSessionOnAuthentication)">
+            <summary>
+            Tardis Server에 인증을 요청 합니다.<br></br>
+            인증에 성공해야 Tardis Connector의 다른 기능을 사용할 수 있습니다.
+            </summary>
+            <param name="deviceId">사용자 기기를 식별 할 수 있는 고유 ID.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="accountId">사용자 계정을 식별 할 수 있는 고유 ID.</param>
+            <param name="passwd">사용자 계정의 password. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="payload"></param>
+            <param name="onAuthentication">결과를 전달 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.GetChannelList(System.String)">
+            <summary>
+            특정 서비스에서 사용 가능한 채널 목록을 요청합니다. 
+            </summary>
+            <param name="serviceName">채널 목록을 요청할 service Id.</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.GetChannelList(System.String,Tardis.Session.Interface.DelSessionOnChannelList)">
+            <summary>
+            특정 서비스에서 사용 가능한 채널 목록을 요청합니다. 
+            </summary>
+            <param name="serviceName">채널 목록을 요청할 service Id.</param>
+            <param name="onChannelList">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.GetChannelInfo(System.String,System.String)">
+            <summary>
+            특정 채널의 정보를 요청합니다.<br></br>서버에서 지원할 경우 사용할 수 있습니다.
+            </summary>
+            <param name="serviceName">채널 정보를 요청할 service Id.</param>
+            <param name="channelId">채널 정보를 요청할 channel의 Id.</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.GetChannelInfo(System.String,System.String,Tardis.Session.Interface.DelSessionOnChannelInfo)">
+            <summary>
+            특정 채널의 정보를 요청합니다.<br></br>서버에서 지원할 경우 사용할 수 있습니다.
+            </summary>
+            <param name="serviceName">채널 정보를 요청할 service Id.</param>
+            <param name="channelId">채널 정보를 요청할 channel의 Id.</param>
+            <param name="onChannelInfo">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.Disconnect">
+            <summary>
+            Tardis Server와의 연결을 해제합니다.
+            </summary>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.Disconnect(Tardis.Session.Interface.DelSessionOnDisconnect)">
+            <summary>
+            Tardis Server와의 연결을 해제합니다.
+            </summary>
+            <param name="onDisconnect">결과를 전달 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.Session.SessionCommandHandler.AddInstantHandlerForConnect(System.Int32,System.Delegate)">
+            <summary>
+            Request를 사용하지 않는 Connect를 위한 콜백 등록 함수.
+            Connect, Disconnect외에는 Request를 사용해야함.
+            </summary>
+            <param name="connectSeq">connectSeq</param>
+            <param name="del">콜백</param>
+        </member>
+        <member name="T:Tardis.User.UserAgent">
+            <summary>
+            Tardis Server의 Space Node와 관련된 작업을 담당합니다.<br></br>
+            로그인(Login()), 로그아웃(Logout()) 및 Room 관리 등 기본 기능을 제공하며, 서버 구현에 따라 사용자 정의 기능을 추가적으로 제공할 수도 있습니다.<br></br>
+            UserAgent를 사용하기 위해서는 Connector.CreateUserAgent() 함수를 이용해 새로운 UserAgent를 생성해야 합니다.<br></br>
+            ServiceName 과 SubId로 구분되는 여러개의 UserAgent를 생성할 수 있으며 생성된 각 UserAgent는 독립적으로 사용할 수 있습니다.<br></br>
+            생성된 UserAgent는 Connector 에서 내부적으로 관리되며 Connector.GetUser()함수를 이용해 다시 사용할 수 있습니다.
+            <br></br>
+            UserAgent의 기본 기능 사용<br></br>
+            UserAgent가 제공하는 기본 기능은 모두 비동기 함수를 통해 제공됩니니다.<br></br>
+            그리고 각 기능의 결과를 얻기 위해 크게 나눠 2가지 방식을 제공하고 있습니다.<br></br>
+            첫째는 listener나 delegate를 미리 등록해 놓고 이를 통해 결과에 대한 알림을 받는 방법이고 나머지는 기능을 요청 할 때 알림을 받을 delegate를 같이 전달하는 방법입니다.<br></br>
+            두가지 방법을 같이 사용하는 것도 가능하고 목적에 따라 listener나 delegate를 여러개 등록하여 사용할 수도 있습니다.
+            </summary>
+        </member>
+        <member name="M:Tardis.User.UserAgent.UpdateLoginPayload(Tardis.Payload)">
+            <summary>
+            Login시 사용된 payload값을 갱신할 때 사용.
+            relogin시 사용 됨.
+            </summary>
+            <param name="payload"></param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.CreateRoom(System.String)">
+            <summary>
+            임의의 방을 생성하고 해당 방에 입장합니다.
+            </summary>
+            <param name="roomType">생성할 방의 roomType.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.CreateRoom(System.String,Tardis.Payload)">
+            <summary>
+            임의의 방을 생성하고 해당 방에 입장합니다.
+            </summary>
+            <param name="roomType">생성할 방의 roomType.</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.CreateRoom(System.String,Tardis.User.Interface.DelUserOnCreateRoom)">
+            <summary>
+            임의의 방을 생성하고 해당 방에 입장합니다.
+            </summary>
+            <param name="roomType">생성할 방의 roomType.</param>
+            <param name="onCreateRoom">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.CreateRoom(System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnCreateRoom)">
+            <summary>
+            임의의 방을 생성하고 해당 방에 입장합니다.
+            </summary>
+            <param name="roomType">생성할 방의 roomType.</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onCreateRoom">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.LeaveRoom">
+            <summary>
+            현재 방에서 퇴장합니다.
+            </summary>
+        </member>
+        <member name="M:Tardis.User.UserAgent.LeaveRoom(Tardis.Payload)">
+            <summary>
+            현재 방에서 퇴장합니다.
+            </summary>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.LeaveRoom(Tardis.User.Interface.DelUserOnLeaveRoom)">
+            <summary>
+            현재 방에서 퇴장합니다.
+            </summary>
+            <param name="onLeaveRoom">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.LeaveRoom(Tardis.Payload,Tardis.User.Interface.DelUserOnLeaveRoom)">
+            <summary>
+            현재 방에서 퇴장합니다.
+            </summary>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onLeaveRoom">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean)">
+            <summary>
+            자동으로 방에 입장합니다. 방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,Tardis.User.Interface.DelUserOnMatchRoom)">
+            <summary>
+            자동으로 방에 입장합니다. 방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
+            /// <param name="onMatchRoom">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,Tardis.Payload)">
+            <summary>
+            자동으로 방에 입장합니다.<br></br>
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,Tardis.Payload,Tardis.User.Interface.DelUserOnMatchRoom)">
+            <summary>
+            자동으로 방에 입장합니다. 방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMatchRoom">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            자동으로 방에 입장합니다.<br></br>
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
+            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.<br></br>false - 방에 입장한 상태에서 요청했을 경우 실패</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,System.Boolean,Tardis.User.Interface.DelUserOnMatchRoom)">
+            <summary>
+            자동으로 방에 입장합니다.<br></br>
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
+            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.<br></br>false - 방에 입장한 상태에서 요청했을 경우 실패</param>
+            <param name="onMatchRoom">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,System.Boolean,Tardis.Payload)">
+            <summary>
+            자동으로 방에 입장합니다.<br></br>
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
+            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.<br></br>false - 방에 입장한 상태에서 요청했을 경우 실패</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,System.Boolean,Tardis.Payload,Tardis.User.Interface.DelUserOnMatchRoom)">
+            <summary>
+            자동으로 방에 입장합니다.<br></br>
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
+            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.<br></br>false - 방에 입장한 상태에서 요청했을 경우 실패</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMatchRoom">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,System.Boolean,Tardis.Payload,Tardis.Payload)">
+            <summary>
+            자동으로 방에 입장합니다.<br></br>
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
+            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.<br></br>false - 방에 입장한 상태에서 요청했을 경우 실패</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="leaveRoomPayload">입장한 방을 떠날때 서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,System.Boolean,Tardis.Payload,Tardis.Payload,Tardis.User.Interface.DelUserOnMatchRoom)">
+            <summary>
+            자동으로 방에 입장합니다.<br></br>
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
+            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.<br></br>false - 방에 입장한 상태에서 요청했을 경우 실패</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="leaveRoomPayload">입장한 방을 떠날때 서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMatchRoom">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.NamedRoom(System.String,System.String,System.Boolean)">
+            <summary>
+            지정한 이름의 방에 입장합니다.<br></br>
+            지정한 이름의 방이 없을 경우 지정한 이름의 방을 생성하고 해당 방에 입장합니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="roomName">입장하고자 하는 방의 이름.</param>
+            <param name="isParty"></param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.NamedRoom(System.String,System.String,System.Boolean,Tardis.Payload)">
+            <summary>
+            지정한 이름의 방에 입장합니다.<br></br>
+            지정한 이름의 방이 없을 경우 지정한 이름의 방을 생성하고 해당 방에 입장합니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="roomName">입장하고자 하는 방의 이름.</param>
+            <param name="isParty"></param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.NamedRoom(System.String,System.String,System.Boolean,Tardis.Payload,Tardis.User.Interface.DelUserOnNamedRoom)">
+            <summary>
+            지정한 이름의 방에 입장합니다.<br></br>
+            지정한 이름의 방이 없을 경우 지정한 이름의 방을 생성하고 해당 방에 입장합니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="roomName">입장하고자 하는 방의 이름.</param>
+            <param name="isParty"></param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onNamedRoom">결과를 전달 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchUserStart(System.String)">
+            <summary>
+            매치를 요청합니다.<br></br>
+            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있습니다.<br></br>
+            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있습니다.
+            </summary>
+            <param name="roomType">매치를 요청할 roomType.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchUserStart(System.String,Tardis.Payload)">
+            <summary>
+            매치를 요청합니다.<br></br>
+            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있습니다.<br></br>
+            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있습니다.
+            </summary>
+            <param name="roomType">매치를 요청할 roomType.</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchUserStart(System.String,Tardis.User.Interface.DelUserOnMatchUserStart)">
+            <summary>
+            매치를 요청합니다.<br></br>
+            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있습니다.<br></br>
+            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있습니다.
+            </summary>
+            <param name="roomType">매치를 요청할 roomType.</param>
+            <param name="onMatchUserStart">결과를 전달 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchUserStart(System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnMatchUserStart)">
+            <summary>
+            매치를 요청합니다.<br></br>
+            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있습니다.<br></br>
+            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있습니다.
+            </summary>
+            <param name="roomType">매치를 요청할 roomType.</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMatchUserStart">결과를 전달 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchUserCancel(System.String)">
+            <summary>
+            매치 요청을 취소합니다.<br></br>
+            이미 매칭이 성공했거나 Timeout이 발생했을 경우 실패할 수 있습니다.
+            </summary>
+            <param name="roomType">매치를 요청할 roomType.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchUserCancel(System.String,Tardis.User.Interface.DelUserOnMatchUserCancel)">
+            <summary>
+            매치 요청을 취소합니다.<br></br>
+            이미 매칭이 성공했거나 Timeout이 발생했을 경우 실패할 수 있습니다.
+            </summary>
+            <param name="roomType">매치를 요청할 roomType.</param>
+            <param name="onMatchUserCancel">결과를 전달 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.JoinRoom(System.String,System.String)">
+            <summary>
+            지정한 id의 방에 입장합니다.<br></br>지정한 id의 방이 없을 경우 실패합니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="roomId">입장하고자 하는 방의 id.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.JoinRoom(System.String,System.String,Tardis.Payload)">
+            <summary>
+            지정한 id의 방에 입장합니다.<br></br>지정한 id의 방이 없을 경우 실패합니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="roomId">입장하고자 하는 방의 id.</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.JoinRoom(System.String,System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnJoinRoom)">
+            <summary>
+            지정한 id의 방에 입장합니다.<br></br>지정한 id의 방이 없을 경우 실패합니다.
+            </summary>
+            <param name="roomType">입장할 방의 roomType.</param>
+            <param name="roomId">입장하고자 하는 방의 id.</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onJoinRoom">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.Snapshot">
+            <summary>
+            현재 user의 snapshot을 얻어옵니다.<br></br>
+            재접속 등 user의 모든 정보를 갱싱해야 할 필요가 있을때 사용할 수 있습니다.<br></br>
+            서버 구현에 따라 내용이 달라집니다.
+            </summary>
+        </member>
+        <member name="M:Tardis.User.UserAgent.Snapshot(Tardis.Payload)">
+            <summary>
+            현재 user의 snapshot을 얻어옵니다.<br></br>
+            재접속 등 user의 모든 정보를 갱싱해야 할 필요가 있을때 사용할 수 있습니다.<br></br>
+            서버 구현에 따라 내용이 달라집니다.
+            </summary>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.Snapshot(Tardis.Payload,Tardis.User.Interface.DelUserOnSnapshot)">
+            <summary>
+            현재 user의 snapshot을 얻어옵니다.<br></br>
+            재접속 등 user의 모든 정보를 갱싱해야 할 필요가 있을때 사용할 수 있습니다.<br></br>
+            서버 구현에 따라 내용이 달라집니다.
+            </summary>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onSnapshot">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MoveChannel(System.String)">
+            <summary>
+            지정한 채널로 이동합니다.
+            </summary>
+            <param name="channelId">이동할 channel의 id.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MoveChannel(System.String,Tardis.Payload)">
+            <summary>
+            지정한 채널로 이동합니다.
+            </summary>
+            <param name="channelId">이동할 channel의 id.</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MoveChannel(System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnMoveChannel)">
+            <summary>
+            지정한 채널로 이동합니다.
+            </summary>
+            <param name="channelId">이동할 channel의 id.</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMoveChannel">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String)">
+            <summary>
+            지정한 서비스로 이동합니다.
+            </summary>
+            <param name="serviceName">이동할 service의 id.</param>
+            <param name="userType">이동할 service에서 사용할 userType.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,Tardis.User.Interface.DelUserOnMoveService)">
+            <summary>
+            지정한 서비스로 이동합니다.
+            </summary>
+            <param name="serviceName">이동할 service의 id.</param>
+            <param name="userType">이동할 service에서 사용할 userType.</param>
+            <param name="onMoveService">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,Tardis.Payload)">
+            <summary>
+            지정한 채널로 이동합니다.
+            </summary>
+            <param name="serviceName">이동할 service의 id.</param>
+            <param name="userType">이동할 service에서 사용할 userType.</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnMoveService)">
+            <summary>
+            지정한 채널로 이동합니다.
+            </summary>
+            <param name="serviceName">이동할 service의 id.</param>
+            <param name="userType">이동할 service에서 사용할 userType.</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMoveService">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,System.String)">
+            <summary>
+            지정한 서비스로 이동합니다.
+            </summary>
+            <param name="serviceName">이동할 service의 id.</param>
+            <param name="userType">이동할 service에서 사용할 userType.</param>
+            <param name="channelId">이동할 service에서 사용할 channelId.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,System.String,Tardis.User.Interface.DelUserOnMoveService)">
+            <summary>
+            지정한 서비스로 이동합니다.
+            </summary>
+            <param name="serviceName">이동할 service의 id.</param>
+            <param name="userType">이동할 service에서 사용할 userType.</param>
+            <param name="channelId">이동할 service에서 사용할 channelId.</param>
+            <param name="onMoveService">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,System.String,Tardis.Payload)">
+            <summary>
+            지정한 서비스로 이동합니다.
+            </summary>
+            <param name="serviceName">이동할 service의 id.</param>
+            <param name="userType">이동할 service에서 사용할 userType.</param>
+            <param name="channelId">이동할 service에서 사용할 channelId.</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnMoveService)">
+            <summary>
+            지정한 채널로 이동합니다.
+            </summary>
+            <param name="serviceName">이동할 service의 id.</param>
+            <param name="userType">이동할 service에서 사용할 userType.</param>
+            <param name="channelId">이동할 service에서 사용할 channelId.</param>
+            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMoveService">결과를 전달 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.Login(System.String)">
+            <summary>
+            지정한 채널에 로그인합니다.
+            </summary>
+            <param name="userType">User의 타입. </param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.Login(System.String,Tardis.User.Interface.DelUserOnLogin)">
+            <summary>
+            지정한 채널에 로그인합니다.
+            </summary>
+            <param name="userType">User의 타입. </param>
+            <param name="onLogin">결과를 전달 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.Login(System.String,System.String,Tardis.Payload)">
+            <summary>
+            지정한 채널에 로그인합니다.
+            </summary>
+            <param name="userType">User의 타입. </param>
+            <param name="payload">버에 전달할 추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="channelId">로그인할 channel의 id. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.Login(System.String,System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnLogin)">
+            <summary>
+            지정한 채널에 로그인합니다.
+            </summary>
+            <param name="userType">User의 타입. </param>
+            <param name="payload">버에 전달할 추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="channelId">로그인할 channel의 id. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onLogin">결과를 전달 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.Logout">
+            <summary>
+            현재 채널에서 로그아웃 합니다.
+            </summary>
+        </member>
+        <member name="M:Tardis.User.UserAgent.Logout(Tardis.User.Interface.DelUserOnLogout)">
+            <summary>
+            현재 채널에서 로그아웃 합니다.
+            </summary>
+            <param name="onLogout">로그아웃 콜백.</param>
+        </member>
+        <member name="M:Tardis.Internal.AgentManager.CreateUserAgent(System.String,System.String)">
+            <summary>
+            유저 에이전트 생성.
+            </summary>
+            <param name="serviceName">UserAgent가 사용할 serviceName. </param>
+            <param name="subId">서비스별 UserAgent식별 할 수 있는 고유 ID. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <returns>생성된 유저 에이전트.</returns>
+        </member>
+        <member name="M:Tardis.Internal.AgentManager.GetUserAgent(System.Int32,System.String)">
+            <summary>
+            유저 에이전트를 찾아 가져온다.
+            </summary>
+            <param name="serviceId">UserAgent가 사용할 serviceId. </param>
+            <param name="subId">서비스별 UserAgent식별 할 수 있는 고유 ID. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <returns>해당 유저 에이전트, 없으면 null</returns>
+        </member>
+        <member name="M:Tardis.Internal.AgentManager.FindAgent(Tardis.Network.InternalPacket)">
+            <summary>
+            패킷으로 부터 Agent를 찾아준다.
+            서비스 이동 시 변경된 유저 에이전트를 찾아준다.
+            null 인경우 SessionAgent를 넘겨준다.
+            </summary>
+            <param name="internalPacket">패킷</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tardis.Internal.AgentManager.FindUserAgent(Tardis.Network.InternalPacket)">
+            <summary>
+            패킷으로 부터 Agent를 찾아준다.
+            서비스 이동 시 변경된 유저 에이전트를 찾아준다.
+            UserAgent에 해당 Agent가 없는경우 null 리턴.
+            </summary>
+            <param name="internalPacket">패킷</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tardis.Internal.AgentManager.GetSessionAgent">
+            <summary>
+            세션 에이전트를 넘겨준다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tardis.Internal.AgentManager.GetUserAgents">
+            <summary>
+            모든 유저 에이전트를 넘겨준다.
+            </summary>
+            <returns>모든 유저 에이전트.</returns>
+        </member>
+        <member name="F:Tardis.Internal.Core.config">
+            <summary>
+            커넥터 환경값.
+            </summary>
+        </member>
+        <member name="M:Tardis.Internal.Core.LvNetLogger(Tardis.Defines.NetLogLevel,System.String)">
+            <summary>
+            로그 콜백.
+            </summary>
+        </member>
+        <member name="M:Tardis.Internal.Core.Logger(Tardis.Defines.LogLevel,System.String)">
+            <summary>
+            로그 콜백.
+            </summary>
+        </member>
+        <member name="T:Tardis.IMessageHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tardis.Network.PacketManager.packet_seq">
+            <summary>
+             패킷 고유 id, 양수로 이루어져야 한다.
+            </summary>
+        </member>
+        <member name="M:Tardis.Network.PacketManager.Validate(Tardis.Packet)">
+            <summary>
+            유효성 검사.
+            </summary>
+            <param name="packet"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tardis.PacketHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tardis.PacketHelper.GetMessage``1(Tardis.Packet)">
+            <summary>
+            Packet으로부터 메세지를 가져온다.
+            </summary>
+            <typeparam name="T">메세지 타입:IMessage</typeparam>
+            <param name="packet">패킷</param>
+            <returns>T타입 메세지</returns>
+        </member>
+        <member name="T:Tardis.Connector">
+            <summary>
+            Connector는 Tardis Connector를 사용하기 위한 기본 모듈입니다.<br></br>
+            기본 설정과 Agent의 관리를 담당합니다.<br></br>
+            또 내부 동작과 관련된 로그를 볼수 있도록 delegate를 등록할 수 있습니다.<br></br>
+            </summary>
+        </member>
+        <member name="T:Tardis.Connector.Config">
+            <summary>
+            커넥터 환경 클래스.
+            </summary>
+        </member>
+        <member name="F:Tardis.Connector.Config.defaultReqestTimeout">
+            <summary>
+            TimeOut 기본 대기시간 설정(단위 : sec, 기본값 15).
+            </summary>
+        </member>
+        <member name="F:Tardis.Connector.Config.defaultRetryCount">
+            <summary>
+            TimeOut시 재시도 횟수(기본값 : 0).
+            </summary>
+        </member>
+        <member name="F:Tardis.Connector.Config.packetTimeout">
+            <summary>
+            패킷이 지정된 시간안에 업데이트 되지 않으면, disconnect 되었다고 판단된다.
+            pingInterval 보다 높게 설정되야 한다.
+            </summary>
+        </member>
+        <member name="F:Tardis.Connector.Config.pingInterval">
+            <summary>
+            서버와의 연결을 확인하기 위한 ping 주기 설정(단위 : sec, 0일 경우 사용 안함, 기본값 3).
+            </summary>
+        </member>
+        <member name="F:Tardis.Connector.Config.autoReconnectCount">
+            <summary>
+            접속이 끈겼을 경우 재접속 시도 횟수(기본값 : 0).
+            </summary>
+        </member>
+        <member name="F:Tardis.Connector.Config.autoReconnectDelay">
+            <summary>
+            재접속 실패시 다음 재접속 시도까지 대기시간(단위 : sec, 기본값 : 3).
+            </summary>
+        </member>
+        <member name="F:Tardis.Connector.Config.autoReconnectTimeout">
+            <summary>
+            재접속시 연결 대기시간 (단위 : sec, 기본값 : 15).
+            </summary>
+        </member>
+        <member name="F:Tardis.Connector.Config.useIPv6">
+            <summary>
+            접속시 IPv6 주소로 변환 여부.
+            </summary>
+        </member>
+        <member name="F:Tardis.Connector.Config.useSocketNoDelay">
+            <summary>
+            소켓의 Nodelay 사용 여부.
+            </summary>
+        </member>
+        <member name="P:Tardis.Connector.config">
+            <summary>
+            커넥터 환경값.
+            </summary>
+        </member>
+        <member name="F:Tardis.Connector.LvNetLogger">
+            <summary>
+            로그 콜백.
+            </summary>
+        </member>
+        <member name="F:Tardis.Connector.Logger">
+            <summary>
+            로그 콜백.
+            </summary>
+        </member>
+        <member name="M:Tardis.Connector.#ctor">
+            <summary>
+            커넥터 생성.
+            </summary>
+        </member>
+        <member name="M:Tardis.Connector.#ctor(Tardis.Connector.Config)">
+            <summary>
+            커넥터 생성.
+            </summary>
+            <param name="config">커넥터 환경.</param>
+        </member>
+        <member name="M:Tardis.Connector.CreateUserAgent(System.String,System.String)">
+            <summary>
+            유저 에이전트 생성.
+            </summary>
+            <param name="serviceName">UserAgent가 사용할 serviceName. </param>
+            <param name="subId">서비스별 UserAgent식별 할 수 있는 고유 ID. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <returns>생성된 유저 에이전트.</returns>
+        </member>
+        <member name="M:Tardis.Connector.GetUserAgent(System.String,System.String)">
+            <summary>
+            유저 에이전트를 찾아 가져온다.
+            </summary>
+            <param name="serviceName">UserAgent가 사용할 serviceName. </param>
+            <param name="subId">서비스별 UserAgent식별 할 수 있는 고유 ID. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <returns>해당 유저 에이전트, 없으면 null</returns>
+        </member>
+        <member name="M:Tardis.Connector.GetUserAgents">
+            <summary>
+            모든 유저 에이전트를 넘겨준다.
+            </summary>
+            <returns>모든 유저 에이전트.</returns>
+        </member>
+        <member name="M:Tardis.Connector.GetSessionAgent">
+            <summary>
+            세션 에이전트를 넘겨준다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tardis.Connector.CloseSocket">
+            <summary>
+            소켓 종료.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ErrorCode">
+            <summary>
+            시스템 에러 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ErrorCode.TIMEOUT">
+            <summary>
+            타임 아웃.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ErrorCode.SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ErrorCode.SYSTEM_ERROR">
+            <summary>
+            서버 시스템 에러.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeConnect">
+            <summary>
+            Connect 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeConnect.CONNECT_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeConnect.CONNECT_FAIL">
+            <summary>
+            실패.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeConnect.CONNECT_ALREADY_CONNECTED">
+            <summary>
+            이미 연결되어있음.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeConnect.CONNECT_ALREADY_REQUEST">
+            <summary>
+            이미 연결 시도중임.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeAuth">
+            <summary>
+            Authenticate 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeAuth.AUTH_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeAuth.AUTH_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeAuth.AUTH_FAIL_MAINTENANCE">
+            <summary>
+            실패. 점검중.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeCreateRoom">
+            <summary>
+            CreateRoom 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeCreateRoom.CREATE_ROOM_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeCreateRoom.CREATE_ROOM_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeCreateRoom.CREATE_ROOM_FAIL_ALREADY_JOINED_ROOM">
+            <summary>
+            실패. 이미 룸에 들어가 있음.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeChannelInfo">
+            <summary>
+            GetChannelInfo 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeChannelInfo.CHANNEL_INFO_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeChannelInfo.CHANNEL_INFO_FAIL_INVALID_SERVICEID">
+            <summary>
+            실패. 잘못된 서비스 아이디.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeChannelList">
+            <summary>
+            GetChannelList 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeChannelList.CHANNEL_LIST_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeChannelList.CHANNEL_LIST_FAIL_INVALID_SERVICEID">
+            /// <summary>
+            실패. 잘못된 서비스 아이디.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeJoinRoom">
+            <summary>
+            JoinRoom 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeJoinRoom.JOIN_ROOM_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeJoinRoom.JOIN_ROOM_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeJoinRoom.JOIN_ROOM_FAIL_ROOM_DOES_NOT_EXIST">
+            <summary>
+            실패. 방이 존재하지 않음.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeJoinRoom.JOIN_ROOM_FAIL_ALREADY_JOINED_ROOM">
+            <summary>
+            실패. 이미 방에 들어가 있음.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeLeaveRoom">
+            <summary>
+            LeaveRoom 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeLeaveRoom.LEAVE_ROOM_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeLeaveRoom.LEAVE_ROOM_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeLogin">
+            <summary>
+            로그인 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeLogin.LOGIN_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeLogin.LOGIN_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeLogin.LOGIN_FAIL_LOGINED_OTHER_SERVICE">
+            <summary>
+            실패. 다른 서비스에 로그인 되어있음.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeLogin.LOGIN_FAIL_LOGINED_SAME_SERVICE">
+            <summary>
+            실패. 같은 서비스에 로그인 되어있음(Sub 아이디가 다른경우 발생).
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeLogin.LOGIN_FAIL_INVALID_SERVICEID">
+            <summary>
+            실패. 잘못된 서비스 아이디.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeLogin.LOGIN_FAIL_INVALID_USERTYPE">
+            <summary>
+            실패. 잘못된 유저 타입.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeLogin.LOGIN_FAIL_LOGINED_OTHER_CHANNEL">
+            <summary>
+            실패. 다른 채널에 로그인 되어있음.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeLogin.LOGIN_FAIL_NOT_EXIST_NODE">
+            <summary>
+            실패. 노드가 존재하지 않음.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeLogin.LOGIN_FAIL_MAINTENANCE">
+            <summary>
+            실패. 점검중.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeLogout">
+            <summary>
+            Logout 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeLogout.LOGOUT_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeLogout.LOGOUT_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeMatchUserCancel">
+            <summary>
+            MatchUserCancel 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchUserCancel.MATCH_USER_CANCEL_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchUserCancel.MATCH_USER_CANCEL_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchUserCancel.MATCH_USER_CANCEL_FAIL_ALREADY_JOINED_ROOM">
+            <summary>
+            실패. 이미 매칭이 이루어짐.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchUserCancel.MATCH_USER_CANCEL_FAIL_MATCH_UNKNOWN_ERROR">
+            <summary>
+            실패. 알 수 없는 에러 발생.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeMatchPartyStart">
+            <summary>
+            MatchPartyStart 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchPartyStart.MATCH_PARTY_START_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchPartyStart.MATCH_PARTY_START_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchPartyStart.MATCH_PARTY_START_FAIL_MATCH_UNKNOWN_ERROR">
+            <summary>
+            실패. 알 수 없는 에러 발생.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchPartyStart.MATCH_PARTY_START_FAIL_PARTY_MATCH_WEIRD">
+            <summary>
+            실패. 파티매칭을 요청할 때, 룸이 파티매칭용 룸이 아닌경우.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeMatchRoom">
+            <summary>
+            MatchRoom 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchRoom.MATCH_ROOM_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchRoom.MATCH_ROOM_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchRoom.MATCH_ROOM_FAIL_ROOM_DOES_NOT_EXIST">
+            <summary>
+            실패. 방이 존재하지 않음.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchRoom.MATCH_ROOM_FAIL_ALREADY_JOINED_ROOM">
+            <summary>
+            실패. 이미 방에 들어가 있음.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchRoom.MATCH_ROOM_FAIL_LEAVE_ROOM">
+            <summary>
+            실패. 방 이동 기능으로 매칭시킬 때, 기존방에서 나가기가 실패한 경우.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchRoom.MATCH_ROOM_FAIL_IN_PROGRESS">
+            <summary>
+            실패. 이미 매치 매이킹이 진행중인 경우.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchRoom.MATCH_ROOM_FAIL_UNKNOWN_ERROR">
+            <summary>
+            실패. 알 수 없는 에러 발생.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchRoom.MATCH_ROOM_FAIL_MATCHED_ROOM_DOES_NOT_EXIST">
+            <summary>
+            실패. 조건에 맞는 방을 찾아 방에 참가 시키는 도중, 방이 사라짐.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeMatchPartyCancel">
+            <summary>
+            MatchPartyCancel 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchPartyCancel.MATCH_PARTY_CANCEL_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchPartyCancel.MATCH_PARTY_CANCEL_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchPartyCancel.MATCH_PARTY_CANCEL_FAIL_MATCH_UNKNOWN_ERROR">
+            <summary>
+            실패. 알 수 없는 에러 발생.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchPartyCancel.MATCH_PARTY_CANCEL_FAIL_PARTY_MATCH_WEIRD">
+            <summary>
+            실패. 파티매칭을 취소할 때, 룸이 파티매칭용 룸이 아닌경우.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeMatchUserDone">
+            <summary>
+            MatchUserDone 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchUserDone.MATCH_USER_DONE_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchUserDone.MATCH_USER_DONE_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨(조검에 맞는 방을 찾지 못함).
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchUserDone.MATCH_USER_DONE_FAIL_ROOM_DOES_NOT_EXIST">
+            <summary>
+            실패. 조건에 맞는 방을 찾아 방에 참가 시키는 도중, 방이 사라짐.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeMatchUserStart">
+            <summary>
+            MatchUserStart 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchUserStart.MATCH_USER_START_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchUserStart.MATCH_USER_START_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchUserStart.MATCH_USER_START_FAIL_ALREADY_JOINED_ROOM">
+            <summary>
+            실패. 이미 방에 들어가 있음.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMatchUserStart.MATCH_USER_START_FAIL_MATCH_UNKNOWN_ERROR">
+            <summary>
+            실패. 알 수 없는 에러 발생.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeMoveChannel">
+            <summary>
+            MoveChannel 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMoveChannel.MOVE_CHANNEL_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMoveChannel.MOVE_CHANNEL_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeMoveService">
+            <summary>
+            MoveService 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMoveService.MOVE_SERVICE_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMoveService.MOVE_SERVICE_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMoveService.MOVE_SERVICE_FAIL_ALREADY_JOINED_ROOM">
+            <summary>
+            실패. 이미 방에 들어가 있음.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMoveService.MOVE_SERVICE_FAIL_ALREADY_JOINED_SERVICE">
+            <summary>
+            실패. 이미 서비스에 들어가 있음.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeMoveService.MOVE_SERVICE_FAIL_SERVICE_DOES_NOT_EXIST">
+            <summary>
+            실패. 해당 서비스가 존재하지 않음.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeNamedRoom">
+            <summary>
+            NamedRoom 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeNamedRoom.NAMED_ROOM_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeNamedRoom.NAMED_ROOM_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeNamedRoom.NAMED_ROOM_FAIL_ROOM_DOES_NOT_EXIST">
+            <summary>
+            실패. 방 생성이 실패하여 방을 찾을 수 없음.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeNamedRoom.NAMED_ROOM_FAIL_ALREADY_JOINED_ROOM">
+            <summary>
+            실패. 이미 방에 들어가 있음.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeSnapshot">
+            <summary>
+            Snapshot 결과 코드.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeSnapshot.SNAPSHOT_SUCCESS">
+            <summary>
+            성공.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeSnapshot.SNAPSHOT_FAIL_CONTENT">
+            <summary>
+            실패. 컨텐츠에서 거부됨.
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ResultCodeDisconnect">
+            <summary>
+            Disconnect가 된 이유
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeDisconnect.FORCE_CLOSE_SYSTEM">
+            <summary>
+            시스템 오류로 인한 강제 종료. 일반적으로 발생하지 않으며 발생 할 경우 문의주세요.
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeDisconnect.FORCE_CLOSE_CONTENT">
+            <summary>
+            컨텐츠에서 강제 종료
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeDisconnect.FORCE_CLOSE_DUPLICATE_LOGIN">
+            <summary>
+            중복접속으로 인한 강제 종료
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeDisconnect.FORCE_CLOSE_ADMIN_KICK">
+            <summary>
+            Admin에서 강제 종료
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeDisconnect.FORCE_CLOSE_MAINTENANCE">
+            <summary>
+            서버 점검으로 인한 강제 종료
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeDisconnect.FORCE_CLOSE_AUTHENTICATION_FAIL">
+            <summary>
+            인증 실패로 인한 강제 종료
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeDisconnect.SOCKET_DISCONNECT">
+            <summary>
+            네트워크 연결이 끊어짐
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeDisconnect.SOCKET_TIME_OUT">
+            <summary>
+            타임아웃이 발생, 컨넥터에서 연결을 끊음
+            </summary>
+        </member>
+        <member name="F:Tardis.Defines.ResultCodeDisconnect.SOCKET_ERROR">
+            <summary>
+            소켓 에러가 발생하여 연결을 끊음
+            </summary>
+        </member>
+        <member name="T:Tardis.Defines.ChannelStatus">
+            <summary>
+            deprecated. 삭제 예정.
+            </summary>
+        </member>
+        <member name="T:Tardis.Packet">
+            <summary>
+            서버와 주고 받는 모든 패킷은 Packet 모듈에 실려서 처리 되며 Packet 모듈이 제공하는 인터페이스를 이용하게 됩니다.
+            </summary>
+        </member>
+        <member name="T:Com.Nhnent.Tardis.Common.Protocol.BaseReflection">
+            <summary>Holder for reflection information generated from base.proto</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Common.Protocol.BaseReflection.Descriptor">
+            <summary>File descriptor for base.proto</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.TargetType.SpaceActor">
+            <summary>
+            Space IUser (기본값)
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.TargetType.SessionSession">
+            <summary>
+            ISession.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.TargetType.SessionActor">
+            <summary>
+            ISessionUser.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeLogin.LoginFailLoginedOtherService">
+            <summary>
+            동일 Account 아이디로 다른 서비스에 로그인 되어있음.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeLogin.LoginFailLoginedSameService">
+            <summary>
+            동일 Account 아이디로 현재 서비스에 이미 로그인 되어있음. (Sub 아이디가 다른경우 발생)
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeLogin.LoginFailInvalidServiceid">
+            <summary>
+            잘못된 ServiceId가 사용될 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeLogin.LoginFailInvalidUsertype">
+            <summary>
+            잘못된 UserType이 사용될 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeLogin.LoginFailLoginedOtherChannel">
+            <summary>
+            동일 Account 아이디로 다른 채널에 로그인 되어있음.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeLogin.LoginFailNotExistNode">
+            <summary>
+            서비스 중인 노드가 없을 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeLogin.LoginFailMaintenance">
+            <summary>
+            점검 중일 경우
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeCreateRoom.CreateRoomFailAlreadyJoinedRoom">
+            <summary>
+            이미 룸에 들어가있는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeJoinRoom.JoinRoomFailRoomDoesNotExist">
+            <summary>
+            룸이 존재하지 않는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeJoinRoom.JoinRoomFailAlreadyJoinedRoom">
+            <summary>
+            이미 룸에 들어가있는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchRoom.MatchRoomFailRoomDoesNotExist">
+            <summary>
+            룸이 존재하지 않는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchRoom.MatchRoomFailAlreadyJoinedRoom">
+            <summary>
+            이미 룸에 들어가있는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchRoom.MatchRoomFailLeaveRoom">
+            <summary>
+            방 이동 기능으로 매칭시킬 때, 기존방에서 나가기가 실패한 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchRoom.MatchRoomFailInProgress">
+            <summary>
+            이미 매치 매이킹이 진행중인 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchRoom.MatchRoomFailUnknownError">
+            <summary>
+            매칭 과정에서 알 수 없는 예외 발생
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchRoom.MatchRoomFailMatchedRoomDoesNotExist">
+            <summary>
+            매칭은 되었으나 해당 방이 존재하지 않는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeNamedRoom.NamedRoomFailRoomDoesNotExist">
+            <summary>
+            룸이 존재하지 않는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeNamedRoom.NamedRoomFailAlreadyJoinedRoom">
+            <summary>
+            이미 룸에 들어가있는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchUserStart.MatchUserStartFailAlreadyJoinedRoom">
+            <summary>
+            이미 룸에 들어가있는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchUserStart.MatchUserStartFailMatchUnknownError">
+            <summary>
+            매칭 과정에서 Timeout을 제외한 알 수 없는 예외 발생
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchPartyStart.MatchPartyStartFailMatchUnknownError">
+            <summary>
+            매칭 과정에서 Timeout을 제외한 알 수 없는 예외 발생
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchPartyStart.MatchPartyStartFailPartyMatchWeird">
+            <summary>
+            Party Room이 아닌 방으로부터 파티 매칭 요청
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchPartyCancel.MatchPartyCancelFailMatchUnknownError">
+            <summary>
+            매칭 과정에서 Timeout을 제외한 알 수 없는 예외 발생
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchPartyCancel.MatchPartyCancelFailPartyMatchWeird">
+            <summary>
+            Party Room이 아닌 방으로부터 파티 매칭 요청
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchUserDone.MatchUserDoneFailRoomDoesNotExist">
+            <summary>
+            룸이 존재하지 않는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchUserCancel.MatchUserCancelFailAlreadyJoinedRoom">
+            <summary>
+            이미 룸에 들어가있는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeMatchUserCancel.MatchUserCancelFailMatchUnknownError">
+            <summary>
+            매칭 과정에서 Timeout을 제외한 알 수 없는 예외 발생
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeChannelList.ChannelListFailInvalidServiceid">
+            <summary>
+            잘못된 ServiceId가 사용될 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ResultCodeChannelInfo.ChannelInfoFailInvalidServiceid">
+            <summary>
+            잘못된 ServiceId가 사용될 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.Header.ServiceIdFieldNumber">
+            <summary>Field number for the "service_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.Header.SubIdFieldNumber">
+            <summary>Field number for the "sub_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.Header.TargetTypeFieldNumber">
+            <summary>Field number for the "target_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.Header.SeqFieldNumber">
+            <summary>Field number for the "seq" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.Header.ErrorCodeFieldNumber">
+            <summary>Field number for the "error_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.Header.MsgIdFieldNumber">
+            <summary>Field number for the "msg_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.Header.UncompressSizeFieldNumber">
+            <summary>Field number for the "uncompress_size" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.Payload.MsgIdFieldNumber">
+            <summary>Field number for the "msg_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.Payload.DataFieldNumber">
+            <summary>Field number for the "data" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.Payload.PriorityFieldNumber">
+            <summary>Field number for the "priority" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MultiMessage.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MultiMessage.ReplyFieldNumber">
+            <summary>Field number for the "reply" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.AuthenticationReq.AccountIdFieldNumber">
+            <summary>Field number for the "account_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.AuthenticationReq.PasswordFieldNumber">
+            <summary>Field number for the "password" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.AuthenticationReq.DeviceIdFieldNumber">
+            <summary>Field number for the "device_id" field.</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Common.Protocol.AuthenticationReq.DeviceId">
+             <summary>
+            int32 cid = 3;
+             </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.AuthenticationReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.AuthenticationRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.AuthenticationRes.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.AuthenticationRes.UserListFieldNumber">
+            <summary>Field number for the "user_list" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.AuthenticationRes.MessageFieldNumber">
+            <summary>Field number for the "message" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.AuthenticationRes.ServiceIdsFieldNumber">
+            <summary>Field number for the "service_ids" field.</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Common.Protocol.AuthenticationRes.ServiceIds">
+            <summary>
+            &lt;serviceName, serviceId>
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginReq.SubIdFieldNumber">
+            <summary>Field number for the "sub_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginReq.ChannelIdFieldNumber">
+            <summary>Field number for the "channel_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginReq.UserTypeFieldNumber">
+            <summary>Field number for the "user_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginRes.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginRes.IsReloginedFieldNumber">
+            <summary>Field number for the "is_relogined" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginRes.RejoinedRoomIdFieldNumber">
+            <summary>Field number for the "rejoined_room_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginRes.RoomCommandFieldNumber">
+            <summary>Field number for the "room_command" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginRes.RoomRejoinPayloadFieldNumber">
+            <summary>Field number for the "room_rejoin_payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginRes.ChannelIdFieldNumber">
+            <summary>Field number for the "channel_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginRes.UserTypeFieldNumber">
+            <summary>Field number for the "user_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginRes.ServiceIdFieldNumber">
+            <summary>Field number for the "service_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginRes.MessageFieldNumber">
+            <summary>Field number for the "message" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginRes.IsUserMatchingFieldNumber">
+            <summary>Field number for the "is_user_matching" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginedUserInfo.SubIdFieldNumber">
+            <summary>Field number for the "sub_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginedUserInfo.ServiceIdFieldNumber">
+            <summary>Field number for the "service_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginedUserInfo.UserTypeFieldNumber">
+            <summary>Field number for the "user_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginedUserInfo.ChannelIdFieldNumber">
+            <summary>Field number for the "channel_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LoginedUserInfo.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Common.Protocol.LoginedUserInfo.Payload">
+            <summary>
+            to onLogin or onReLogin.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectResultInfo.SubIdFieldNumber">
+            <summary>Field number for the "sub_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectResultInfo.ServiceIdFieldNumber">
+            <summary>Field number for the "service_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectResultInfo.UserTypeFieldNumber">
+            <summary>Field number for the "user_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectResultInfo.ChannelIdFieldNumber">
+            <summary>Field number for the "channel_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectResultInfo.RoomIdFieldNumber">
+            <summary>Field number for the "room_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectResultInfo.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Common.Protocol.ReconnectResultInfo.Payload">
+            <summary>
+            from onReLogin.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectResultInfo.RoomPayloadFieldNumber">
+            <summary>Field number for the "room_payload" field.</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Common.Protocol.ReconnectResultInfo.RoomPayload">
+            <summary>
+            from onReJoinRoom.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectResultInfo.IsUserMatchingFieldNumber">
+            <summary>Field number for the "is_user_matching" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectReq.AccountIdFieldNumber">
+            <summary>Field number for the "account_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectReq.PasswordFieldNumber">
+            <summary>Field number for the "password" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectReq.DeviceIdFieldNumber">
+            <summary>Field number for the "device_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Common.Protocol.ReconnectReq.Payload">
+            <summary>
+            to onAuth.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectReq.UserListFieldNumber">
+            <summary>Field number for the "user_list" field.</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Common.Protocol.ReconnectReq.UserList">
+            <summary>
+            재접속 하려는 유저 목록.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectRes.ResultListFieldNumber">
+            <summary>Field number for the "result_list" field.</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Common.Protocol.ReconnectRes.ResultList">
+            <summary>
+            재접속 완료 목록.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectRes.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Common.Protocol.ReconnectRes.Payload">
+            <summary>
+            from onAuth.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ReconnectRes.ServiceIdsFieldNumber">
+            <summary>Field number for the "service_ids" field.</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Common.Protocol.ReconnectRes.ServiceIds">
+            <summary>
+            &lt;serviceName, serviceId>
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LogoutReq.SubIdFieldNumber">
+            <summary>Field number for the "sub_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LogoutReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LogoutRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LogoutRes.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.SnapshotReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.SnapshotRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.SnapshotRes.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.CreateRoomReq.RoomTypeFieldNumber">
+            <summary>Field number for the "room_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.CreateRoomReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.CreateRoomRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.CreateRoomRes.RoomIdFieldNumber">
+            <summary>Field number for the "room_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.CreateRoomRes.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.JoinRoomReq.RoomIdFieldNumber">
+            <summary>Field number for the "room_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.JoinRoomReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.JoinRoomReq.RoomTypeFieldNumber">
+            <summary>Field number for the "room_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.JoinRoomRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.JoinRoomRes.RoomIdFieldNumber">
+            <summary>Field number for the "room_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.JoinRoomRes.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LeaveRoomReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LeaveRoomRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LeaveRoomRes.RoomIdFieldNumber">
+            <summary>Field number for the "room_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.LeaveRoomRes.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchRoomReq.RoomIdFieldNumber">
+            <summary>Field number for the "room_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchRoomReq.CreateFieldNumber">
+            <summary>Field number for the "create" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchRoomReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchRoomReq.RoomTypeFieldNumber">
+            <summary>Field number for the "room_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchRoomReq.MoveRoomFieldNumber">
+            <summary>Field number for the "move_room" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchRoomReq.LeaveRoomPayloadFieldNumber">
+            <summary>Field number for the "leave_room_payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchRoomRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchRoomRes.CreatedFieldNumber">
+            <summary>Field number for the "created" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchRoomRes.RoomIdFieldNumber">
+            <summary>Field number for the "room_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchRoomRes.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.NamedRoomReq.RoomIdFieldNumber">
+            <summary>Field number for the "room_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.NamedRoomReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.NamedRoomReq.RoomTypeFieldNumber">
+            <summary>Field number for the "room_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.NamedRoomReq.PartyFieldNumber">
+            <summary>Field number for the "party" field.</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Common.Protocol.NamedRoomReq.Party">
+            <summary>
+            Party matchmaking을 위한 방인가?
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.NamedRoomRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.NamedRoomRes.CreatedFieldNumber">
+            <summary>Field number for the "created" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.NamedRoomRes.RoomIdFieldNumber">
+            <summary>Field number for the "room_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.NamedRoomRes.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchUserStartReq.RoomTypeFieldNumber">
+            <summary>Field number for the "room_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchUserStartReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchUserStartRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchUserStartRes.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchPartyStartReq.RoomTypeFieldNumber">
+            <summary>Field number for the "room_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchPartyStartReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchPartyStartResOrNoti.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchPartyStartResOrNoti.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchPartyCancelReq.RoomTypeFieldNumber">
+            <summary>Field number for the "room_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchPartyCancelResOrNoti.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchUserDone.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchUserDone.CreatedFieldNumber">
+            <summary>Field number for the "created" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchUserDone.RoomIdFieldNumber">
+            <summary>Field number for the "room_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchUserDone.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchUserCancelReq.RoomTypeFieldNumber">
+            <summary>Field number for the "room_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MatchUserCancelRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveChannelReq.ChannelIdFieldNumber">
+            <summary>Field number for the "channel_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveChannelReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveChannelRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveChannelRes.ChannelIdFieldNumber">
+            <summary>Field number for the "channel_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveChannelRes.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceReq.ServiceIdFieldNumber">
+            <summary>Field number for the "service_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceReq.ChannelIdFieldNumber">
+            <summary>Field number for the "channel_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceReq.UserTypeFieldNumber">
+            <summary>Field number for the "user_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceReq.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceRes.ServiceIdFieldNumber">
+            <summary>Field number for the "service_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceRes.ChannelIdFieldNumber">
+            <summary>Field number for the "channel_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceRes.UserTypeFieldNumber">
+            <summary>Field number for the "user_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceRes.PayloadChannelFieldNumber">
+            <summary>Field number for the "payload_channel" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceRes.PayloadServiceFieldNumber">
+            <summary>Field number for the "payload_service" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceRes.PrevServiceIdFieldNumber">
+            <summary>Field number for the "prev_service_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.GetChannelListReq.ServiceIdFieldNumber">
+            <summary>Field number for the "service_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.GetChannelListRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.GetChannelListRes.ChannelListFieldNumber">
+            <summary>Field number for the "channel_list" field.</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Common.Protocol.GetChannelListRes.ChannelList">
+            <summary>
+            list of channel ID.
+            </summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.GetChannelInfoReq.ServiceIdFieldNumber">
+            <summary>Field number for the "service_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.GetChannelInfoReq.ChannelIdFieldNumber">
+            <summary>Field number for the "channel_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.GetChannelInfoRes.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.GetChannelInfoRes.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ForceLogoutNoti.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ForceCloseNoti.ResultCodeFieldNumber">
+            <summary>Field number for the "result_code" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ForceCloseNoti.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ForceLeaveRoomNoti.RoomIdFieldNumber">
+            <summary>Field number for the "room_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.ForceLeaveRoomNoti.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveChannelNoti.ChannelIdFieldNumber">
+            <summary>Field number for the "channel_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveChannelNoti.PayloadFieldNumber">
+            <summary>Field number for the "payload" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceNoti.ServiceIdFieldNumber">
+            <summary>Field number for the "service_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceNoti.ChannelIdFieldNumber">
+            <summary>Field number for the "channel_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceNoti.UserTypeFieldNumber">
+            <summary>Field number for the "user_type" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceNoti.PayloadChannelFieldNumber">
+            <summary>Field number for the "payload_channel" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceNoti.PayloadServiceFieldNumber">
+            <summary>Field number for the "payload_service" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.MoveServiceNoti.PrevServiceIdFieldNumber">
+            <summary>Field number for the "prev_service_id" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.Notice.MessageFieldNumber">
+            <summary>Field number for the "message" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Common.Protocol.AdminKickoutNoti.MessageFieldNumber">
+            <summary>Field number for the "message" field.</summary>
+        </member>
+        <member name="T:Com.Nhnent.Tardis.Internal.Protocol.InternalReflection">
+            <summary>Holder for reflection information generated from internal.proto</summary>
+        </member>
+        <member name="P:Com.Nhnent.Tardis.Internal.Protocol.InternalReflection.Descriptor">
+            <summary>File descriptor for internal.proto</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Internal.Protocol.InternalConnect.ResultFieldNumber">
+            <summary>Field number for the "result" field.</summary>
+        </member>
+        <member name="F:Com.Nhnent.Tardis.Internal.Protocol.InternalSocketClose.ResultCodeFieldNumber">
+            <summary>Field number for the "ResultCode" field.</summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,262 @@
+﻿using System.Collections.Generic;
+using Tardis;
+using Tardis.Defines;
+using Tardis.User;
+using TardisConnector;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+// 게임 로비신 UI 제어 스크립트
+public class GameLobbyUi : MonoBehaviour
+{
+    // 화면 입력 필드
+    public Text textUUID;
+    public Text textNickName;
+    public Text textHeart;
+    public Text textCoin;
+    public Text textRuby;
+    public Text textLevel;
+    public Text textExp;
+    public Text textHighScore;
+    public Button buttonTapBirdGame;
+    public Button buttonMultiTapBirdGame;
+    public Button buttonMultiSnakeGame;
+    public Button buttonSingleRanking;
+    public Text textRanking;
+    public Button buttonUserInfo;
+    public GameObject panelUserInfo;
+    public GameObject panelSingleRankingInfo;
+
+    // 접속 유저 객체
+    UserAgent gameUser;
+
+    void Start()
+    {
+        // 버튼 리스너 연결
+        buttonTapBirdGame.onClick.AddListener(() => { OnClickTapBirdGame(); });
+        buttonMultiTapBirdGame.onClick.AddListener(() => { OnClickMultiTapBirdGame(); });
+        buttonMultiSnakeGame.onClick.AddListener(() => { OnClickMultiSnakeGame(); });
+        buttonSingleRanking.onClick.AddListener(() => { OnClickSingleRanking(); });
+        buttonUserInfo.onClick.AddListener(() => { OnClickUserInfo(); });
+
+        // ===========================================================================================>>> Tardis
+        // 커넥터로 부터 유저 객체 저장
+        gameUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, string.Empty);
+        // ===========================================================================================>>> Tardis
+
+        // 유저 게임 정보 초기화
+        UserInfo.Instance.IsMulti = false;
+        UserInfo.Instance.gameState = UserInfo.GameState.None;
+
+        // ===========================================================================================>>> Tardis
+        // 타이밍 이슈상 리스너를 미리 등록, 유저 매치가 되었을때 불리는 리스너
+        gameUser.onMatchUserDoneListeners += (UserAgent userAgent, ResultCodeMatchUserDone result, bool created, string roomId, Payload payload) =>
+        {
+            Debug.Log("onMatchUserDoneListeners!!!!!! " + userAgent.GetUserId());
+            UserInfo.Instance.gameState = UserInfo.GameState.Wait;
+        };
+
+        // 타이밍 이슈상 리스너 미리등록, 서버에서 게임룸에 두명이 모두 입장했을때 게임 설정데이터를 전송
+        gameUser.AddListener((UserAgent userAgent, Com.Nhn.Tardis.Sample.Protocol.SnakeGameInfoMsg msg) =>
+        {
+            if (msg != null)
+            {
+                Debug.Log("SnakeGameInfoMsg!!!!!! : " + msg);
+                SnakeGameInfo.Instance.BoarderLeft = msg.BoarderLeft;
+                SnakeGameInfo.Instance.BoarderRight = msg.BoarderRight;
+                SnakeGameInfo.Instance.BoarderBottom = msg.BoarderBottom;
+                SnakeGameInfo.Instance.BoarderTop = msg.BoarderTop;
+
+                Dictionary<string, SnakeGameUser> userMap = new Dictionary<string, SnakeGameUser>();
+                foreach (var user in msg.Users)
+                {
+
+                    var snakeGameUser = new SnakeGameUser
+                    {
+                        Id = user.BaseData.Id,
+                        Nickname = user.BaseData.NickName,
+                        Score = user.BaseData.Score
+                    };
+
+                    List<SnakePositionInfo> snakePositionData = new List<SnakePositionInfo>();
+                    foreach (var userPosition in user.UserPositionListData)
+                    {
+                        var positionData = new SnakePositionInfo
+                        {
+                            Index = userPosition.Idx,
+                            X = userPosition.X,
+                            Y = userPosition.Y
+                        };
+                        snakePositionData.Add(positionData);
+                    }
+                    snakeGameUser.PositionList = snakePositionData;
+                    userMap.Add(snakeGameUser.Id, snakeGameUser);
+                }
+
+                SnakeGameInfo.Instance.UserMapInfo = userMap;
+                Debug.Log("UserMapInfo Count " + userMap.Count);
+                UserInfo.Instance.gameState = UserInfo.GameState.Wait;
+            }
+        });
+    }
+
+    void RemoveAllListeners()
+    {
+        // 리스너 제거
+        buttonMultiTapBirdGame.onClick.RemoveAllListeners();
+        buttonMultiSnakeGame.onClick.RemoveAllListeners();
+        buttonTapBirdGame.onClick.RemoveAllListeners();
+        buttonSingleRanking.onClick.RemoveAllListeners();
+        buttonUserInfo.onClick.RemoveAllListeners();
+
+    }
+
+    void OnClickTapBirdGame()
+    {
+        // 다중클릭 막음
+        buttonTapBirdGame.interactable = false;
+
+        // ===========================================================================================>>> Tardis
+        // 게임 시작 프로토콜 데이터 정의
+        var startGameReq = new Com.Nhn.Tardis.Sample.Protocol.StartGameReq
+        {
+            Deck = UserInfo.Instance.CurrentDeck,
+            Difficulty = Com.Nhn.Tardis.Sample.Protocol.DifficultyType.DifficultyNormal
+        };
+        Debug.Log("startGameReq" + startGameReq);
+        gameUser.CreateRoom(Constants.SPACE_ROOM_TYPE_SINGLE, new Payload().add(new Packet(startGameReq)), (UserAgent userAgent, ResultCodeCreateRoom result, string roomId, Payload payload) =>
+        {
+            Debug.Log("CreateRoom " + result);
+
+            if (result == ResultCodeCreateRoom.CREATE_ROOM_SUCCESS)
+            {
+                // 성공시 게임신으로 변경, 등록된 리스너 제거
+                RemoveAllListeners();
+                UserInfo.Instance.MoveScene(Constants.SCENE_GAME_TAPBIRD);
+            }
+            else
+            {
+                // 실패 처리
+            }
+        });
+        // ===========================================================================================>>> Tardis
+
+        buttonTapBirdGame.interactable = true;
+    }
+
+    void OnClickMultiTapBirdGame()
+    {
+        // 다중클릭 막음
+        buttonMultiTapBirdGame.interactable = false;
+
+        // ===========================================================================================>>> Tardis
+        // 만들어 져있는 방에 들어가는 룸매치 요청 - 혼자서도 플레이가 가능하다. 최대 인원수 까지 모두 입장
+        gameUser.MatchRoom(Constants.SPACE_ROOM_TYPE_MULTI_ROOM_MATCH, true, false, (UserAgent userAgent, ResultCodeMatchRoom result, string roomId, Payload payload) =>
+        {
+            Debug.Log("MatchRoom " + result);
+            if (result == ResultCodeMatchRoom.MATCH_ROOM_SUCCESS)
+            {
+                // 성공시 게임신으로 변경, 등록된 리스너 제거
+                RemoveAllListeners();
+                UserInfo.Instance.IsMulti = true;
+                UserInfo.Instance.MoveScene(Constants.SCENE_GAME_TAPBIRD);
+            }
+            else
+            {
+                // 실패 처리
+            }
+        });
+        // ===========================================================================================>>> Tardis
+
+
+        buttonMultiTapBirdGame.interactable = true;
+    }
+
+    void OnClickMultiSnakeGame()
+    {
+        // 다중클릭 막음
+        buttonMultiSnakeGame.interactable = false;
+
+        // 유저 매치 두명이서 방을 만들어서 동시에 입장해서 게임진행
+        gameUser.MatchUserStart(Constants.SPACE_ROOM_TYPE_MULTI_USER_MATCH, (UserAgent userAgent, ResultCodeMatchUserStart result, Payload payload) =>
+        {
+            Debug.Log("MatchUser " + result);
+            if (result == ResultCodeMatchUserStart.MATCH_USER_START_SUCCESS)
+            {
+                SnakeGameInfo.Instance.FoodList.Clear();
+                SnakeGameInfo.Instance.UserMapInfo.Clear();
+
+                // 성공시 게임신으로 변경, 등록된 리스너 제거
+                RemoveAllListeners();
+                UserInfo.Instance.MoveScene(Constants.SCENE_GAME_SNAKE);
+            }
+            else
+            {
+                // 실패 처리
+            }
+        });
+        // ===========================================================================================>>> Tardis
+
+        buttonMultiSnakeGame.interactable = true;
+    }
+
+    void OnClickSingleRanking()
+    {
+        // 다중 클릭 막음
+        buttonSingleRanking.interactable = false;
+
+        var singleRankingReq = new Com.Nhn.Tardis.Sample.Protocol.ScoreRankingReq
+        {
+            Start = 1,
+            End = 100
+        };
+        Debug.Log("singleRankingReq " + singleRankingReq);
+
+        // ===========================================================================================>>> Tardis
+        // 게임에서 등록한 랭킹 리스트 요청
+        gameUser.Request<Com.Nhn.Tardis.Sample.Protocol.ScoreRankingRes>(singleRankingReq, (userAgent, singleRankingRes) =>
+        {
+            Debug.Log("singleRankingRes" + singleRankingRes);
+
+            if (singleRankingRes.ResultCode == Com.Nhn.Tardis.Sample.Protocol.ErrorCode.None)
+            {
+                var rankings = singleRankingRes.Rankings;
+
+                textRanking.text = "RankingList";
+                int rankingNumber = 0;
+                foreach (var ranking in rankings)
+                {
+                    textRanking.text += "\n" + rankingNumber++ + ":" + ":" + ranking.Nickname + ":" + ranking.Score;
+                }
+
+                panelSingleRankingInfo.SetActive(true);
+            }
+            else
+            {
+                // 실패시 처리
+            }
+            buttonSingleRanking.interactable = true;
+        });
+        // ===========================================================================================>>> Tardis
+
+    }
+
+    void OnClickUserInfo()
+    {
+        // 다중 클릭 막음
+        buttonUserInfo.interactable = false;
+
+        textUUID.text = UserInfo.Instance.Uuid;
+        textNickName.text = UserInfo.Instance.Nickname;
+        textHeart.text = UserInfo.Instance.Heart.ToString();
+        textCoin.text = UserInfo.Instance.Coin.ToString();
+        textRuby.text = UserInfo.Instance.Ruby.ToString();
+        textLevel.text = UserInfo.Instance.Level.ToString();
+        textExp.text = UserInfo.Instance.Exp.ToString();
+        textHighScore.text = UserInfo.Instance.HighScore.ToString();
+
+        panelUserInfo.SetActive(true);
+        buttonUserInfo.interactable = true;
+    }
+}

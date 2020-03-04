@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{8BA3A2C7-D3C4-47D6-2319-28D1DC3F9574}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MultiTapBirdGameUi.cs">
+    <Files>
+      <File FileName="Assets/Scripts/MultiTapBirdGameUi.cs" Line="38" Column="9" />
+      <File FileName="Assets/Scripts/MultiSnakeGameUi.cs" Line="16" Column="33" />
+      <File FileName="Assets/Scripts/Constants.cs" Line="16" Column="61" />
+      <File FileName="Assets/Scripts/LobbyUi.cs" Line="195" Column="33" />
+      <File FileName="Assets/Scripts/AuthUi.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LoadingUi.cs" Line="38" Column="57" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
