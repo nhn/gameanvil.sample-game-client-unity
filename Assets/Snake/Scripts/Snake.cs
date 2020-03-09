@@ -34,13 +34,13 @@ public class Snake : MonoBehaviour
     {
         if (UserInfo.Instance.gameState == UserInfo.GameState.Start)
         {
-            // Move in a new Direction?
+            // 키 처리
             if (Input.GetKey(KeyCode.RightArrow))
                 dir = Vector2.right;
             else if (Input.GetKey(KeyCode.DownArrow))
-                dir = -Vector2.up;    // '-up' means 'down'
+                dir = -Vector2.up;    // 밑으로 이동
             else if (Input.GetKey(KeyCode.LeftArrow))
-                dir = -Vector2.right; // '-right' means 'left'
+                dir = -Vector2.right; // 왼쪽으로 이동
             else if (Input.GetKey(KeyCode.UpArrow))
                 dir = Vector2.up;
 
@@ -92,6 +92,7 @@ public class Snake : MonoBehaviour
                 userPositionList.Add(tailPosition);
             }
 
+            // 전송할 데이터 만듬
             var baseData = SnakeGameInfo.Instance.GetBaseUserDataByProto(UserInfo.Instance.Uuid);
             var snakeUserData = new Com.Nhn.Tardis.Sample.Protocol.SnakeUserData
             {

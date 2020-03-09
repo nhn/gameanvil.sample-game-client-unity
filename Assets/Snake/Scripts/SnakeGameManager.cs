@@ -65,6 +65,7 @@ public class SnakeGameManager : MonoBehaviour
             UserInfo.Instance.gameState = UserInfo.GameState.GameOver;
         };
 
+        // 상대편 유저 데이터 처리
         snakeGameUser.AddListener((UserAgent userAgent, Com.Nhn.Tardis.Sample.Protocol.SnakeUserMsg msg) =>
         {
             Debug.Log("<<<< SnakeUserMsg!!!!!! : " + msg);
@@ -89,6 +90,7 @@ public class SnakeGameManager : MonoBehaviour
             }
         });
 
+        // 서버에서 전달 받은 food 상태 처리
         snakeGameUser.AddListener((UserAgent userAgent, Com.Nhn.Tardis.Sample.Protocol.SnakeFoodMsg msg) =>
         {
             if (msg != null)
@@ -121,7 +123,6 @@ public class SnakeGameManager : MonoBehaviour
 
     void Update()
     {
-//        Debug.Log("<<<<<<<<<<<<<<<<<<<< UserInfo.Instance.gameState!!!!!! : " + UserInfo.Instance.gameState);
         // 유저 매치가 되면 게임 패널 On
         if (transform.Find("PanelWait").gameObject.activeSelf && UserInfo.Instance.gameState == UserInfo.GameState.Wait)
         {
@@ -134,6 +135,7 @@ public class SnakeGameManager : MonoBehaviour
 
             SetBoarderActive(true);
 
+            // 유저 위치들 설정
             foreach (var snakeGameUser in SnakeGameInfo.Instance.UserMapInfo.Values)
             {
                 if (UserInfo.Instance.Uuid.Equals(snakeGameUser.Id))

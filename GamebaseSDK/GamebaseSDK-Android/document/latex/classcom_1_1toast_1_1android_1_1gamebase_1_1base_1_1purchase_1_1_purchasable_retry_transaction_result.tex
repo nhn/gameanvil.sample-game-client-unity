@@ -1,0 +1,151 @@
+\hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result}{}\section{Purchasable\+Retry\+Transaction\+Result Class Reference}
+\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result}\index{Purchasable\+Retry\+Transaction\+Result@{Purchasable\+Retry\+Transaction\+Result}}
+
+
+The information of the items that are result of the \hyperlink{}{Purchasable\#request\+Retry\+Transaction(\+Activity, Purchasable.\+Purchase\+Callback)}.  
+
+
+
+
+Inheritance diagram for Purchasable\+Retry\+Transaction\+Result\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Purchasable\+Retry\+Transaction\+Result\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a}{to\+Json\+String} ()
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a054431f3d988a22295cfc8b784ff2637}{to\+Pretty\+Json\+String} ()
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520}{to\+String} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static$<$ T $>$ T \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b}{from\+Json} (@Non\+Null String json, Class$<$ T $>$ class\+OfT)
+\item 
+static$<$ T $>$ T \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101}{from\+Json} (@Non\+Null J\+S\+O\+N\+Object json\+Object, Class$<$ T $>$ class\+OfT)
+\item 
+static$<$ T $>$ T \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_aa901d97d495150b54bcb80c05672f58a}{from\+Json} (@Non\+Null String json, Type type)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt}{Purchasable\+Receipt} $>$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result_a94d9eecba2a24c99fd6c0a120803c18c}{success\+List}
+\item 
+List$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt}{Purchasable\+Receipt} $>$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result_a4a6a726bab7d926265f330f4e67055b9}{fail\+List}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The information of the items that are result of the \hyperlink{}{Purchasable\#request\+Retry\+Transaction(\+Activity, Purchasable.\+Purchase\+Callback)}. 
+
+If the fail\+List is not empty, the \hyperlink{}{Purchasable\#request\+Retry\+Transaction(\+Activity, Purchasable.\+Purchase\+Callback)} function should be called again.(retry once or retry after next login)
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result}{Purchasable\+Retry\+Transaction\+Result} 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+2016-\/12-\/07 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}!from\+Json@{from\+Json}}
+\index{from\+Json@{from\+Json}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}}
+\subsubsection{\texorpdfstring{from\+Json()}{fromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static $<$T$>$ T from\+Json (\begin{DoxyParamCaption}\item[{@Non\+Null String}]{json,  }\item[{Class$<$ T $>$}]{class\+OfT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}!from\+Json@{from\+Json}}
+\index{from\+Json@{from\+Json}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}}
+\subsubsection{\texorpdfstring{from\+Json()}{fromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static $<$T$>$ T from\+Json (\begin{DoxyParamCaption}\item[{@Non\+Null J\+S\+O\+N\+Object}]{json\+Object,  }\item[{Class$<$ T $>$}]{class\+OfT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_aa901d97d495150b54bcb80c05672f58a}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_aa901d97d495150b54bcb80c05672f58a}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}!from\+Json@{from\+Json}}
+\index{from\+Json@{from\+Json}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}}
+\subsubsection{\texorpdfstring{from\+Json()}{fromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static $<$T$>$ T from\+Json (\begin{DoxyParamCaption}\item[{@Non\+Null String}]{json,  }\item[{Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}!to\+Json\+String@{to\+Json\+String}}
+\index{to\+Json\+String@{to\+Json\+String}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}}
+\subsubsection{\texorpdfstring{to\+Json\+String()}{toJsonString()}}
+{\footnotesize\ttfamily String to\+Json\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a054431f3d988a22295cfc8b784ff2637}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a054431f3d988a22295cfc8b784ff2637}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}!to\+Pretty\+Json\+String@{to\+Pretty\+Json\+String}}
+\index{to\+Pretty\+Json\+String@{to\+Pretty\+Json\+String}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}}
+\subsubsection{\texorpdfstring{to\+Pretty\+Json\+String()}{toPrettyJsonString()}}
+{\footnotesize\ttfamily String to\+Pretty\+Json\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result_a4a6a726bab7d926265f330f4e67055b9}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result_a4a6a726bab7d926265f330f4e67055b9}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}!fail\+List@{fail\+List}}
+\index{fail\+List@{fail\+List}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}}
+\subsubsection{\texorpdfstring{fail\+List}{failList}}
+{\footnotesize\ttfamily List$<$\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt}{Purchasable\+Receipt}$>$ fail\+List}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result_a94d9eecba2a24c99fd6c0a120803c18c}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result_a94d9eecba2a24c99fd6c0a120803c18c}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}!success\+List@{success\+List}}
+\index{success\+List@{success\+List}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Retry\+Transaction\+Result}}
+\subsubsection{\texorpdfstring{success\+List}{successList}}
+{\footnotesize\ttfamily List$<$\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt}{Purchasable\+Receipt}$>$ success\+List}
+

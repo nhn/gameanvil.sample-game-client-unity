@@ -1,0 +1,6 @@
+digraph "Gamebase"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Gamebase\n||+ SetDebugMode()\l+ IsSuccess()\l+ Initialize()\l+ Initialize()\l+ AddObserver()\l+ RemoveObserver()\l+ RemoveAllObserver()\l+ AddServerPushEvent()\l+ RemoveServerPushEvent()\l+ RemoveAllServerPushEvent()\land 35 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

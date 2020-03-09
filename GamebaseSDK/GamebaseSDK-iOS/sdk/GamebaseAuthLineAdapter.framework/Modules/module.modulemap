@@ -1,0 +1,6 @@
+framework module GamebaseAuthLineAdapter {
+  umbrella header "GamebaseAuthLineAdapter.h"
+
+  export *
+  module * { export * }
+}

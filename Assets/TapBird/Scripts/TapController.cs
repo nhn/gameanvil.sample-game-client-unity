@@ -59,6 +59,7 @@ public class TapController : MonoBehaviour
     {
         if (game.GameOver) return;
 
+        // 마우 스클릭에 따른 bird 처리
         if (Input.GetMouseButtonDown(0))
         {
             rigidBody.velocity = Vector2.zero;

@@ -1,0 +1,8 @@
+var namespacecom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data =
+[
+    [ "RenewalModeType", "enumcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_renewal_mode_type.html", "enumcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_renewal_mode_type" ],
+    [ "RenewalTargetType", "enumcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_renewal_target_type.html", "enumcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_renewal_target_type" ],
+    [ "TransferAccountFailInfo", "classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info.html", "classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info" ],
+    [ "TransferAccountInfo", "classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info.html", "classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info" ],
+    [ "TransferAccountRenewConfiguration", "classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_renew_configuration.html", "classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_renew_configuration" ]
+];

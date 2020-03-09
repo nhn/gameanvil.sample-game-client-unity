@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Gamebase Sample</string>
+
+    <string name="app_title">Gamebase Sample</string>
+
+    <string name="text_login_idp">Select Login IDP</string>
+    <string name="button_login">Login</string>
+    <string name="button_login_facebook">Facebook</string>
+
+    <string name="text_mapping_idp">Select Mapping IDP</string>
+    <string name="button_mapping">Mapping</string>
+    <string name="checkbox_forcing">Forcing</string>
+
+    <string name="popup_dialog_ok">OK</string>
+    <string name="popup_dialog_cancel">CANCEL</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_log">LogActivity</string>
+    <string name="title_activity_push">PushActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+
+
+</resources>

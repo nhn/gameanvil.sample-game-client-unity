@@ -1,0 +1,6 @@
+<map id="newErrorByServerError" name="newErrorByServerError">
+<area shape="rect" id="node2" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error.html#ae1e31671405d6d3c4660aacf9d9dd3c5" title="newClientErrorCode" alt="" coords="257,5,399,31"/>
+<area shape="rect" id="node3" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error.html#a2d1d7646a1658d188ee9b65a25905661" title="newError" alt="" coords="290,55,366,80"/>
+<area shape="rect" id="node5" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception.html#a4c2f908275e5fc56081aabb2f71a50e7" title="com.toast.android.gamebase.base.\lGamebaseException.putExtras" alt="" coords="213,104,443,143"/>
+<area shape="rect" id="node4" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error.html#a2ed49c27d7a237cd7fcdaa43604c9615" title="newErrorWithAppendMessage" alt="" coords="491,55,693,80"/>
+</map>

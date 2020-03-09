@@ -1,0 +1,262 @@
+\hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase}{}\section{Gamebase.\+Purchase Class Reference}
+\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase}\index{Gamebase.\+Purchase@{Gamebase.\+Purchase}}
+
+
+This class provides wrapping of function execution related to payment.  
+
+
+
+
+Collaboration diagram for Gamebase.\+Purchase\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_ae6a7d3ccf1e7de6fb479485cce1ddeea}{get\+Store\+Code} ()
+\begin{DoxyCompactList}\small\item\em Gets the store code of the current app. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a8933fcc2fc156c87feee53efadfa4bb0}{set\+Store\+Code} (final String store\+Code)
+\begin{DoxyCompactList}\small\item\em Set the store code of the current app. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a1969094885ffc1de17304f7aaf7cd4c9}{request\+Item\+List\+Purchasable} (@Non\+Null final Activity activity, @Non\+Null final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ List$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item}{Purchasable\+Item} $>$$>$ callback)
+\begin{DoxyCompactList}\small\item\em Request a item list which is purchasable. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a541b8b3f42c728a330ed1d4b6e3bc9af}{request\+Item\+List\+At\+I\+A\+P\+Console} (@Non\+Null final Activity activity, @Non\+Null final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ List$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item}{Purchasable\+Item} $>$$>$ callback)
+\begin{DoxyCompactList}\small\item\em Request a item list which is purchasable. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a046768008c4f0d0eb8f6c5052f621b87}{request\+Purchase} (@Non\+Null final Activity activity, final long item\+Seq, @Non\+Null final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt}{Purchasable\+Receipt} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Request Purchasing Item that has item\+Seq. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a335f00febc88c2052a9914278aebdac0}{request\+Item\+List\+Of\+Not\+Consumed} (@Non\+Null final Activity activity, @Non\+Null final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ List$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt}{Purchasable\+Receipt} $>$$>$ callback)
+\begin{DoxyCompactList}\small\item\em Request a Item List which is not consumed. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a865b97145a008db8dcb97682b3cbd8f1}{request\+Activated\+Purchases} (@Non\+Null final Activity activity, @Non\+Null final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ List$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt}{Purchasable\+Receipt} $>$$>$ callback)
+\begin{DoxyCompactList}\small\item\em Request a list of payment products that are currently subscribed. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a041c6d7111a2815fe52823a2a56aaec5}{request\+Retry\+Transaction} (@Non\+Null final Activity activity, @Non\+Null final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result}{Purchasable\+Retry\+Transaction\+Result} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Processes incomplete purchases. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides wrapping of function execution related to payment. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_ae6a7d3ccf1e7de6fb479485cce1ddeea}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_ae6a7d3ccf1e7de6fb479485cce1ddeea}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}!get\+Store\+Code@{get\+Store\+Code}}
+\index{get\+Store\+Code@{get\+Store\+Code}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}}
+\subsubsection{\texorpdfstring{get\+Store\+Code()}{getStoreCode()}}
+{\footnotesize\ttfamily static String get\+Store\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the store code of the current app. 
+
+This should only be called after the S\+DK has been initialized by calling \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a1b2d26183c219ab1ef840a95af71bd88}{Gamebase.\+initialize()}.
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000002}{Deprecated}]As of release 2.\+6.\+0, Changing the store\+Code in runtime is no longer supported. \end{DoxyRefDesc}
+\begin{DoxyReturn}{Returns}
+The store code. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_ae6a7d3ccf1e7de6fb479485cce1ddeea_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a865b97145a008db8dcb97682b3cbd8f1}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a865b97145a008db8dcb97682b3cbd8f1}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}!request\+Activated\+Purchases@{request\+Activated\+Purchases}}
+\index{request\+Activated\+Purchases@{request\+Activated\+Purchases}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}}
+\subsubsection{\texorpdfstring{request\+Activated\+Purchases()}{requestActivatedPurchases()}}
+{\footnotesize\ttfamily static void request\+Activated\+Purchases (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Non\+Null final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ List$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt}{Purchasable\+Receipt} $>$$>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Request a list of payment products that are currently subscribed. 
+
+If there is a subscription purchased from another platform (such as i\+OS), the item\+Seq value is returned as -\/1.
+
+\begin{DoxySince}{Since}
+Added 2.\+6.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & current Activity. \\
+\hline
+{\em callback} & callback pass to A\+PI result. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt}{com.\+toast.\+android.\+gamebase.\+base.\+purchase.\+Purchasable\+Receipt}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a541b8b3f42c728a330ed1d4b6e3bc9af}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a541b8b3f42c728a330ed1d4b6e3bc9af}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}!request\+Item\+List\+At\+I\+A\+P\+Console@{request\+Item\+List\+At\+I\+A\+P\+Console}}
+\index{request\+Item\+List\+At\+I\+A\+P\+Console@{request\+Item\+List\+At\+I\+A\+P\+Console}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}}
+\subsubsection{\texorpdfstring{request\+Item\+List\+At\+I\+A\+P\+Console()}{requestItemListAtIAPConsole()}}
+{\footnotesize\ttfamily static void request\+Item\+List\+At\+I\+A\+P\+Console (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Non\+Null final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ List$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item}{Purchasable\+Item} $>$$>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Request a item list which is purchasable. 
+
+This list has items which are only registered in Toast\+Cloud I\+AP Console, not Market(\+Google, One\+Store)
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & current Activity. \\
+\hline
+{\em callback} & callback pass to A\+PI result. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item}{com.\+toast.\+android.\+gamebase.\+base.\+purchase.\+Purchasable\+Item}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a335f00febc88c2052a9914278aebdac0}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a335f00febc88c2052a9914278aebdac0}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}!request\+Item\+List\+Of\+Not\+Consumed@{request\+Item\+List\+Of\+Not\+Consumed}}
+\index{request\+Item\+List\+Of\+Not\+Consumed@{request\+Item\+List\+Of\+Not\+Consumed}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}}
+\subsubsection{\texorpdfstring{request\+Item\+List\+Of\+Not\+Consumed()}{requestItemListOfNotConsumed()}}
+{\footnotesize\ttfamily static void request\+Item\+List\+Of\+Not\+Consumed (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Non\+Null final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ List$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt}{Purchasable\+Receipt} $>$$>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Request a Item List which is not consumed. 
+
+You should deliver this item\+Receipt info to your game-\/server to consume it or request consume\+A\+PI to Toast\+Cloud I\+AP Server
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & current Activity. \\
+\hline
+{\em callback} & callback pass to A\+PI result. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt}{com.\+toast.\+android.\+gamebase.\+base.\+purchase.\+Purchasable\+Receipt}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a1969094885ffc1de17304f7aaf7cd4c9}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a1969094885ffc1de17304f7aaf7cd4c9}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}!request\+Item\+List\+Purchasable@{request\+Item\+List\+Purchasable}}
+\index{request\+Item\+List\+Purchasable@{request\+Item\+List\+Purchasable}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}}
+\subsubsection{\texorpdfstring{request\+Item\+List\+Purchasable()}{requestItemListPurchasable()}}
+{\footnotesize\ttfamily static void request\+Item\+List\+Purchasable (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Non\+Null final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ List$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item}{Purchasable\+Item} $>$$>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Request a item list which is purchasable. 
+
+This list has items which are registered in both Market(\+App\+Store) and Toast\+Cloud I\+AP Console
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & current Activity. \\
+\hline
+{\em callback} & callback pass to A\+PI result. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item}{com.\+toast.\+android.\+gamebase.\+base.\+purchase.\+Purchasable\+Item}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a046768008c4f0d0eb8f6c5052f621b87}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a046768008c4f0d0eb8f6c5052f621b87}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}!request\+Purchase@{request\+Purchase}}
+\index{request\+Purchase@{request\+Purchase}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}}
+\subsubsection{\texorpdfstring{request\+Purchase()}{requestPurchase()}}
+{\footnotesize\ttfamily static void request\+Purchase (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{final long}]{item\+Seq,  }\item[{@Non\+Null final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt}{Purchasable\+Receipt} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Request Purchasing Item that has item\+Seq. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & current Activity. \\
+\hline
+{\em item\+Seq} & represent to item ID. \\
+\hline
+{\em callback} & callback pass to A\+PI result. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt}{com.\+toast.\+android.\+gamebase.\+base.\+purchase.\+Purchasable\+Receipt}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a041c6d7111a2815fe52823a2a56aaec5}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a041c6d7111a2815fe52823a2a56aaec5}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}!request\+Retry\+Transaction@{request\+Retry\+Transaction}}
+\index{request\+Retry\+Transaction@{request\+Retry\+Transaction}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}}
+\subsubsection{\texorpdfstring{request\+Retry\+Transaction()}{requestRetryTransaction()}}
+{\footnotesize\ttfamily static void request\+Retry\+Transaction (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Non\+Null final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result}{Purchasable\+Retry\+Transaction\+Result} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Processes incomplete purchases. 
+
+Request a retrying transaction which is not completed to I\+AP Server
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000004}{Deprecated}]As of release 2.\+6.\+0, You don\textquotesingle{}t need to call this A\+PI anymore. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & current Activity. \\
+\hline
+{\em callback} & callback pass to A\+PI result. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result}{com.\+toast.\+android.\+gamebase.\+base.\+purchase.\+Purchasable\+Retry\+Transaction\+Result}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a8933fcc2fc156c87feee53efadfa4bb0}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a8933fcc2fc156c87feee53efadfa4bb0}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}!set\+Store\+Code@{set\+Store\+Code}}
+\index{set\+Store\+Code@{set\+Store\+Code}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Purchase}}
+\subsubsection{\texorpdfstring{set\+Store\+Code()}{setStoreCode()}}
+{\footnotesize\ttfamily static void set\+Store\+Code (\begin{DoxyParamCaption}\item[{final String}]{store\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set the store code of the current app. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000003}{Deprecated}]As of release 2.\+6.\+0, changing the store\+Code in runtime is no longer supported. You can set store\+Code with \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_configuration_a7c28786c8e446dd54cb5f4d0797b6564}{Gamebase\+Configuration\#new\+Builder(\+String, String, String)} method only. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em store\+Code} & Input store code. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase_a8933fcc2fc156c87feee53efadfa4bb0_cgraph}
+\end{center}
+\end{figure}

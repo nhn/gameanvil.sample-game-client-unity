@@ -145,7 +145,6 @@ public class SingleGameUi : MonoBehaviour
                 // 로비신으로 이동
                 RemoveAllListeners();
                 UserInfo.Instance.MoveScene(Constants.SCENE_LOBBY);
-
             }
             else
             {

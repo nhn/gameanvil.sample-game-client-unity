@@ -1,0 +1,638 @@
+\hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger}{}\section{Logger Class Reference}
+\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger}\index{Logger@{Logger}}
+
+
+Collaboration diagram for Logger\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_affc6772e3b03c3888d55dbe59e4891ae}{set\+Message\+Prefix} (String key, String prefix)
+\item 
+static int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a060b9eca800cda8aa51f3bd02abd9263}{get\+Log\+Level} ()
+\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a0ec9520dda7e2062f7455956d093113b}{set\+Log\+Level} (int level)
+\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a82d31f975cf96db679b6ee67481daf3b}{add\+Loggable} (String key, \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_loggable}{Loggable} loggable)
+\item 
+static \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_loggable}{Loggable} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a6598081cafafec0f85b46ad972eeb5ae}{remove\+Loggable} (String key)
+\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a5b9aa7ce47bb48e51f971d5a6a2846e1}{println} (int priority, String tag, String msg, Throwable tr)
+\begin{DoxyCompactList}\small\item\em Instructs the Log\+Node to print the log data provided. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aa6339be44dcb4adc33c2636101b4027d}{println} (int priority, String tag, String msg)
+\begin{DoxyCompactList}\small\item\em Instructs the Log\+Node to print the log data provided. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a464a3aa241c116031e6b07af63e0cecc}{v} (String tag, String msg, Throwable tr)
+\begin{DoxyCompactList}\small\item\em Prints a message at V\+E\+R\+B\+O\+SE priority. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ae07d1a03ee97d15c0d205633497ea327}{v} (String tag, String msg)
+\begin{DoxyCompactList}\small\item\em Prints a message at V\+E\+R\+B\+O\+SE priority. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ac92000722506d61f323e53319c3d75b0}{d} (String tag, String msg, Throwable tr)
+\begin{DoxyCompactList}\small\item\em Prints a message at D\+E\+B\+UG priority. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_af4bcd771ce8eb05ccff9b8ae421dbe32}{d} (String tag, String msg)
+\begin{DoxyCompactList}\small\item\em Prints a message at D\+E\+B\+UG priority. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a116916f0b74dee7353299a061e6e73b1}{i} (String tag, String msg, Throwable tr)
+\begin{DoxyCompactList}\small\item\em Prints a message at I\+N\+FO priority. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a7cd0a94de5c27beee2da674bfcccfece}{i} (String tag, String msg)
+\begin{DoxyCompactList}\small\item\em Prints a message at I\+N\+FO priority. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_af39c88dd6f05a7752d16c7de3f48bf46}{w} (String tag, String msg, Throwable tr)
+\begin{DoxyCompactList}\small\item\em Prints a message at W\+A\+RN priority. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a514df8f7e3381ecc0c9dabf76723b688}{w} (String tag, String msg)
+\begin{DoxyCompactList}\small\item\em Prints a message at W\+A\+RN priority. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aea8dff5a52edecf3597b8f086e941790}{w} (String tag, Throwable tr)
+\begin{DoxyCompactList}\small\item\em Prints a message at W\+A\+RN priority. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a31c4de083ef2003f9fb433d639866537}{e} (String tag, String msg, Throwable tr)
+\begin{DoxyCompactList}\small\item\em Prints a message at E\+R\+R\+OR priority. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a98ed530e788c0a6fef1e9b951d3693f9}{e} (String tag, String msg)
+\begin{DoxyCompactList}\small\item\em Prints a message at E\+R\+R\+OR priority. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a5454c01be0df340788095415a591ef89}{wtf} (String tag, String msg, Throwable tr)
+\begin{DoxyCompactList}\small\item\em Prints a message at A\+S\+S\+E\+RT priority. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a1242f028963a420d7e3ccb4f5694a65f}{wtf} (String tag, String msg)
+\begin{DoxyCompactList}\small\item\em Prints a message at A\+S\+S\+E\+RT priority. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a3c834156048f909cd14a6244c0732fae}{wtf} (String tag, Throwable tr)
+\begin{DoxyCompactList}\small\item\em Prints a message at A\+S\+S\+E\+RT priority. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ae1ccf795aa20dbf8aa62619c2efa44ec}{V\+E\+R\+B\+O\+SE} = android.\+util.\+Log.\+V\+E\+R\+B\+O\+SE
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a721812cc43754ab72ef194ed99a931d0}{D\+E\+B\+UG} = android.\+util.\+Log.\+D\+E\+B\+UG
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ab837e03a1190d42a17684f8dbb5d8572}{I\+N\+FO} = android.\+util.\+Log.\+I\+N\+FO
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a585a3ce80dc75330d091795f561473b5}{W\+A\+RN} = android.\+util.\+Log.\+W\+A\+RN
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aa8f7adc893367cd8c4b10222a528a616}{E\+R\+R\+OR} = android.\+util.\+Log.\+E\+R\+R\+OR
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a3d462acb7f869e29b976cfd5015c2a82}{A\+S\+S\+E\+RT} = android.\+util.\+Log.\+A\+S\+S\+E\+RT
+\item 
+static final String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aa7a0be1813d71b79c680be953023d6a6}{L\+O\+G\+C\+AT} = \char`\"{}Log\+Cat\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a82d31f975cf96db679b6ee67481daf3b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a82d31f975cf96db679b6ee67481daf3b}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!add\+Loggable@{add\+Loggable}}
+\index{add\+Loggable@{add\+Loggable}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{add\+Loggable()}{addLoggable()}}
+{\footnotesize\ttfamily static void add\+Loggable (\begin{DoxyParamCaption}\item[{String}]{key,  }\item[{\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_loggable}{Loggable}}]{loggable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ac92000722506d61f323e53319c3d75b0}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ac92000722506d61f323e53319c3d75b0}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!d@{d}}
+\index{d@{d}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{d()}{d()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void d (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{String}]{msg,  }\item[{Throwable}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at D\+E\+B\+UG priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. \\
+\hline
+{\em tr} & If an exception was thrown, this can be sent along for the logging facilities to extract and print useful information. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ac92000722506d61f323e53319c3d75b0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ac92000722506d61f323e53319c3d75b0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_af4bcd771ce8eb05ccff9b8ae421dbe32}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_af4bcd771ce8eb05ccff9b8ae421dbe32}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!d@{d}}
+\index{d@{d}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{d()}{d()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void d (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{String}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at D\+E\+B\+UG priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_af4bcd771ce8eb05ccff9b8ae421dbe32_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a31c4de083ef2003f9fb433d639866537}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a31c4de083ef2003f9fb433d639866537}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!e@{e}}
+\index{e@{e}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{e()}{e()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void e (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{String}]{msg,  }\item[{Throwable}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at E\+R\+R\+OR priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. \\
+\hline
+{\em tr} & If an exception was thrown, this can be sent along for the logging facilities to extract and print useful information. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a31c4de083ef2003f9fb433d639866537_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a31c4de083ef2003f9fb433d639866537_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a98ed530e788c0a6fef1e9b951d3693f9}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a98ed530e788c0a6fef1e9b951d3693f9}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!e@{e}}
+\index{e@{e}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{e()}{e()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void e (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{String}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at E\+R\+R\+OR priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a98ed530e788c0a6fef1e9b951d3693f9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a060b9eca800cda8aa51f3bd02abd9263}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a060b9eca800cda8aa51f3bd02abd9263}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!get\+Log\+Level@{get\+Log\+Level}}
+\index{get\+Log\+Level@{get\+Log\+Level}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{get\+Log\+Level()}{getLogLevel()}}
+{\footnotesize\ttfamily static int get\+Log\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a116916f0b74dee7353299a061e6e73b1}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a116916f0b74dee7353299a061e6e73b1}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!i@{i}}
+\index{i@{i}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{i()}{i()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void i (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{String}]{msg,  }\item[{Throwable}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at I\+N\+FO priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. \\
+\hline
+{\em tr} & If an exception was thrown, this can be sent along for the logging facilities to extract and print useful information. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a116916f0b74dee7353299a061e6e73b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a116916f0b74dee7353299a061e6e73b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a7cd0a94de5c27beee2da674bfcccfece}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a7cd0a94de5c27beee2da674bfcccfece}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!i@{i}}
+\index{i@{i}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{i()}{i()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void i (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{String}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at I\+N\+FO priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a7cd0a94de5c27beee2da674bfcccfece_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a5b9aa7ce47bb48e51f971d5a6a2846e1}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a5b9aa7ce47bb48e51f971d5a6a2846e1}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!println@{println}}
+\index{println@{println}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{println()}{println()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void println (\begin{DoxyParamCaption}\item[{int}]{priority,  }\item[{String}]{tag,  }\item[{String}]{msg,  }\item[{Throwable}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Instructs the Log\+Node to print the log data provided. 
+
+Other Log\+Nodes can be chained to the end of the Log\+Node as desired.
+
+
+\begin{DoxyParams}{Parameters}
+{\em priority} & \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger}{Logger} level of the data being logged. Verbose, Error, etc. \\
+\hline
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. \\
+\hline
+{\em tr} & If an exception was thrown, this can be sent along for the logging facilities to extract and print useful information. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a5b9aa7ce47bb48e51f971d5a6a2846e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a5b9aa7ce47bb48e51f971d5a6a2846e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aa6339be44dcb4adc33c2636101b4027d}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aa6339be44dcb4adc33c2636101b4027d}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!println@{println}}
+\index{println@{println}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{println()}{println()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void println (\begin{DoxyParamCaption}\item[{int}]{priority,  }\item[{String}]{tag,  }\item[{String}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Instructs the Log\+Node to print the log data provided. 
+
+Other Log\+Nodes can be chained to the end of the Log\+Node as desired.
+
+
+\begin{DoxyParams}{Parameters}
+{\em priority} & \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger}{Logger} level of the data being logged. Verbose, Error, etc. \\
+\hline
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. The actual message to be logged. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aa6339be44dcb4adc33c2636101b4027d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a6598081cafafec0f85b46ad972eeb5ae}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a6598081cafafec0f85b46ad972eeb5ae}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!remove\+Loggable@{remove\+Loggable}}
+\index{remove\+Loggable@{remove\+Loggable}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{remove\+Loggable()}{removeLoggable()}}
+{\footnotesize\ttfamily static \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_loggable}{Loggable} remove\+Loggable (\begin{DoxyParamCaption}\item[{String}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a0ec9520dda7e2062f7455956d093113b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a0ec9520dda7e2062f7455956d093113b}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!set\+Log\+Level@{set\+Log\+Level}}
+\index{set\+Log\+Level@{set\+Log\+Level}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{set\+Log\+Level()}{setLogLevel()}}
+{\footnotesize\ttfamily static void set\+Log\+Level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_affc6772e3b03c3888d55dbe59e4891ae}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_affc6772e3b03c3888d55dbe59e4891ae}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!set\+Message\+Prefix@{set\+Message\+Prefix}}
+\index{set\+Message\+Prefix@{set\+Message\+Prefix}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{set\+Message\+Prefix()}{setMessagePrefix()}}
+{\footnotesize\ttfamily static void set\+Message\+Prefix (\begin{DoxyParamCaption}\item[{String}]{key,  }\item[{String}]{prefix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_affc6772e3b03c3888d55dbe59e4891ae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a464a3aa241c116031e6b07af63e0cecc}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a464a3aa241c116031e6b07af63e0cecc}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!v@{v}}
+\index{v@{v}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{v()}{v()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void v (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{String}]{msg,  }\item[{Throwable}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at V\+E\+R\+B\+O\+SE priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. \\
+\hline
+{\em tr} & If an exception was thrown, this can be sent along for the logging facilities to extract and print useful information. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a464a3aa241c116031e6b07af63e0cecc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a464a3aa241c116031e6b07af63e0cecc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ae07d1a03ee97d15c0d205633497ea327}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ae07d1a03ee97d15c0d205633497ea327}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!v@{v}}
+\index{v@{v}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{v()}{v()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void v (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{String}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at V\+E\+R\+B\+O\+SE priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ae07d1a03ee97d15c0d205633497ea327_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_af39c88dd6f05a7752d16c7de3f48bf46}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_af39c88dd6f05a7752d16c7de3f48bf46}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!w@{w}}
+\index{w@{w}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{w()}{w()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static void w (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{String}]{msg,  }\item[{Throwable}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at W\+A\+RN priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. \\
+\hline
+{\em tr} & If an exception was thrown, this can be sent along for the logging facilities to extract and print useful information. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_af39c88dd6f05a7752d16c7de3f48bf46_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_af39c88dd6f05a7752d16c7de3f48bf46_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a514df8f7e3381ecc0c9dabf76723b688}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a514df8f7e3381ecc0c9dabf76723b688}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!w@{w}}
+\index{w@{w}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{w()}{w()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static void w (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{String}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at W\+A\+RN priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a514df8f7e3381ecc0c9dabf76723b688_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aea8dff5a52edecf3597b8f086e941790}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aea8dff5a52edecf3597b8f086e941790}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!w@{w}}
+\index{w@{w}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{w()}{w()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static void w (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{Throwable}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at W\+A\+RN priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em tr} & If an exception was thrown, this can be sent along for the logging facilities to extract and print useful information. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aea8dff5a52edecf3597b8f086e941790_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a5454c01be0df340788095415a591ef89}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a5454c01be0df340788095415a591ef89}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!wtf@{wtf}}
+\index{wtf@{wtf}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{wtf()}{wtf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static void wtf (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{String}]{msg,  }\item[{Throwable}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at A\+S\+S\+E\+RT priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. \\
+\hline
+{\em tr} & If an exception was thrown, this can be sent along for the logging facilities to extract and print useful information. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a5454c01be0df340788095415a591ef89_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a5454c01be0df340788095415a591ef89_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a1242f028963a420d7e3ccb4f5694a65f}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a1242f028963a420d7e3ccb4f5694a65f}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!wtf@{wtf}}
+\index{wtf@{wtf}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{wtf()}{wtf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static void wtf (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{String}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at A\+S\+S\+E\+RT priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em msg} & The actual message to be logged. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a1242f028963a420d7e3ccb4f5694a65f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a3c834156048f909cd14a6244c0732fae}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a3c834156048f909cd14a6244c0732fae}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!wtf@{wtf}}
+\index{wtf@{wtf}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{wtf()}{wtf()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static void wtf (\begin{DoxyParamCaption}\item[{String}]{tag,  }\item[{Throwable}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a message at A\+S\+S\+E\+RT priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Tag for for the log data. Can be used to organize log statements. \\
+\hline
+{\em tr} & If an exception was thrown, this can be sent along for the logging facilities to extract and print useful information. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a3c834156048f909cd14a6244c0732fae_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a3d462acb7f869e29b976cfd5015c2a82}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a3d462acb7f869e29b976cfd5015c2a82}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!A\+S\+S\+E\+RT@{A\+S\+S\+E\+RT}}
+\index{A\+S\+S\+E\+RT@{A\+S\+S\+E\+RT}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{A\+S\+S\+E\+RT}{ASSERT}}
+{\footnotesize\ttfamily final int A\+S\+S\+E\+RT = android.\+util.\+Log.\+A\+S\+S\+E\+RT\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a721812cc43754ab72ef194ed99a931d0}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a721812cc43754ab72ef194ed99a931d0}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!D\+E\+B\+UG@{D\+E\+B\+UG}}
+\index{D\+E\+B\+UG@{D\+E\+B\+UG}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{D\+E\+B\+UG}{DEBUG}}
+{\footnotesize\ttfamily final int D\+E\+B\+UG = android.\+util.\+Log.\+D\+E\+B\+UG\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aa8f7adc893367cd8c4b10222a528a616}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aa8f7adc893367cd8c4b10222a528a616}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!E\+R\+R\+OR@{E\+R\+R\+OR}}
+\index{E\+R\+R\+OR@{E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{E\+R\+R\+OR}{ERROR}}
+{\footnotesize\ttfamily final int E\+R\+R\+OR = android.\+util.\+Log.\+E\+R\+R\+OR\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ab837e03a1190d42a17684f8dbb5d8572}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ab837e03a1190d42a17684f8dbb5d8572}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!I\+N\+FO@{I\+N\+FO}}
+\index{I\+N\+FO@{I\+N\+FO}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{I\+N\+FO}{INFO}}
+{\footnotesize\ttfamily final int I\+N\+FO = android.\+util.\+Log.\+I\+N\+FO\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aa7a0be1813d71b79c680be953023d6a6}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_aa7a0be1813d71b79c680be953023d6a6}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!L\+O\+G\+C\+AT@{L\+O\+G\+C\+AT}}
+\index{L\+O\+G\+C\+AT@{L\+O\+G\+C\+AT}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{L\+O\+G\+C\+AT}{LOGCAT}}
+{\footnotesize\ttfamily final String L\+O\+G\+C\+AT = \char`\"{}Log\+Cat\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ae1ccf795aa20dbf8aa62619c2efa44ec}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_ae1ccf795aa20dbf8aa62619c2efa44ec}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!V\+E\+R\+B\+O\+SE@{V\+E\+R\+B\+O\+SE}}
+\index{V\+E\+R\+B\+O\+SE@{V\+E\+R\+B\+O\+SE}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{V\+E\+R\+B\+O\+SE}{VERBOSE}}
+{\footnotesize\ttfamily final int V\+E\+R\+B\+O\+SE = android.\+util.\+Log.\+V\+E\+R\+B\+O\+SE\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a585a3ce80dc75330d091795f561473b5}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger_a585a3ce80dc75330d091795f561473b5}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}!W\+A\+RN@{W\+A\+RN}}
+\index{W\+A\+RN@{W\+A\+RN}!com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger@{com\+::toast\+::android\+::gamebase\+::base\+::log\+::\+Logger}}
+\subsubsection{\texorpdfstring{W\+A\+RN}{WARN}}
+{\footnotesize\ttfamily final int W\+A\+RN = android.\+util.\+Log.\+W\+A\+RN\hspace{0.3cm}{\ttfamily [static]}}
+

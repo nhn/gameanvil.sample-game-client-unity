@@ -1,0 +1,6 @@
+digraph "Gamebase.Purchase"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Gamebase.Purchase\n||+ RequestPurchase()\l+ RequestItemListOfNotConsumed()\l+ RequestRetryTransaction()\l+ RequestItemListPurchasable()\l+ RequestItemListAtIAPConsole()\l+ SetPromotionIAPHandler()\l+ SetStoreCode()\l+ GetStoreCode()\l+ RequestActivatedPurchases()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

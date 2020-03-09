@@ -1,0 +1,184 @@
+\hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util}{}\section{Gamebase.\+Util Class Reference}
+\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util}\index{Gamebase.\+Util@{Gamebase.\+Util}}
+
+
+This class provides Android utility functions.  
+
+
+
+
+Collaboration diagram for Gamebase.\+Util\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_ab4467be73dd7910139d8135348ac00ae}{show\+Toast} (@Non\+Null final Context context, @Non\+Null final String message, @\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1annotation_1_1_toast_duration}{Toast\+Duration} int duration)
+\begin{DoxyCompactList}\small\item\em Show a standard toast that just contains a text view. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_a7a8c03323f6a593e4eb765b41de2ea82}{show\+Alert} (@Non\+Null final Context context, @Non\+Null final String title, @Non\+Null final String message)
+\begin{DoxyCompactList}\small\item\em This method to create the dialog and display it on screen. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_aeb1c44c193356f6050710b7f50e41a6b}{show\+Alert} (@Non\+Null final Context context, @Non\+Null final String title, @Non\+Null final String message, @Nullable final Dialog\+Interface.\+On\+Click\+Listener click\+Listener)
+\begin{DoxyCompactList}\small\item\em This method to create the dialog and display it on screen. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_afa6d3ce6e5b0a271f6d120e6b616f97c}{request\+Permissions} (@Non\+Null Context context, @Non\+Null List$<$ String $>$ permissions, @Nullable Permissions\+Util.\+Request\+Permission\+Callback callback)
+\begin{DoxyCompactList}\small\item\em Request android permissions in runtime. \end{DoxyCompactList}\item 
+static boolean \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_ae5164823a25529a8125f7cf5f974c609}{check\+Permissions} (@Non\+Null Context context, @Non\+Null List$<$ String $>$ permissions)
+\begin{DoxyCompactList}\small\item\em Determine whether {\itshape you} have been granted a particular permission. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides Android utility functions. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_ae5164823a25529a8125f7cf5f974c609}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_ae5164823a25529a8125f7cf5f974c609}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util}!check\+Permissions@{check\+Permissions}}
+\index{check\+Permissions@{check\+Permissions}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util}}
+\subsubsection{\texorpdfstring{check\+Permissions()}{checkPermissions()}}
+{\footnotesize\ttfamily static boolean check\+Permissions (\begin{DoxyParamCaption}\item[{@Non\+Null Context}]{context,  }\item[{@Non\+Null List$<$ String $>$}]{permissions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Determine whether {\itshape you} have been granted a particular permission. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Main activity. \\
+\hline
+{\em permissions} & The name of the permission being checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Over OS 6.\+0(A\+PI 23, M), true if all of the permission are granted, false otherwise ~\newline
+ Under OS 6.\+0, true will be returned always. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_afa6d3ce6e5b0a271f6d120e6b616f97c}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_afa6d3ce6e5b0a271f6d120e6b616f97c}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util}!request\+Permissions@{request\+Permissions}}
+\index{request\+Permissions@{request\+Permissions}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util}}
+\subsubsection{\texorpdfstring{request\+Permissions()}{requestPermissions()}}
+{\footnotesize\ttfamily static void request\+Permissions (\begin{DoxyParamCaption}\item[{@Non\+Null Context}]{context,  }\item[{@Non\+Null List$<$ String $>$}]{permissions,  }\item[{@Nullable Permissions\+Util.\+Request\+Permission\+Callback}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Request android permissions in runtime. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em context} & A Context of the application package implementing this class. \\
+\hline
+{\em permissions} & The name of the permissions that are needed. \\
+\hline
+{\em callback} & The callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{}{com.\+toast.\+android.\+gamebase.\+base.\+Permissions\+Util.\+Request\+Permission\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_a7a8c03323f6a593e4eb765b41de2ea82}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_a7a8c03323f6a593e4eb765b41de2ea82}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util}!show\+Alert@{show\+Alert}}
+\index{show\+Alert@{show\+Alert}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util}}
+\subsubsection{\texorpdfstring{show\+Alert()}{showAlert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void show\+Alert (\begin{DoxyParamCaption}\item[{@Non\+Null final Context}]{context,  }\item[{@Non\+Null final String}]{title,  }\item[{@Non\+Null final String}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This method to create the dialog and display it on screen. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The context to use. Usually your \hyperlink{}{android.\+app.\+Application} ~\newline
+ or \hyperlink{}{android.\+app.\+Activity} object. \\
+\hline
+{\em title} & The title displayed in the dialog. \\
+\hline
+{\em message} & The message to display. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_a7a8c03323f6a593e4eb765b41de2ea82_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_aeb1c44c193356f6050710b7f50e41a6b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_aeb1c44c193356f6050710b7f50e41a6b}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util}!show\+Alert@{show\+Alert}}
+\index{show\+Alert@{show\+Alert}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util}}
+\subsubsection{\texorpdfstring{show\+Alert()}{showAlert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void show\+Alert (\begin{DoxyParamCaption}\item[{@Non\+Null final Context}]{context,  }\item[{@Non\+Null final String}]{title,  }\item[{@Non\+Null final String}]{message,  }\item[{@Nullable final Dialog\+Interface.\+On\+Click\+Listener}]{click\+Listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This method to create the dialog and display it on screen. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The context to use. Usually your \hyperlink{}{android.\+app.\+Application} ~\newline
+ or \hyperlink{}{android.\+app.\+Activity} object. \\
+\hline
+{\em title} & The title displayed in the dialog. \\
+\hline
+{\em message} & The message to display. \\
+\hline
+{\em click\+Listener} & The click\+Listener to be invoked when the button of the dialog is pressed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{}{android.\+content.\+Dialog\+Interface.\+On\+Click\+Listener}. 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_aeb1c44c193356f6050710b7f50e41a6b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_ab4467be73dd7910139d8135348ac00ae}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_ab4467be73dd7910139d8135348ac00ae}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util}!show\+Toast@{show\+Toast}}
+\index{show\+Toast@{show\+Toast}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Util}}
+\subsubsection{\texorpdfstring{show\+Toast()}{showToast()}}
+{\footnotesize\ttfamily static void show\+Toast (\begin{DoxyParamCaption}\item[{@Non\+Null final Context}]{context,  }\item[{@Non\+Null final String}]{message,  }\item[{@\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1annotation_1_1_toast_duration}{Toast\+Duration} int}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Show a standard toast that just contains a text view. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The context to use. Usually your \hyperlink{}{android.\+app.\+Application}~\newline
+ or \hyperlink{}{android.\+app.\+Activity} object. \\
+\hline
+{\em message} & The message to show. \\
+\hline
+{\em duration} & How long to display the message. Either \hyperlink{}{android.\+widget.\+Toast\#\+L\+E\+N\+G\+T\+H\+\_\+\+S\+H\+O\+RT} or ~\newline
+ \hyperlink{}{android.\+widget.\+Toast\#\+L\+E\+N\+G\+T\+H\+\_\+\+L\+O\+NG} \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util_ab4467be73dd7910139d8135348ac00ae_cgraph}
+\end{center}
+\end{figure}

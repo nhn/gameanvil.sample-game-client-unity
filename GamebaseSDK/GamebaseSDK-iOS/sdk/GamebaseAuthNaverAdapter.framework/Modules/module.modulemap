@@ -1,0 +1,6 @@
+framework module GamebaseAuthNaverAdapter {
+  umbrella header "GamebaseAuthNaverAdapter.h"
+
+  export *
+  module * { export * }
+}

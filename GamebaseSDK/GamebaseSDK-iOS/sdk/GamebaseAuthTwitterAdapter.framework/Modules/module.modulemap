@@ -1,0 +1,6 @@
+framework module GamebaseAuthTwitterAdapter {
+  umbrella header "GamebaseAuthTwitterAdapter.h"
+
+  export *
+  module * { export * }
+}

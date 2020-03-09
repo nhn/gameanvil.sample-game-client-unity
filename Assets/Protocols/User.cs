@@ -33,15 +33,21 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
             "Y29sLkN1cnJlbmN5VHlwZRINCgV1c2FnZRgCIAEoAyKHAQoOU2h1ZmZsZURl",
             "Y2tSZXMSPQoKcmVzdWx0Q29kZRgBIAEoDjIpLmNvbS5uaG4udGFyZGlzLnNh",
             "bXBsZS5wcm90b2NvbC5FcnJvckNvZGUSDAoEZGVjaxgCIAEoCRITCgtiYWxh",
-            "bmNlQ29pbhgDIAEoAxITCgtiYWxhbmNlUnVieRgEIAEoAypHCgxDdXJyZW5j",
-            "eVR5cGUSEQoNQ1VSUkVOQ1lfTk9ORRAAEhEKDUNVUlJFTkNZX0NPSU4QARIR",
-            "Cg1DVVJSRU5DWV9SVUJZEAJiBnByb3RvMw=="));
+            "bmNlQ29pbhgDIAEoAxITCgtiYWxhbmNlUnVieRgEIAEoAyIlChFDaGFuZ2VO",
+            "aWNrbmFtZVJlcRIQCghuaWNrbmFtZRgBIAEoCSKOAQoRQ2hhbmdlTmlja25h",
+            "bWVSZXMSPQoKcmVzdWx0Q29kZRgBIAEoDjIpLmNvbS5uaG4udGFyZGlzLnNh",
+            "bXBsZS5wcm90b2NvbC5FcnJvckNvZGUSOgoIdXNlckRhdGEYAiABKAsyKC5j",
+            "b20ubmhuLnRhcmRpcy5zYW1wbGUucHJvdG9jb2wuVXNlckRhdGEqRwoMQ3Vy",
+            "cmVuY3lUeXBlEhEKDUNVUlJFTkNZX05PTkUQABIRCg1DVVJSRU5DWV9DT0lO",
+            "EAESEQoNQ1VSUkVOQ1lfUlVCWRACYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Com.Nhn.Tardis.Sample.Protocol.ResultReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Com.Nhn.Tardis.Sample.Protocol.CurrencyType), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.UserData), global::Com.Nhn.Tardis.Sample.Protocol.UserData.Parser, new[]{ "Nickname", "Heart", "Coin", "Ruby", "Level", "Exp", "HighScore", "CurrentDeck" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.ShuffleDeckReq), global::Com.Nhn.Tardis.Sample.Protocol.ShuffleDeckReq.Parser, new[]{ "CurrencyType", "Usage" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.ShuffleDeckRes), global::Com.Nhn.Tardis.Sample.Protocol.ShuffleDeckRes.Parser, new[]{ "ResultCode", "Deck", "BalanceCoin", "BalanceRuby" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.ShuffleDeckRes), global::Com.Nhn.Tardis.Sample.Protocol.ShuffleDeckRes.Parser, new[]{ "ResultCode", "Deck", "BalanceCoin", "BalanceRuby" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.ChangeNicknameReq), global::Com.Nhn.Tardis.Sample.Protocol.ChangeNicknameReq.Parser, new[]{ "Nickname" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.ChangeNicknameRes), global::Com.Nhn.Tardis.Sample.Protocol.ChangeNicknameRes.Parser, new[]{ "ResultCode", "UserData" }, null, null, null)
           }));
     }
     #endregion
@@ -747,6 +753,298 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
           }
           case 32: {
             BalanceRuby = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class ChangeNicknameReq : pb::IMessage<ChangeNicknameReq> {
+    private static readonly pb::MessageParser<ChangeNicknameReq> _parser = new pb::MessageParser<ChangeNicknameReq>(() => new ChangeNicknameReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ChangeNicknameReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Com.Nhn.Tardis.Sample.Protocol.UserReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ChangeNicknameReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ChangeNicknameReq(ChangeNicknameReq other) : this() {
+      nickname_ = other.nickname_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ChangeNicknameReq Clone() {
+      return new ChangeNicknameReq(this);
+    }
+
+    /// <summary>Field number for the "nickname" field.</summary>
+    public const int NicknameFieldNumber = 1;
+    private string nickname_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Nickname {
+      get { return nickname_; }
+      set {
+        nickname_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ChangeNicknameReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ChangeNicknameReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Nickname != other.Nickname) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Nickname.Length != 0) hash ^= Nickname.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Nickname.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Nickname);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Nickname.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Nickname);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ChangeNicknameReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Nickname.Length != 0) {
+        Nickname = other.Nickname;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Nickname = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class ChangeNicknameRes : pb::IMessage<ChangeNicknameRes> {
+    private static readonly pb::MessageParser<ChangeNicknameRes> _parser = new pb::MessageParser<ChangeNicknameRes>(() => new ChangeNicknameRes());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ChangeNicknameRes> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Com.Nhn.Tardis.Sample.Protocol.UserReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ChangeNicknameRes() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ChangeNicknameRes(ChangeNicknameRes other) : this() {
+      resultCode_ = other.resultCode_;
+      userData_ = other.userData_ != null ? other.userData_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ChangeNicknameRes Clone() {
+      return new ChangeNicknameRes(this);
+    }
+
+    /// <summary>Field number for the "resultCode" field.</summary>
+    public const int ResultCodeFieldNumber = 1;
+    private global::Com.Nhn.Tardis.Sample.Protocol.ErrorCode resultCode_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Com.Nhn.Tardis.Sample.Protocol.ErrorCode ResultCode {
+      get { return resultCode_; }
+      set {
+        resultCode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "userData" field.</summary>
+    public const int UserDataFieldNumber = 2;
+    private global::Com.Nhn.Tardis.Sample.Protocol.UserData userData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Com.Nhn.Tardis.Sample.Protocol.UserData UserData {
+      get { return userData_; }
+      set {
+        userData_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ChangeNicknameRes);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ChangeNicknameRes other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ResultCode != other.ResultCode) return false;
+      if (!object.Equals(UserData, other.UserData)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ResultCode != 0) hash ^= ResultCode.GetHashCode();
+      if (userData_ != null) hash ^= UserData.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ResultCode != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) ResultCode);
+      }
+      if (userData_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(UserData);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ResultCode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ResultCode);
+      }
+      if (userData_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UserData);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ChangeNicknameRes other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ResultCode != 0) {
+        ResultCode = other.ResultCode;
+      }
+      if (other.userData_ != null) {
+        if (userData_ == null) {
+          userData_ = new global::Com.Nhn.Tardis.Sample.Protocol.UserData();
+        }
+        UserData.MergeFrom(other.UserData);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            resultCode_ = (global::Com.Nhn.Tardis.Sample.Protocol.ErrorCode) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            if (userData_ == null) {
+              userData_ = new global::Com.Nhn.Tardis.Sample.Protocol.UserData();
+            }
+            input.ReadMessage(userData_);
             break;
           }
         }

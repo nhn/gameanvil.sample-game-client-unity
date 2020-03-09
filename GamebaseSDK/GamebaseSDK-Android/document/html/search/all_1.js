@@ -1,0 +1,13 @@
+var searchData=
+[
+  ['baninfo',['BanInfo',['../classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info.html',1,'com::toast::android::gamebase::auth::data']]],
+  ['baninfo_2ejava',['BanInfo.java',['../_ban_info_8java.html',1,'']]],
+  ['banned_5fmember',['BANNED_MEMBER',['../classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error.html#ad3860810b28946fc54d2879102c3ffd4',1,'com::toast::android::gamebase::base::GamebaseError']]],
+  ['bantype',['banType',['../classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info.html#ace990e7178e0986d721cac30736f8b3a',1,'com::toast::android::gamebase::auth::data::BanInfo']]],
+  ['begindate',['beginDate',['../classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info.html#a8b827b673c840e560a92055f0c8c480f',1,'com::toast::android::gamebase::auth::data::BanInfo']]],
+  ['blocked_5fuser',['BLOCKED_USER',['../classcom_1_1toast_1_1android_1_1gamebase_1_1launching_1_1data_1_1_launching_status.html#a0fe4925ebb0a22038ef69af7d05f8b17',1,'com::toast::android::gamebase::launching::data::LaunchingStatus']]],
+  ['blockenddate',['blockEndDate',['../classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info.html#afc4583aaf2bed315513a89152f759e1e',1,'com::toast::android::gamebase::auth::transfer::data::TransferAccountFailInfo']]],
+  ['browser',['BROWSER',['../classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_web_view_style.html#a9d77e4ec2a62b4956caade68b902c6fd',1,'com::toast::android::gamebase::GamebaseWebViewStyle']]],
+  ['build',['build',['../classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_configuration_1_1_builder.html#aa7918a81c9a0e2a68b4aeb901e5352b2',1,'com.toast.android.gamebase.GamebaseConfiguration.Builder.build()'],['../classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_web_view_configuration_1_1_builder.html#aa876865decc9e4d1f0faa73926a6442a',1,'com.toast.android.gamebase.GamebaseWebViewConfiguration.Builder.build()']]],
+  ['builder',['Builder',['../classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_web_view_configuration_1_1_builder.html',1,'GamebaseWebViewConfiguration.Builder'],['../classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_configuration_1_1_builder.html',1,'GamebaseConfiguration.Builder'],['../classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_configuration_1_1_builder.html#ab8dce20a5e0f4a689574d947e05a4feb',1,'com.toast.android.gamebase.GamebaseConfiguration.Builder.Builder(String appId, String appVersion, String storeCode)'],['../classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_configuration_1_1_builder.html#afbe6729f6423577d9a06c1832315f37d',1,'com.toast.android.gamebase.GamebaseConfiguration.Builder.Builder(String appId, String appVersion)']]]
+];

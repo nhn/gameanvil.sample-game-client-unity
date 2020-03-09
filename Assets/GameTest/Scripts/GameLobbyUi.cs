@@ -5,12 +5,21 @@ using Tardis.User;
 using TardisConnector;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 // 게임 로비신 UI 제어 스크립트
 public class GameLobbyUi : MonoBehaviour
 {
     // 화면 입력 필드
+    public InputField inputFieldNickname;
+    public Button buttonNicknameChange;
+    public Button buttonTapBirdGame;
+    public Button buttonMultiTapBirdGame;
+    public Button buttonMultiSnakeGame;
+    public Button buttonSingleRanking;
+    public Text textRanking;
+    public Button buttonUserInfo;
+    // 유저 정보 패널
+    public GameObject panelUserInfo;
     public Text textUUID;
     public Text textNickName;
     public Text textHeart;
@@ -19,13 +28,7 @@ public class GameLobbyUi : MonoBehaviour
     public Text textLevel;
     public Text textExp;
     public Text textHighScore;
-    public Button buttonTapBirdGame;
-    public Button buttonMultiTapBirdGame;
-    public Button buttonMultiSnakeGame;
-    public Button buttonSingleRanking;
-    public Text textRanking;
-    public Button buttonUserInfo;
-    public GameObject panelUserInfo;
+    // 싱글 랭킹 패널
     public GameObject panelSingleRankingInfo;
 
     // 접속 유저 객체
@@ -33,7 +36,10 @@ public class GameLobbyUi : MonoBehaviour
 
     void Start()
     {
+        inputFieldNickname.text = UserInfo.Instance.Nickname;
+
         // 버튼 리스너 연결
+        buttonNicknameChange.onClick.AddListener(() => { OnClickNicknameChange(); });
         buttonTapBirdGame.onClick.AddListener(() => { OnClickTapBirdGame(); });
         buttonMultiTapBirdGame.onClick.AddListener(() => { OnClickMultiTapBirdGame(); });
         buttonMultiSnakeGame.onClick.AddListener(() => { OnClickMultiSnakeGame(); });
@@ -50,14 +56,14 @@ public class GameLobbyUi : MonoBehaviour
         UserInfo.Instance.gameState = UserInfo.GameState.None;
 
         // ===========================================================================================>>> Tardis
-        // 타이밍 이슈상 리스너를 미리 등록, 유저 매치가 되었을때 불리는 리스너
+        // 타이밍 이슈상 리스너를 미리 등록, 유저 매치가 되었을때 불리는 리스너  : snake 게임 server to client
         gameUser.onMatchUserDoneListeners += (UserAgent userAgent, ResultCodeMatchUserDone result, bool created, string roomId, Payload payload) =>
         {
             Debug.Log("onMatchUserDoneListeners!!!!!! " + userAgent.GetUserId());
             UserInfo.Instance.gameState = UserInfo.GameState.Wait;
         };
 
-        // 타이밍 이슈상 리스너 미리등록, 서버에서 게임룸에 두명이 모두 입장했을때 게임 설정데이터를 전송
+        // 타이밍 이슈상 리스너 미리등록, 서버에서 게임룸에 두명이 모두 입장했을때 게임 설정데이터를 전송 : snake 게임 server to client
         gameUser.AddListener((UserAgent userAgent, Com.Nhn.Tardis.Sample.Protocol.SnakeGameInfoMsg msg) =>
         {
             if (msg != null)
@@ -99,17 +105,56 @@ public class GameLobbyUi : MonoBehaviour
                 UserInfo.Instance.gameState = UserInfo.GameState.Wait;
             }
         });
+        // ===========================================================================================>>> Tardis
     }
 
     void RemoveAllListeners()
     {
         // 리스너 제거
+        buttonNicknameChange.onClick.RemoveAllListeners();
         buttonMultiTapBirdGame.onClick.RemoveAllListeners();
         buttonMultiSnakeGame.onClick.RemoveAllListeners();
         buttonTapBirdGame.onClick.RemoveAllListeners();
         buttonSingleRanking.onClick.RemoveAllListeners();
         buttonUserInfo.onClick.RemoveAllListeners();
+    }
 
+    void OnClickNicknameChange()
+    {
+        buttonNicknameChange.interactable = false;
+
+        // 닉네임변경 요청 프로토콜
+        var changeNicknameReq = new Com.Nhn.Tardis.Sample.Protocol.ChangeNicknameReq
+        {
+            Nickname = inputFieldNickname.text
+        };
+        Debug.Log("changeNicknameReq " + changeNicknameReq);
+
+        // ===========================================================================================>>> Tardis
+        // 게임유저가 서버로 request로 response를 받아 처리 한다.
+        gameUser.Request<Com.Nhn.Tardis.Sample.Protocol.ChangeNicknameRes>(changeNicknameReq, (userAgent, changeNicknameRes) =>
+        {
+            Debug.Log("changeNicknameRes" + changeNicknameRes);
+
+            if (changeNicknameRes.ResultCode == Com.Nhn.Tardis.Sample.Protocol.ErrorCode.None)
+            {
+                // 서버에 닉네임 변경 후 성공 하고 응답값 갱신
+                UserInfo.Instance.Nickname = changeNicknameRes.UserData.Nickname;
+                UserInfo.Instance.Heart = changeNicknameRes.UserData.Heart;
+                UserInfo.Instance.Coin = changeNicknameRes.UserData.Coin;
+                UserInfo.Instance.Ruby = changeNicknameRes.UserData.Ruby;
+                UserInfo.Instance.Level = changeNicknameRes.UserData.Level;
+                UserInfo.Instance.Exp = changeNicknameRes.UserData.Exp;
+                UserInfo.Instance.HighScore = changeNicknameRes.UserData.HighScore;
+                UserInfo.Instance.CurrentDeck = changeNicknameRes.UserData.CurrentDeck;
+            }
+            else
+            {
+                // 실패시 처리
+            }
+            buttonNicknameChange.interactable = true;
+        });
+        // ===========================================================================================>>> Tardis
     }
 
     void OnClickTapBirdGame()
@@ -138,6 +183,7 @@ public class GameLobbyUi : MonoBehaviour
             else
             {
                 // 실패 처리
+                MessageUi.Instance.SetTextMessage("onCreateRoom Fail..... " + result);
             }
         });
         // ===========================================================================================>>> Tardis
@@ -165,10 +211,10 @@ public class GameLobbyUi : MonoBehaviour
             else
             {
                 // 실패 처리
+                MessageUi.Instance.SetTextMessage("onMatchRoom Fail..... " + result);
             }
         });
         // ===========================================================================================>>> Tardis
-
 
         buttonMultiTapBirdGame.interactable = true;
     }
@@ -194,6 +240,7 @@ public class GameLobbyUi : MonoBehaviour
             else
             {
                 // 실패 처리
+                MessageUi.Instance.SetTextMessage("onMatchUserStart Fail..... " + result);
             }
         });
         // ===========================================================================================>>> Tardis
@@ -235,6 +282,7 @@ public class GameLobbyUi : MonoBehaviour
             else
             {
                 // 실패시 처리
+                MessageUi.Instance.SetTextMessage("singleRankingReq  Fail..... " + singleRankingRes);
             }
             buttonSingleRanking.interactable = true;
         });

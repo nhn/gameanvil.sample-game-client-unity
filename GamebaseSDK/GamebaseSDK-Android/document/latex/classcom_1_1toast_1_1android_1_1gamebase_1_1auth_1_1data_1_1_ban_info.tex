@@ -1,0 +1,215 @@
+\hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info}{}\section{Ban\+Info Class Reference}
+\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info}\index{Ban\+Info@{Ban\+Info}}
+
+
+Ban information for user who have been banned.  
+
+
+
+
+Inheritance diagram for Ban\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ban\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a}{to\+Json\+String} ()
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a054431f3d988a22295cfc8b784ff2637}{to\+Pretty\+Json\+String} ()
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520}{to\+String} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static$<$ T $>$ T \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b}{from\+Json} (@Non\+Null String json, Class$<$ T $>$ class\+OfT)
+\item 
+static$<$ T $>$ T \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101}{from\+Json} (@Non\+Null J\+S\+O\+N\+Object json\+Object, Class$<$ T $>$ class\+OfT)
+\item 
+static$<$ T $>$ T \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_aa901d97d495150b54bcb80c05672f58a}{from\+Json} (@Non\+Null String json, Type type)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_ae9d0b602f581392f4e9a08d579632b94}{user\+Id}
+\begin{DoxyCompactList}\small\item\em User ID who was banned. \end{DoxyCompactList}\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_ace990e7178e0986d721cac30736f8b3a}{ban\+Type}
+\begin{DoxyCompactList}\small\item\em There are two types of the banning. \end{DoxyCompactList}\item 
+long \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a8b827b673c840e560a92055f0c8c480f}{begin\+Date}
+\begin{DoxyCompactList}\small\item\em Time when banning was started. \end{DoxyCompactList}\item 
+long \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a5d05de439b5392f41d2e3673442f9785}{end\+Date}
+\begin{DoxyCompactList}\small\item\em Time when banning will be released. \end{DoxyCompactList}\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a2836db0f8ae4563c70935b5e514bdc21}{message}
+\begin{DoxyCompactList}\small\item\em Banning message entered from the \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} console. \end{DoxyCompactList}\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a35d86c2d4d0199e57471a7e2b2ad5934}{cs\+Info}
+\begin{DoxyCompactList}\small\item\em The U\+RL of the customer center web page. \end{DoxyCompactList}\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a06b0f551e49da9f93b731c28a6597062}{cs\+Url}
+\begin{DoxyCompactList}\small\item\em The email address of the customer center. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ban information for user who have been banned. 
+
+\begin{DoxySince}{Since}
+Added 1.\+11.\+0. 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}!from\+Json@{from\+Json}}
+\index{from\+Json@{from\+Json}!com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}}
+\subsubsection{\texorpdfstring{from\+Json()}{fromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static $<$T$>$ T from\+Json (\begin{DoxyParamCaption}\item[{@Non\+Null String}]{json,  }\item[{Class$<$ T $>$}]{class\+OfT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}!from\+Json@{from\+Json}}
+\index{from\+Json@{from\+Json}!com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}}
+\subsubsection{\texorpdfstring{from\+Json()}{fromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static $<$T$>$ T from\+Json (\begin{DoxyParamCaption}\item[{@Non\+Null J\+S\+O\+N\+Object}]{json\+Object,  }\item[{Class$<$ T $>$}]{class\+OfT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_aa901d97d495150b54bcb80c05672f58a}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_aa901d97d495150b54bcb80c05672f58a}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}!from\+Json@{from\+Json}}
+\index{from\+Json@{from\+Json}!com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}}
+\subsubsection{\texorpdfstring{from\+Json()}{fromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static $<$T$>$ T from\+Json (\begin{DoxyParamCaption}\item[{@Non\+Null String}]{json,  }\item[{Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}!to\+Json\+String@{to\+Json\+String}}
+\index{to\+Json\+String@{to\+Json\+String}!com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}}
+\subsubsection{\texorpdfstring{to\+Json\+String()}{toJsonString()}}
+{\footnotesize\ttfamily String to\+Json\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a054431f3d988a22295cfc8b784ff2637}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a054431f3d988a22295cfc8b784ff2637}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}!to\+Pretty\+Json\+String@{to\+Pretty\+Json\+String}}
+\index{to\+Pretty\+Json\+String@{to\+Pretty\+Json\+String}!com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}}
+\subsubsection{\texorpdfstring{to\+Pretty\+Json\+String()}{toPrettyJsonString()}}
+{\footnotesize\ttfamily String to\+Pretty\+Json\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_ace990e7178e0986d721cac30736f8b3a}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_ace990e7178e0986d721cac30736f8b3a}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}!ban\+Type@{ban\+Type}}
+\index{ban\+Type@{ban\+Type}!com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}}
+\subsubsection{\texorpdfstring{ban\+Type}{banType}}
+{\footnotesize\ttfamily String ban\+Type}
+
+
+
+There are two types of the banning. 
+
+~\newline
+ \char`\"{}\+T\+E\+M\+P\+O\+R\+A\+R\+Y\char`\"{}, \char`\"{}\+P\+E\+R\+M\+A\+N\+E\+N\+T\char`\"{}. \mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a8b827b673c840e560a92055f0c8c480f}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a8b827b673c840e560a92055f0c8c480f}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}!begin\+Date@{begin\+Date}}
+\index{begin\+Date@{begin\+Date}!com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}}
+\subsubsection{\texorpdfstring{begin\+Date}{beginDate}}
+{\footnotesize\ttfamily long begin\+Date}
+
+
+
+Time when banning was started. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a35d86c2d4d0199e57471a7e2b2ad5934}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a35d86c2d4d0199e57471a7e2b2ad5934}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}!cs\+Info@{cs\+Info}}
+\index{cs\+Info@{cs\+Info}!com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}}
+\subsubsection{\texorpdfstring{cs\+Info}{csInfo}}
+{\footnotesize\ttfamily String cs\+Info}
+
+
+
+The U\+RL of the customer center web page. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a06b0f551e49da9f93b731c28a6597062}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a06b0f551e49da9f93b731c28a6597062}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}!cs\+Url@{cs\+Url}}
+\index{cs\+Url@{cs\+Url}!com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}}
+\subsubsection{\texorpdfstring{cs\+Url}{csUrl}}
+{\footnotesize\ttfamily String cs\+Url}
+
+
+
+The email address of the customer center. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a5d05de439b5392f41d2e3673442f9785}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a5d05de439b5392f41d2e3673442f9785}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}!end\+Date@{end\+Date}}
+\index{end\+Date@{end\+Date}!com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}}
+\subsubsection{\texorpdfstring{end\+Date}{endDate}}
+{\footnotesize\ttfamily long end\+Date}
+
+
+
+Time when banning will be released. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a2836db0f8ae4563c70935b5e514bdc21}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_a2836db0f8ae4563c70935b5e514bdc21}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}!message@{message}}
+\index{message@{message}!com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}}
+\subsubsection{\texorpdfstring{message}{message}}
+{\footnotesize\ttfamily String message}
+
+
+
+Banning message entered from the \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} console. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_ae9d0b602f581392f4e9a08d579632b94}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info_ae9d0b602f581392f4e9a08d579632b94}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}!user\+Id@{user\+Id}}
+\index{user\+Id@{user\+Id}!com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::data\+::\+Ban\+Info}}
+\subsubsection{\texorpdfstring{user\+Id}{userId}}
+{\footnotesize\ttfamily String user\+Id}
+
+
+
+User ID who was banned. 
+

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>TCGBAuthAdapterDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">TCGamebase </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">NHN Entertainment</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/versionString">+ versionString</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addMappingWithSender:target:additionalInfo:viewController:completion:">- addMappingWithSender:target:additionalInfo:viewController:completion:</option>
+		
+		<option value="//api/name/application:didReceiveRemoteNotification:fetchCompletionHandler:">- application:didReceiveRemoteNotification:fetchCompletionHandler:</option>
+		
+		<option value="//api/name/application:openURL:options:">- application:openURL:options:</option>
+		
+		<option value="//api/name/application:willFinishLaunchingWithOptions:">- application:willFinishLaunchingWithOptions:</option>
+		
+		<option value="//api/name/authInfosFromProvider">- authInfosFromProvider</option>
+		
+		<option value="//api/name/initializeWithOptions:">- initializeWithOptions:</option>
+		
+		<option value="//api/name/loginWithSender:target:additionalInfo:viewController:completion:">- loginWithSender:target:additionalInfo:viewController:completion:</option>
+		
+		<option value="//api/name/logoutWithSender:target:completion:">- logoutWithSender:target:completion:</option>
+		
+		<option value="//api/name/providerName">- providerName</option>
+		
+		<option value="//api/name/withdrawWithSender:target:completion:">- withdrawWithSender:target:completion:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">TCGBAuthAdapterDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>TCGBAuthAdapterDelegate.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The protocol TCGBAuthAdapterDelegate is for developing Auth Adapter.<br/>
+This protocol contains several methods such as to login, logout and so on.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Initilaize Auth Adapter" name="task_Initilaize Auth Adapter"></a>
+						<h2 class="task-title">Initilaize Auth Adapter</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initializeWithOptions:" title="initializeWithOptions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initializeWithOptions:">&ndash;&nbsp;initializeWithOptions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method ininialize the Auth Adapter class.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)initializeWithOptions:(NSDictionary *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>isDebugMode is for setting debug mode of ToastCloud IAP module.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBAuthAdapterDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Authentication API" name="task_Authentication API"></a>
+						<h2 class="task-title">Authentication API</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/loginWithSender:target:additionalInfo:viewController:completion:" title="loginWithSender:target:additionalInfo:viewController:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loginWithSender:target:additionalInfo:viewController:completion:">&ndash;&nbsp;loginWithSender:target:additionalInfo:viewController:completion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Login to identity service provider.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)loginWithSender:(id)<em>sender</em> target:(id&lt;TCGBAuthAdapterDelegate&gt;)<em>target</em> additionalInfo:(NSDictionary *)<em>additionalInfo</em> viewController:(UIViewController *)<em>viewController</em> completion:(void ( ^ ) ( id credential , TCGBError *error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>sender instance</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>target</code></th>
+						<td><p>target instance</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>additionalInfo</code></th>
+						<td><p>If identity provider needs to set something when it is initialized, this additionanlInfo is set.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>viewController</code></th>
+						<td><p>presenting view controller</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion handler when auth process(login, logout, withdraw) is completed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBAuthAdapterDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logoutWithSender:target:completion:" title="logoutWithSender:target:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logoutWithSender:target:completion:">&ndash;&nbsp;logoutWithSender:target:completion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logout to identity service provider.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)logoutWithSender:(id)<em>sender</em> target:(id&lt;TCGBAuthAdapterDelegate&gt;)<em>target</em> completion:(void ( ^ ) ( TCGBError *error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>sender instance</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>target</code></th>
+						<td><p>target instance</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion handler when auth process(login, logout, withdraw) is completed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBAuthAdapterDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withdrawWithSender:target:completion:" title="withdrawWithSender:target:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withdrawWithSender:target:completion:">&ndash;&nbsp;withdrawWithSender:target:completion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Withdrwal to identity service provider.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)withdrawWithSender:(id)<em>sender</em> target:(id&lt;TCGBAuthAdapterDelegate&gt;)<em>target</em> completion:(void ( ^ ) ( TCGBError *error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>sender instance</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>target</code></th>
+						<td><p>target instance</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion handler when auth process(login, logout, withdraw) is completed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBAuthAdapterDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addMappingWithSender:target:additionalInfo:viewController:completion:" title="addMappingWithSender:target:additionalInfo:viewController:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addMappingWithSender:target:additionalInfo:viewController:completion:">&ndash;&nbsp;addMappingWithSender:target:additionalInfo:viewController:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Mapping to identity service provider.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addMappingWithSender:(id)<em>sender</em> target:(id&lt;TCGBAuthAdapterDelegate&gt;)<em>target</em> additionalInfo:(NSDictionary *)<em>additionalInfo</em> viewController:(UIViewController *)<em>viewController</em> completion:(void ( ^ ) ( id credential , TCGBError *error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sender</code></th>
+						<td><p>sender instance</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>target</code></th>
+						<td><p>target instance</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>additionalInfo</code></th>
+						<td><p>If identity provider needs to set something when it is initialized, this additionanlInfo is set.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion handler when auth process(login, logout, withdraw) is completed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBAuthAdapterDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Provider information" name="task_Provider information"></a>
+						<h2 class="task-title">Provider information</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/authInfosFromProvider" title="authInfosFromProvider"></a>
+	<h3 class="method-title"><code><a href="#//api/name/authInfosFromProvider">&ndash;&nbsp;authInfosFromProvider</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provider&rsquo;s authenticated credential</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (TCGBProviderAuthCredential *)authInfosFromProvider</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Provider&rsquo;s authenticated credential</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBAuthAdapterDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/providerName" title="providerName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/providerName">&ndash;&nbsp;providerName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provider&rsquo;s name</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)providerName</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Provider&rsquo;s name</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBAuthAdapterDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Adapter information" name="task_Adapter information"></a>
+						<h2 class="task-title">Adapter information</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/versionString" title="versionString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/versionString">+&nbsp;versionString</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>semantic version string of Auth Adapter</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)versionString</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>semantic version string of Auth Adapter</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBAuthAdapterDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Application life cycle for identify provider&apos;s sdk setting" name="task_Application life cycle for identify provider&apos;s sdk setting"></a>
+						<h2 class="task-title">Application life cycle for identify provider&apos;s sdk setting</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/application:willFinishLaunchingWithOptions:" title="application:willFinishLaunchingWithOptions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/application:willFinishLaunchingWithOptions:">&ndash;&nbsp;application:willFinishLaunchingWithOptions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Managing State Transitions</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)application:(UIApplication *)<em>application</em> willFinishLaunchingWithOptions:(NSDictionary *)<em>launchOptions</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBAuthAdapterDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/application:didReceiveRemoteNotification:fetchCompletionHandler:" title="application:didReceiveRemoteNotification:fetchCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/application:didReceiveRemoteNotification:fetchCompletionHandler:">&ndash;&nbsp;application:didReceiveRemoteNotification:fetchCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Responding to Notifications and Events</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)application:(UIApplication *)<em>application</em> didReceiveRemoteNotification:(NSDictionary *)<em>userInfo</em> fetchCompletionHandler:(void ( ^ ) ( UIBackgroundFetchResult result ))<em>completionHandler</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBAuthAdapterDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/application:openURL:options:" title="application:openURL:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/application:openURL:options:">&ndash;&nbsp;application:openURL:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>handle OpenURL</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)application:(UIApplication *)<em>app</em> openURL:(NSURL *)<em>url</em> options:(NSDictionary&lt;UIApplicationOpenURLOptionsKey,id&gt; *)<em>options</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBAuthAdapterDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 NHN Entertainment. All rights reserved. Updated: 2020-02-24</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

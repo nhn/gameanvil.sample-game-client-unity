@@ -1,0 +1,942 @@
+\hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error}{}\section{Gamebase\+Error Class Reference}
+\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error}\index{Gamebase\+Error@{Gamebase\+Error}}
+
+
+Class responsible for creating error codes and error objects.  
+
+
+
+
+Collaboration diagram for Gamebase\+Error\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static boolean \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a7d24434216b8c296f9c1382422267daf}{is\+Success} (@Nullable final \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} gb\+Exception)
+\item 
+static boolean \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a19d8ad6593536a494dbf1fbae403779d}{is\+Canceled} (@Nullable final \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} gb\+Exception)
+\item 
+static boolean \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aca830b6e975371f5aa1e80562d7b6295}{is\+External\+Library\+Error} (@Nullable final \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} gb\+Exception)
+\item 
+static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2d1d7646a1658d188ee9b65a25905661}{new\+Error} (@Non\+Null final String domain, final int code)
+\item 
+static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a65b209f183118b929f313eedbadcfc71}{new\+Error} (@Non\+Null final String domain, final int code, @Nullable final Throwable cause)
+\item 
+static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2ed49c27d7a237cd7fcdaa43604c9615}{new\+Error\+With\+Append\+Message} (@Non\+Null final String domain, final int code, @Nullable String append\+Message)
+\item 
+static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6aa42722f0af25a63811f924fd940552}{new\+Error\+With\+Append\+Message} (@Non\+Null final String domain, final int code, @Nullable String append\+Message, @Nullable final Throwable cause)
+\item 
+static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_af6a27716a44f247527608e14098bb01b}{new\+Error\+By\+Server\+Error} (@Non\+Null final String domain, @Non\+Null final String api\+Id, final int server\+Error\+Code, @Nullable final String server\+Error\+Message, @Nullable final Map$<$ String, Object $>$ extras)
+\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a42ebfd14c26b172ab5e528b94647e9e2}{new\+Error\+Message} (final int code)
+\item 
+static int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ae1e31671405d6d3c4660aacf9d9dd3c5}{new\+Client\+Error\+Code} (int server\+Error\+Code, String api\+Id)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a78a8f85131c22ffd108d29766b27f2e5}{S\+U\+C\+C\+E\+SS} = 0
+\begin{DoxyCompactList}\small\item\em Success. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a8eee16890e4829932e769351891ab2e5}{N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED} = 1
+\begin{DoxyCompactList}\small\item\em Common error code. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acf8c8ed3996407204f4905342cbdb656}{N\+O\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+IN} = 2
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a55eabe442482e503ad3a382bb50ae619}{I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER} = 3
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a0604bba6bca2f23564f4982fb2ebdd92}{I\+N\+V\+A\+L\+I\+D\+\_\+\+J\+S\+O\+N\+\_\+\+F\+O\+R\+M\+AT} = 4
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aed34d12ad749faa05c75f3ad028327df}{U\+S\+E\+R\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+ON} = 5
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6751b4f49ed64ad163350daea4088ef5}{I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+E\+M\+B\+ER} = 6
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ad3860810b28946fc54d2879102c3ffd4}{B\+A\+N\+N\+E\+D\+\_\+\+M\+E\+M\+B\+ER} = 7
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ae80de9cf6cf8c7c352392a80f16a739b}{S\+A\+M\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+OR} = 8
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa4cfcd7abc10b285fbd2aa92be371d05}{N\+O\+T\+\_\+\+G\+U\+E\+S\+T\+\_\+\+O\+R\+\_\+\+H\+A\+S\+\_\+\+O\+T\+H\+E\+RS} = 9
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acd9b3f5149cd30338cc6795919ad1c6f}{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED} = 10
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_adb77253190b30524cadc6f8c0bb55391}{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+A\+N\+D\+R\+O\+ID} = 11
+\begin{DoxyCompactList}\small\item\em for unity plugin error code. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a788dd7e723a82d89ade5d47c71c3a19d}{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+I\+OS} = 12
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a4210f1c3db853e07619403a3e59d80b8}{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+E\+D\+I\+T\+OR} = 13
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2bfe4d07386e86ae23540ca906d805fd}{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+S\+T\+A\+N\+D\+A\+L\+O\+NE} = 14
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a65c66b579258bb75c777a0a9dd4f4248}{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+W\+E\+B\+GL} = 15
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3bb1bf5ccc1b6644e6e9e4a3dbda16e7}{A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+I\+T\+Y\+\_\+\+D\+E\+S\+T\+R\+O\+Y\+ED} = 31
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ac04feb670905098cfe714fb8cc742453}{A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+E\+A\+P\+P\+\_\+\+N\+O\+T\+\_\+\+C\+A\+L\+L\+ED} = 32
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a304437763f2e717daaa1d6df700e4c87}{I\+O\+S\+\_\+\+G\+A\+M\+E\+C\+E\+N\+T\+E\+R\+\_\+\+D\+E\+N\+I\+ED} = 51
+\begin{DoxyCompactList}\small\item\em for ios specified error code. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ace876501a04e69d568dc5a85c5536804}{S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+T\+I\+M\+E\+O\+UT} = 101
+\begin{DoxyCompactList}\small\item\em Socket error code. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a010b2b2f8b503acc062ef7c480cb7aa2}{S\+O\+C\+K\+E\+T\+\_\+\+E\+R\+R\+OR} = 110
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a4743676acd0471d3d6248b8efca76dbf}{S\+O\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR} = 999
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a8afd99e2087ecd3562a9ae044f635f0a}{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR} = 2001
+\begin{DoxyCompactList}\small\item\em Launching error code. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ade65abd1b2745d2661b5211a8e05df61}{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+ID} = 2002
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a0c64c2269f5f45c4654d82326b87d193}{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+A\+PP} = 2003
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3c9c4952006aa1c4eae5c564155cdcb9}{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+C\+L\+I\+E\+NT} = 2004
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa787b2661e800ee9df677219dbdd0aba}{A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED} = 3001
+\begin{DoxyCompactList}\small\item\em Auth error code. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_af7ba4284e36585835a9b8dec2298b3b8}{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER} = 3002
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a29b702ab8a898ddbdc0267bf0cad142e}{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+M\+E\+M\+B\+ER} = 3003
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ac6eccd46dfa3c4974f1769d10e11335f}{A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR} = 3006
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a47a8fc5c51b5a41ec4863fc65d821e91}{A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR} = 3009
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acc991240d46353185b547cf92e599cd7}{A\+U\+T\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR} = 3010
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acb0b54e38030fdb916fd9fa50f5ce4fa}{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+E\+X\+P\+I\+R\+ED} = 3041
+\begin{DoxyCompactList}\small\item\em Transfer Account. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6f3883ade933e5828b220863aac82270}{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+B\+L\+O\+CK} = 3042
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ae12065db8f976d55b846e6ab362a976c}{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+ID} = 3043
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a8f58dff8c4020b1e9f5c22872755cbc3}{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD} = 3044
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ac7d5cc89dbe9946ea0627df20b146491}{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+C\+O\+N\+S\+O\+L\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+D\+I\+T\+I\+ON} = 3045
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aec819b44145f3a56260746c04db34afe}{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST} = 3046
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_af2d25a71f73d86d2d7c6b24720de1738}{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+E\+X\+I\+S\+T\+\_\+\+ID} = 3047
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a9905d64fe24b0e61cccdfe5d692c0c69}{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+ED} = 3048
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aaae26d8e17568a291fa6cdbd2d114eac}{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED} = 3101
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a9840976e9e86bd14afe85b34daed8778}{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+T\+O\+K\+E\+N\+\_\+\+I\+N\+FO} = 3102
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a943e4518d95e4dda2ad4b28dce7aa355}{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+A\+S\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP} = 3103
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a763cdc51f2566c1933972492992a94ac}{A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED} = 3201
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ad9705f588fccbb93aa85e0c6b0a9ca46}{A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO} = 3202
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa454a70f1941fc3d5ef4f6d6d9ce9764}{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED} = 3301
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a666b9ff84344649ceb8dfd19573e454f}{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+O\+\_\+\+O\+T\+H\+E\+R\+\_\+\+M\+E\+M\+B\+ER} = 3302
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a84927f1b168239e1c6e4e06072d9f097}{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+H\+A\+S\+\_\+\+S\+A\+M\+E\+\_\+\+I\+DP} = 3303
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ab0b9adc67dd24e57bcdbe4b3c73432de}{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO} = 3304
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3553979702d4ad952e9cacc24704c2eb}{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+G\+U\+E\+S\+T\+\_\+\+I\+DP} = 3305
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a835dcf4848344f23161981f632149208}{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+K\+EY} = 3311
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa18ee2b60e83125a0422c5d56bd59b18}{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+E\+D\+\_\+\+K\+EY} = 3312
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_abd3a347ce8e5f5c41c6f284690d7b1dc}{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+E\+X\+P\+I\+R\+E\+D\+\_\+\+K\+EY} = 3313
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aec32b6c6a8eec5f0cdeeeafebf9108b4}{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+I\+DP} = 3314
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_af9bcd68903b375f36de33992421dcde6}{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+A\+U\+T\+H\+K\+EY} = 3315
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3396dd65877a836362332aaad021dfad}{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED} = 3401
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a20e46fe27702edff6e2bc56cb59ca4a1}{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+A\+S\+T\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+I\+DP} = 3402
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_adf44b4db7395f2d9cff124f885903f60}{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP} = 3403
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6824bf2046e155715a78a7658bd28c3b}{A\+U\+T\+H\+\_\+\+L\+O\+G\+O\+U\+T\+\_\+\+F\+A\+I\+L\+ED} = 3501
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a480a18982a957f4f9a8d00f0500a08ff}{A\+U\+T\+H\+\_\+\+W\+I\+T\+H\+D\+R\+A\+W\+\_\+\+F\+A\+I\+L\+ED} = 3601
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2295d6ef3c13d3aa1eba8c6cb7b70a76}{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+P\+L\+A\+Y\+A\+B\+LE} = 3701
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3c25651751bd65f6b97b00b4a3bfa59c}{A\+U\+T\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR} = 3999
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6402187d8ebc1adc1ed73f178dbb5e9f}{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED} = 4001
+\begin{DoxyCompactList}\small\item\em Purchase error code. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a5bff106b35e4ec08de731f4c04861a1f}{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED} = 4002
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa4215a5b5289aa38cdf200c9a54f098d}{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+F\+I\+N\+I\+S\+H\+E\+D\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+P\+U\+R\+C\+H\+A\+S\+I\+NG} = 4003
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a9c30750707323692db2c8344b96a165c}{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+E\+N\+O\+U\+G\+H\+\_\+\+C\+A\+SH} = 4004
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a55d68288ba8d0c83950b50cec0f80a84}{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+A\+R\+K\+ET} = 4010
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a5e0e68e0ccd1e16526599293c38122e5}{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR} = 4201
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a4954d9c824504e5ecb7a660611a06455}{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR} = 4999
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a32799f53809522f48199d87b1742424c}{P\+U\+S\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR} = 5101
+\begin{DoxyCompactList}\small\item\em Push error code. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a07f43cdd647b44c79a5495de908d15b9}{P\+U\+S\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR} = 5102
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a823a5ca14fe66e59c63f710e2d67f4e8}{P\+U\+S\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR} = 5999
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3d318bd428efcb4afb70a5044fa576d6}{L\+O\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED} = 6001
+\begin{DoxyCompactList}\small\item\em Logger code. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a04e2d71d85a6c52d68be48a80a6376bc}{L\+O\+G\+G\+E\+R\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR} = 6048
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a9bc34722e36d94d0e8c68e6ae4be9576}{L\+O\+G\+G\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR} = 6049
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a4c0ed79f0ab3029b200531931583be9f}{U\+I\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR} = 6999
+\begin{DoxyCompactList}\small\item\em UI error code. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a5efd97b69e79d6b5296265443a7da202}{W\+E\+B\+V\+I\+E\+W\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+RL} = 7001
+\begin{DoxyCompactList}\small\item\em Web\+View error code. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a5d107027e581550a08babbfd2440da86}{W\+E\+B\+V\+I\+E\+W\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR} = 7999
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_abb8bcf6617c8d01173161a51a0668ca4}{S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+E\+R\+R\+OR} = 8001
+\begin{DoxyCompactList}\small\item\em Server error code. \end{DoxyCompactList}\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acc3672296c208fd1bea93617c2f7ddeb}{S\+E\+R\+V\+E\+R\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+E\+R\+R\+OR} = 8002
+\item 
+static final int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ad6e53269e4ff5378bdc18dc5e2e621f8}{S\+E\+R\+V\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR} = 8999
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class responsible for creating error codes and error objects. 
+
+~\newline
+ The error object used by \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} uses \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{com.\+toast.\+android.\+gamebase.\+base.\+Gamebase\+Exception} class.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{com.\+toast.\+android.\+gamebase.\+base.\+Gamebase\+Exception} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a19d8ad6593536a494dbf1fbae403779d}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a19d8ad6593536a494dbf1fbae403779d}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!is\+Canceled@{is\+Canceled}}
+\index{is\+Canceled@{is\+Canceled}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{is\+Canceled()}{isCanceled()}}
+{\footnotesize\ttfamily static boolean is\+Canceled (\begin{DoxyParamCaption}\item[{@Nullable final \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception}}]{gb\+Exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aca830b6e975371f5aa1e80562d7b6295}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aca830b6e975371f5aa1e80562d7b6295}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!is\+External\+Library\+Error@{is\+External\+Library\+Error}}
+\index{is\+External\+Library\+Error@{is\+External\+Library\+Error}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{is\+External\+Library\+Error()}{isExternalLibraryError()}}
+{\footnotesize\ttfamily static boolean is\+External\+Library\+Error (\begin{DoxyParamCaption}\item[{@Nullable final \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception}}]{gb\+Exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a7d24434216b8c296f9c1382422267daf}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a7d24434216b8c296f9c1382422267daf}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!is\+Success@{is\+Success}}
+\index{is\+Success@{is\+Success}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{is\+Success()}{isSuccess()}}
+{\footnotesize\ttfamily static boolean is\+Success (\begin{DoxyParamCaption}\item[{@Nullable final \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception}}]{gb\+Exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a7d24434216b8c296f9c1382422267daf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ae1e31671405d6d3c4660aacf9d9dd3c5}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ae1e31671405d6d3c4660aacf9d9dd3c5}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!new\+Client\+Error\+Code@{new\+Client\+Error\+Code}}
+\index{new\+Client\+Error\+Code@{new\+Client\+Error\+Code}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{new\+Client\+Error\+Code()}{newClientErrorCode()}}
+{\footnotesize\ttfamily static int new\+Client\+Error\+Code (\begin{DoxyParamCaption}\item[{int}]{server\+Error\+Code,  }\item[{String}]{api\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Common
+
+Light house
+
+Gateway
+
+Launching
+
+Member
+
+Add Mapping Forcibly
+
+Transfer AccountHere is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ae1e31671405d6d3c4660aacf9d9dd3c5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2d1d7646a1658d188ee9b65a25905661}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2d1d7646a1658d188ee9b65a25905661}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!new\+Error@{new\+Error}}
+\index{new\+Error@{new\+Error}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{new\+Error()}{newError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} new\+Error (\begin{DoxyParamCaption}\item[{@Non\+Null final String}]{domain,  }\item[{final int}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2d1d7646a1658d188ee9b65a25905661_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2d1d7646a1658d188ee9b65a25905661_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a65b209f183118b929f313eedbadcfc71}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a65b209f183118b929f313eedbadcfc71}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!new\+Error@{new\+Error}}
+\index{new\+Error@{new\+Error}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{new\+Error()}{newError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} new\+Error (\begin{DoxyParamCaption}\item[{@Non\+Null final String}]{domain,  }\item[{final int}]{code,  }\item[{@Nullable final Throwable}]{cause }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a65b209f183118b929f313eedbadcfc71_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_af6a27716a44f247527608e14098bb01b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_af6a27716a44f247527608e14098bb01b}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!new\+Error\+By\+Server\+Error@{new\+Error\+By\+Server\+Error}}
+\index{new\+Error\+By\+Server\+Error@{new\+Error\+By\+Server\+Error}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{new\+Error\+By\+Server\+Error()}{newErrorByServerError()}}
+{\footnotesize\ttfamily static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} new\+Error\+By\+Server\+Error (\begin{DoxyParamCaption}\item[{@Non\+Null final String}]{domain,  }\item[{@Non\+Null final String}]{api\+Id,  }\item[{final int}]{server\+Error\+Code,  }\item[{@Nullable final String}]{server\+Error\+Message,  }\item[{@Nullable final Map$<$ String, Object $>$}]{extras }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_af6a27716a44f247527608e14098bb01b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a42ebfd14c26b172ab5e528b94647e9e2}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a42ebfd14c26b172ab5e528b94647e9e2}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!new\+Error\+Message@{new\+Error\+Message}}
+\index{new\+Error\+Message@{new\+Error\+Message}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{new\+Error\+Message()}{newErrorMessage()}}
+{\footnotesize\ttfamily static String new\+Error\+Message (\begin{DoxyParamCaption}\item[{final int}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+ \subsubsection*{Common. }
+
+
+
+ \subsubsection*{Socket. }
+
+
+
+ \subsubsection*{Launching. }
+
+
+
+ \subsubsection*{Auth. }
+
+
+
+ \subsubsection*{Purchase. }
+
+
+
+ \subsubsection*{Push. }
+
+
+
+ \subsubsection*{Logger. }
+
+
+
+ \subsubsection*{Transfer A\+C\+C\+O\+U\+NT. }
+
+
+
+ \subsubsection*{Transfer A\+C\+C\+O\+U\+NT. }Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a42ebfd14c26b172ab5e528b94647e9e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2ed49c27d7a237cd7fcdaa43604c9615}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2ed49c27d7a237cd7fcdaa43604c9615}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!new\+Error\+With\+Append\+Message@{new\+Error\+With\+Append\+Message}}
+\index{new\+Error\+With\+Append\+Message@{new\+Error\+With\+Append\+Message}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{new\+Error\+With\+Append\+Message()}{newErrorWithAppendMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} new\+Error\+With\+Append\+Message (\begin{DoxyParamCaption}\item[{@Non\+Null final String}]{domain,  }\item[{final int}]{code,  }\item[{@Nullable String}]{append\+Message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2ed49c27d7a237cd7fcdaa43604c9615_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6aa42722f0af25a63811f924fd940552}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6aa42722f0af25a63811f924fd940552}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!new\+Error\+With\+Append\+Message@{new\+Error\+With\+Append\+Message}}
+\index{new\+Error\+With\+Append\+Message@{new\+Error\+With\+Append\+Message}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{new\+Error\+With\+Append\+Message()}{newErrorWithAppendMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} new\+Error\+With\+Append\+Message (\begin{DoxyParamCaption}\item[{@Non\+Null final String}]{domain,  }\item[{final int}]{code,  }\item[{@Nullable String}]{append\+Message,  }\item[{@Nullable final Throwable}]{cause }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6aa42722f0af25a63811f924fd940552_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ac04feb670905098cfe714fb8cc742453}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ac04feb670905098cfe714fb8cc742453}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+E\+A\+P\+P\+\_\+\+N\+O\+T\+\_\+\+C\+A\+L\+L\+ED@{A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+E\+A\+P\+P\+\_\+\+N\+O\+T\+\_\+\+C\+A\+L\+L\+ED}}
+\index{A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+E\+A\+P\+P\+\_\+\+N\+O\+T\+\_\+\+C\+A\+L\+L\+ED@{A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+E\+A\+P\+P\+\_\+\+N\+O\+T\+\_\+\+C\+A\+L\+L\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+E\+A\+P\+P\+\_\+\+N\+O\+T\+\_\+\+C\+A\+L\+L\+ED}{ANDROID\_ACTIVEAPP\_NOT\_CALLED}}
+{\footnotesize\ttfamily final int A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+E\+A\+P\+P\+\_\+\+N\+O\+T\+\_\+\+C\+A\+L\+L\+ED = 32\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3bb1bf5ccc1b6644e6e9e4a3dbda16e7}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3bb1bf5ccc1b6644e6e9e4a3dbda16e7}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+I\+T\+Y\+\_\+\+D\+E\+S\+T\+R\+O\+Y\+ED@{A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+I\+T\+Y\+\_\+\+D\+E\+S\+T\+R\+O\+Y\+ED}}
+\index{A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+I\+T\+Y\+\_\+\+D\+E\+S\+T\+R\+O\+Y\+ED@{A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+I\+T\+Y\+\_\+\+D\+E\+S\+T\+R\+O\+Y\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+I\+T\+Y\+\_\+\+D\+E\+S\+T\+R\+O\+Y\+ED}{ANDROID\_ACTIVITY\_DESTROYED}}
+{\footnotesize\ttfamily final int A\+N\+D\+R\+O\+I\+D\+\_\+\+A\+C\+T\+I\+V\+I\+T\+Y\+\_\+\+D\+E\+S\+T\+R\+O\+Y\+ED = 31\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a84927f1b168239e1c6e4e06072d9f097}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a84927f1b168239e1c6e4e06072d9f097}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+H\+A\+S\+\_\+\+S\+A\+M\+E\+\_\+\+I\+DP@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+H\+A\+S\+\_\+\+S\+A\+M\+E\+\_\+\+I\+DP}}
+\index{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+H\+A\+S\+\_\+\+S\+A\+M\+E\+\_\+\+I\+DP@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+H\+A\+S\+\_\+\+S\+A\+M\+E\+\_\+\+I\+DP}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+H\+A\+S\+\_\+\+S\+A\+M\+E\+\_\+\+I\+DP}{AUTH\_ADD\_MAPPING\_ALREADY\_HAS\_SAME\_IDP}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+H\+A\+S\+\_\+\+S\+A\+M\+E\+\_\+\+I\+DP = 3303\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a666b9ff84344649ceb8dfd19573e454f}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a666b9ff84344649ceb8dfd19573e454f}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+O\+\_\+\+O\+T\+H\+E\+R\+\_\+\+M\+E\+M\+B\+ER@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+O\+\_\+\+O\+T\+H\+E\+R\+\_\+\+M\+E\+M\+B\+ER}}
+\index{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+O\+\_\+\+O\+T\+H\+E\+R\+\_\+\+M\+E\+M\+B\+ER@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+O\+\_\+\+O\+T\+H\+E\+R\+\_\+\+M\+E\+M\+B\+ER}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+O\+\_\+\+O\+T\+H\+E\+R\+\_\+\+M\+E\+M\+B\+ER}{AUTH\_ADD\_MAPPING\_ALREADY\_MAPPED\_TO\_OTHER\_MEMBER}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+T\+O\+\_\+\+O\+T\+H\+E\+R\+\_\+\+M\+E\+M\+B\+ER = 3302\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3553979702d4ad952e9cacc24704c2eb}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3553979702d4ad952e9cacc24704c2eb}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+G\+U\+E\+S\+T\+\_\+\+I\+DP@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+G\+U\+E\+S\+T\+\_\+\+I\+DP}}
+\index{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+G\+U\+E\+S\+T\+\_\+\+I\+DP@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+G\+U\+E\+S\+T\+\_\+\+I\+DP}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+G\+U\+E\+S\+T\+\_\+\+I\+DP}{AUTH\_ADD\_MAPPING\_CANNOT\_ADD\_GUEST\_IDP}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+G\+U\+E\+S\+T\+\_\+\+I\+DP = 3305\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa454a70f1941fc3d5ef4f6d6d9ce9764}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa454a70f1941fc3d5ef4f6d6d9ce9764}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED}}
+\index{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED}{AUTH\_ADD\_MAPPING\_FAILED}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED = 3301\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa18ee2b60e83125a0422c5d56bd59b18}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa18ee2b60e83125a0422c5d56bd59b18}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+E\+D\+\_\+\+K\+EY@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+E\+D\+\_\+\+K\+EY}}
+\index{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+E\+D\+\_\+\+K\+EY@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+E\+D\+\_\+\+K\+EY}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+E\+D\+\_\+\+K\+EY}{AUTH\_ADD\_MAPPING\_FORCIBLY\_ALREADY\_USED\_KEY}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+E\+D\+\_\+\+K\+EY = 3312\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_af9bcd68903b375f36de33992421dcde6}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_af9bcd68903b375f36de33992421dcde6}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+A\+U\+T\+H\+K\+EY@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+A\+U\+T\+H\+K\+EY}}
+\index{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+A\+U\+T\+H\+K\+EY@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+A\+U\+T\+H\+K\+EY}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+A\+U\+T\+H\+K\+EY}{AUTH\_ADD\_MAPPING\_FORCIBLY\_DIFFERENT\_AUTHKEY}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+A\+U\+T\+H\+K\+EY = 3315\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aec32b6c6a8eec5f0cdeeeafebf9108b4}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aec32b6c6a8eec5f0cdeeeafebf9108b4}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+I\+DP@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+I\+DP}}
+\index{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+I\+DP@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+I\+DP}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+I\+DP}{AUTH\_ADD\_MAPPING\_FORCIBLY\_DIFFERENT\_IDP}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+T\+\_\+\+I\+DP = 3314\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_abd3a347ce8e5f5c41c6f284690d7b1dc}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_abd3a347ce8e5f5c41c6f284690d7b1dc}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+E\+X\+P\+I\+R\+E\+D\+\_\+\+K\+EY@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+E\+X\+P\+I\+R\+E\+D\+\_\+\+K\+EY}}
+\index{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+E\+X\+P\+I\+R\+E\+D\+\_\+\+K\+EY@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+E\+X\+P\+I\+R\+E\+D\+\_\+\+K\+EY}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+E\+X\+P\+I\+R\+E\+D\+\_\+\+K\+EY}{AUTH\_ADD\_MAPPING\_FORCIBLY\_EXPIRED\_KEY}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+E\+X\+P\+I\+R\+E\+D\+\_\+\+K\+EY = 3313\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a835dcf4848344f23161981f632149208}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a835dcf4848344f23161981f632149208}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+K\+EY@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+K\+EY}}
+\index{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+K\+EY@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+K\+EY}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+K\+EY}{AUTH\_ADD\_MAPPING\_FORCIBLY\_NOT\_EXIST\_KEY}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+O\+R\+C\+I\+B\+L\+Y\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+K\+EY = 3311\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ab0b9adc67dd24e57bcdbe4b3c73432de}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ab0b9adc67dd24e57bcdbe4b3c73432de}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO}}
+\index{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO@{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO}{AUTH\_ADD\_MAPPING\_INVALID\_IDP\_INFO}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+A\+D\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO = 3304\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acc991240d46353185b547cf92e599cd7}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acc991240d46353185b547cf92e599cd7}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR@{A\+U\+T\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR}}
+\index{A\+U\+T\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR@{A\+U\+T\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR}{AUTH\_ALREADY\_IN\_PROGRESS\_ERROR}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR = 3010\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a47a8fc5c51b5a41ec4863fc65d821e91}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a47a8fc5c51b5a41ec4863fc65d821e91}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR@{A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR}}
+\index{A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR@{A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR}{AUTH\_EXTERNAL\_LIBRARY\_ERROR}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR = 3009\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ac6eccd46dfa3c4974f1769d10e11335f}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ac6eccd46dfa3c4974f1769d10e11335f}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR@{A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR}}
+\index{A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR@{A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR}{AUTH\_EXTERNAL\_LIBRARY\_INITIALIZATION\_ERROR}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR = 3006\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a763cdc51f2566c1933972492992a94ac}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a763cdc51f2566c1933972492992a94ac}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED@{A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED}}
+\index{A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED@{A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED}{AUTH\_IDP\_LOGIN\_FAILED}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED = 3201\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ad9705f588fccbb93aa85e0c6b0a9ca46}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ad9705f588fccbb93aa85e0c6b0a9ca46}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO@{A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO}}
+\index{A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO@{A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO}{AUTH\_IDP\_LOGIN\_INVALID\_IDP\_INFO}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+I\+D\+P\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+D\+P\+\_\+\+I\+N\+FO = 3202\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6824bf2046e155715a78a7658bd28c3b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6824bf2046e155715a78a7658bd28c3b}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+L\+O\+G\+O\+U\+T\+\_\+\+F\+A\+I\+L\+ED@{A\+U\+T\+H\+\_\+\+L\+O\+G\+O\+U\+T\+\_\+\+F\+A\+I\+L\+ED}}
+\index{A\+U\+T\+H\+\_\+\+L\+O\+G\+O\+U\+T\+\_\+\+F\+A\+I\+L\+ED@{A\+U\+T\+H\+\_\+\+L\+O\+G\+O\+U\+T\+\_\+\+F\+A\+I\+L\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+L\+O\+G\+O\+U\+T\+\_\+\+F\+A\+I\+L\+ED}{AUTH\_LOGOUT\_FAILED}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+L\+O\+G\+O\+U\+T\+\_\+\+F\+A\+I\+L\+ED = 3501\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a29b702ab8a898ddbdc0267bf0cad142e}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a29b702ab8a898ddbdc0267bf0cad142e}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+M\+E\+M\+B\+ER@{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+M\+E\+M\+B\+ER}}
+\index{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+M\+E\+M\+B\+ER@{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+M\+E\+M\+B\+ER}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+M\+E\+M\+B\+ER}{AUTH\_NOT\_EXIST\_MEMBER}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+M\+E\+M\+B\+ER = 3003\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2295d6ef3c13d3aa1eba8c6cb7b70a76}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2295d6ef3c13d3aa1eba8c6cb7b70a76}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+P\+L\+A\+Y\+A\+B\+LE@{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+P\+L\+A\+Y\+A\+B\+LE}}
+\index{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+P\+L\+A\+Y\+A\+B\+LE@{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+P\+L\+A\+Y\+A\+B\+LE}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+P\+L\+A\+Y\+A\+B\+LE}{AUTH\_NOT\_PLAYABLE}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+P\+L\+A\+Y\+A\+B\+LE = 3701\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_af7ba4284e36585835a9b8dec2298b3b8}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_af7ba4284e36585835a9b8dec2298b3b8}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER@{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER}}
+\index{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER@{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER}{AUTH\_NOT\_SUPPORTED\_PROVIDER}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER = 3002\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3396dd65877a836362332aaad021dfad}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3396dd65877a836362332aaad021dfad}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED@{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED}}
+\index{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED@{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED}{AUTH\_REMOVE\_MAPPING\_FAILED}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+F\+A\+I\+L\+ED = 3401\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a20e46fe27702edff6e2bc56cb59ca4a1}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a20e46fe27702edff6e2bc56cb59ca4a1}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+A\+S\+T\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+I\+DP@{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+A\+S\+T\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+I\+DP}}
+\index{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+A\+S\+T\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+I\+DP@{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+A\+S\+T\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+I\+DP}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+A\+S\+T\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+I\+DP}{AUTH\_REMOVE\_MAPPING\_LAST\_MAPPED\_IDP}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+A\+S\+T\+\_\+\+M\+A\+P\+P\+E\+D\+\_\+\+I\+DP = 3402\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_adf44b4db7395f2d9cff124f885903f60}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_adf44b4db7395f2d9cff124f885903f60}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP@{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP}}
+\index{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP@{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP}{AUTH\_REMOVE\_MAPPING\_LOGGED\_IN\_IDP}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+R\+E\+M\+O\+V\+E\+\_\+\+M\+A\+P\+P\+I\+N\+G\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP = 3403\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aaae26d8e17568a291fa6cdbd2d114eac}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aaae26d8e17568a291fa6cdbd2d114eac}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED@{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED}}
+\index{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED@{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED}{AUTH\_TOKEN\_LOGIN\_FAILED}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+F\+A\+I\+L\+ED = 3101\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a943e4518d95e4dda2ad4b28dce7aa355}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a943e4518d95e4dda2ad4b28dce7aa355}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+A\+S\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP@{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+A\+S\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP}}
+\index{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+A\+S\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP@{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+A\+S\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+A\+S\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP}{AUTH\_TOKEN\_LOGIN\_INVALID\_LAST\_LOGGED\_IN\_IDP}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+A\+S\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+I\+N\+\_\+\+I\+DP = 3103\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a9840976e9e86bd14afe85b34daed8778}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a9840976e9e86bd14afe85b34daed8778}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+T\+O\+K\+E\+N\+\_\+\+I\+N\+FO@{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+T\+O\+K\+E\+N\+\_\+\+I\+N\+FO}}
+\index{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+T\+O\+K\+E\+N\+\_\+\+I\+N\+FO@{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+T\+O\+K\+E\+N\+\_\+\+I\+N\+FO}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+T\+O\+K\+E\+N\+\_\+\+I\+N\+FO}{AUTH\_TOKEN\_LOGIN\_INVALID\_TOKEN\_INFO}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+T\+O\+K\+E\+N\+\_\+\+L\+O\+G\+I\+N\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+T\+O\+K\+E\+N\+\_\+\+I\+N\+FO = 3102\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_af2d25a71f73d86d2d7c6b24720de1738}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_af2d25a71f73d86d2d7c6b24720de1738}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+E\+X\+I\+S\+T\+\_\+\+ID@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+E\+X\+I\+S\+T\+\_\+\+ID}}
+\index{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+E\+X\+I\+S\+T\+\_\+\+ID@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+E\+X\+I\+S\+T\+\_\+\+ID}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+E\+X\+I\+S\+T\+\_\+\+ID}{AUTH\_TRANSFERACCOUNT\_ALREADY\_EXIST\_ID}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+E\+X\+I\+S\+T\+\_\+\+ID = 3047\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a9905d64fe24b0e61cccdfe5d692c0c69}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a9905d64fe24b0e61cccdfe5d692c0c69}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+ED@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+ED}}
+\index{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+ED@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+ED}{AUTH\_TRANSFERACCOUNT\_ALREADY\_USED}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+U\+S\+ED = 3048\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6f3883ade933e5828b220863aac82270}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6f3883ade933e5828b220863aac82270}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+B\+L\+O\+CK@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+B\+L\+O\+CK}}
+\index{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+B\+L\+O\+CK@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+B\+L\+O\+CK}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+B\+L\+O\+CK}{AUTH\_TRANSFERACCOUNT\_BLOCK}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+B\+L\+O\+CK = 3042\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ac7d5cc89dbe9946ea0627df20b146491}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ac7d5cc89dbe9946ea0627df20b146491}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+C\+O\+N\+S\+O\+L\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+D\+I\+T\+I\+ON@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+C\+O\+N\+S\+O\+L\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+D\+I\+T\+I\+ON}}
+\index{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+C\+O\+N\+S\+O\+L\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+D\+I\+T\+I\+ON@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+C\+O\+N\+S\+O\+L\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+D\+I\+T\+I\+ON}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+C\+O\+N\+S\+O\+L\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+D\+I\+T\+I\+ON}{AUTH\_TRANSFERACCOUNT\_CONSOLE\_NO\_CONDITION}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+C\+O\+N\+S\+O\+L\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+D\+I\+T\+I\+ON = 3045\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acb0b54e38030fdb916fd9fa50f5ce4fa}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acb0b54e38030fdb916fd9fa50f5ce4fa}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+E\+X\+P\+I\+R\+ED@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+E\+X\+P\+I\+R\+ED}}
+\index{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+E\+X\+P\+I\+R\+ED@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+E\+X\+P\+I\+R\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+E\+X\+P\+I\+R\+ED}{AUTH\_TRANSFERACCOUNT\_EXPIRED}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+E\+X\+P\+I\+R\+ED = 3041\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Transfer Account. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ae12065db8f976d55b846e6ab362a976c}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ae12065db8f976d55b846e6ab362a976c}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+ID@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+ID}}
+\index{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+ID@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+ID}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+ID}{AUTH\_TRANSFERACCOUNT\_INVALID\_ID}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+ID = 3043\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a8f58dff8c4020b1e9f5c22872755cbc3}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a8f58dff8c4020b1e9f5c22872755cbc3}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD}}
+\index{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD}{AUTH\_TRANSFERACCOUNT\_INVALID\_PASSWORD}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD = 3044\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aec819b44145f3a56260746c04db34afe}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aec819b44145f3a56260746c04db34afe}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}}
+\index{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST@{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}{AUTH\_TRANSFERACCOUNT\_NOT\_EXIST}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+A\+C\+C\+O\+U\+N\+T\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST = 3046\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3c25651751bd65f6b97b00b4a3bfa59c}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3c25651751bd65f6b97b00b4a3bfa59c}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{A\+U\+T\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}}
+\index{A\+U\+T\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{A\+U\+T\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}{AUTH\_UNKNOWN\_ERROR}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR = 3999\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa787b2661e800ee9df677219dbdd0aba}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa787b2661e800ee9df677219dbdd0aba}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED@{A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED}}
+\index{A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED@{A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED}{AUTH\_USER\_CANCELED}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED = 3001\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Auth error code. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a480a18982a957f4f9a8d00f0500a08ff}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a480a18982a957f4f9a8d00f0500a08ff}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!A\+U\+T\+H\+\_\+\+W\+I\+T\+H\+D\+R\+A\+W\+\_\+\+F\+A\+I\+L\+ED@{A\+U\+T\+H\+\_\+\+W\+I\+T\+H\+D\+R\+A\+W\+\_\+\+F\+A\+I\+L\+ED}}
+\index{A\+U\+T\+H\+\_\+\+W\+I\+T\+H\+D\+R\+A\+W\+\_\+\+F\+A\+I\+L\+ED@{A\+U\+T\+H\+\_\+\+W\+I\+T\+H\+D\+R\+A\+W\+\_\+\+F\+A\+I\+L\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{A\+U\+T\+H\+\_\+\+W\+I\+T\+H\+D\+R\+A\+W\+\_\+\+F\+A\+I\+L\+ED}{AUTH\_WITHDRAW\_FAILED}}
+{\footnotesize\ttfamily final int A\+U\+T\+H\+\_\+\+W\+I\+T\+H\+D\+R\+A\+W\+\_\+\+F\+A\+I\+L\+ED = 3601\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ad3860810b28946fc54d2879102c3ffd4}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ad3860810b28946fc54d2879102c3ffd4}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!B\+A\+N\+N\+E\+D\+\_\+\+M\+E\+M\+B\+ER@{B\+A\+N\+N\+E\+D\+\_\+\+M\+E\+M\+B\+ER}}
+\index{B\+A\+N\+N\+E\+D\+\_\+\+M\+E\+M\+B\+ER@{B\+A\+N\+N\+E\+D\+\_\+\+M\+E\+M\+B\+ER}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{B\+A\+N\+N\+E\+D\+\_\+\+M\+E\+M\+B\+ER}{BANNED\_MEMBER}}
+{\footnotesize\ttfamily final int B\+A\+N\+N\+E\+D\+\_\+\+M\+E\+M\+B\+ER = 7\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a0604bba6bca2f23564f4982fb2ebdd92}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a0604bba6bca2f23564f4982fb2ebdd92}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!I\+N\+V\+A\+L\+I\+D\+\_\+\+J\+S\+O\+N\+\_\+\+F\+O\+R\+M\+AT@{I\+N\+V\+A\+L\+I\+D\+\_\+\+J\+S\+O\+N\+\_\+\+F\+O\+R\+M\+AT}}
+\index{I\+N\+V\+A\+L\+I\+D\+\_\+\+J\+S\+O\+N\+\_\+\+F\+O\+R\+M\+AT@{I\+N\+V\+A\+L\+I\+D\+\_\+\+J\+S\+O\+N\+\_\+\+F\+O\+R\+M\+AT}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{I\+N\+V\+A\+L\+I\+D\+\_\+\+J\+S\+O\+N\+\_\+\+F\+O\+R\+M\+AT}{INVALID\_JSON\_FORMAT}}
+{\footnotesize\ttfamily final int I\+N\+V\+A\+L\+I\+D\+\_\+\+J\+S\+O\+N\+\_\+\+F\+O\+R\+M\+AT = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6751b4f49ed64ad163350daea4088ef5}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6751b4f49ed64ad163350daea4088ef5}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+E\+M\+B\+ER@{I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+E\+M\+B\+ER}}
+\index{I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+E\+M\+B\+ER@{I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+E\+M\+B\+ER}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+E\+M\+B\+ER}{INVALID\_MEMBER}}
+{\footnotesize\ttfamily final int I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+E\+M\+B\+ER = 6\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a55eabe442482e503ad3a382bb50ae619}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a55eabe442482e503ad3a382bb50ae619}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{INVALID\_PARAMETER}}
+{\footnotesize\ttfamily final int I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER = 3\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a304437763f2e717daaa1d6df700e4c87}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a304437763f2e717daaa1d6df700e4c87}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!I\+O\+S\+\_\+\+G\+A\+M\+E\+C\+E\+N\+T\+E\+R\+\_\+\+D\+E\+N\+I\+ED@{I\+O\+S\+\_\+\+G\+A\+M\+E\+C\+E\+N\+T\+E\+R\+\_\+\+D\+E\+N\+I\+ED}}
+\index{I\+O\+S\+\_\+\+G\+A\+M\+E\+C\+E\+N\+T\+E\+R\+\_\+\+D\+E\+N\+I\+ED@{I\+O\+S\+\_\+\+G\+A\+M\+E\+C\+E\+N\+T\+E\+R\+\_\+\+D\+E\+N\+I\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{I\+O\+S\+\_\+\+G\+A\+M\+E\+C\+E\+N\+T\+E\+R\+\_\+\+D\+E\+N\+I\+ED}{IOS\_GAMECENTER\_DENIED}}
+{\footnotesize\ttfamily final int I\+O\+S\+\_\+\+G\+A\+M\+E\+C\+E\+N\+T\+E\+R\+\_\+\+D\+E\+N\+I\+ED = 51\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+for ios specified error code. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ade65abd1b2745d2661b5211a8e05df61}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ade65abd1b2745d2661b5211a8e05df61}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+ID@{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+ID}}
+\index{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+ID@{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+ID}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+ID}{LAUNCHING\_NOT\_EXIST\_CLIENT\_ID}}
+{\footnotesize\ttfamily final int L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+ID = 2002\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a8afd99e2087ecd3562a9ae044f635f0a}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a8afd99e2087ecd3562a9ae044f635f0a}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR@{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR}}
+\index{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR@{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR}{LAUNCHING\_SERVER\_ERROR}}
+{\footnotesize\ttfamily final int L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR = 2001\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Launching error code. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a0c64c2269f5f45c4654d82326b87d193}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a0c64c2269f5f45c4654d82326b87d193}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+A\+PP@{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+A\+PP}}
+\index{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+A\+PP@{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+A\+PP}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+A\+PP}{LAUNCHING\_UNREGISTERED\_APP}}
+{\footnotesize\ttfamily final int L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+A\+PP = 2003\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3c9c4952006aa1c4eae5c564155cdcb9}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3c9c4952006aa1c4eae5c564155cdcb9}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+C\+L\+I\+E\+NT@{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+C\+L\+I\+E\+NT}}
+\index{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+C\+L\+I\+E\+NT@{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+C\+L\+I\+E\+NT}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+C\+L\+I\+E\+NT}{LAUNCHING\_UNREGISTERED\_CLIENT}}
+{\footnotesize\ttfamily final int L\+A\+U\+N\+C\+H\+I\+N\+G\+\_\+\+U\+N\+R\+E\+G\+I\+S\+T\+E\+R\+E\+D\+\_\+\+C\+L\+I\+E\+NT = 2004\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a04e2d71d85a6c52d68be48a80a6376bc}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a04e2d71d85a6c52d68be48a80a6376bc}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!L\+O\+G\+G\+E\+R\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR@{L\+O\+G\+G\+E\+R\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR}}
+\index{L\+O\+G\+G\+E\+R\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR@{L\+O\+G\+G\+E\+R\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{L\+O\+G\+G\+E\+R\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR}{LOGGER\_EXTERNAL\_LIBRARY\_ERROR}}
+{\footnotesize\ttfamily final int L\+O\+G\+G\+E\+R\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR = 6048\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3d318bd428efcb4afb70a5044fa576d6}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a3d318bd428efcb4afb70a5044fa576d6}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!L\+O\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{L\+O\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}
+\index{L\+O\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{L\+O\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{L\+O\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}{LOGGER\_NOT\_INITIALIZED}}
+{\footnotesize\ttfamily final int L\+O\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED = 6001\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logger code. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a9bc34722e36d94d0e8c68e6ae4be9576}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a9bc34722e36d94d0e8c68e6ae4be9576}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!L\+O\+G\+G\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{L\+O\+G\+G\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}}
+\index{L\+O\+G\+G\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{L\+O\+G\+G\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{L\+O\+G\+G\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}{LOGGER\_UNKNOWN\_ERROR}}
+{\footnotesize\ttfamily final int L\+O\+G\+G\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR = 6049\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa4cfcd7abc10b285fbd2aa92be371d05}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa4cfcd7abc10b285fbd2aa92be371d05}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!N\+O\+T\+\_\+\+G\+U\+E\+S\+T\+\_\+\+O\+R\+\_\+\+H\+A\+S\+\_\+\+O\+T\+H\+E\+RS@{N\+O\+T\+\_\+\+G\+U\+E\+S\+T\+\_\+\+O\+R\+\_\+\+H\+A\+S\+\_\+\+O\+T\+H\+E\+RS}}
+\index{N\+O\+T\+\_\+\+G\+U\+E\+S\+T\+\_\+\+O\+R\+\_\+\+H\+A\+S\+\_\+\+O\+T\+H\+E\+RS@{N\+O\+T\+\_\+\+G\+U\+E\+S\+T\+\_\+\+O\+R\+\_\+\+H\+A\+S\+\_\+\+O\+T\+H\+E\+RS}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{N\+O\+T\+\_\+\+G\+U\+E\+S\+T\+\_\+\+O\+R\+\_\+\+H\+A\+S\+\_\+\+O\+T\+H\+E\+RS}{NOT\_GUEST\_OR\_HAS\_OTHERS}}
+{\footnotesize\ttfamily final int N\+O\+T\+\_\+\+G\+U\+E\+S\+T\+\_\+\+O\+R\+\_\+\+H\+A\+S\+\_\+\+O\+T\+H\+E\+RS = 9\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a8eee16890e4829932e769351891ab2e5}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a8eee16890e4829932e769351891ab2e5}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}
+\index{N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}{NOT\_INITIALIZED}}
+{\footnotesize\ttfamily final int N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Common error code. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acf8c8ed3996407204f4905342cbdb656}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acf8c8ed3996407204f4905342cbdb656}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!N\+O\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+IN@{N\+O\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+IN}}
+\index{N\+O\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+IN@{N\+O\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+IN}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{N\+O\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+IN}{NOT\_LOGGED\_IN}}
+{\footnotesize\ttfamily final int N\+O\+T\+\_\+\+L\+O\+G\+G\+E\+D\+\_\+\+IN = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acd9b3f5149cd30338cc6795919ad1c6f}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acd9b3f5149cd30338cc6795919ad1c6f}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED@{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}}
+\index{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED@{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}{NOT\_SUPPORTED}}
+{\footnotesize\ttfamily final int N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_adb77253190b30524cadc6f8c0bb55391}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_adb77253190b30524cadc6f8c0bb55391}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+A\+N\+D\+R\+O\+ID@{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+A\+N\+D\+R\+O\+ID}}
+\index{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+A\+N\+D\+R\+O\+ID@{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+A\+N\+D\+R\+O\+ID}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+A\+N\+D\+R\+O\+ID}{NOT\_SUPPORTED\_ANDROID}}
+{\footnotesize\ttfamily final int N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+A\+N\+D\+R\+O\+ID = 11\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+for unity plugin error code. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a788dd7e723a82d89ade5d47c71c3a19d}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a788dd7e723a82d89ade5d47c71c3a19d}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+I\+OS@{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+I\+OS}}
+\index{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+I\+OS@{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+I\+OS}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+I\+OS}{NOT\_SUPPORTED\_IOS}}
+{\footnotesize\ttfamily final int N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+I\+OS = 12\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a4210f1c3db853e07619403a3e59d80b8}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a4210f1c3db853e07619403a3e59d80b8}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+E\+D\+I\+T\+OR@{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+E\+D\+I\+T\+OR}}
+\index{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+E\+D\+I\+T\+OR@{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+E\+D\+I\+T\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+E\+D\+I\+T\+OR}{NOT\_SUPPORTED\_UNITY\_EDITOR}}
+{\footnotesize\ttfamily final int N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+E\+D\+I\+T\+OR = 13\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2bfe4d07386e86ae23540ca906d805fd}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a2bfe4d07386e86ae23540ca906d805fd}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+S\+T\+A\+N\+D\+A\+L\+O\+NE@{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+S\+T\+A\+N\+D\+A\+L\+O\+NE}}
+\index{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+S\+T\+A\+N\+D\+A\+L\+O\+NE@{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+S\+T\+A\+N\+D\+A\+L\+O\+NE}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+S\+T\+A\+N\+D\+A\+L\+O\+NE}{NOT\_SUPPORTED\_UNITY\_STANDALONE}}
+{\footnotesize\ttfamily final int N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+S\+T\+A\+N\+D\+A\+L\+O\+NE = 14\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a65c66b579258bb75c777a0a9dd4f4248}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a65c66b579258bb75c777a0a9dd4f4248}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+W\+E\+B\+GL@{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+W\+E\+B\+GL}}
+\index{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+W\+E\+B\+GL@{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+W\+E\+B\+GL}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+W\+E\+B\+GL}{NOT\_SUPPORTED\_UNITY\_WEBGL}}
+{\footnotesize\ttfamily final int N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+U\+N\+I\+T\+Y\+\_\+\+W\+E\+B\+GL = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a5e0e68e0ccd1e16526599293c38122e5}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a5e0e68e0ccd1e16526599293c38122e5}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR}}
+\index{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR}{PURCHASE\_EXTERNAL\_LIBRARY\_ERROR}}
+{\footnotesize\ttfamily final int P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR = 4201\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a9c30750707323692db2c8344b96a165c}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a9c30750707323692db2c8344b96a165c}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+E\+N\+O\+U\+G\+H\+\_\+\+C\+A\+SH@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+E\+N\+O\+U\+G\+H\+\_\+\+C\+A\+SH}}
+\index{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+E\+N\+O\+U\+G\+H\+\_\+\+C\+A\+SH@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+E\+N\+O\+U\+G\+H\+\_\+\+C\+A\+SH}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+E\+N\+O\+U\+G\+H\+\_\+\+C\+A\+SH}{PURCHASE\_NOT\_ENOUGH\_CASH}}
+{\footnotesize\ttfamily final int P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+E\+N\+O\+U\+G\+H\+\_\+\+C\+A\+SH = 4004\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa4215a5b5289aa38cdf200c9a54f098d}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aa4215a5b5289aa38cdf200c9a54f098d}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+F\+I\+N\+I\+S\+H\+E\+D\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+P\+U\+R\+C\+H\+A\+S\+I\+NG@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+F\+I\+N\+I\+S\+H\+E\+D\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+P\+U\+R\+C\+H\+A\+S\+I\+NG}}
+\index{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+F\+I\+N\+I\+S\+H\+E\+D\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+P\+U\+R\+C\+H\+A\+S\+I\+NG@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+F\+I\+N\+I\+S\+H\+E\+D\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+P\+U\+R\+C\+H\+A\+S\+I\+NG}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+F\+I\+N\+I\+S\+H\+E\+D\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+P\+U\+R\+C\+H\+A\+S\+I\+NG}{PURCHASE\_NOT\_FINISHED\_PREVIOUS\_PURCHASING}}
+{\footnotesize\ttfamily final int P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+F\+I\+N\+I\+S\+H\+E\+D\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S\+\_\+\+P\+U\+R\+C\+H\+A\+S\+I\+NG = 4003\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6402187d8ebc1adc1ed73f178dbb5e9f}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a6402187d8ebc1adc1ed73f178dbb5e9f}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}
+\index{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}{PURCHASE\_NOT\_INITIALIZED}}
+{\footnotesize\ttfamily final int P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED = 4001\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Purchase error code. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a55d68288ba8d0c83950b50cec0f80a84}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a55d68288ba8d0c83950b50cec0f80a84}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+A\+R\+K\+ET@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+A\+R\+K\+ET}}
+\index{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+A\+R\+K\+ET@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+A\+R\+K\+ET}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+A\+R\+K\+ET}{PURCHASE\_NOT\_SUPPORTED\_MARKET}}
+{\footnotesize\ttfamily final int P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+A\+R\+K\+ET = 4010\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a4954d9c824504e5ecb7a660611a06455}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a4954d9c824504e5ecb7a660611a06455}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}}
+\index{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}{PURCHASE\_UNKNOWN\_ERROR}}
+{\footnotesize\ttfamily final int P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR = 4999\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a5bff106b35e4ec08de731f4c04861a1f}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a5bff106b35e4ec08de731f4c04861a1f}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED}}
+\index{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED@{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED}{PURCHASE\_USER\_CANCELED}}
+{\footnotesize\ttfamily final int P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED = 4002\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a07f43cdd647b44c79a5495de908d15b9}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a07f43cdd647b44c79a5495de908d15b9}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!P\+U\+S\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR@{P\+U\+S\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR}}
+\index{P\+U\+S\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR@{P\+U\+S\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{P\+U\+S\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR}{PUSH\_ALREADY\_IN\_PROGRESS\_ERROR}}
+{\footnotesize\ttfamily final int P\+U\+S\+H\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\+\_\+\+E\+R\+R\+OR = 5102\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a32799f53809522f48199d87b1742424c}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a32799f53809522f48199d87b1742424c}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!P\+U\+S\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR@{P\+U\+S\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR}}
+\index{P\+U\+S\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR@{P\+U\+S\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{P\+U\+S\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR}{PUSH\_EXTERNAL\_LIBRARY\_ERROR}}
+{\footnotesize\ttfamily final int P\+U\+S\+H\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+E\+R\+R\+OR = 5101\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Push error code. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a823a5ca14fe66e59c63f710e2d67f4e8}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a823a5ca14fe66e59c63f710e2d67f4e8}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!P\+U\+S\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{P\+U\+S\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}}
+\index{P\+U\+S\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{P\+U\+S\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{P\+U\+S\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}{PUSH\_UNKNOWN\_ERROR}}
+{\footnotesize\ttfamily final int P\+U\+S\+H\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR = 5999\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ae80de9cf6cf8c7c352392a80f16a739b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ae80de9cf6cf8c7c352392a80f16a739b}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!S\+A\+M\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+OR@{S\+A\+M\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+OR}}
+\index{S\+A\+M\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+OR@{S\+A\+M\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{S\+A\+M\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+OR}{SAME\_REQUESTOR}}
+{\footnotesize\ttfamily final int S\+A\+M\+E\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+OR = 8\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_abb8bcf6617c8d01173161a51a0668ca4}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_abb8bcf6617c8d01173161a51a0668ca4}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+E\+R\+R\+OR@{S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+E\+R\+R\+OR}}
+\index{S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+E\+R\+R\+OR@{S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+E\+R\+R\+OR}{SERVER\_INTERNAL\_ERROR}}
+{\footnotesize\ttfamily final int S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+E\+R\+R\+OR = 8001\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Server error code. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acc3672296c208fd1bea93617c2f7ddeb}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_acc3672296c208fd1bea93617c2f7ddeb}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!S\+E\+R\+V\+E\+R\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+E\+R\+R\+OR@{S\+E\+R\+V\+E\+R\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+E\+R\+R\+OR}}
+\index{S\+E\+R\+V\+E\+R\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+E\+R\+R\+OR@{S\+E\+R\+V\+E\+R\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{S\+E\+R\+V\+E\+R\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+E\+R\+R\+OR}{SERVER\_REMOTE\_SYSTEM\_ERROR}}
+{\footnotesize\ttfamily final int S\+E\+R\+V\+E\+R\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+E\+R\+R\+OR = 8002\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ad6e53269e4ff5378bdc18dc5e2e621f8}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ad6e53269e4ff5378bdc18dc5e2e621f8}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!S\+E\+R\+V\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{S\+E\+R\+V\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}}
+\index{S\+E\+R\+V\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{S\+E\+R\+V\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{S\+E\+R\+V\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}{SERVER\_UNKNOWN\_ERROR}}
+{\footnotesize\ttfamily final int S\+E\+R\+V\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR = 8999\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a010b2b2f8b503acc062ef7c480cb7aa2}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a010b2b2f8b503acc062ef7c480cb7aa2}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!S\+O\+C\+K\+E\+T\+\_\+\+E\+R\+R\+OR@{S\+O\+C\+K\+E\+T\+\_\+\+E\+R\+R\+OR}}
+\index{S\+O\+C\+K\+E\+T\+\_\+\+E\+R\+R\+OR@{S\+O\+C\+K\+E\+T\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{S\+O\+C\+K\+E\+T\+\_\+\+E\+R\+R\+OR}{SOCKET\_ERROR}}
+{\footnotesize\ttfamily final int S\+O\+C\+K\+E\+T\+\_\+\+E\+R\+R\+OR = 110\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ace876501a04e69d568dc5a85c5536804}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_ace876501a04e69d568dc5a85c5536804}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+T\+I\+M\+E\+O\+UT@{S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+T\+I\+M\+E\+O\+UT}}
+\index{S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+T\+I\+M\+E\+O\+UT@{S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+T\+I\+M\+E\+O\+UT}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+T\+I\+M\+E\+O\+UT}{SOCKET\_RESPONSE\_TIMEOUT}}
+{\footnotesize\ttfamily final int S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+T\+I\+M\+E\+O\+UT = 101\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Socket error code. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a4743676acd0471d3d6248b8efca76dbf}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a4743676acd0471d3d6248b8efca76dbf}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!S\+O\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{S\+O\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}}
+\index{S\+O\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{S\+O\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{S\+O\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}{SOCKET\_UNKNOWN\_ERROR}}
+{\footnotesize\ttfamily final int S\+O\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR = 999\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a78a8f85131c22ffd108d29766b27f2e5}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a78a8f85131c22ffd108d29766b27f2e5}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!S\+U\+C\+C\+E\+SS@{S\+U\+C\+C\+E\+SS}}
+\index{S\+U\+C\+C\+E\+SS@{S\+U\+C\+C\+E\+SS}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{S\+U\+C\+C\+E\+SS}{SUCCESS}}
+{\footnotesize\ttfamily final int S\+U\+C\+C\+E\+SS = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Success. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a4c0ed79f0ab3029b200531931583be9f}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a4c0ed79f0ab3029b200531931583be9f}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!U\+I\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{U\+I\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}}
+\index{U\+I\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{U\+I\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{U\+I\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}{UI\_UNKNOWN\_ERROR}}
+{\footnotesize\ttfamily final int U\+I\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR = 6999\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+UI error code. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aed34d12ad749faa05c75f3ad028327df}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_aed34d12ad749faa05c75f3ad028327df}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!U\+S\+E\+R\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+ON@{U\+S\+E\+R\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+ON}}
+\index{U\+S\+E\+R\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+ON@{U\+S\+E\+R\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+ON}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{U\+S\+E\+R\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+ON}{USER\_PERMISSION}}
+{\footnotesize\ttfamily final int U\+S\+E\+R\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+ON = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a5efd97b69e79d6b5296265443a7da202}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a5efd97b69e79d6b5296265443a7da202}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!W\+E\+B\+V\+I\+E\+W\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+RL@{W\+E\+B\+V\+I\+E\+W\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+RL}}
+\index{W\+E\+B\+V\+I\+E\+W\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+RL@{W\+E\+B\+V\+I\+E\+W\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+RL}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{W\+E\+B\+V\+I\+E\+W\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+RL}{WEBVIEW\_INVALID\_URL}}
+{\footnotesize\ttfamily final int W\+E\+B\+V\+I\+E\+W\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+RL = 7001\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Web\+View error code. 
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a5d107027e581550a08babbfd2440da86}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_error_a5d107027e581550a08babbfd2440da86}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}!W\+E\+B\+V\+I\+E\+W\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{W\+E\+B\+V\+I\+E\+W\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}}
+\index{W\+E\+B\+V\+I\+E\+W\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{W\+E\+B\+V\+I\+E\+W\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}!com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error@{com\+::toast\+::android\+::gamebase\+::base\+::\+Gamebase\+Error}}
+\subsubsection{\texorpdfstring{W\+E\+B\+V\+I\+E\+W\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}{WEBVIEW\_UNKNOWN\_ERROR}}
+{\footnotesize\ttfamily final int W\+E\+B\+V\+I\+E\+W\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR = 7999\hspace{0.3cm}{\ttfamily [static]}}
+

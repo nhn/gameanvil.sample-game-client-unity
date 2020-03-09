@@ -1,0 +1,82 @@
+\hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_network}{}\section{Gamebase.\+Network Class Reference}
+\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_network}\index{Gamebase.\+Network@{Gamebase.\+Network}}
+
+
+This class provides network status information.  
+
+
+
+
+Collaboration diagram for Gamebase.\+Network\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_network__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static boolean \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_network_a794a5c628defa296e0feccd47fcd1113}{is\+Connected} ()
+\begin{DoxyCompactList}\small\item\em Indicates whether network connectivity exists and it is possible to establish connections and pass data. \end{DoxyCompactList}\item 
+static int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_network_a266dfc4b57f7c115e6323b37841f9f83}{get\+Type} ()
+\begin{DoxyCompactList}\small\item\em Reports the type of network to which the info in this Network\+Info pertains. \end{DoxyCompactList}\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_network_afc9b9c5fd3623a1bc4efb56deab90dbf}{get\+Type\+Name} ()
+\begin{DoxyCompactList}\small\item\em Return a human-\/readable name describe the type of the network, for example \char`\"{}\+W\+I\+F\+I\char`\"{} or \char`\"{}\+M\+O\+B\+I\+L\+E\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides network status information. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_network_a266dfc4b57f7c115e6323b37841f9f83}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_network_a266dfc4b57f7c115e6323b37841f9f83}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Network@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Network}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Network@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Network}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily static int get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reports the type of network to which the info in this Network\+Info pertains. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+one of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_network_manager_ab6a262f93c8f7b229f0d9968f15ae328}{Network\+Manager\#\+T\+Y\+P\+E\+\_\+\+N\+OT}, \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_network_manager_acdbf2cda592e7b95d250246e4eab7cee}{Network\+Manager\#\+T\+Y\+P\+E\+\_\+\+M\+O\+B\+I\+LE}, ~\newline
+ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_network_manager_acf729cc484f4b6d0e535f19ed31614b5}{Network\+Manager\#\+T\+Y\+P\+E\+\_\+\+W\+I\+FI}, \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_network_manager_ac89feff3bdce716ffc4abafec7cc04d4}{Network\+Manager\#\+T\+Y\+P\+E\+\_\+\+A\+NY},~\newline
+ or other types defined by Network\+Manager. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_network_afc9b9c5fd3623a1bc4efb56deab90dbf}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_network_afc9b9c5fd3623a1bc4efb56deab90dbf}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Network@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Network}!get\+Type\+Name@{get\+Type\+Name}}
+\index{get\+Type\+Name@{get\+Type\+Name}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Network@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Network}}
+\subsubsection{\texorpdfstring{get\+Type\+Name()}{getTypeName()}}
+{\footnotesize\ttfamily static String get\+Type\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return a human-\/readable name describe the type of the network, for example \char`\"{}\+W\+I\+F\+I\char`\"{} or \char`\"{}\+M\+O\+B\+I\+L\+E\char`\"{}. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+the name of the network type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_network_a794a5c628defa296e0feccd47fcd1113}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_network_a794a5c628defa296e0feccd47fcd1113}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Network@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Network}!is\+Connected@{is\+Connected}}
+\index{is\+Connected@{is\+Connected}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Network@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Network}}
+\subsubsection{\texorpdfstring{is\+Connected()}{isConnected()}}
+{\footnotesize\ttfamily static boolean is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Indicates whether network connectivity exists and it is possible to establish connections and pass data. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+true if network connectivity exists, false otherwise. 
+\end{DoxyReturn}

@@ -1,0 +1,81 @@
+/*
+ * © NHN Corp. All rights reserved.
+ * NHN Corp. PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ */
+apply plugin: 'com.android.application'
+
+// Create a variable called keystorePropertiesFile, and initialize it to your
+// keystore.properties file, in the rootProject folder.
+def keystorePropertiesFile = project.file("../keystore.properties")
+
+// Initialize a new Properties() object called keystoreProperties.
+def keystoreProperties = new Properties()
+
+// Load your keystore.properties file into the keystoreProperties object.
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        // TODO: [Fix me] Change to your app's package name.
+        applicationId "com.toast.gamebasesample"
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 5
+        versionName "1.4"
+
+        multiDexEnabled = true
+    }
+
+    dexOptions {
+        javaMaxHeapSize = 4g
+    }
+
+    signingConfigs {
+        config {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+        }
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // For sample application json parsing
+    implementation "com.google.code.gson:gson:$GSON_VERSION"
+
+    // For sample application layout
+    implementation "com.android.support:appcompat-v7:$ANDROID_SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:cardview-v7:$ANDROID_SUPPORT_LIBRARY_VERSION"
+
+    // >>> Gamebase -  Auth Adapter
+    implementation "com.toast.android.gamebase:gamebase-adapter-auth-facebook:$GAMEBASE_VERSION"
+    implementation "com.toast.android.gamebase:gamebase-adapter-auth-google:$GAMEBASE_VERSION"
+    implementation "com.toast.android.gamebase:gamebase-adapter-auth-line:$GAMEBASE_VERSION"
+    implementation "com.toast.android.gamebase:gamebase-adapter-auth-naver:$GAMEBASE_VERSION"
+    implementation "com.toast.android.gamebase:gamebase-adapter-auth-payco:$GAMEBASE_VERSION"
+    implementation "com.toast.android.gamebase:gamebase-adapter-auth-twitter:$GAMEBASE_VERSION"
+
+    // >>> Gamebase -  Purchase Adapter
+    implementation "com.toast.android.gamebase:gamebase-adapter-purchase-google:$GAMEBASE_VERSION"
+    implementation "com.toast.android.gamebase:gamebase-adapter-purchase-onestore:$GAMEBASE_VERSION"
+
+    // >>> Gamebase -  Push Adapter
+    implementation "com.toast.android.gamebase:gamebase-adapter-push-fcm:$GAMEBASE_VERSION"
+}
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,10 +1,10 @@
 ﻿public static class Constants 
 {
     // 게임에서 사용 하는 상수정의
-    public const string KEY_UUID = "uuid";
+    public const string KEY_UUID = "uuid";                          // 플랫폼 테스트에 사용
     public const string KEY_LAUNCHING = "launching";
     public const string KEY_USER_ID = "userId";
-    public const string AUTH_ACCESS_TOKEN = "TapTap_AccessToken";
+    public const string AUTH_ACCESS_TOKEN = "TapTap_AccessToken";   // 플랫폼 테스트에 사용
 
     public const string SCENE_START = "StartScene";
 

@@ -1,0 +1,5 @@
+<map id="TransferAccountInfo" name="TransferAccountInfo">
+<area shape="rect" id="node2" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object.html" title="{ValueObject\n||+ toJsonString()\l+ toPrettyJsonString()\l+ toString()\l+ fromJson()\l+ fromJson()\l+ fromJson()\l}" alt="" coords="5,5,156,145"/>
+<area shape="rect" id="node3" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info_1_1_condition.html" title="{TransferAccountInfo.Condition\n|+ transferAccountType\l+ expirationType\l+ expirationDate\l|}" alt="" coords="180,25,381,125"/>
+<area shape="rect" id="node4" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info_1_1_account.html" title="{TransferAccountInfo.Account\n|+ id\l+ password\l|}" alt="" coords="406,32,598,119"/>
+</map>

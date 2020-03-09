@@ -1,0 +1,5 @@
+<map id="w" name="w">
+<area shape="rect" id="node2" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger.html#a514df8f7e3381ecc0c9dabf76723b688" title="Prints a message at WARN priority. " alt="" coords="192,5,231,31"/>
+<area shape="rect" id="node3" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_system_info.html#a16b2f5edffda1b725d31c6f3b157c0bb" title="com.toast.android.gamebase.\lGamebaseSystemInfo.setStoreCode" alt="" coords="92,55,330,93"/>
+<area shape="rect" id="node4" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase.html#a8933fcc2fc156c87feee53efadfa4bb0" title="Set the store code of the current app. " alt="" coords="378,55,610,93"/>
+</map>

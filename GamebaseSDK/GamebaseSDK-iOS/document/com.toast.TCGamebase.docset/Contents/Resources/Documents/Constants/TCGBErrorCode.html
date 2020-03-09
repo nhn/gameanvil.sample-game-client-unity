@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>TCGBErrorCode Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">TCGamebase </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">NHN Entertainment</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">TCGBErrorCode Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>TCGBConstants.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">TCGBErrorCode</h3>
+                    
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(NSInteger, TCGBErrorCode ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_NOT_INITIALIZED</a> = 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_NOT_LOGGED_IN</a> = 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_INVALID_PARAMETER</a> = 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_INVALID_JSON_FORMAT</a> = 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_USER_PERMISSION</a> = 5,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_INVALID_MEMBER</a> = 6,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_BANNED_MEMBER</a> = 7,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_SAME_REQUESTOR</a> = 8,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_NOT_GUEST_OR_HAS_OTHERS</a> = 9,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_NOT_SUPPORTED</a> = 10,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_NOT_SUPPORTED_ANDROID</a> = 11,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_NOT_SUPPORTED_IOS</a> = 12,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_NOT_SUPPORTED_UNITY_EDITOR</a> = 13,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_NOT_SUPPORTED_UNITY_STANDALONE</a> = 14,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_NOT_SUPPORTED_UNITY_WEBGL</a> = 15,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_ANDROID_ACTIVITY_DESTROYED</a> = 31,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_ANDROID_ACTIVEAPP_NOT_CALLED</a> = 32,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_IOS_GAMECENTER_DENIED</a> = 51,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_SOCKET_RESPONSE_TIMEOUT</a> = 101,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_SOCKET_ERROR</a> = 110,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_UNKNOWN_ERROR</a> = 999,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_LAUNCHING_SERVER_ERROR</a> = 2001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_LAUNCHING_NOT_EXIST_CLIENT_ID</a> = 2002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_LAUNCHING_UNREGISTERED_APP</a> = 2003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_LAUNCHING_UNREGISTERED_CLIENT</a> = 2004,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_USER_CANCELED</a> = 3001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_NOT_SUPPORTED_PROVIDER</a> = 3002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_NOT_EXIST_MEMBER</a> = 3003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_EXTERNAL_LIBRARY_ERROR</a> = 3009,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_ALREADY_IN_PROGRESS_ERROR</a> = 3010,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_TRANSFERACCOUNT_EXPIRED</a> = 3041,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_TRANSFERACCOUNT_BLOCK</a> = 3042,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERORR_AUTH_TRANSFERACCOUNT_INVALID_ID</a> = 3043,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERORR_AUTH_TRANSFERACCOUNT_INVALID_PASSWORD</a> = 3044,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_TRANSFERACCOUNT_CONSOLE_NO_CONDITION</a> = 3045,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_TRANSFERACCOUNT_NOT_EXIST</a> = 3046,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_TRANSFERACCOUNT_ALREADY_EXIST_ID</a> = 3047,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_TRANSFERACCOUNT_ALREADY_USED</a> = 3048,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_TOKEN_LOGIN_FAILED</a> = 3101,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_TOKEN_LOGIN_INVALID_TOKEN_INFO</a> = 3102,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_TOKEN_LOGIN_INVALID_LAST_LOGGED_IN_IDP</a> = 3103,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_IDP_LOGIN_FAILED</a> = 3201,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_IDP_LOGIN_INVALID_IDP_INFO</a> = 3202,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_ADD_MAPPING_FAILED</a> = 3301,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_ADD_MAPPING_ALREADY_MAPPED_TO_OTHER_MEMBER</a> = 3302,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_ADD_MAPPING_ALREADY_HAS_SAME_IDP</a> = 3303,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_ADD_MAPPING_INVALID_IDP_INFO</a> = 3304,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_ADD_MAPPING_CANNOT_ADD_GUEST_IDP</a> = 3305,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_NOT_EXIST_KEY</a> = 3311,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_ALREADY_USED_KEY</a> = 3312,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_EXPIRED_KEY</a> = 3313,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_DIFFERENT_IDP</a> = 3314,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_DIFFERENT_AUTHKEY</a> = 3315,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_REMOVE_MAPPING_FAILED</a> = 3401,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_REMOVE_MAPPING_LAST_MAPPED_IDP</a> = 3402,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_REMOVE_MAPPING_LOGGED_IN_IDP</a> = 3403,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_LOGOUT_FAILED</a> = 3501,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_WITHDRAW_FAILED</a> = 3601,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_NOT_PLAYABLE</a> = 3701,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_AUTH_UNKNOWN_ERROR</a> = 3999,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_PURCHASE_NOT_INITIALIZED</a> = 4001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_PURCHASE_USER_CANCELED</a> = 4002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_PURCHASE_NOT_FINISHED_PREVIOUS_PURCHASING</a> = 4003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_PURCHASE_NOT_ENOUGH_CASH</a> = 4004,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_PURCHASE_NOT_SUPPORTED_MARKET</a> = 4010,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_PURCHASE_EXTERNAL_LIBRARY_ERROR</a> = 4201,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_PURCHASE_UNKNOWN_ERROR</a> = 4999,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_PUSH_EXTERNAL_LIBRARY_ERROR</a> = 5101,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_PUSH_ALREADY_IN_PROGRESS_ERROR</a> = 5102,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_PUSH_UNKNOWN_ERROR</a> = 5999,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_UI_UNKNOWN_ERROR</a> = 6999,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_WEBVIEW_INVALID_URL</a> = 7001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_WEBVIEW_UNKNOWN_ERROR</a> = 7999,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_SERVER_INTERNAL_ERROR</a> = 8001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_SERVER_REMOTE_SYSTEM_ERROR</a> = 8002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_SERVER_UNKNOWN_ERROR</a> = 8999,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_INVALID_INTERNAL_STATE</a> = 11001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">TCGB_ERROR_NOT_CALLABLE_STATE</a> = 11002,<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="TCGB_ERROR_NOT_INITIALIZED"></a><code>TCGB_ERROR_NOT_INITIALIZED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_NOT_LOGGED_IN"></a><code>TCGB_ERROR_NOT_LOGGED_IN</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_INVALID_PARAMETER"></a><code>TCGB_ERROR_INVALID_PARAMETER</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_INVALID_JSON_FORMAT"></a><code>TCGB_ERROR_INVALID_JSON_FORMAT</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_USER_PERMISSION"></a><code>TCGB_ERROR_USER_PERMISSION</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_INVALID_MEMBER"></a><code>TCGB_ERROR_INVALID_MEMBER</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_BANNED_MEMBER"></a><code>TCGB_ERROR_BANNED_MEMBER</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_SAME_REQUESTOR"></a><code>TCGB_ERROR_SAME_REQUESTOR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_NOT_GUEST_OR_HAS_OTHERS"></a><code>TCGB_ERROR_NOT_GUEST_OR_HAS_OTHERS</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_NOT_SUPPORTED"></a><code>TCGB_ERROR_NOT_SUPPORTED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_NOT_SUPPORTED_ANDROID"></a><code>TCGB_ERROR_NOT_SUPPORTED_ANDROID</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_NOT_SUPPORTED_IOS"></a><code>TCGB_ERROR_NOT_SUPPORTED_IOS</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_NOT_SUPPORTED_UNITY_EDITOR"></a><code>TCGB_ERROR_NOT_SUPPORTED_UNITY_EDITOR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_NOT_SUPPORTED_UNITY_STANDALONE"></a><code>TCGB_ERROR_NOT_SUPPORTED_UNITY_STANDALONE</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_NOT_SUPPORTED_UNITY_WEBGL"></a><code>TCGB_ERROR_NOT_SUPPORTED_UNITY_WEBGL</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_ANDROID_ACTIVITY_DESTROYED"></a><code>TCGB_ERROR_ANDROID_ACTIVITY_DESTROYED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_ANDROID_ACTIVEAPP_NOT_CALLED"></a><code>TCGB_ERROR_ANDROID_ACTIVEAPP_NOT_CALLED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_IOS_GAMECENTER_DENIED"></a><code>TCGB_ERROR_IOS_GAMECENTER_DENIED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_SOCKET_RESPONSE_TIMEOUT"></a><code>TCGB_ERROR_SOCKET_RESPONSE_TIMEOUT</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_SOCKET_ERROR"></a><code>TCGB_ERROR_SOCKET_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_UNKNOWN_ERROR"></a><code>TCGB_ERROR_UNKNOWN_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_LAUNCHING_SERVER_ERROR"></a><code>TCGB_ERROR_LAUNCHING_SERVER_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_LAUNCHING_NOT_EXIST_CLIENT_ID"></a><code>TCGB_ERROR_LAUNCHING_NOT_EXIST_CLIENT_ID</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_LAUNCHING_UNREGISTERED_APP"></a><code>TCGB_ERROR_LAUNCHING_UNREGISTERED_APP</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_LAUNCHING_UNREGISTERED_CLIENT"></a><code>TCGB_ERROR_LAUNCHING_UNREGISTERED_CLIENT</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_USER_CANCELED"></a><code>TCGB_ERROR_AUTH_USER_CANCELED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_NOT_SUPPORTED_PROVIDER"></a><code>TCGB_ERROR_AUTH_NOT_SUPPORTED_PROVIDER</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_NOT_EXIST_MEMBER"></a><code>TCGB_ERROR_AUTH_NOT_EXIST_MEMBER</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_EXTERNAL_LIBRARY_ERROR"></a><code>TCGB_ERROR_AUTH_EXTERNAL_LIBRARY_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_ALREADY_IN_PROGRESS_ERROR"></a><code>TCGB_ERROR_AUTH_ALREADY_IN_PROGRESS_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_TRANSFERACCOUNT_EXPIRED"></a><code>TCGB_ERROR_AUTH_TRANSFERACCOUNT_EXPIRED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_TRANSFERACCOUNT_BLOCK"></a><code>TCGB_ERROR_AUTH_TRANSFERACCOUNT_BLOCK</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERORR_AUTH_TRANSFERACCOUNT_INVALID_ID"></a><code>TCGB_ERORR_AUTH_TRANSFERACCOUNT_INVALID_ID</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERORR_AUTH_TRANSFERACCOUNT_INVALID_PASSWORD"></a><code>TCGB_ERORR_AUTH_TRANSFERACCOUNT_INVALID_PASSWORD</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_TRANSFERACCOUNT_CONSOLE_NO_CONDITION"></a><code>TCGB_ERROR_AUTH_TRANSFERACCOUNT_CONSOLE_NO_CONDITION</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_TRANSFERACCOUNT_NOT_EXIST"></a><code>TCGB_ERROR_AUTH_TRANSFERACCOUNT_NOT_EXIST</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_TRANSFERACCOUNT_ALREADY_EXIST_ID"></a><code>TCGB_ERROR_AUTH_TRANSFERACCOUNT_ALREADY_EXIST_ID</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_TRANSFERACCOUNT_ALREADY_USED"></a><code>TCGB_ERROR_AUTH_TRANSFERACCOUNT_ALREADY_USED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_TOKEN_LOGIN_FAILED"></a><code>TCGB_ERROR_AUTH_TOKEN_LOGIN_FAILED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_TOKEN_LOGIN_INVALID_TOKEN_INFO"></a><code>TCGB_ERROR_AUTH_TOKEN_LOGIN_INVALID_TOKEN_INFO</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_TOKEN_LOGIN_INVALID_LAST_LOGGED_IN_IDP"></a><code>TCGB_ERROR_AUTH_TOKEN_LOGIN_INVALID_LAST_LOGGED_IN_IDP</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_IDP_LOGIN_FAILED"></a><code>TCGB_ERROR_AUTH_IDP_LOGIN_FAILED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_IDP_LOGIN_INVALID_IDP_INFO"></a><code>TCGB_ERROR_AUTH_IDP_LOGIN_INVALID_IDP_INFO</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_ADD_MAPPING_FAILED"></a><code>TCGB_ERROR_AUTH_ADD_MAPPING_FAILED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_ADD_MAPPING_ALREADY_MAPPED_TO_OTHER_MEMBER"></a><code>TCGB_ERROR_AUTH_ADD_MAPPING_ALREADY_MAPPED_TO_OTHER_MEMBER</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_ADD_MAPPING_ALREADY_HAS_SAME_IDP"></a><code>TCGB_ERROR_AUTH_ADD_MAPPING_ALREADY_HAS_SAME_IDP</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_ADD_MAPPING_INVALID_IDP_INFO"></a><code>TCGB_ERROR_AUTH_ADD_MAPPING_INVALID_IDP_INFO</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_ADD_MAPPING_CANNOT_ADD_GUEST_IDP"></a><code>TCGB_ERROR_AUTH_ADD_MAPPING_CANNOT_ADD_GUEST_IDP</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_NOT_EXIST_KEY"></a><code>TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_NOT_EXIST_KEY</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_ALREADY_USED_KEY"></a><code>TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_ALREADY_USED_KEY</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_EXPIRED_KEY"></a><code>TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_EXPIRED_KEY</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_DIFFERENT_IDP"></a><code>TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_DIFFERENT_IDP</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_DIFFERENT_AUTHKEY"></a><code>TCGB_ERROR_AUTH_ADD_MAPPING_FORCIBLY_DIFFERENT_AUTHKEY</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_REMOVE_MAPPING_FAILED"></a><code>TCGB_ERROR_AUTH_REMOVE_MAPPING_FAILED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_REMOVE_MAPPING_LAST_MAPPED_IDP"></a><code>TCGB_ERROR_AUTH_REMOVE_MAPPING_LAST_MAPPED_IDP</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_REMOVE_MAPPING_LOGGED_IN_IDP"></a><code>TCGB_ERROR_AUTH_REMOVE_MAPPING_LOGGED_IN_IDP</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_LOGOUT_FAILED"></a><code>TCGB_ERROR_AUTH_LOGOUT_FAILED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_WITHDRAW_FAILED"></a><code>TCGB_ERROR_AUTH_WITHDRAW_FAILED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_NOT_PLAYABLE"></a><code>TCGB_ERROR_AUTH_NOT_PLAYABLE</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_AUTH_UNKNOWN_ERROR"></a><code>TCGB_ERROR_AUTH_UNKNOWN_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_PURCHASE_NOT_INITIALIZED"></a><code>TCGB_ERROR_PURCHASE_NOT_INITIALIZED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_PURCHASE_USER_CANCELED"></a><code>TCGB_ERROR_PURCHASE_USER_CANCELED</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_PURCHASE_NOT_FINISHED_PREVIOUS_PURCHASING"></a><code>TCGB_ERROR_PURCHASE_NOT_FINISHED_PREVIOUS_PURCHASING</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_PURCHASE_NOT_ENOUGH_CASH"></a><code>TCGB_ERROR_PURCHASE_NOT_ENOUGH_CASH</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_PURCHASE_NOT_SUPPORTED_MARKET"></a><code>TCGB_ERROR_PURCHASE_NOT_SUPPORTED_MARKET</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_PURCHASE_EXTERNAL_LIBRARY_ERROR"></a><code>TCGB_ERROR_PURCHASE_EXTERNAL_LIBRARY_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_PURCHASE_UNKNOWN_ERROR"></a><code>TCGB_ERROR_PURCHASE_UNKNOWN_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_PUSH_EXTERNAL_LIBRARY_ERROR"></a><code>TCGB_ERROR_PUSH_EXTERNAL_LIBRARY_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_PUSH_ALREADY_IN_PROGRESS_ERROR"></a><code>TCGB_ERROR_PUSH_ALREADY_IN_PROGRESS_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_PUSH_UNKNOWN_ERROR"></a><code>TCGB_ERROR_PUSH_UNKNOWN_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_UI_UNKNOWN_ERROR"></a><code>TCGB_ERROR_UI_UNKNOWN_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_WEBVIEW_INVALID_URL"></a><code>TCGB_ERROR_WEBVIEW_INVALID_URL</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_WEBVIEW_UNKNOWN_ERROR"></a><code>TCGB_ERROR_WEBVIEW_UNKNOWN_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_SERVER_INTERNAL_ERROR"></a><code>TCGB_ERROR_SERVER_INTERNAL_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_SERVER_REMOTE_SYSTEM_ERROR"></a><code>TCGB_ERROR_SERVER_REMOTE_SYSTEM_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_SERVER_UNKNOWN_ERROR"></a><code>TCGB_ERROR_SERVER_UNKNOWN_ERROR</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_INVALID_INTERNAL_STATE"></a><code>TCGB_ERROR_INVALID_INTERNAL_STATE</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="TCGB_ERROR_NOT_CALLABLE_STATE"></a><code>TCGB_ERROR_NOT_CALLABLE_STATE</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">TCGBConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 NHN Entertainment. All rights reserved. Updated: 2020-02-24</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

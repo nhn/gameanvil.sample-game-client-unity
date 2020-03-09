@@ -1,0 +1,6 @@
+framework module GamebaseAuthAppleidAdapter {
+  umbrella header "GamebaseAuthAppleidAdapter.h"
+
+  export *
+  module * { export * }
+}

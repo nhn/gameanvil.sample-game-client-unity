@@ -1,0 +1,5 @@
+<map id="i" name="i">
+<area shape="rect" id="node2" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger.html#a7cd0a94de5c27beee2da674bfcccfece" title="Prints a message at INFO priority. " alt="" coords="194,5,233,31"/>
+<area shape="rect" id="node3" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_system_info.html#a946aee63d952b390e1d4a96fa3e34407" title="com.toast.android.gamebase.\lGamebaseSystemInfo.getDeviceKey" alt="" coords="94,55,333,93"/>
+<area shape="rect" id="node4" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_system_info.html#a6056123d9b0c179c561e9d3567dda1e1" title="com.toast.android.gamebase.\lGamebaseSystemInfo.getGuestUUID" alt="" coords="92,117,336,156"/>
+</map>

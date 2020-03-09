@@ -1,0 +1,7 @@
+var namespacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase =
+[
+    [ "PurchasableItem", "classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item.html", "classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item" ],
+    [ "PurchasableReceipt", "classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt.html", "classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_receipt" ],
+    [ "PurchasableRetryTransactionResult", "classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result.html", "classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_retry_transaction_result" ],
+    [ "PurchaseProvider", "classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchase_provider.html", "classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchase_provider" ]
+];

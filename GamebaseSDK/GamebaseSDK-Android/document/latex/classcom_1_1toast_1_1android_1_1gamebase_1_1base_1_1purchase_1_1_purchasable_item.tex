@@ -1,0 +1,179 @@
+\hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item}{}\section{Purchasable\+Item Class Reference}
+\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item}\index{Purchasable\+Item@{Purchasable\+Item}}
+
+
+The information of the item that can buy.  
+
+
+
+
+Inheritance diagram for Purchasable\+Item\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Purchasable\+Item\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a}{to\+Json\+String} ()
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a054431f3d988a22295cfc8b784ff2637}{to\+Pretty\+Json\+String} ()
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520}{to\+String} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static$<$ T $>$ T \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b}{from\+Json} (@Non\+Null String json, Class$<$ T $>$ class\+OfT)
+\item 
+static$<$ T $>$ T \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101}{from\+Json} (@Non\+Null J\+S\+O\+N\+Object json\+Object, Class$<$ T $>$ class\+OfT)
+\item 
+static$<$ T $>$ T \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_aa901d97d495150b54bcb80c05672f58a}{from\+Json} (@Non\+Null String json, Type type)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+long \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_ae238e7a4dbb904519cb83075b2ac046f}{item\+Seq}
+\item 
+float \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_a500426aec97889b7572f25ae45c06a8d}{price}
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_a21ef1fb8b40391856719451100a37a00}{currency}
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_aee3a122fff06051fbf74cc9051fb90c4}{item\+Name}
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_a5d29b8e8b35b651ac8ec048046b800c3}{market\+Item\+Id}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The information of the item that can buy. 
+
+The function \hyperlink{}{Purchasable\#request\+Purchase(\+Activity, long, Purchasable.\+Purchase\+Callback)} must use \textquotesingle{}item\+Seq\textquotesingle{} value in this class.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{}{Purchasable\#request\+Item\+List\+Purchasable(\+Activity, Purchasable.\+Purchase\+Callback)} 
+
+\hyperlink{}{Purchasable\#request\+Item\+List\+At\+I\+A\+P\+Console(\+Activity, Purchasable.\+Purchase\+Callback)} 
+
+\hyperlink{}{Purchasable\#request\+Item\+List\+At\+Market\+Console(\+Activity, Purchasable.\+Purchase\+Callback)} 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+2016-\/12-\/07 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}!from\+Json@{from\+Json}}
+\index{from\+Json@{from\+Json}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}}
+\subsubsection{\texorpdfstring{from\+Json()}{fromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static $<$T$>$ T from\+Json (\begin{DoxyParamCaption}\item[{@Non\+Null String}]{json,  }\item[{Class$<$ T $>$}]{class\+OfT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}!from\+Json@{from\+Json}}
+\index{from\+Json@{from\+Json}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}}
+\subsubsection{\texorpdfstring{from\+Json()}{fromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static $<$T$>$ T from\+Json (\begin{DoxyParamCaption}\item[{@Non\+Null J\+S\+O\+N\+Object}]{json\+Object,  }\item[{Class$<$ T $>$}]{class\+OfT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_aa901d97d495150b54bcb80c05672f58a}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_aa901d97d495150b54bcb80c05672f58a}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}!from\+Json@{from\+Json}}
+\index{from\+Json@{from\+Json}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}}
+\subsubsection{\texorpdfstring{from\+Json()}{fromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static $<$T$>$ T from\+Json (\begin{DoxyParamCaption}\item[{@Non\+Null String}]{json,  }\item[{Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}!to\+Json\+String@{to\+Json\+String}}
+\index{to\+Json\+String@{to\+Json\+String}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}}
+\subsubsection{\texorpdfstring{to\+Json\+String()}{toJsonString()}}
+{\footnotesize\ttfamily String to\+Json\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a054431f3d988a22295cfc8b784ff2637}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a054431f3d988a22295cfc8b784ff2637}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}!to\+Pretty\+Json\+String@{to\+Pretty\+Json\+String}}
+\index{to\+Pretty\+Json\+String@{to\+Pretty\+Json\+String}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}}
+\subsubsection{\texorpdfstring{to\+Pretty\+Json\+String()}{toPrettyJsonString()}}
+{\footnotesize\ttfamily String to\+Pretty\+Json\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_a21ef1fb8b40391856719451100a37a00}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_a21ef1fb8b40391856719451100a37a00}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}!currency@{currency}}
+\index{currency@{currency}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}}
+\subsubsection{\texorpdfstring{currency}{currency}}
+{\footnotesize\ttfamily String currency}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_aee3a122fff06051fbf74cc9051fb90c4}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_aee3a122fff06051fbf74cc9051fb90c4}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}!item\+Name@{item\+Name}}
+\index{item\+Name@{item\+Name}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}}
+\subsubsection{\texorpdfstring{item\+Name}{itemName}}
+{\footnotesize\ttfamily String item\+Name}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_ae238e7a4dbb904519cb83075b2ac046f}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_ae238e7a4dbb904519cb83075b2ac046f}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}!item\+Seq@{item\+Seq}}
+\index{item\+Seq@{item\+Seq}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}}
+\subsubsection{\texorpdfstring{item\+Seq}{itemSeq}}
+{\footnotesize\ttfamily long item\+Seq}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_a5d29b8e8b35b651ac8ec048046b800c3}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_a5d29b8e8b35b651ac8ec048046b800c3}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}!market\+Item\+Id@{market\+Item\+Id}}
+\index{market\+Item\+Id@{market\+Item\+Id}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}}
+\subsubsection{\texorpdfstring{market\+Item\+Id}{marketItemId}}
+{\footnotesize\ttfamily String market\+Item\+Id}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_a500426aec97889b7572f25ae45c06a8d}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1purchase_1_1_purchasable_item_a500426aec97889b7572f25ae45c06a8d}} 
+\index{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}!price@{price}}
+\index{price@{price}!com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item@{com\+::toast\+::android\+::gamebase\+::base\+::purchase\+::\+Purchasable\+Item}}
+\subsubsection{\texorpdfstring{price}{price}}
+{\footnotesize\ttfamily float price}
+

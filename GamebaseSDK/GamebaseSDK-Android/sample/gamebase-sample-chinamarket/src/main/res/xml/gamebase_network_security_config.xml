@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Otaku market start -->
+        <domain includeSubdomains="true">login.otakuol.com</domain>
+        <domain includeSubdomains="true">pay.otakuol.com</domain>
+        <domain includeSubdomains="true">otaku-wxpay.redbeancorp.com</domain>
+        <domain includeSubdomains="true">accounts.otakudev.net</domain>
+        <!-- Otaku market end -->
+
+        <!-- Redbean CC SDK start -->
+        <domain includeSubdomains="true">azkaban.otakudev.net</domain>
+        <domain includeSubdomains="true">alpha-azkaban.redbeancorp.com</domain>
+        <!-- Redbean CC SDK end -->
+    </domain-config>
+</network-security-config>

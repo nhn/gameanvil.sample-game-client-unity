@@ -1,0 +1,6 @@
+<map id="AuthToken" name="AuthToken">
+<area shape="rect" id="node2" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object.html" title="{ValueObject\n||+ toJsonString()\l+ toPrettyJsonString()\l+ toString()\l+ fromJson()\l+ fromJson()\l+ fromJson()\l}" alt="" coords="10,5,161,145"/>
+<area shape="rect" id="node3" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info.html" title="Ban information for user who have been banned. " alt="" coords="13,372,107,525"/>
+<area shape="rect" id="node4" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_gamebase_token.html" title="{AuthGamebaseToken\n|~ accessToken\l~ accessTokenSecret\l|+ AuthGamebaseToken()\l+ getAccessToken()\l+ getAccessTokenSecret()\l}" alt="" coords="114,392,292,505"/>
+<area shape="rect" id="node7" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1mapping_1_1data_1_1_forcing_mapping_ticket.html" title="{ForcingMappingTicket\n|+ idPCode\l+ userId\l+ mappedUserId\l+ forcingMappingKey\l+ expirationDate\l+ KEY_FORCING_MAPPING\l_TICKET\l|+ from()\l}" alt="" coords="148,195,346,348"/>
+</map>

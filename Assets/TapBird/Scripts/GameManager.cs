@@ -7,7 +7,7 @@ using TardisConnector;
 using UnityEngine;
 using UnityEngine.UI;
 
-// 탬버드 게임 스크립트
+// 탭버드 게임 스크립트
 public class GameManager : MonoBehaviour
 {
     public delegate void GameDelegate();
@@ -132,6 +132,7 @@ public class GameManager : MonoBehaviour
 
     void OnPlayerDied()
     {
+        // 게임 끝
         gameOver = true;
         int savedScore = PlayerPrefs.GetInt("HighScore");
         if (score > savedScore)
@@ -143,6 +144,7 @@ public class GameManager : MonoBehaviour
 
     void SetPageState(PageState state)
     {
+        // 게임 상태에따른 화면 설정
         switch (state)
         {
             case PageState.None:

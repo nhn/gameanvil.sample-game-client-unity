@@ -1,0 +1,4 @@
+var interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1ui_1_1_simple_input_text_dialog_1_1_on_click_listener =
+[
+    [ "onClick", "interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1ui_1_1_simple_input_text_dialog_1_1_on_click_listener.html#a8f1e820ffcfe747ab5b068ba89099303", null ]
+];

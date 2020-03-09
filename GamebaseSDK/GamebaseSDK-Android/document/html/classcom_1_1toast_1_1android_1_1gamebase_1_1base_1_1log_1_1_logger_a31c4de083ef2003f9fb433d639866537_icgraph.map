@@ -1,0 +1,10 @@
+<map id="e" name="e">
+<area shape="rect" id="node2" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1auth_1_1_auth_provider_profile.html#a1c5fdaa251e51c6a42b1428dbcfb9205" title="com.toast.android.gamebase.base.auth.\lAuthProviderProfile.AuthProviderProfile" alt="" coords="112,5,372,44"/>
+<area shape="rect" id="node3" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception.html#a6b2a39146828e6b135949df810b8e052" title="com.toast.android.gamebase.base.\lGamebaseException.toJson" alt="" coords="127,92,357,131"/>
+<area shape="rect" id="node6" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception.html#a054431f3d988a22295cfc8b784ff2637" title="com.toast.android.gamebase.base.\lGamebaseException.toPrettyJsonString" alt="" coords="440,149,698,188"/>
+<area shape="rect" id="node7" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger.html#a98ed530e788c0a6fef1e9b951d3693f9" title="Prints a message at ERROR priority. " alt="" coords="223,207,261,232"/>
+<area shape="rect" id="node8" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_configuration_1_1_builder.html#a66db0aa4dc8c164fd7d93cd20e0af13e" title="API for the test application. " alt="" coords="126,256,358,308"/>
+<area shape="rect" id="node9" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_system_info.html#a368703814b26afb8a1d7d53a0c5c87de" title="com.toast.android.gamebase.\lGamebaseSystemInfo.getGamebaseLanguage" alt="" coords="92,332,392,371"/>
+<area shape="rect" id="node4" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception.html#a58acf6402880e9769d79d8667581fa6a" title="com.toast.android.gamebase.base.\lGamebaseException.toJsonString" alt="" coords="454,87,684,125"/>
+<area shape="rect" id="node5" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception.html#ad146fa8579a5f8a876c4688cc5a68520" title="com.toast.android.gamebase.base.\lGamebaseException.toString" alt="" coords="746,87,975,125"/>
+</map>

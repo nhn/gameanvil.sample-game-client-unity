@@ -1,0 +1,38 @@
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Class }&\textbf{ A\+PI Name }&\textbf{ Added Version }&\textbf{ Deprecated Version }&\textbf{ Removed Version }&\textbf{ Replacement A\+PI Name  }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Class }&\textbf{ A\+PI Name }&\textbf{ Added Version }&\textbf{ Deprecated Version }&\textbf{ Removed Version }&\textbf{ Replacement A\+PI Name  }\\\cline{1-6}
+\endhead
+Gamebase\+Configuration.\+Builder &new Gamebase\+Configuration.\+Builder() &1.\+0.\+0 &1.\+10.\+0 &2.\+6.\+0 &\hyperlink{}{Gamebase\+Configuration.\+Builder(\+String, String)} \\\cline{1-6}
+Gamebase\+Configuration.\+Builder &new Gamebase\+Configuration.\+Builder(\+String, String) &1.\+0.\+0 &2.\+6.\+0 &&\hyperlink{}{Gamebase\+Configuration\#new\+Builder(\+String, String, String)} \\\cline{1-6}
+Gamebase\+Configuration.\+Builder &set\+App\+Id(\+String) &1.\+4.\+0 &1.\+10.\+0 &2.\+6.\+0 &\hyperlink{}{Gamebase\+Configuration.\+Builder(\+String, String)} \\\cline{1-6}
+Gamebase\+Configuration.\+Builder &set\+App\+Version(\+String) &1.\+4.\+0 &1.\+10.\+0 &2.\+6.\+0 &\hyperlink{}{Gamebase\+Configuration.\+Builder(\+String, String)} \\\cline{1-6}
+Gamebase\+Configuration.\+Builder &set\+Store\+Code(\+String) &1.\+4.\+0 &2.\+6.\+0 &&\hyperlink{}{Gamebase\+Configuration\#new\+Builder(\+String, String, String)} \\\cline{1-6}
+Gamebase\+Configuration.\+Builder &set\+F\+C\+M\+Sender\+Id(\+String) &1.\+4.\+0 &2.\+6.\+0 &&You don\textquotesingle{}t need to call this A\+PI anymore. \\\cline{1-6}
+Gamebase\+Configuration.\+Builder &set\+Tencent\+Access\+Key(\+String) &1.\+4.\+0 &2.\+6.\+0 &&You need to define Access\+Key and Access\+ID to the Android\+Manifest.\+xml or build.\+gradle. \\\cline{1-6}
+Gamebase\+Configuration.\+Builder &set\+Tencent\+Access\+Id(\+String) &1.\+4.\+0 &2.\+6.\+0 &&You need to define Access\+Key and Access\+ID to the Android\+Manifest.\+xml or build.\+gradle. \\\cline{1-6}
+Gamebase\+Configuration &get\+Server\+Api\+Version() &1.\+0.\+0 &2.\+6.\+0 &&Do not call this method anymore. \\\cline{1-6}
+Gamebase\+Configuration &get\+Zone\+Type() &1.\+0.\+0 &2.\+6.\+0 &&Do not call this method anymore. \\\cline{1-6}
+Gamebase\+Configuration &get\+F\+C\+M\+Sender\+Id() &1.\+4.\+0 &2.\+6.\+0 &&This A\+PI is not used anymore. \\\cline{1-6}
+Gamebase\+Configuration &get\+Tencent\+Access\+Id() &1.\+4.\+0 &2.\+6.\+0 &&This A\+PI is not used anymore. \\\cline{1-6}
+Gamebase\+Configuration &get\+Tencent\+Access\+Key() &1.\+4.\+0 &2.\+6.\+0 &&This A\+PI is not used anymore. \\\cline{1-6}
+Gamebase &active\+App(\+Context) &1.\+4.\+0 &2.\+6.\+0 &&This is called by the Gamebase\+Init\+Provider automatically. \\\cline{1-6}
+Gamebase &get\+Auth\+Ban\+Info() &1.\+2.\+0 &1.\+11.\+0 &2.\+6.\+0 &\hyperlink{}{Gamebase\#get\+Ban\+Info()} \\\cline{1-6}
+Gamebase &get\+Language\+Code() &1.\+4.\+0 &1.\+7.\+0 &2.\+6.\+0 &\hyperlink{}{Gamebase\#get\+Device\+Language\+Code()} \\\cline{1-6}
+Gamebase &issue\+Transfer\+Key(long, Gamebase\+Data\+Callback$<$\+Transfer\+Key\+Info$>$) &1.\+9.\+0 &2.\+1.\+0 &2.\+1.\+0 &Transfer\+Account \\\cline{1-6}
+Gamebase &request\+Transfer(\+String, Gamebase\+Data\+Callback$<$\+Auth\+Token$>$) &1.\+9.\+0 &2.\+1.\+0 &2.\+1.\+0 &Transfer\+Account \\\cline{1-6}
+Gamebase.\+Launching &add\+On\+Updated\+Listener(\+Launching\+On\+Update\+Listener) &1.\+4.\+0 &1.\+8.\+0 &1.\+14.\+0 &\hyperlink{}{Gamebase\#add\+Observer(\+Observer)} \\\cline{1-6}
+Gamebase.\+Launching &remove\+On\+Updated\+Listener(\+Launching\+On\+Update\+Listener) &1.\+4.\+0 &1.\+8.\+0 &1.\+14.\+0 &\hyperlink{}{Gamebase\#remove\+Observer(\+Observer)} \\\cline{1-6}
+Gamebase.\+Network &add\+On\+Changed\+Listener(Network\+Manager.\+On\+Changed\+Listener) &1.\+4.\+0 &1.\+8.\+0 &1.\+14.\+0 &\hyperlink{}{Gamebase\#add\+Observer(\+Observer)} \\\cline{1-6}
+Gamebase.\+Network &remove\+On\+Changed\+Listener(Network\+Manager.\+On\+Changed\+Listener) &1.\+4.\+0 &1.\+8.\+0 &1.\+14.\+0 &\hyperlink{}{Gamebase\#remove\+Observer(\+Observer)} \\\cline{1-6}
+Gamebase.\+Web\+View &show\+Web\+Browser(\+Activity, String) &1.\+4.\+0 &1.\+5.\+0 &1.\+14.\+0 &\hyperlink{}{Gamebase.\+Web\+View\#open\+Web\+Browser(\+Activity, String)} \\\cline{1-6}
+Gamebase.\+Purchase &get\+Store\+Code() &1.\+4.\+0 &2.\+6.\+0 &&Changing the store\+Code in runtime is no longer supported. \\\cline{1-6}
+Gamebase.\+Purchase &set\+Store\+Code(\+String) &1.\+4.\+0 &2.\+6.\+0 &&\hyperlink{}{Gamebase\+Configuration\#new\+Builder(\+String, String, String)} \\\cline{1-6}
+Gamebase.\+Purchase &request\+Retry\+Transaction(\+Activity, Gamebase\+Data\+Callback$<$\+Purchasable\+Retry\+Transaction\+Result$>$) &1.\+4.\+0 &2.\+6.\+0 &&You don\textquotesingle{}t need to call this A\+PI anymore. \\\cline{1-6}
+Launching\+Status &is\+Playable() &1.\+4.\+0 &2.\+6.\+0 &&Do not call this method anymore. You have to do the processing according to the launching status code. \\\cline{1-6}
+\end{longtabu}

@@ -32,8 +32,7 @@ public class AuthUi : MonoBehaviour
         textUUID.text = PlayerPrefs.GetString(Constants.KEY_UUID);
         if (string.IsNullOrWhiteSpace(textUUID.text))
         {
-            textUUID.text = System.Guid.NewGuid().ToString();
-            PlayerPrefs.SetString(Constants.KEY_UUID, textUUID.text);
+            OnClickGenerateUUID();
         }
 
         string launching = PlayerPrefs.GetString(Constants.KEY_LAUNCHING);
@@ -64,6 +63,8 @@ public class AuthUi : MonoBehaviour
         buttonLogin.onClick.AddListener(() => { OnClickLogin(); });
 
         UiReset();
+
+        GamebaseInfo.Instance.SetActive(false);
 
         Debug.Log("Initialize complete!!!! " + textUUID.text);
 
@@ -102,12 +103,12 @@ public class AuthUi : MonoBehaviour
     {
         // 다중 클릭 막음
         buttonGetLaunching.interactable = false;
+
+        // sample url "http://10.77.35.47:10080/launching?platform=Editor&appStore=GOOGLE&appVersion=1.2.0&deviceId=4D34C127-9C56-5BAB-A3C2-D8F18C0B7B6E";
+
         string url = inputFieldLaunching.text;
         PlayerPrefs.SetString(Constants.KEY_LAUNCHING, url);
-
         url += "/launching?platform=" + Application.platform + "&appStore=NONE&appVersion=" + Application.version + "&deviceId=" + textUUID.text;
-
-        //        string url = "http://10.77.35.47:10080/launching?platform=Editor&appStore=GOOGLE&appVersion=1.2.0&deviceId=4D34C127-9C56-5BAB-A3C2-D8F18C0B7B6E";
 
         StartCoroutine(GetRequestLaunching(url));
     }
@@ -148,7 +149,8 @@ public class AuthUi : MonoBehaviour
             Debug.Log("ID field is empty!!!! ");
         }
         else
-        {           PlayerPrefs.SetString(Constants.KEY_USER_ID, inputFieldID.text);
+        {
+            PlayerPrefs.SetString(Constants.KEY_USER_ID, inputFieldID.text);
 
             // 다중 클릭 막음
             buttonAuth.interactable = false;
@@ -194,6 +196,7 @@ public class AuthUi : MonoBehaviour
         // 로그인에 필요한 프로토콜 데이터 설정
         var loginReq = new Com.Nhn.Tardis.Sample.Protocol.LoginReq
         {
+            // 임의로 필요한 데이터 설정
             Uuid = textUUID.text,
             LoginType = Com.Nhn.Tardis.Sample.Protocol.LoginType.LoginGuest,
             AppVersion = "0.0.1",

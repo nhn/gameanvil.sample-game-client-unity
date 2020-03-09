@@ -1,0 +1,92 @@
+\hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_analytics}{}\section{Gamebase.\+Analytics Class Reference}
+\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_analytics}\index{Gamebase.\+Analytics@{Gamebase.\+Analytics}}
+
+
+Collaboration diagram for Gamebase.\+Analytics\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_analytics__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_analytics_a2f339ad8d77890e3521e292bf84284ae}{set\+Game\+User\+Data} (Game\+User\+Data user\+Data)
+\begin{DoxyCompactList}\small\item\em Send a game user data to \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} Server for analyzing the data. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_analytics_aa814a3056950011e47c8d7fcc83624b6}{trace\+Level\+Up} (Level\+Up\+Data level\+Up\+Data)
+\begin{DoxyCompactList}\small\item\em Send a game user data to \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} server for analyzing the data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_analytics_a2f339ad8d77890e3521e292bf84284ae}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_analytics_a2f339ad8d77890e3521e292bf84284ae}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Analytics@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Analytics}!set\+Game\+User\+Data@{set\+Game\+User\+Data}}
+\index{set\+Game\+User\+Data@{set\+Game\+User\+Data}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Analytics@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Analytics}}
+\subsubsection{\texorpdfstring{set\+Game\+User\+Data()}{setGameUserData()}}
+{\footnotesize\ttfamily static void set\+Game\+User\+Data (\begin{DoxyParamCaption}\item[{Game\+User\+Data}]{user\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Send a game user data to \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} Server for analyzing the data. 
+
+This method should be called after login.
+
+\begin{DoxySince}{Since}
+Added 2.\+0.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Data} & Game User Data \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{}{Game\+User\+Data} 
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keywordtype}{void} onLoginSuccess(, String channelId, String characterId) \{
+    \textcolor{keywordtype}{int} userLevel = 10;
+    String channelId, characterId;
+
+    GameUserData gameUserData = \textcolor{keyword}{new} GameUserData(userLevel);
+    gameUserData.channelId = channelId; \textcolor{comment}{// Optional}
+    gameUserData.characterId = characterId; \textcolor{comment}{// Optional}
+
+    Gamebase.Analytics.setGameUserData(gameUserData);
+\}
+\end{DoxyCode}
+ 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_analytics_aa814a3056950011e47c8d7fcc83624b6}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_analytics_aa814a3056950011e47c8d7fcc83624b6}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Analytics@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Analytics}!trace\+Level\+Up@{trace\+Level\+Up}}
+\index{trace\+Level\+Up@{trace\+Level\+Up}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Analytics@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Analytics}}
+\subsubsection{\texorpdfstring{trace\+Level\+Up()}{traceLevelUp()}}
+{\footnotesize\ttfamily static void trace\+Level\+Up (\begin{DoxyParamCaption}\item[{Level\+Up\+Data}]{level\+Up\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Send a game user data to \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} server for analyzing the data. 
+
+This method should be called after level up event.
+
+\begin{DoxySince}{Since}
+Added 2.\+0.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em level\+Up\+Data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{}{Level\+Up\+Data} 
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keywordtype}{void} onLevelUp(\textcolor{keywordtype}{int} userLevel, \textcolor{keywordtype}{long} levelUpTime, String channelId, String characterId) \{
+    LevelUpData levelUpData = \textcolor{keyword}{new} LevelUpData(userLevel);
+    levelUpData.levelUpTime = levelUpTime; \textcolor{comment}{// Optional}
+    levelUpData.channelId = channelId; \textcolor{comment}{// Optional}
+    levelUpData.characterId = characterId; \textcolor{comment}{// Optional}
+
+    Gamebase.Analytics.traceLevelUp(levelUpData);
+\}
+\end{DoxyCode}
+ 
+\end{DoxySeeAlso}

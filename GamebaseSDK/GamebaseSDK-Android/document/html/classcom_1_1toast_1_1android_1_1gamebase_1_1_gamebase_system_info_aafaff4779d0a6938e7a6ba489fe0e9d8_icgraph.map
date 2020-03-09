@@ -1,0 +1,11 @@
+<map id="getInstance" name="getInstance">
+<area shape="rect" id="node2" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase.html#aeb5168abbd62c631b65247e6289d1e2d" title="Returns the current version of the Gamebase SDK for Android as a string. " alt="" coords="166,5,363,44"/>
+<area shape="rect" id="node3" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase.html#a9816db7baf613297601e327207cda02d" title="Gets the language code set for the current device. " alt="" coords="144,68,385,107"/>
+<area shape="rect" id="node4" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase.html#aea83ba0122198c967d745bb4b8d97215" title="Gets the carrier code set for the current device. " alt="" coords="166,131,363,169"/>
+<area shape="rect" id="node5" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase.html#acd4bf4656730a81853332a4a551e5e9f" title="Gets the carrier name set for the current device. " alt="" coords="166,193,363,232"/>
+<area shape="rect" id="node6" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase.html#a57662f504668587ba2a1d667a48c9732" title="Gets the country code. " alt="" coords="166,256,363,295"/>
+<area shape="rect" id="node7" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase.html#aefed09bea0026a9e6de3c0506ebd5617" title="Gets the country code set in USIM. " alt="" coords="147,319,382,357"/>
+<area shape="rect" id="node8" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase.html#aa5cb9db9a02d57d19f78a34a1adbdc95" title="Gets the country code currently set on the device. " alt="" coords="144,381,386,420"/>
+<area shape="rect" id="node9" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase.html#ae6a7d3ccf1e7de6fb479485cce1ddeea" title="Gets the store code of the current app. " alt="" coords="148,444,381,483"/>
+<area shape="rect" id="node10" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase.html#a8933fcc2fc156c87feee53efadfa4bb0" title="Set the store code of the current app. " alt="" coords="149,507,381,545"/>
+</map>

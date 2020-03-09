@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>TCGBPurchasable Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">TCGamebase </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">NHN Entertainment</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initializePurchaseWithAppID:store:userID:enableDebugMode:">- initializePurchaseWithAppID:store:userID:enableDebugMode:</option>
+		
+		<option value="//api/name/requestItemListAtIAPConsoleWithCompletion:">- requestItemListAtIAPConsoleWithCompletion:</option>
+		
+		<option value="//api/name/requestItemListOfNotConsumedWithCompletion:">- requestItemListOfNotConsumedWithCompletion:</option>
+		
+		<option value="//api/name/requestItemListPurchasableWithCompletion:">- requestItemListPurchasableWithCompletion:</option>
+		
+		<option value="//api/name/requestPurchaseWithItemSeq:viewController:completion:">- requestPurchaseWithItemSeq:viewController:completion:</option>
+		
+		<option value="//api/name/requestRetryTransactionWithCompletion:">- requestRetryTransactionWithCompletion:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">TCGBPurchasable Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>TCGBPurchasable.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The protocol TCGBPurchasable is for developing IAP Adapter.<br/>
+This protocol contains several methods such as to request item list, to puchasing item and retrying incompleted purchasing.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Initilaize IAP Adapter" name="task_Initilaize IAP Adapter"></a>
+						<h2 class="task-title">Initilaize IAP Adapter</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initializePurchaseWithAppID:store:userID:enableDebugMode:" title="initializePurchaseWithAppID:store:userID:enableDebugMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initializePurchaseWithAppID:store:userID:enableDebugMode:">&ndash;&nbsp;initializePurchaseWithAppID:store:userID:enableDebugMode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method ininialize the IAP Adapter class.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)initializePurchaseWithAppID:(NSString *)<em>appID</em> store:(NSString *)<em>store</em> userID:(NSString *)<em>userID</em> enableDebugMode:(BOOL)<em>isDebugMode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appID</code></th>
+						<td><p>appID is ToastCloud IAP&rsquo;s appID, not ToastCloud projectID.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>store</code></th>
+						<td><p>store should be appstore. Others will be ignored.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userID</code></th>
+						<td><p>userID is obtained after logged in. This must be unique cause of tracing purchasing.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isDebugMode</code></th>
+						<td><p>isDebugMode is for setting debug mode of ToastCloud IAP module.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBPurchasable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Request Item List" name="task_Request Item List"></a>
+						<h2 class="task-title">Request Item List</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/requestItemListPurchasableWithCompletion:" title="requestItemListPurchasableWithCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestItemListPurchasableWithCompletion:">&ndash;&nbsp;requestItemListPurchasableWithCompletion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This is the primary method for obtaining ItemList which is registered at ToastCloud IAP Console and Apple Itunes Connect.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)requestItemListPurchasableWithCompletion:(void ( ^ ) ( NSArray&lt;TCGBPurchasableItem*&gt; *purchasableItemArray , TCGBError *error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion may return the NSArray of <a href="../Classes/TCGBPurchasableItem.html">TCGBPurchasableItem</a>.<br/>
+If there is an error, <a href="../Classes/TCGBError.html">TCGBError</a> will be returned.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Request a item list which is purchasable. This list has items which are registered in both Market(AppStore) and ToastCloud IAP Console.</p><div class="warning"><p><strong>Warning:</strong> You should call this method after <code>logged in</code>, otherwise you will get <strong>TCGB_ERROR_NOT_LOGGED_IN</strong> error in the completion.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBPurchasable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestItemListAtIAPConsoleWithCompletion:" title="requestItemListAtIAPConsoleWithCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestItemListAtIAPConsoleWithCompletion:">&ndash;&nbsp;requestItemListAtIAPConsoleWithCompletion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This is the method for obtaining ItemList which is registered at ToastCloud IAP Console.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)requestItemListAtIAPConsoleWithCompletion:(void ( ^ ) ( NSArray&lt;TCGBPurchasableItem*&gt; *purchasableItemArray , TCGBError *error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion may return the NSArray of <a href="../Classes/TCGBPurchasableItem.html">TCGBPurchasableItem</a>.<br/>
+If there is an error, <a href="../Classes/TCGBError.html">TCGBError</a> will be returned.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Request a item list which is purchasable. This list has items which are only registered in ToastCloud IAP Console, not Market(AppStore)</p><div class="warning"><p><strong>Warning:</strong> You should call this method after <code>logged in</code>, otherwise you will get <strong>TCGB_ERROR_NOT_LOGGED_IN</strong> error in the completion.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBPurchasable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Request Purchasing Item" name="task_Request Purchasing Item"></a>
+						<h2 class="task-title">Request Purchasing Item</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/requestPurchaseWithItemSeq:viewController:completion:" title="requestPurchaseWithItemSeq:viewController:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestPurchaseWithItemSeq:viewController:completion:">&ndash;&nbsp;requestPurchaseWithItemSeq:viewController:completion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This is the method to request purchasing item which identifier is itemSeq. There is a viewController parameter and you may put your top most viewController. If you don&rsquo;t, this method will find out top most view controller and put it in the parameter.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)requestPurchaseWithItemSeq:(long)<em>itemSeq</em> viewController:(UIViewController *)<em>viewController</em> completion:(void ( ^ ) ( TCGBPurchasableReceipt *purchasableReceipt , TCGBError *error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>itemSeq</code></th>
+						<td><p>itemID which you want to purchase.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>viewController</code></th>
+						<td><p>represent to current viewcontroller.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion may return the <a href="../Classes/TCGBPurchasableReceipt.html">TCGBPurchasableReceipt</a> instance.<br/>
+If there is an error, <a href="../Classes/TCGBError.html">TCGBError</a> will be returned.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Request Purchasing Item that has itemId.</p><div class="warning"><p><strong>Warning:</strong> You should call this method after <code>logged in</code>, otherwise you will get <strong>TCGB_ERROR_NOT_LOGGED_IN</strong> error in the completion.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBPurchasable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Request non-consumed Item List" name="task_Request non-consumed Item List"></a>
+						<h2 class="task-title">Request non-consumed Item List</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/requestItemListOfNotConsumedWithCompletion:" title="requestItemListOfNotConsumedWithCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestItemListOfNotConsumedWithCompletion:">&ndash;&nbsp;requestItemListOfNotConsumedWithCompletion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method provides an item list that have non-consumed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)requestItemListOfNotConsumedWithCompletion:(void ( ^ ) ( NSArray&lt;TCGBPurchasableReceipt*&gt; *purchasableReceiptArray , TCGBError *error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion may return the NSArray of <a href="../Classes/TCGBPurchasableReceipt.html">TCGBPurchasableReceipt</a> instances.<br/>
+This instance has the paymentSequence, itemSequence, PurchaseToken information.<br/>
+If there is an error, <a href="../Classes/TCGBError.html">TCGBError</a> will be returned.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Request a Item List which is not consumed. You should deliver this itemReceipt to your game server to consume it or request consuming API to ToastCloud IAP Server. You may call this method after logged in and deal with these non-consumed items.</p><div class="warning"><p><strong>Warning:</strong> You should call this method after <code>logged in</code>, otherwise you will get <strong>TCGB_ERROR_NOT_LOGGED_IN</strong> error in the completion.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBPurchasable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Request retry purchasing processes" name="task_Request retry purchasing processes"></a>
+						<h2 class="task-title">Request retry purchasing processes</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/requestRetryTransactionWithCompletion:" title="requestRetryTransactionWithCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestRetryTransactionWithCompletion:">&ndash;&nbsp;requestRetryTransactionWithCompletion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is for retrying failed purchasing proccesses.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)requestRetryTransactionWithCompletion:(void ( ^ ) ( TCGBPurchasableRetryTransactionResult *transactionResult , TCGBError *error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion may return the <a href="../Classes/TCGBPurchasableRetryTransactionResult.html">TCGBPurchasableRetryTransactionResult</a> which has two member variables which are named &lsquo;successList&rsquo; and &lsquo;failList&rsquo;.<br/>
+These two variables are array of <a href="../Classes/TCGBPurchasableReceipt.html">TCGBPurchasableReceipt</a>.<br/>
+Each key has a list of <a href="../Classes/TCGBPurchasableReceipt.html">TCGBPurchasableReceipt</a> that has uncompleted purchase information.<br/>
+If there is an error, <a href="../Classes/TCGBError.html">TCGBError</a> will be returned.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Request a retrying transaction which is not completed to IAP Server</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TCGBPurchasable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 NHN Entertainment. All rights reserved. Updated: 2020-02-24</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

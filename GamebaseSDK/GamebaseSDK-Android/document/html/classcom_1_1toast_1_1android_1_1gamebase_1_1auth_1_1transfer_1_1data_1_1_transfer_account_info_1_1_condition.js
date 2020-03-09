@@ -1,0 +1,6 @@
+var classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info_1_1_condition =
+[
+    [ "expirationDate", "classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info_1_1_condition.html#a7fd6bc57285184877bc741714381e0a6", null ],
+    [ "expirationType", "classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info_1_1_condition.html#ab59eb8f45d9d22344cd80851af973c46", null ],
+    [ "transferAccountType", "classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info_1_1_condition.html#a747b6e611e9c1a55797b2790f1b92667", null ]
+];

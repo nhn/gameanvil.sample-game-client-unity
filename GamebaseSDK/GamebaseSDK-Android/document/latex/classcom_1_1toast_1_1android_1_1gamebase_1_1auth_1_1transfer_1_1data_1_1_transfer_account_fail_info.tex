@@ -1,0 +1,216 @@
+\hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info}{}\section{Transfer\+Account\+Fail\+Info Class Reference}
+\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info}\index{Transfer\+Account\+Fail\+Info@{Transfer\+Account\+Fail\+Info}}
+
+
+Transfer\+Account A\+P\+I가 실패하였을 경우, 해당 V\+O로 실패 사유를 알 수 있습니다.  
+
+
+
+
+Inheritance diagram for Transfer\+Account\+Fail\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Transfer\+Account\+Fail\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a}{to\+Json\+String} ()
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a054431f3d988a22295cfc8b784ff2637}{to\+Pretty\+Json\+String} ()
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520}{to\+String} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info}{Transfer\+Account\+Fail\+Info} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_aecfb04c0e705db55ec4e81508e1c3a05}{from} (\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} exception)
+\item 
+static$<$ T $>$ T \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b}{from\+Json} (@Non\+Null String json, Class$<$ T $>$ class\+OfT)
+\item 
+static$<$ T $>$ T \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101}{from\+Json} (@Non\+Null J\+S\+O\+N\+Object json\+Object, Class$<$ T $>$ class\+OfT)
+\item 
+static$<$ T $>$ T \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_aa901d97d495150b54bcb80c05672f58a}{from\+Json} (@Non\+Null String json, Type type)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_ab4a589a669da5b4ff67e5d4443d1cc10}{app\+Id}
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_a76010eef1edc0406cc2375c25d2a433d}{id}
+\item 
+String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_a4e531c185af848083db0808335a78168}{status}
+\item 
+int \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_a7e113fb3b583f0cc2f772dd8bf36f8ab}{fail\+Count}
+\item 
+long \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_afc4583aaf2bed315513a89152f759e1e}{block\+End\+Date}
+\item 
+long \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_ac7e034092dcf8f382dc6d1b950bc5627}{reg\+Date}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Transfer\+Account A\+P\+I가 실패하였을 경우, 해당 V\+O로 실패 사유를 알 수 있습니다. 
+
+Example Usage\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{private} \textcolor{keywordtype}{void} tryToTransferAccount(String \textcolor{keywordtype}{id}, String password) \{
+    Gamebase.transferAccountWithIdPLogin(\textcolor{keywordtype}{id}, password, \textcolor{keyword}{new} GamebaseDataCallback<AuthToken>() \{
+        @Override
+        \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(AuthToken data, GamebaseException exception) \{
+            \textcolor{keywordflow}{if} (exception != null) \{
+                \textcolor{comment}{// Transfer Account Failed !!}
+                \textcolor{comment}{// Login Failed}
+                \textcolor{comment}{// ...}
+
+                \textcolor{keywordflow}{if} (exception.getCode() == GamebaseError.AUTH\_TRANSFERACCOUNT\_BLOCK) \{
+                    \textcolor{keyword}{final} TransferAccountFailInfo failInfo = TransferAccountFailInfo.from(exception);
+                    \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_a7e113fb3b583f0cc2f772dd8bf36f8ab}{failCount} = failInfo.failCount;
+                    \textcolor{keyword}{final} String failedId = failInfo.id;
+                    \textcolor{keyword}{final} Date blockedDate = \textcolor{keyword}{new} Date(failInfo.blockEndDate);
+                    \textcolor{comment}{// ...}
+                \}
+                \textcolor{keywordflow}{return};
+            \}
+
+            \textcolor{comment}{// Transfer Account Success !!}
+            \textcolor{comment}{// Login Success}
+            \textcolor{comment}{// ...}
+        \}
+    \};
+\}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{}{com.\+toast.\+android.\+gamebase.\+Gamebase\#transfer\+Account\+With\+Id\+P\+Login(\+String, String, Gamebase\+Data\+Callback)} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_aecfb04c0e705db55ec4e81508e1c3a05}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_aecfb04c0e705db55ec4e81508e1c3a05}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}!from@{from}}
+\index{from@{from}!com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}}
+\subsubsection{\texorpdfstring{from()}{from()}}
+{\footnotesize\ttfamily static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info}{Transfer\+Account\+Fail\+Info} from (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception}}]{exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}!from\+Json@{from\+Json}}
+\index{from\+Json@{from\+Json}!com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}}
+\subsubsection{\texorpdfstring{from\+Json()}{fromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static $<$T$>$ T from\+Json (\begin{DoxyParamCaption}\item[{@Non\+Null String}]{json,  }\item[{Class$<$ T $>$}]{class\+OfT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ae6655c88c20a9a8406dc11b46250ac7b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}!from\+Json@{from\+Json}}
+\index{from\+Json@{from\+Json}!com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}}
+\subsubsection{\texorpdfstring{from\+Json()}{fromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static $<$T$>$ T from\+Json (\begin{DoxyParamCaption}\item[{@Non\+Null J\+S\+O\+N\+Object}]{json\+Object,  }\item[{Class$<$ T $>$}]{class\+OfT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ab83c4196ee2e3f11553bbe0f04dc2101_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_aa901d97d495150b54bcb80c05672f58a}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_aa901d97d495150b54bcb80c05672f58a}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}!from\+Json@{from\+Json}}
+\index{from\+Json@{from\+Json}!com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}}
+\subsubsection{\texorpdfstring{from\+Json()}{fromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static $<$T$>$ T from\+Json (\begin{DoxyParamCaption}\item[{@Non\+Null String}]{json,  }\item[{Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}!to\+Json\+String@{to\+Json\+String}}
+\index{to\+Json\+String@{to\+Json\+String}!com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}}
+\subsubsection{\texorpdfstring{to\+Json\+String()}{toJsonString()}}
+{\footnotesize\ttfamily String to\+Json\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a58acf6402880e9769d79d8667581fa6a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a054431f3d988a22295cfc8b784ff2637}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_a054431f3d988a22295cfc8b784ff2637}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}!to\+Pretty\+Json\+String@{to\+Pretty\+Json\+String}}
+\index{to\+Pretty\+Json\+String@{to\+Pretty\+Json\+String}!com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}}
+\subsubsection{\texorpdfstring{to\+Pretty\+Json\+String()}{toPrettyJsonString()}}
+{\footnotesize\ttfamily String to\+Pretty\+Json\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_value_object_ad146fa8579a5f8a876c4688cc5a68520_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_ab4a589a669da5b4ff67e5d4443d1cc10}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_ab4a589a669da5b4ff67e5d4443d1cc10}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}!app\+Id@{app\+Id}}
+\index{app\+Id@{app\+Id}!com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}}
+\subsubsection{\texorpdfstring{app\+Id}{appId}}
+{\footnotesize\ttfamily String app\+Id}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_afc4583aaf2bed315513a89152f759e1e}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_afc4583aaf2bed315513a89152f759e1e}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}!block\+End\+Date@{block\+End\+Date}}
+\index{block\+End\+Date@{block\+End\+Date}!com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}}
+\subsubsection{\texorpdfstring{block\+End\+Date}{blockEndDate}}
+{\footnotesize\ttfamily long block\+End\+Date}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_a7e113fb3b583f0cc2f772dd8bf36f8ab}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_a7e113fb3b583f0cc2f772dd8bf36f8ab}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}!fail\+Count@{fail\+Count}}
+\index{fail\+Count@{fail\+Count}!com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}}
+\subsubsection{\texorpdfstring{fail\+Count}{failCount}}
+{\footnotesize\ttfamily int fail\+Count}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_a76010eef1edc0406cc2375c25d2a433d}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_a76010eef1edc0406cc2375c25d2a433d}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}!id@{id}}
+\index{id@{id}!com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}}
+\subsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily String id}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_ac7e034092dcf8f382dc6d1b950bc5627}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_ac7e034092dcf8f382dc6d1b950bc5627}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}!reg\+Date@{reg\+Date}}
+\index{reg\+Date@{reg\+Date}!com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}}
+\subsubsection{\texorpdfstring{reg\+Date}{regDate}}
+{\footnotesize\ttfamily long reg\+Date}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_a4e531c185af848083db0808335a78168}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_fail_info_a4e531c185af848083db0808335a78168}} 
+\index{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}!status@{status}}
+\index{status@{status}!com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info@{com\+::toast\+::android\+::gamebase\+::auth\+::transfer\+::data\+::\+Transfer\+Account\+Fail\+Info}}
+\subsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily String status}
+

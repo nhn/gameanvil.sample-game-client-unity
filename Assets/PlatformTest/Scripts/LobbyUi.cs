@@ -271,7 +271,7 @@ public class LobbyUi : MonoBehaviour
 
             if (singleRankingRes.ResultCode == Com.Nhn.Tardis.Sample.Protocol.ErrorCode.None)
             {
-
+                // 성공시 랭킹 처리
             }
             else
             {

@@ -1,0 +1,67 @@
+\hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_contact}{}\section{Gamebase.\+Contact Class Reference}
+\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_contact}\index{Gamebase.\+Contact@{Gamebase.\+Contact}}
+
+
+This class provides wrapping of function execution related to T\+O\+A\+ST \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_contact}{Contact}.  
+
+
+
+
+Collaboration diagram for Gamebase.\+Contact\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_contact__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_contact_a748d63949a52c48845b042e2de9882ac}{open\+Contact} (@Non\+Null final Activity activity, \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_callback}{Gamebase\+Callback} on\+Close\+Callback)
+\begin{DoxyCompactList}\small\item\em Open T\+O\+A\+ST \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_contact}{Contact} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_web_view}{Web\+View} with CS U\+RL which is wrote in T\+O\+A\+ST \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} App Console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides wrapping of function execution related to T\+O\+A\+ST \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_contact}{Contact}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_contact_a748d63949a52c48845b042e2de9882ac}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_contact_a748d63949a52c48845b042e2de9882ac}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Contact@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Contact}!open\+Contact@{open\+Contact}}
+\index{open\+Contact@{open\+Contact}!com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Contact@{com\+::toast\+::android\+::gamebase\+::\+Gamebase\+::\+Contact}}
+\subsubsection{\texorpdfstring{open\+Contact()}{openContact()}}
+{\footnotesize\ttfamily static void open\+Contact (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_callback}{Gamebase\+Callback}}]{on\+Close\+Callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Open T\+O\+A\+ST \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_contact}{Contact} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_web_view}{Web\+View} with CS U\+RL which is wrote in T\+O\+A\+ST \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} App Console. 
+
+If the CS U\+RL is empty or invalid, you will receive a Gamebase\+Exception.
+
+\begin{DoxySince}{Since}
+Added 2.\+5.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & \\
+\hline
+{\em on\+Close\+Callback} & Example Usage\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_contact_a748d63949a52c48845b042e2de9882ac}{openContact}(Activity activity) \{
+    Gamebase.Contact.openContact(activity, \textcolor{keyword}{new} GamebaseCallback() \{
+        @Override
+        \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(GamebaseException exception) \{
+            \textcolor{keywordflow}{if} (exception != null && exception.code == WEBVIEW\_INVALID\_URL) \{ \textcolor{comment}{// 7001}
+                \textcolor{comment}{// Please check the url field in the TOAST Gamebase Console.}
+            \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (exception != null) \{
+                \textcolor{comment}{// Error occur when opening the contact web view.}
+            \} \textcolor{keywordflow}{else} \{
+                \textcolor{comment}{// A user close the contact web view.}
+            \}
+        \}
+    \});
+\}
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}

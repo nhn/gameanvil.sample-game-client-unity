@@ -1,0 +1,12 @@
+<map id="toPrettyJsonString" name="toPrettyJsonString">
+<area shape="rect" id="node2" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception.html#a6b2a39146828e6b135949df810b8e052" title="toJson" alt="" coords="184,129,244,155"/>
+<area shape="rect" id="node6" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger.html#a31c4de083ef2003f9fb433d639866537" title="Prints a message at ERROR priority. " alt="" coords="292,203,543,241"/>
+<area shape="rect" id="node3" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception.html#a8facb1769856d29a5998bb90146fa5ef" title="Get result domain. " alt="" coords="375,5,461,31"/>
+<area shape="rect" id="node4" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception.html#a8361b009dd85dd991e5e684d648ffabf" title="Get result code. " alt="" coords="382,55,454,80"/>
+<area shape="rect" id="node5" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception.html#afafd068b736520af1e24269a284980a9" title="getMessage" alt="" coords="371,104,465,129"/>
+<area shape="rect" id="node11" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception.html#a2db07ce4db851d795e5d61f772c4e9c0" title="Constructs a new GamebaseException. " alt="" coords="345,153,490,179"/>
+<area shape="rect" id="node7" href="$classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_logger.html#a5b9aa7ce47bb48e51f971d5a6a2846e1" title="Instructs the LogNode to print the log data provided. " alt="" coords="591,203,842,241"/>
+<area shape="rect" id="node8" href="$interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_loggable.html#ae2a866830adbdc50eb134bb313859c7e" title="com.toast.android.gamebase.base.log.\lLoggable.isLoggable" alt="" coords="890,140,1142,179"/>
+<area shape="rect" id="node9" href="$interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_loggable.html#a8035d45f6ff47f663cd9c4220620d2e9" title="com.toast.android.gamebase.base.log.\lLoggable.getMessagePrefix" alt="" coords="890,203,1142,241"/>
+<area shape="rect" id="node10" href="$interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_loggable.html#a3eda0a47ad01e3e0668cbf6dafc14db2" title="Instructs first LogNode in the list to print the log data provided. " alt="" coords="890,265,1142,304"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="println" name="println">
+<area shape="rect" id="node2" href="$interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_loggable.html#ae2a866830adbdc50eb134bb313859c7e" title="com.toast.android.gamebase.base.log.\lLoggable.isLoggable" alt="" coords="111,5,362,44"/>
+<area shape="rect" id="node3" href="$interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_loggable.html#a8035d45f6ff47f663cd9c4220620d2e9" title="com.toast.android.gamebase.base.log.\lLoggable.getMessagePrefix" alt="" coords="111,68,362,107"/>
+<area shape="rect" id="node4" href="$interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1log_1_1_loggable.html#a3eda0a47ad01e3e0668cbf6dafc14db2" title="Instructs first LogNode in the list to print the log data provided. " alt="" coords="111,131,362,169"/>
+</map>

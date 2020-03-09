@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// Tardis connector 
 namespace TardisConnector
 {
     public class ConnectHandler : MonoBehaviour
@@ -25,7 +26,7 @@ namespace TardisConnector
 
             DontDestroyOnLoad(this.gameObject);
             connector = new Tardis.Connector(config);
-            // 커멕터 로그 추가
+            // 커넥터 로그 추가
             connector.Logger += (level, log) =>
             {
                 Debug.Log(string.Format("Log[{0}]:{1}", level, log));

@@ -1,0 +1,7 @@
+var namespacecom_1_1toast_1_1android_1_1gamebase_1_1launching_1_1data =
+[
+    [ "LaunchingInfo", "classcom_1_1toast_1_1android_1_1gamebase_1_1launching_1_1data_1_1_launching_info.html", "classcom_1_1toast_1_1android_1_1gamebase_1_1launching_1_1data_1_1_launching_info" ],
+    [ "LaunchingMaintenanceInfo", "classcom_1_1toast_1_1android_1_1gamebase_1_1launching_1_1data_1_1_launching_maintenance_info.html", "classcom_1_1toast_1_1android_1_1gamebase_1_1launching_1_1data_1_1_launching_maintenance_info" ],
+    [ "LaunchingNoticeInfo", "classcom_1_1toast_1_1android_1_1gamebase_1_1launching_1_1data_1_1_launching_notice_info.html", "classcom_1_1toast_1_1android_1_1gamebase_1_1launching_1_1data_1_1_launching_notice_info" ],
+    [ "LaunchingStatus", "classcom_1_1toast_1_1android_1_1gamebase_1_1launching_1_1data_1_1_launching_status.html", "classcom_1_1toast_1_1android_1_1gamebase_1_1launching_1_1data_1_1_launching_status" ]
+];

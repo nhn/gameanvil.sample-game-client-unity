@@ -1,0 +1,1794 @@
+\hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{}\section{Gamebase Class Reference}
+\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}\index{Gamebase@{Gamebase}}
+
+
+This class is a wrapper class that is provided to use various features of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} platform.  
+
+
+
+
+Collaboration diagram for Gamebase\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_analytics}{Analytics}
+\item 
+class \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_contact}{Contact}
+\begin{DoxyCompactList}\small\item\em This class provides wrapping of function execution related to T\+O\+A\+ST \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_contact}{Contact}. \end{DoxyCompactList}\item 
+class \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_launching}{Launching}
+\begin{DoxyCompactList}\small\item\em This class is provided to check information such as launch information, status, and so on. \end{DoxyCompactList}\item 
+class \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_logger}{Logger}
+\item 
+class \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_network}{Network}
+\begin{DoxyCompactList}\small\item\em This class provides network status information. \end{DoxyCompactList}\item 
+class \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_purchase}{Purchase}
+\begin{DoxyCompactList}\small\item\em This class provides wrapping of function execution related to payment. \end{DoxyCompactList}\item 
+class \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_push}{Push}
+\begin{DoxyCompactList}\small\item\em This class provides wrapping of function execution related to push notification. \end{DoxyCompactList}\item 
+class \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_util}{Util}
+\begin{DoxyCompactList}\small\item\em This class provides Android utility functions. \end{DoxyCompactList}\item 
+class \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_1_1_web_view}{Web\+View}
+\begin{DoxyCompactList}\small\item\em This class implements the Webview call function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a07fe4c62c585e8af9f924935e813ff12}{active\+App} (final Context application\+Context)
+\begin{DoxyCompactList}\small\item\em Notifies the \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} S\+DK that the app has launched. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a1b2d26183c219ab1ef840a95af71bd88}{initialize} (final Activity activity, final \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_configuration}{Gamebase\+Configuration} configuration, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1launching_1_1data_1_1_launching_info}{Launching\+Info} $>$ callback)
+\begin{DoxyCompactList}\small\item\em This function initializes the \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} S\+DK. \end{DoxyCompactList}\item 
+static boolean \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a40e7b7b4c19a8bf4140aa22033ab6489}{is\+Initialized} ()
+\begin{DoxyCompactList}\small\item\em Check whether the \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} is initialized. \end{DoxyCompactList}\item 
+static boolean \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ae28caa0bc9c72de9cc018ee36eb25b47}{is\+Success} (@Nullable final \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception} exception)
+\begin{DoxyCompactList}\small\item\em Returns true if the Gamebase\+Exception object is null or the error code is zero. \end{DoxyCompactList}\item 
+static boolean \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ac53b9593245b674244afe37606ec15c6}{is\+Debug\+Mode} ()
+\begin{DoxyCompactList}\small\item\em Indicates if we are in debug mode. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a4370928bb241d35d896feb65e206a7d4}{set\+Debug\+Mode} (boolean enable\+Debug)
+\begin{DoxyCompactList}\small\item\em Used to enable or disable logging, and other debug features. \end{DoxyCompactList}\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aeb5168abbd62c631b65247e6289d1e2d}{get\+S\+D\+K\+Version} ()
+\begin{DoxyCompactList}\small\item\em Returns the current version of the \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} S\+DK for Android as a string. \end{DoxyCompactList}\item 
+static boolean \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ab2dc0892a980b519fd76e15bcecb3bb5}{is\+Sandbox} ()
+\begin{DoxyCompactList}\small\item\em Returns whether this project is sandbox mode or not. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a277a8a1672aeb0ac6b20e7ebcd4e09b5}{login} (@Non\+Null final Activity activity, final String provider\+Name, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Logs the user in with the external authentication provider. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aff74a9c4ea1a737026d9507d6e9827e8}{login} (@Non\+Null final Activity activity, final String provider\+Name, @Nullable Map$<$ String, Object $>$ additional\+Info, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Logs the user in with the external authentication provider. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aa9ada2b00de7bcc4f96ba8b85319d444}{login} (@Non\+Null final Activity activity, @Non\+Null final Map$<$ String, Object $>$ credential\+Info, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Logs the user in with the credential of external authentication provider. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a2ac5681db5c8d63aaf02ec1daa4b2933}{login\+For\+Last\+Logged\+In\+Provider} (@Non\+Null final Activity activity, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Logs the user in with last logged in authentication provider. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ab860dbc75a62b009d67eca25247493f1}{add\+Mapping} (@Non\+Null final Activity activity, @Non\+Null final String provider\+Name, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Mapping the currently authenticated user identifier of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} with another external authentication. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_af629f12d988dd37b59259eeb63cdbdd0}{add\+Mapping} (@Non\+Null final Activity activity, @Non\+Null final String provider\+Name, @Nullable final Map$<$ String, Object $>$ additional\+Info, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Mapping the currently authenticated user identifier of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} with another external authentication. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a5152b09c5542e5442ed94f0f541ae1d5}{add\+Mapping} (@Non\+Null final Activity activity, @Non\+Null final Map$<$ String, Object $>$ credential\+Info, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Mapping the currently authenticated user identifier of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} with the credential of external authentication provider. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a06dbc31c4c9e171737dee6403837b923}{add\+Mapping\+Forcibly} (@Non\+Null final Activity activity, @Non\+Null final String provider\+Name, @Non\+Null final String forcing\+Mapping\+Key, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Forcibly trying to map the currently authenticated user identifier of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} with the credential of external authentication provider. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_af9f8a372c5b76389cde5f7552a041ee6}{add\+Mapping\+Forcibly} (@Non\+Null final Activity activity, @Non\+Null final String provider\+Name, @Non\+Null final String forcing\+Mapping\+Key, @Nullable final Map$<$ String, Object $>$ additional\+Info, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Forcibly trying to map the currently authenticated user identifier of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} with the credential of external authentication provider. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aad7e2e23e0143342ba53d5c9158d4c7b}{add\+Mapping\+Forcibly} (@Non\+Null final Activity activity, @Non\+Null final Map$<$ String, Object $>$ credential\+Info, @Non\+Null final String forcing\+Mapping\+Key, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Forcibly trying to map the currently authenticated user identifier of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} with the credential of external authentication provider. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a0349c553fad7eb3fb4bdd0da8cebe311}{remove\+Mapping} (@Non\+Null final Activity activity, final String provider\+Name, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_callback}{Gamebase\+Callback} callback)
+\begin{DoxyCompactList}\small\item\em Removes external authentication that is mapped to the current user identifier. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a46e0cbaa0ed64f4c0eb66e137bfcf4d4}{logout} (@Non\+Null final Activity activity, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_callback}{Gamebase\+Callback} callback)
+\begin{DoxyCompactList}\small\item\em Logs out the user. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aaa0ce688f5b145c64fb3cc3ec7d496c7}{withdraw} (@Non\+Null final Activity activity, @Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_callback}{Gamebase\+Callback} callback)
+\begin{DoxyCompactList}\small\item\em Withdraws the user. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aef6c37175f8a8b97e41cf1ae81b47853}{query\+Transfer\+Account} (final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info}{Transfer\+Account\+Info} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Try to query the transfer account to \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase}. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a8b4208c1f02a43176a621de920d922a0}{issue\+Transfer\+Account} (final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info}{Transfer\+Account\+Info} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Try to issue the transfer account. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a047d0d2590f3e4bb4933120ec6bc971d}{renew\+Transfer\+Account} (final \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_renew_configuration}{Transfer\+Account\+Renew\+Configuration} configuration, final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info}{Transfer\+Account\+Info} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Try to renew the transfer account. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a174f9e2e861ee3a4dfca710f01845da0}{transfer\+Account\+With\+Id\+P\+Login} (final String account\+Id, final String account\+Password, final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Try to transfer account with transfer account id and password. \end{DoxyCompactList}\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ab7c1e87ef968e274d77774ea7c814f07}{get\+User\+ID} ()
+\begin{DoxyCompactList}\small\item\em Gets the user ID that is currently logged in. \end{DoxyCompactList}\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a7415fdfef5db5d7e6b02e82f62927e9b}{get\+Access\+Token} ()
+\begin{DoxyCompactList}\small\item\em Gets the access token for the current user. \end{DoxyCompactList}\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aab024fc853da20582cd6cd85ecd9f6a6}{get\+Last\+Logged\+In\+Provider} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the last logged-\/in authentication provider. \end{DoxyCompactList}\item 
+static List$<$ String $>$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_abc355ef4a49b5c6348ee31890df16431}{get\+Auth\+Mapping\+List} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of external authentication providers mapped to the current user identifier. \end{DoxyCompactList}\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_af1dc0a9194eff5829c859a6a6aa4ab7c}{get\+Auth\+Provider\+User\+ID} (@Non\+Null String provider\+Name)
+\begin{DoxyCompactList}\small\item\em Gets the user ID from the authentication provider. \end{DoxyCompactList}\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ae2f90bca5deb4d7dff72b890a257814f}{get\+Auth\+Provider\+Access\+Token} (@Non\+Null String provider\+Name)
+\begin{DoxyCompactList}\small\item\em Gets the access token from the authentication provider. \end{DoxyCompactList}\item 
+static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1auth_1_1_auth_provider_profile}{Auth\+Provider\+Profile} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_abfa260ed922444ef35f23f8ac847b4f8}{get\+Auth\+Provider\+Profile} (@Non\+Null String provider\+Name)
+\begin{DoxyCompactList}\small\item\em Gets the profile from the authentication provider. \end{DoxyCompactList}\item 
+static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info}{Ban\+Info} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a61447d8f3f3a655ea83649465da9df62}{get\+Ban\+Info} ()
+\begin{DoxyCompactList}\small\item\em Gets the ban information of the suspended user. \end{DoxyCompactList}\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a9816db7baf613297601e327207cda02d}{get\+Device\+Language\+Code} ()
+\begin{DoxyCompactList}\small\item\em Gets the language code set for the current device. \end{DoxyCompactList}\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a93d37838d5b242ed96a6bbd2f024c714}{get\+Display\+Language\+Code} ()
+\begin{DoxyCompactList}\small\item\em Gets the display language code set for the current device. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a77c9364a742c9ec00eb104e7e3b159f6}{set\+Display\+Language\+Code} (String display\+Language\+Code)
+\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aea83ba0122198c967d745bb4b8d97215}{get\+Carrier\+Code} ()
+\begin{DoxyCompactList}\small\item\em Gets the carrier code set for the current device. \end{DoxyCompactList}\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_acd4bf4656730a81853332a4a551e5e9f}{get\+Carrier\+Name} ()
+\begin{DoxyCompactList}\small\item\em Gets the carrier name set for the current device. \end{DoxyCompactList}\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a57662f504668587ba2a1d667a48c9732}{get\+Country\+Code} ()
+\begin{DoxyCompactList}\small\item\em Gets the country code. \end{DoxyCompactList}\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aefed09bea0026a9e6de3c0506ebd5617}{get\+Country\+Code\+Of\+U\+S\+IM} ()
+\begin{DoxyCompactList}\small\item\em Gets the country code set in U\+S\+IM. \end{DoxyCompactList}\item 
+static String \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aa5cb9db9a02d57d19f78a34a1adbdc95}{get\+Country\+Code\+Of\+Device} ()
+\begin{DoxyCompactList}\small\item\em Gets the country code currently set on the device. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a74cd8c74ed834e846c05c598708f1e8b}{on\+Activity\+Result} (int request\+Code, int result\+Code, Intent data)
+\begin{DoxyCompactList}\small\item\em The method that should be called from the Activity\textquotesingle{}s or Fragment\textquotesingle{}s on\+Activity\+Result method. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a1cae88da5b12ad9563fbfa619870f11b}{add\+Server\+Push\+Event} (\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1serverpush_1_1_server_push_event}{Server\+Push\+Event} event)
+\begin{DoxyCompactList}\small\item\em Add a server push event listener to be called when server push message is arrived. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a1aac5aefec7eee16ab9ca5522c19dd75}{remove\+Server\+Push\+Event} (\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1serverpush_1_1_server_push_event}{Server\+Push\+Event} event)
+\begin{DoxyCompactList}\small\item\em Remove a server push event listener. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ad8565e3001614780831e6f05fa3f9e77}{remove\+All\+Server\+Push\+Event} ()
+\begin{DoxyCompactList}\small\item\em Remove all server push event listeners. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a9079ec835df5660d8b19a1fd3eb0d9d8}{add\+Observer} (\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1observer_1_1_observer}{Observer} observer)
+\begin{DoxyCompactList}\small\item\em Add a observer to be called when network status, launching status or user status is changed. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_af13c08393910fc1b5dac3b5209f461c8}{remove\+Observer} (\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1observer_1_1_observer}{Observer} observer)
+\begin{DoxyCompactList}\small\item\em Remove a observer listener. \end{DoxyCompactList}\item 
+static void \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a73db608847a6f59086a19b7be9fb0b7f}{remove\+All\+Observer} ()
+\begin{DoxyCompactList}\small\item\em Remove all observer listeners. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is a wrapper class that is provided to use various features of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} platform. 
+
+Provides functions such as authentication, launching, pushing, and billing. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a07fe4c62c585e8af9f924935e813ff12}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a07fe4c62c585e8af9f924935e813ff12}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!active\+App@{active\+App}}
+\index{active\+App@{active\+App}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{active\+App()}{activeApp()}}
+{\footnotesize\ttfamily static void active\+App (\begin{DoxyParamCaption}\item[{final Context}]{application\+Context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Notifies the \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} S\+DK that the app has launched. 
+
+It should be called as early as possible.
+
+Because of release 2.\+6.\+0, Gamebase\+Init\+Provider call the A\+PI automatically, You do not need to call the A\+PI.
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000001}{Deprecated}]As of release 2.\+6.\+0, This is called by the Gamebase\+Init\+Provider automatically. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em application\+Context} & The application context. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Null\+Pointer\+Exception} & \textquotesingle{}application\+Context\textquotesingle{} is null. \\
+\hline
+{\em Illegal\+State\+Exception} & \textquotesingle{}android.\+permission.\+I\+N\+T\+E\+R\+N\+ET\textquotesingle{} permission is not defined in Android\+Manifest.\+xml\\
+\hline
+\end{DoxyExceptions}
+Example Usage\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keyword}{class }GamebaseApplication \textcolor{keyword}{extends} Application \{
+    @Override
+    \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCreate() \{
+        super.onCreate();
+
+        Gamebase.activeApp(getApplicationContext());
+    \}
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ab860dbc75a62b009d67eca25247493f1}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ab860dbc75a62b009d67eca25247493f1}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!add\+Mapping@{add\+Mapping}}
+\index{add\+Mapping@{add\+Mapping}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{add\+Mapping()}{addMapping()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static void add\+Mapping (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Non\+Null final String}]{provider\+Name,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Mapping the currently authenticated user identifier of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} with another external authentication. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is starting the mapping process. \\
+\hline
+{\em provider\+Name} & The provider\+Name which is authentication provider. \\
+\hline
+{\em callback} & Mapping result callback, ~\newline
+ returns the authentication token as a result of mapping.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+Gamebase.addMapping(activity, AuthProvider.GOOGLE, \textcolor{keyword}{new} GamebaseDataCallback<AuthToken>() \{
+    @Override
+    public void onCallback(AuthToken data, GamebaseException exception) \{
+        if (Gamebase.isSuccess(exception)) \{
+            Log.d(TAG, \textcolor{stringliteral}{"Add mapping successful"});
+            ...
+        \} else \{
+            Log.e(TAG, \textcolor{stringliteral}{"Add mapping failed"});
+            ...
+        \}
+    \}
+\});
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1auth_1_1_auth_provider}{com.\+toast.\+android.\+gamebase.\+base.\+auth.\+Auth\+Provider}. 
+
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{com.\+toast.\+android.\+gamebase.\+auth.\+data.\+Auth\+Token}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ab860dbc75a62b009d67eca25247493f1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ab860dbc75a62b009d67eca25247493f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_af629f12d988dd37b59259eeb63cdbdd0}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_af629f12d988dd37b59259eeb63cdbdd0}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!add\+Mapping@{add\+Mapping}}
+\index{add\+Mapping@{add\+Mapping}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{add\+Mapping()}{addMapping()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static void add\+Mapping (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Non\+Null final String}]{provider\+Name,  }\item[{@Nullable final Map$<$ String, Object $>$}]{additional\+Info,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Mapping the currently authenticated user identifier of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} with another external authentication. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is starting the mapping process. \\
+\hline
+{\em provider\+Name} & The provider\+Name which is authentication provider. \\
+\hline
+{\em additional\+Info} & The additional\+Info which is additional information using for mapping. \\
+\hline
+{\em callback} & Callbacks the results of mappings, ~\newline
+ returns the authentication token as a result of mappings.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+Gamebase.addMapping(activity, AuthProvider.GOOGLE, null, \textcolor{keyword}{new} GamebaseDataCallback<AuthToken>() \{
+    @Override
+    public void onCallback(AuthToken data, GamebaseException exception) \{
+        if (Gamebase.isSuccess(exception)) \{
+            Log.d(TAG, \textcolor{stringliteral}{"Add mapping successful"});
+            ...
+        \} else \{
+            Log.e(TAG, \textcolor{stringliteral}{"Add mapping failed"});
+            ...
+        \}
+    \}
+\});
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1auth_1_1_auth_provider}{com.\+toast.\+android.\+gamebase.\+base.\+auth.\+Auth\+Provider}. 
+
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{com.\+toast.\+android.\+gamebase.\+auth.\+data.\+Auth\+Token}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a5152b09c5542e5442ed94f0f541ae1d5}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a5152b09c5542e5442ed94f0f541ae1d5}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!add\+Mapping@{add\+Mapping}}
+\index{add\+Mapping@{add\+Mapping}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{add\+Mapping()}{addMapping()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static void add\+Mapping (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Non\+Null final Map$<$ String, Object $>$}]{credential\+Info,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Mapping the currently authenticated user identifier of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} with the credential of external authentication provider. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is starting the login process. \\
+\hline
+{\em credential\+Info} & The credential\+Info which is credential of authentication provider. \\
+\hline
+{\em callback} & Mapping result callback, ~\newline
+ returns the authentication token as a result of mapping.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+Map<String, Object> credential = \textcolor{keyword}{new} HashMap<>();
+credential.put(AuthProviderCredentialConstants.PROVIDER\_NAME, providerName);
+credential.put(AuthProviderCredentialConstants.ACCESS\_TOKEN, accessToken);
+credential.put(AuthProviderCredentialConstants.ACCESS\_TOKEN\_SECRET, accessTokenSecret);
+Gamebase.addMapping(activity, credential, \textcolor{keyword}{new} GamebaseDataCallback<AuthToken>() \{
+    @Override
+    \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(AuthToken data, GamebaseException exception) \{
+        \textcolor{keywordflow}{if} (Gamebase.isSuccess(exception)) \{
+            Log.d(TAG, \textcolor{stringliteral}{"Add mapping successful"});
+            ...
+        \} \textcolor{keywordflow}{else} \{
+            Log.e(TAG, \textcolor{stringliteral}{"Add mapping failed"});
+            ...
+        \}
+    \}
+\});
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1auth_1_1_auth_provider}{com.\+toast.\+android.\+gamebase.\+base.\+auth.\+Auth\+Provider}. 
+
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{com.\+toast.\+android.\+gamebase.\+auth.\+data.\+Auth\+Token}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a06dbc31c4c9e171737dee6403837b923}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a06dbc31c4c9e171737dee6403837b923}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!add\+Mapping\+Forcibly@{add\+Mapping\+Forcibly}}
+\index{add\+Mapping\+Forcibly@{add\+Mapping\+Forcibly}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{add\+Mapping\+Forcibly()}{addMappingForcibly()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static void add\+Mapping\+Forcibly (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Non\+Null final String}]{provider\+Name,  }\item[{@Non\+Null final String}]{forcing\+Mapping\+Key,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Forcibly trying to map the currently authenticated user identifier of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} with the credential of external authentication provider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is starting the login process. \\
+\hline
+{\em provider\+Name} & The provider\+Name which is authentication provider. \\
+\hline
+{\em forcing\+Mapping\+Key} & The key string which is necessary to map forcibly with the provider that is already mappped with another account. \\
+\hline
+{\em callback} & Mapping Forcibly result callback, ~\newline
+ returns the authentication token as a result of mapping.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+ \textcolor{keyword}{public} \textcolor{keywordtype}{void} addMappingForciblyFacebook(\textcolor{keyword}{final} Activity activity) \{
+    Gamebase.addMapping(activity, AuthProvider.FACEBOOK, null, \textcolor{keyword}{new} GamebaseDataCallback<AuthToken>() \{
+        @Override
+        public void onCallback(AuthToken result, GamebaseException exception) \{
+            \textcolor{comment}{// Add Mapping Success.}
+            if (Gamebase.isSuccess(exception)) \{
+                ...
+            \}
+
+            \textcolor{comment}{// If you got this error code(AUTH\_ADD\_MAPPING\_ALREADY\_MAPPED\_TO\_OTHER\_MEMBER) that means this
+       user already has another account of the AuthProvider.XXX),}
+            \textcolor{comment}{// You can call this method, Gamebase.addMappingForcibly() which can try to map forcibly with
+       the AuthProvider.XXX.}
+            if (exception.getCode() == GamebaseError.AUTH\_ADD\_MAPPING\_ALREADY\_MAPPED\_TO\_OTHER\_MEMBER) \{
+                \textcolor{comment}{// Before calling the mapping forcibly api, You should get this ForcingMappingTicket and
+       ForcingMappingKey string for this method parameter.}
+                final ForcingMappingTicket ticket = ForcingMappingTicket.from(exception);
+                final String forcingMappingKey = ticket.forcingMappingKey;
+
+                \textcolor{comment}{// Try to add mapping forcibly with the ForcingMappingKey.}
+                Gamebase.addMappingForcibly(activity, AuthProvider.FACEBOOK, forcingMappingKey, null, new G
+      amebaseDataCallback<AuthToken>() \{
+                    @Override
+                    public void onCallback(AuthToken data, GamebaseException addMappingForciblyException) \{
+                        if (Gamebase.isSuccess(addMappingForciblyException)) \{
+                            \textcolor{comment}{// Add Mapping Forcibly Success.}
+                            Log.d(TAG, \textcolor{stringliteral}{"Add Mapping Forcibly successful"});
+                            String userId = Gamebase.getUserID();
+                            return;
+                        \}
+
+                        \textcolor{comment}{// Add Mapping Forcibly Failed.}
+                        \textcolor{comment}{// Check the error code and handle the error appropriately.}
+                        ...
+                    \}
+                \}
+            \} else \{
+                \textcolor{comment}{// Add Mapping Failed.}
+                \textcolor{comment}{// Check the error code and handle the error appropriately.}
+                ...
+            \}
+        \}
+    \});
+\}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{}{Gamebase\#add\+Mapping(\+Activity, String, Map, Gamebase\+Data\+Callback)} 
+
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1mapping_1_1data_1_1_forcing_mapping_ticket}{com.\+toast.\+android.\+gamebase.\+auth.\+mapping.\+data.\+Forcing\+Mapping\+Ticket} 
+
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{com.\+toast.\+android.\+gamebase.\+auth.\+data.\+Auth\+Token}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a06dbc31c4c9e171737dee6403837b923_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a06dbc31c4c9e171737dee6403837b923_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_af9f8a372c5b76389cde5f7552a041ee6}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_af9f8a372c5b76389cde5f7552a041ee6}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!add\+Mapping\+Forcibly@{add\+Mapping\+Forcibly}}
+\index{add\+Mapping\+Forcibly@{add\+Mapping\+Forcibly}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{add\+Mapping\+Forcibly()}{addMappingForcibly()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static void add\+Mapping\+Forcibly (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Non\+Null final String}]{provider\+Name,  }\item[{@Non\+Null final String}]{forcing\+Mapping\+Key,  }\item[{@Nullable final Map$<$ String, Object $>$}]{additional\+Info,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Forcibly trying to map the currently authenticated user identifier of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} with the credential of external authentication provider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is starting the login process. \\
+\hline
+{\em provider\+Name} & The provider\+Name which is authentication provider. \\
+\hline
+{\em forcing\+Mapping\+Key} & The key string which is necessary to map forcibly with the provider that is already mappped with another account. \\
+\hline
+{\em additional\+Info} & The additional\+Info which is additional information using for mapping. \\
+\hline
+{\em callback} & Mapping Forcibly result callback, ~\newline
+ returns the authentication token as a result of mapping.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+ \textcolor{keyword}{public} \textcolor{keywordtype}{void} addMappingForciblyFacebook(\textcolor{keyword}{final} Activity activity, \textcolor{keyword}{final} Map<String, Object> additionalInfo) 
+      \{
+    Gamebase.addMapping(activity, AuthProvider.FACEBOOK, additionalInfo, \textcolor{keyword}{new} 
+      GamebaseDataCallback<AuthToken>() \{
+        @Override
+        public void onCallback(AuthToken result, GamebaseException exception) \{
+            \textcolor{comment}{// Add Mapping Success.}
+            if (Gamebase.isSuccess(exception)) \{
+                ...
+            \}
+
+            \textcolor{comment}{// If you got this error code(AUTH\_ADD\_MAPPING\_ALREADY\_MAPPED\_TO\_OTHER\_MEMBER) that means this
+       user already has another account of the AuthProvider.XXX),}
+            \textcolor{comment}{// You can call this method, Gamebase.addMappingForcibly() which can try to map forcibly with
+       the AuthProvider.XXX.}
+            if (exception.getCode() == GamebaseError.AUTH\_ADD\_MAPPING\_ALREADY\_MAPPED\_TO\_OTHER\_MEMBER) \{
+                \textcolor{comment}{// Before calling the mapping forcibly api, You should get this ForcingMappingTicket and
+       ForcingMappingKey string for this method parameter.}
+                final ForcingMappingTicket ticket = ForcingMappingTicket.from(exception);
+                final String forcingMappingKey = ticket.forcingMappingKey;
+
+                \textcolor{comment}{// Try to add mapping forcibly with the ForcingMappingKey.}
+                Gamebase.addMappingForcibly(activity, AuthProvider.FACEBOOK, forcingMappingKey, additionalI
+      nfo, new GamebaseDataCallback<AuthToken>() \{
+                    @Override
+                    public void onCallback(AuthToken data, GamebaseException addMappingForciblyException) \{
+                        if (Gamebase.isSuccess(addMappingForciblyException)) \{
+                            \textcolor{comment}{// Add Mapping Forcibly Success.}
+                            Log.d(TAG, \textcolor{stringliteral}{"Add Mapping Forcibly successful"});
+                            String userId = Gamebase.getUserID();
+                            return;
+                        \}
+
+                        \textcolor{comment}{// Add Mapping Forcibly Failed.}
+                        \textcolor{comment}{// Check the error code and handle the error appropriately.}
+                        ...
+                    \}
+                \}
+            \} else \{
+                \textcolor{comment}{// Add Mapping Failed.}
+                \textcolor{comment}{// Check the error code and handle the error appropriately.}
+                ...
+            \}
+        \}
+    \});
+\}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{}{Gamebase\#add\+Mapping(\+Activity, String, Map, Gamebase\+Data\+Callback)} 
+
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1mapping_1_1data_1_1_forcing_mapping_ticket}{com.\+toast.\+android.\+gamebase.\+auth.\+mapping.\+data.\+Forcing\+Mapping\+Ticket} 
+
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{com.\+toast.\+android.\+gamebase.\+auth.\+data.\+Auth\+Token}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aad7e2e23e0143342ba53d5c9158d4c7b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aad7e2e23e0143342ba53d5c9158d4c7b}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!add\+Mapping\+Forcibly@{add\+Mapping\+Forcibly}}
+\index{add\+Mapping\+Forcibly@{add\+Mapping\+Forcibly}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{add\+Mapping\+Forcibly()}{addMappingForcibly()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static void add\+Mapping\+Forcibly (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Non\+Null final Map$<$ String, Object $>$}]{credential\+Info,  }\item[{@Non\+Null final String}]{forcing\+Mapping\+Key,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Forcibly trying to map the currently authenticated user identifier of \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} with the credential of external authentication provider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is starting the login process. \\
+\hline
+{\em credential\+Info} & The credential\+Info which is credential of authentication provider. \\
+\hline
+{\em forcing\+Mapping\+Key} & The key string which is necessary to map forcibly with the provider that is already mappped with another account. \\
+\hline
+{\em callback} & Mapping Forcibly result callback, ~\newline
+ returns the authentication token as a result of mapping.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+ \textcolor{keyword}{public} \textcolor{keywordtype}{void} addMappingForciblyFacebook(\textcolor{keyword}{final} Activity activity, \textcolor{keyword}{final} String facebookAccessToken) \{
+    \textcolor{keyword}{final} Map<String, Object> credentialInfo = \textcolor{keyword}{new} HashMap<>();
+    credentialInfo.put(AuthProviderCredentialConstants.PROVIDER\_NAME, AuthProvider.FACEBOOK);
+    credentialInfo.put(AuthProviderCredentialConstants.ACCESS\_TOKEN, facebookAccessToken);
+
+    Gamebase.addMapping(activity, credentialInfo, \textcolor{keyword}{new} GamebaseDataCallback<AuthToken>() \{
+        @Override
+        \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(AuthToken result, GamebaseException exception) \{
+            \textcolor{comment}{// Add Mapping Success.}
+            \textcolor{keywordflow}{if} (Gamebase.isSuccess(exception)) \{
+                ...
+            \}
+
+            \textcolor{comment}{// If you got this error code(AUTH\_ADD\_MAPPING\_ALREADY\_MAPPED\_TO\_OTHER\_MEMBER) that means this
+       user already has another account of the AuthProvider.XXX),}
+            \textcolor{comment}{// You can call this method, Gamebase.addMappingForcibly() which can try to map forcibly with
+       the AuthProvider.XXX.}
+            \textcolor{keywordflow}{if} (exception.getCode() == GamebaseError.AUTH\_ADD\_MAPPING\_ALREADY\_MAPPED\_TO\_OTHER\_MEMBER) \{
+                \textcolor{comment}{// Before calling the mapping forcibly api, You should get this ForcingMappingTicket and
+       ForcingMappingKey string for this method parameter.}
+                \textcolor{keyword}{final} ForcingMappingTicket ticket = ForcingMappingTicket.from(exception);
+                \textcolor{keyword}{final} String forcingMappingKey = ticket.forcingMappingKey;
+
+                \textcolor{comment}{// Try to add mapping forcibly with the ForcingMappingKey.}
+                Gamebase.addMappingForcibly(activity, credentialInfo, forcingMappingKey, \textcolor{keyword}{new} 
+      GamebaseDataCallback<AuthToken>() \{
+                    @Override
+                    \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(AuthToken data, GamebaseException addMappingForciblyException) \{
+                        \textcolor{keywordflow}{if} (Gamebase.isSuccess(addMappingForciblyException)) \{
+                            \textcolor{comment}{// Add Mapping Forcibly Success.}
+                            Log.d(TAG, \textcolor{stringliteral}{"Add Mapping Forcibly successful"});
+                            String userId = Gamebase.getUserID();
+                            \textcolor{keywordflow}{return};
+                        \}
+
+                        \textcolor{comment}{// Add Mapping Forcibly Failed.}
+                        \textcolor{comment}{// Check the error code and handle the error appropriately.}
+                        ...
+                    \}
+                \}
+            \} \textcolor{keywordflow}{else} \{
+                \textcolor{comment}{// Add Mapping Failed.}
+                \textcolor{comment}{// Check the error code and handle the error appropriately.}
+                ...
+            \}
+        \}
+    \});
+\}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{}{Gamebase\#add\+Mapping(\+Activity, String, Map, Gamebase\+Data\+Callback)} 
+
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1mapping_1_1data_1_1_forcing_mapping_ticket}{com.\+toast.\+android.\+gamebase.\+auth.\+mapping.\+data.\+Forcing\+Mapping\+Ticket} 
+
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{com.\+toast.\+android.\+gamebase.\+auth.\+data.\+Auth\+Token}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a9079ec835df5660d8b19a1fd3eb0d9d8}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a9079ec835df5660d8b19a1fd3eb0d9d8}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!add\+Observer@{add\+Observer}}
+\index{add\+Observer@{add\+Observer}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{add\+Observer()}{addObserver()}}
+{\footnotesize\ttfamily static void add\+Observer (\begin{DoxyParamCaption}\item[{\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1observer_1_1_observer}{Observer}}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Add a observer to be called when network status, launching status or user status is changed. 
+
+\begin{DoxySince}{Since}
+Added 1.\+8.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & The callback that will run.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keyword}{class }MyObserverManager \{
+    ...
+    \textcolor{keyword}{private} \textcolor{keywordtype}{void} handlingObserverMessage() \{
+        Gamebase.addObserver(\textcolor{keyword}{new} Observer() \{
+             @Override
+             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onLaunchingInfoUpdate(ObserverMessage message) \{
+                 String typeOfMessage = message.type;
+                 Map<String, Object> dataMap = message.data;
+
+                 \textcolor{keywordflow}{if} (typeOfMessage.equalsIgnoreCase(ObserverMessage.Type.LAUNCHING)) \{
+                     \textcolor{keywordtype}{int} code = (int) dataMap.get(\textcolor{stringliteral}{"code"});
+                     String messageString = (String) dataMap.get(\textcolor{stringliteral}{"message"});
+                     Log.d(TAG, \textcolor{stringliteral}{"Update launching status: "} + code + \textcolor{stringliteral}{", "} + messageString);
+                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (typeOfMessage.equalsIgnoreCase(ObserverMessage.Type.HEARTBEAT)) \{
+                     Log.d(TAG, \textcolor{stringliteral}{"Heartbeat changing : "} + dataMap);
+                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (typeOfMessage.equalsIgnoreCase(ObserverMessage.Type.NETWORK)) \{
+                     Log.d(TAG, \textcolor{stringliteral}{"Network changing : "} + dataMap);
+                 \} \textcolor{keywordflow}{else} \{
+                     Logger.d(TAG, \textcolor{stringliteral}{"Something gonna be changing : "} + dataMap);
+                 \}
+             \}
+         \});
+     \}
+     ...
+\}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1observer_1_1_observer}{com.\+toast.\+android.\+gamebase.\+observer.\+Observer}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a1cae88da5b12ad9563fbfa619870f11b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a1cae88da5b12ad9563fbfa619870f11b}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!add\+Server\+Push\+Event@{add\+Server\+Push\+Event}}
+\index{add\+Server\+Push\+Event@{add\+Server\+Push\+Event}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{add\+Server\+Push\+Event()}{addServerPushEvent()}}
+{\footnotesize\ttfamily static void add\+Server\+Push\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1serverpush_1_1_server_push_event}{Server\+Push\+Event}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Add a server push event listener to be called when server push message is arrived. 
+
+\begin{DoxySince}{Since}
+Added 1.\+8.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The callback that will run.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keyword}{class }MyServerPushEventManager \{
+    ...
+    \textcolor{keyword}{private} \textcolor{keywordtype}{void} handlingServerPushMessage() \{
+        Gamebase.addServerPushEvent(\textcolor{keyword}{new} ServerPushEvent() \{
+            @Override
+            \textcolor{keyword}{public} \textcolor{keywordtype}{void} onReceive(ServerPushEventMessage message) \{
+                \textcolor{keywordflow}{if} (message.type.equals(ServerPushEventMessage.Type.APP\_KICKOUT)) \{
+                    Gamebase.logout(activity, \textcolor{keyword}{new} GamebaseCallback() \{
+                        @Override
+                        \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(GamebaseException exception) \{
+                            MyGameManager.logoutAndReLaunching();
+                        \}
+                    \});
+                \} \textcolor{keywordflow}{else} \{
+                    ...
+                \}
+            \}
+        \});
+    \}
+    ...
+\}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1serverpush_1_1_server_push_event}{com.\+toast.\+android.\+gamebase.\+serverpush.\+Server\+Push\+Event}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a7415fdfef5db5d7e6b02e82f62927e9b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a7415fdfef5db5d7e6b02e82f62927e9b}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Access\+Token@{get\+Access\+Token}}
+\index{get\+Access\+Token@{get\+Access\+Token}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Access\+Token()}{getAccessToken()}}
+{\footnotesize\ttfamily static String get\+Access\+Token (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the access token for the current user. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+The access token for \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} platform. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_abc355ef4a49b5c6348ee31890df16431}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_abc355ef4a49b5c6348ee31890df16431}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Auth\+Mapping\+List@{get\+Auth\+Mapping\+List}}
+\index{get\+Auth\+Mapping\+List@{get\+Auth\+Mapping\+List}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Auth\+Mapping\+List()}{getAuthMappingList()}}
+{\footnotesize\ttfamily static List$<$String$>$ get\+Auth\+Mapping\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the list of external authentication providers mapped to the current user identifier. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+The list of external authentication providers mapped to the current user identifier. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1auth_1_1_auth_provider}{com.\+toast.\+android.\+gamebase.\+base.\+auth.\+Auth\+Provider}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ae2f90bca5deb4d7dff72b890a257814f}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ae2f90bca5deb4d7dff72b890a257814f}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Auth\+Provider\+Access\+Token@{get\+Auth\+Provider\+Access\+Token}}
+\index{get\+Auth\+Provider\+Access\+Token@{get\+Auth\+Provider\+Access\+Token}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Auth\+Provider\+Access\+Token()}{getAuthProviderAccessToken()}}
+{\footnotesize\ttfamily static String get\+Auth\+Provider\+Access\+Token (\begin{DoxyParamCaption}\item[{@Non\+Null String}]{provider\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the access token from the authentication provider. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em provider\+Name} & The provider\+Name which is authentication provider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The access token from the authentication provider. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_abfa260ed922444ef35f23f8ac847b4f8}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_abfa260ed922444ef35f23f8ac847b4f8}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Auth\+Provider\+Profile@{get\+Auth\+Provider\+Profile}}
+\index{get\+Auth\+Provider\+Profile@{get\+Auth\+Provider\+Profile}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Auth\+Provider\+Profile()}{getAuthProviderProfile()}}
+{\footnotesize\ttfamily static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1auth_1_1_auth_provider_profile}{Auth\+Provider\+Profile} get\+Auth\+Provider\+Profile (\begin{DoxyParamCaption}\item[{@Non\+Null String}]{provider\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the profile from the authentication provider. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em provider\+Name} & The provider\+Name which is authentication provider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The profile from the authentication provider. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_af1dc0a9194eff5829c859a6a6aa4ab7c}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_af1dc0a9194eff5829c859a6a6aa4ab7c}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Auth\+Provider\+User\+ID@{get\+Auth\+Provider\+User\+ID}}
+\index{get\+Auth\+Provider\+User\+ID@{get\+Auth\+Provider\+User\+ID}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Auth\+Provider\+User\+I\+D()}{getAuthProviderUserID()}}
+{\footnotesize\ttfamily static String get\+Auth\+Provider\+User\+ID (\begin{DoxyParamCaption}\item[{@Non\+Null String}]{provider\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the user ID from the authentication provider. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em provider\+Name} & The provider\+Name which is authentication provider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The user ID from the authentication provider. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a61447d8f3f3a655ea83649465da9df62}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a61447d8f3f3a655ea83649465da9df62}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Ban\+Info@{get\+Ban\+Info}}
+\index{get\+Ban\+Info@{get\+Ban\+Info}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Ban\+Info()}{getBanInfo()}}
+{\footnotesize\ttfamily static \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_ban_info}{Ban\+Info} get\+Ban\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the ban information of the suspended user. 
+
+\begin{DoxySince}{Since}
+Added 1.\+11.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+The ban information of the suspended user. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aea83ba0122198c967d745bb4b8d97215}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aea83ba0122198c967d745bb4b8d97215}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Carrier\+Code@{get\+Carrier\+Code}}
+\index{get\+Carrier\+Code@{get\+Carrier\+Code}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Carrier\+Code()}{getCarrierCode()}}
+{\footnotesize\ttfamily static String get\+Carrier\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the carrier code set for the current device. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+The carrier code set for the current device. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aea83ba0122198c967d745bb4b8d97215_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_acd4bf4656730a81853332a4a551e5e9f}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_acd4bf4656730a81853332a4a551e5e9f}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Carrier\+Name@{get\+Carrier\+Name}}
+\index{get\+Carrier\+Name@{get\+Carrier\+Name}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Carrier\+Name()}{getCarrierName()}}
+{\footnotesize\ttfamily static String get\+Carrier\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the carrier name set for the current device. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+The carrier name set for the current device. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_acd4bf4656730a81853332a4a551e5e9f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a57662f504668587ba2a1d667a48c9732}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a57662f504668587ba2a1d667a48c9732}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Country\+Code@{get\+Country\+Code}}
+\index{get\+Country\+Code@{get\+Country\+Code}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Country\+Code()}{getCountryCode()}}
+{\footnotesize\ttfamily static String get\+Country\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the country code. 
+
+First, get the country code set in U\+S\+IM, ~\newline
+ and if there is no U\+S\+IM, get the country code set in the device.
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+The country code. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a57662f504668587ba2a1d667a48c9732_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aa5cb9db9a02d57d19f78a34a1adbdc95}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aa5cb9db9a02d57d19f78a34a1adbdc95}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Country\+Code\+Of\+Device@{get\+Country\+Code\+Of\+Device}}
+\index{get\+Country\+Code\+Of\+Device@{get\+Country\+Code\+Of\+Device}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Country\+Code\+Of\+Device()}{getCountryCodeOfDevice()}}
+{\footnotesize\ttfamily static String get\+Country\+Code\+Of\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the country code currently set on the device. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+The country code currently set on the device. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aa5cb9db9a02d57d19f78a34a1adbdc95_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aefed09bea0026a9e6de3c0506ebd5617}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aefed09bea0026a9e6de3c0506ebd5617}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Country\+Code\+Of\+U\+S\+IM@{get\+Country\+Code\+Of\+U\+S\+IM}}
+\index{get\+Country\+Code\+Of\+U\+S\+IM@{get\+Country\+Code\+Of\+U\+S\+IM}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Country\+Code\+Of\+U\+S\+I\+M()}{getCountryCodeOfUSIM()}}
+{\footnotesize\ttfamily static String get\+Country\+Code\+Of\+U\+S\+IM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the country code set in U\+S\+IM. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+The country code that is set in U\+S\+IM. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aefed09bea0026a9e6de3c0506ebd5617_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a9816db7baf613297601e327207cda02d}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a9816db7baf613297601e327207cda02d}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Device\+Language\+Code@{get\+Device\+Language\+Code}}
+\index{get\+Device\+Language\+Code@{get\+Device\+Language\+Code}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Device\+Language\+Code()}{getDeviceLanguageCode()}}
+{\footnotesize\ttfamily static String get\+Device\+Language\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the language code set for the current device. 
+
+\begin{DoxySince}{Since}
+Added 1.\+5.\+1. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+The device language code that is currently set. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a9816db7baf613297601e327207cda02d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a93d37838d5b242ed96a6bbd2f024c714}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a93d37838d5b242ed96a6bbd2f024c714}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Display\+Language\+Code@{get\+Display\+Language\+Code}}
+\index{get\+Display\+Language\+Code@{get\+Display\+Language\+Code}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Display\+Language\+Code()}{getDisplayLanguageCode()}}
+{\footnotesize\ttfamily static String get\+Display\+Language\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the display language code set for the current device. 
+
+\begin{DoxySince}{Since}
+Added 1.\+5.\+1. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+The display language code that is currently set. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aab024fc853da20582cd6cd85ecd9f6a6}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aab024fc853da20582cd6cd85ecd9f6a6}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+Last\+Logged\+In\+Provider@{get\+Last\+Logged\+In\+Provider}}
+\index{get\+Last\+Logged\+In\+Provider@{get\+Last\+Logged\+In\+Provider}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+Last\+Logged\+In\+Provider()}{getLastLoggedInProvider()}}
+{\footnotesize\ttfamily static String get\+Last\+Logged\+In\+Provider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the name of the last logged-\/in authentication provider. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+The name that is last logged-\/in authentication provider. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1auth_1_1_auth_provider}{com.\+toast.\+android.\+gamebase.\+base.\+auth.\+Auth\+Provider}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aeb5168abbd62c631b65247e6289d1e2d}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aeb5168abbd62c631b65247e6289d1e2d}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+S\+D\+K\+Version@{get\+S\+D\+K\+Version}}
+\index{get\+S\+D\+K\+Version@{get\+S\+D\+K\+Version}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+S\+D\+K\+Version()}{getSDKVersion()}}
+{\footnotesize\ttfamily static String get\+S\+D\+K\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the current version of the \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} S\+DK for Android as a string. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+The current version of the \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} S\+DK. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aeb5168abbd62c631b65247e6289d1e2d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ab7c1e87ef968e274d77774ea7c814f07}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ab7c1e87ef968e274d77774ea7c814f07}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!get\+User\+ID@{get\+User\+ID}}
+\index{get\+User\+ID@{get\+User\+ID}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{get\+User\+I\+D()}{getUserID()}}
+{\footnotesize\ttfamily static String get\+User\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the user ID that is currently logged in. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+The user id that is currently logged in. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a1b2d26183c219ab1ef840a95af71bd88}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a1b2d26183c219ab1ef840a95af71bd88}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!initialize@{initialize}}
+\index{initialize@{initialize}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily static void initialize (\begin{DoxyParamCaption}\item[{final Activity}]{activity,  }\item[{final \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_configuration}{Gamebase\+Configuration}}]{configuration,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1launching_1_1data_1_1_launching_info}{Launching\+Info} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function initializes the \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} S\+DK. 
+
+If this function is not called, the \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} S\+DK function will not work.
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is initializing modules. \\
+\hline
+{\em configuration} & The configurations required to run the \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} S\+DK. \\
+\hline
+{\em callback} & Initialization result callback, ~\newline
+ returns the launching information as a result of initialization.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keyword}{class }SampleActivity \textcolor{keyword}{extends} Activity \{
+    @Override
+    \textcolor{keyword}{protected} \textcolor{keywordtype}{void} onCreate(Bundle savedInstanceState) \{
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity\_sample);
+
+        Gamebase.setDebugMode(\textcolor{keyword}{true});
+
+        GamebaseConfiguration initSettings = GamebaseConfiguration.newBuilder(
+                        \textcolor{stringliteral}{"diIofWef"}, \textcolor{stringliteral}{"1.0.0"}, PurchaseProvider.StoreCode.GOOGLE)
+                        .build();
+
+        Gamebase.initialize(activity, initSettings, \textcolor{keyword}{new} GamebaseDataCallback<LaunchingInfo>() \{
+            @Override
+            \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(LaunchingInfo data, GamebaseException exception) \{
+                \textcolor{keywordflow}{if} (Gamebase.isSuccess(exception)) \{
+                    \textcolor{comment}{// Success}
+                    ...
+                \} \textcolor{keywordflow}{else} \{
+                    \textcolor{comment}{// Failed}
+                    ...
+                \}
+            \}
+        \});
+    \}
+
+    ...
+\}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_configuration}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Configuration}. 
+
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1launching_1_1data_1_1_launching_info}{com.\+toast.\+android.\+gamebase.\+launching.\+data.\+Launching\+Info}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ac53b9593245b674244afe37606ec15c6}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ac53b9593245b674244afe37606ec15c6}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!is\+Debug\+Mode@{is\+Debug\+Mode}}
+\index{is\+Debug\+Mode@{is\+Debug\+Mode}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{is\+Debug\+Mode()}{isDebugMode()}}
+{\footnotesize\ttfamily static boolean is\+Debug\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Indicates if we are in debug mode. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+True if enabled debug, false if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a40e7b7b4c19a8bf4140aa22033ab6489}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a40e7b7b4c19a8bf4140aa22033ab6489}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!is\+Initialized@{is\+Initialized}}
+\index{is\+Initialized@{is\+Initialized}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{is\+Initialized()}{isInitialized()}}
+{\footnotesize\ttfamily static boolean is\+Initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check whether the \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase} is initialized. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+True if initialized, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ab2dc0892a980b519fd76e15bcecb3bb5}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ab2dc0892a980b519fd76e15bcecb3bb5}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!is\+Sandbox@{is\+Sandbox}}
+\index{is\+Sandbox@{is\+Sandbox}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{is\+Sandbox()}{isSandbox()}}
+{\footnotesize\ttfamily static boolean is\+Sandbox (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns whether this project is sandbox mode or not. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+\begin{DoxyReturn}{Returns}
+Boolean value whether this project is sandbox mode. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ae28caa0bc9c72de9cc018ee36eb25b47}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ae28caa0bc9c72de9cc018ee36eb25b47}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!is\+Success@{is\+Success}}
+\index{is\+Success@{is\+Success}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{is\+Success()}{isSuccess()}}
+{\footnotesize\ttfamily static boolean is\+Success (\begin{DoxyParamCaption}\item[{@Nullable final \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1base_1_1_gamebase_exception}{Gamebase\+Exception}}]{exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns true if the Gamebase\+Exception object is null or the error code is zero. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em exception} & The exception that occurred. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if success, false if not. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ae28caa0bc9c72de9cc018ee36eb25b47_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a8b4208c1f02a43176a621de920d922a0}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a8b4208c1f02a43176a621de920d922a0}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!issue\+Transfer\+Account@{issue\+Transfer\+Account}}
+\index{issue\+Transfer\+Account@{issue\+Transfer\+Account}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{issue\+Transfer\+Account()}{issueTransferAccount()}}
+{\footnotesize\ttfamily static void issue\+Transfer\+Account (\begin{DoxyParamCaption}\item[{final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info}{Transfer\+Account\+Info} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Try to issue the transfer account. 
+
+\begin{DoxySince}{Since}
+Added 2.\+1.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{}{Transfer\+Account\+Info}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} onIssueTransferAccount(\textcolor{keyword}{final} Activity activity) \{
+    Gamebase.issueTransferAccount(\textcolor{keyword}{new} GamebaseDataCallback<TransferAccountInfo>() \{
+        @Override
+        \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(\textcolor{keyword}{final} TransferAccountInfo transferAccount, \textcolor{keyword}{final} GamebaseException exception
+      ) \{
+            \textcolor{keywordflow}{if} (!Gamebase.isSuccess(exception)) \{
+                \textcolor{comment}{// Issuing TransferAccount failed.}
+                \textcolor{keywordflow}{return};
+            \}
+
+            \textcolor{comment}{// Issuing TransferAccount success.}
+            \textcolor{keyword}{final} String account = transferAccount.account.id;
+            \textcolor{keyword}{final} String password = transferAccount.account.password;
+        \}
+    \});
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a277a8a1672aeb0ac6b20e7ebcd4e09b5}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a277a8a1672aeb0ac6b20e7ebcd4e09b5}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!login@{login}}
+\index{login@{login}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{login()}{login()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static void login (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{final String}]{provider\+Name,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs the user in with the external authentication provider. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is starting the login process. \\
+\hline
+{\em provider\+Name} & The provider name witch is authentication provider. \\
+\hline
+{\em callback} & Login result callback, ~\newline
+ returns the authentication token as a result of login.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+Gamebase.login(activity, AuthProvider.GOOGLE, \textcolor{keyword}{new} GamebaseDataCallback<AuthToken>() \{
+    @Override
+    public void onCallback(AuthToken data, GamebaseException exception) \{
+        if (Gamebase.isSuccess(exception)) \{
+            Log.d(TAG, \textcolor{stringliteral}{"Login successful"});
+            ...
+        \} else \{
+            Log.e(TAG, \textcolor{stringliteral}{"Login failed"});
+            ...
+        \}
+    \}
+\});
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1auth_1_1_auth_provider}{com.\+toast.\+android.\+gamebase.\+base.\+auth.\+Auth\+Provider}. 
+
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{com.\+toast.\+android.\+gamebase.\+auth.\+data.\+Auth\+Token}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a277a8a1672aeb0ac6b20e7ebcd4e09b5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a277a8a1672aeb0ac6b20e7ebcd4e09b5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aff74a9c4ea1a737026d9507d6e9827e8}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aff74a9c4ea1a737026d9507d6e9827e8}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!login@{login}}
+\index{login@{login}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{login()}{login()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static void login (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{final String}]{provider\+Name,  }\item[{@Nullable Map$<$ String, Object $>$}]{additional\+Info,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs the user in with the external authentication provider. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is starting the login process. \\
+\hline
+{\em provider\+Name} & The provider\+Name which is authentication provider. \\
+\hline
+{\em additional\+Info} & The additional\+Info which is additional information using for login. \\
+\hline
+{\em callback} & Login result callback, ~\newline
+ returns the authentication token as a result of login.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+Gamebase.login(activity, AuthProvider.GOOGLE, additionalInfo, \textcolor{keyword}{new} GamebaseDataCallback<AuthToken>() \{
+    @Override
+    public void onCallback(AuthToken data, GamebaseException exception) \{
+        if (Gamebase.isSuccess(exception)) \{
+            Log.d(TAG, \textcolor{stringliteral}{"Login successful"});
+            ...
+        \} else \{
+            Log.e(TAG, \textcolor{stringliteral}{"Login failed"});
+            ...
+        \}
+    \}
+\});
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1auth_1_1_auth_provider}{com.\+toast.\+android.\+gamebase.\+base.\+auth.\+Auth\+Provider}. 
+
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{com.\+toast.\+android.\+gamebase.\+auth.\+data.\+Auth\+Token}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aa9ada2b00de7bcc4f96ba8b85319d444}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aa9ada2b00de7bcc4f96ba8b85319d444}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!login@{login}}
+\index{login@{login}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{login()}{login()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static void login (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Non\+Null final Map$<$ String, Object $>$}]{credential\+Info,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs the user in with the credential of external authentication provider. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is starting the login process. \\
+\hline
+{\em credential\+Info} & The credential\+Info which is credential of authentication provider. \\
+\hline
+{\em callback} & Login result callback, ~\newline
+ returns the authentication token as a result of login.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+Map<String, Object> credential = \textcolor{keyword}{new} HashMap<>();
+credential.put(AuthProviderCredentialConstants.PROVIDER\_NAME, providerName);
+credential.put(AuthProviderCredentialConstants.ACCESS\_TOKEN, accessToken);
+credential.put(AuthProviderCredentialConstants.ACCESS\_TOKEN\_SECRET, accessTokenSecret);
+Gamebase.login(activity, credential, \textcolor{keyword}{new} GamebaseDataCallback<AuthToken>() \{
+    @Override
+    \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(AuthToken data, GamebaseException exception) \{
+        \textcolor{keywordflow}{if} (Gamebase.isSuccess(exception)) \{
+            Log.d(TAG, \textcolor{stringliteral}{"Login successful"});
+            ...
+        \} \textcolor{keywordflow}{else} \{
+            Log.e(TAG, \textcolor{stringliteral}{"Login failed"});
+            ...
+        \}
+    \}
+\});
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1auth_1_1_auth_provider}{com.\+toast.\+android.\+gamebase.\+base.\+auth.\+Auth\+Provider}. 
+
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{com.\+toast.\+android.\+gamebase.\+auth.\+data.\+Auth\+Token}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a2ac5681db5c8d63aaf02ec1daa4b2933}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a2ac5681db5c8d63aaf02ec1daa4b2933}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!login\+For\+Last\+Logged\+In\+Provider@{login\+For\+Last\+Logged\+In\+Provider}}
+\index{login\+For\+Last\+Logged\+In\+Provider@{login\+For\+Last\+Logged\+In\+Provider}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{login\+For\+Last\+Logged\+In\+Provider()}{loginForLastLoggedInProvider()}}
+{\footnotesize\ttfamily static void login\+For\+Last\+Logged\+In\+Provider (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs the user in with last logged in authentication provider. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is starting the mapping process. \\
+\hline
+{\em callback} & Login result callback, ~\newline
+ returns the authentication token as a result of login.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+Gamebase.loginForLastLoggedInProvider(\textcolor{keyword}{new} GamebaseDataCallback<AuthToken>() \{
+    @Override
+    \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(AuthToken data, GamebaseException exception) \{
+        \textcolor{keywordflow}{if} (Gamebase.isSuccess(exception)) \{
+            Log.d(TAG, \textcolor{stringliteral}{"Login successful"});
+            ...
+        \} \textcolor{keywordflow}{else} \{
+            Log.e(TAG, \textcolor{stringliteral}{"Login failed"});
+            ...
+        \}
+    \}
+\});
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{com.\+toast.\+android.\+gamebase.\+auth.\+data.\+Auth\+Token}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Data\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a46e0cbaa0ed64f4c0eb66e137bfcf4d4}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a46e0cbaa0ed64f4c0eb66e137bfcf4d4}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!logout@{logout}}
+\index{logout@{logout}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily static void logout (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_callback}{Gamebase\+Callback}}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs out the user. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is starting the mapping process. \\
+\hline
+{\em callback} & Callbacks the result of logout. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a74cd8c74ed834e846c05c598708f1e8b}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a74cd8c74ed834e846c05c598708f1e8b}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!on\+Activity\+Result@{on\+Activity\+Result}}
+\index{on\+Activity\+Result@{on\+Activity\+Result}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{on\+Activity\+Result()}{onActivityResult()}}
+{\footnotesize\ttfamily static void on\+Activity\+Result (\begin{DoxyParamCaption}\item[{int}]{request\+Code,  }\item[{int}]{result\+Code,  }\item[{Intent}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The method that should be called from the Activity\textquotesingle{}s or Fragment\textquotesingle{}s on\+Activity\+Result method. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em request\+Code} & The request code that\textquotesingle{}s received by the Activity or Fragment. \\
+\hline
+{\em result\+Code} & The result code that\textquotesingle{}s received by the Activity or Fragment. \\
+\hline
+{\em data} & The result data that\textquotesingle{}s received by the Activity or Fragment.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keyword}{class }MainActivity \textcolor{keyword}{extends} AppCompatActivity \{
+    ...
+    @Override
+    \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a74cd8c74ed834e846c05c598708f1e8b}{onActivityResult}(\textcolor{keywordtype}{int} requestCode, \textcolor{keywordtype}{int} resultCode, Intent data) \{
+        super.onActivityResult(requestCode, resultCode, data);
+        Gamebase.onActivityResult(requestCode, resultCode, data);
+    \}
+    ...
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aef6c37175f8a8b97e41cf1ae81b47853}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aef6c37175f8a8b97e41cf1ae81b47853}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!query\+Transfer\+Account@{query\+Transfer\+Account}}
+\index{query\+Transfer\+Account@{query\+Transfer\+Account}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{query\+Transfer\+Account()}{queryTransferAccount()}}
+{\footnotesize\ttfamily static void query\+Transfer\+Account (\begin{DoxyParamCaption}\item[{final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info}{Transfer\+Account\+Info} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Try to query the transfer account to \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase}{Gamebase}. 
+
+If the transfer account is already issued, it returns.
+
+\begin{DoxySince}{Since}
+Added 2.\+1.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{}{Transfer\+Account\+Info}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} onQueryTransferAccount(\textcolor{keyword}{final} Activity activity) \{
+    Gamebase.queryTransferAccount(\textcolor{keyword}{new} GamebaseDataCallback<TransferAccountInfo>() \{
+        @Override
+        \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(\textcolor{keyword}{final} TransferAccountInfo transferAccount, \textcolor{keyword}{final} GamebaseException exception
+      ) \{
+            \textcolor{keywordflow}{if} (!Gamebase.isSuccess(exception)) \{
+                \textcolor{comment}{// Querying TransferAccount failed.}
+                \textcolor{keywordflow}{return};
+            \}
+
+            \textcolor{comment}{// Querying TransferAccount success.}
+            \textcolor{keyword}{final} String account = transferAccount.account.id;
+            \textcolor{keyword}{final} String password = transferAccount.account.password;
+        \}
+    \});
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a73db608847a6f59086a19b7be9fb0b7f}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a73db608847a6f59086a19b7be9fb0b7f}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!remove\+All\+Observer@{remove\+All\+Observer}}
+\index{remove\+All\+Observer@{remove\+All\+Observer}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{remove\+All\+Observer()}{removeAllObserver()}}
+{\footnotesize\ttfamily static void remove\+All\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove all observer listeners. 
+
+\begin{DoxySince}{Since}
+Added 1.\+8.\+0. 
+\end{DoxySince}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ad8565e3001614780831e6f05fa3f9e77}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_ad8565e3001614780831e6f05fa3f9e77}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!remove\+All\+Server\+Push\+Event@{remove\+All\+Server\+Push\+Event}}
+\index{remove\+All\+Server\+Push\+Event@{remove\+All\+Server\+Push\+Event}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{remove\+All\+Server\+Push\+Event()}{removeAllServerPushEvent()}}
+{\footnotesize\ttfamily static void remove\+All\+Server\+Push\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove all server push event listeners. 
+
+\begin{DoxySince}{Since}
+Added 1.\+8.\+0. 
+\end{DoxySince}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a0349c553fad7eb3fb4bdd0da8cebe311}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a0349c553fad7eb3fb4bdd0da8cebe311}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!remove\+Mapping@{remove\+Mapping}}
+\index{remove\+Mapping@{remove\+Mapping}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{remove\+Mapping()}{removeMapping()}}
+{\footnotesize\ttfamily static void remove\+Mapping (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{final String}]{provider\+Name,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_callback}{Gamebase\+Callback}}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes external authentication that is mapped to the current user identifier. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is starting the mapping process. \\
+\hline
+{\em provider\+Name} & The provider\+Name which is authentication provider. \\
+\hline
+{\em callback} & Callbacks the result of removing the mapping.\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+Gamebase.removeMapping(AuthProvider.GOOGLE, \textcolor{keyword}{new} GamebaseCallback() \{
+    @Override
+    \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(GamebaseException exception) \{
+        \textcolor{keywordflow}{if} (Gamebase.isSuccess(exception)) \{
+            Log.d(TAG, \textcolor{stringliteral}{"Remove mapping successful"});
+        \} \textcolor{keywordflow}{else} \{
+            Log.d(TAG, \textcolor{stringliteral}{"Remove mapping failed"});
+        \}
+    \}
+\});
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1base_1_1auth_1_1_auth_provider}{com.\+toast.\+android.\+gamebase.\+base.\+auth.\+Auth\+Provider}. 
+
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Callback}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_af13c08393910fc1b5dac3b5209f461c8}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_af13c08393910fc1b5dac3b5209f461c8}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!remove\+Observer@{remove\+Observer}}
+\index{remove\+Observer@{remove\+Observer}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{remove\+Observer()}{removeObserver()}}
+{\footnotesize\ttfamily static void remove\+Observer (\begin{DoxyParamCaption}\item[{\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1observer_1_1_observer}{Observer}}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove a observer listener. 
+
+\begin{DoxySince}{Since}
+Added 1.\+8.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & The callback that will be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1observer_1_1_observer}{com.\+toast.\+android.\+gamebase.\+observer.\+Observer}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a1aac5aefec7eee16ab9ca5522c19dd75}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a1aac5aefec7eee16ab9ca5522c19dd75}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!remove\+Server\+Push\+Event@{remove\+Server\+Push\+Event}}
+\index{remove\+Server\+Push\+Event@{remove\+Server\+Push\+Event}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{remove\+Server\+Push\+Event()}{removeServerPushEvent()}}
+{\footnotesize\ttfamily static void remove\+Server\+Push\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1serverpush_1_1_server_push_event}{Server\+Push\+Event}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove a server push event listener. 
+
+\begin{DoxySince}{Since}
+Added 1.\+8.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The callback that will be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1serverpush_1_1_server_push_event}{com.\+toast.\+android.\+gamebase.\+serverpush.\+Server\+Push\+Event}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a047d0d2590f3e4bb4933120ec6bc971d}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a047d0d2590f3e4bb4933120ec6bc971d}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!renew\+Transfer\+Account@{renew\+Transfer\+Account}}
+\index{renew\+Transfer\+Account@{renew\+Transfer\+Account}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{renew\+Transfer\+Account()}{renewTransferAccount()}}
+{\footnotesize\ttfamily static void renew\+Transfer\+Account (\begin{DoxyParamCaption}\item[{final \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_renew_configuration}{Transfer\+Account\+Renew\+Configuration}}]{configuration,  }\item[{final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info}{Transfer\+Account\+Info} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Try to renew the transfer account. 
+
+If you want to renew the account automatically or manually, you should pass the proper Transfer\+Account\+Renew\+Configuration object to the first parameter.
+
+\begin{DoxySince}{Since}
+Added 2.\+1.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em configuration} & \\
+\hline
+{\em callback} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{}{Transfer\+Account\+Renew\+Configuration} 
+
+\hyperlink{}{Transfer\+Account\+Info}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} onRenewTransferAccount(\textcolor{keyword}{final} Activity activity) \{
+    \textcolor{keyword}{final} RenewalTargetType renewalTargetType = RenewalTargetType.ID\_PASSWORD;
+    \textcolor{keyword}{final} TransferAccountRenewConfiguration autoConfig = TransferAccountRenewConfiguration.
+      newAutoRenewConfiguration(renewalTargetType);
+    \textcolor{keyword}{final} TransferAccountRenewConfiguration manualConfig = TransferAccountRenewConfiguration.
+      newManualRenewConfiguration(\textcolor{stringliteral}{"id"}, \textcolor{stringliteral}{"password"});
+    Gamebase.renewTransferAccount(autoConfig, \textcolor{keyword}{new} GamebaseDataCallback<TransferAccountInfo>() \{
+        @Override
+        \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(\textcolor{keyword}{final} TransferAccountInfo transferAccountInfo, \textcolor{keyword}{final} GamebaseException 
+      exception) \{
+            \textcolor{keywordflow}{if} (!Gamebase.isSuccess(exception)) \{
+                \textcolor{comment}{// Renewing TransferAccount failed.}
+                \textcolor{keywordflow}{return};
+            \}
+
+            \textcolor{comment}{// Renewing TransferAccount success.}
+            \textcolor{keyword}{final} String renewedAccount = transferAccount.account.id;
+            \textcolor{keyword}{final} String renewedPassword = transferAccount.account.password;
+        \}
+    \});
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a4370928bb241d35d896feb65e206a7d4}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a4370928bb241d35d896feb65e206a7d4}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!set\+Debug\+Mode@{set\+Debug\+Mode}}
+\index{set\+Debug\+Mode@{set\+Debug\+Mode}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{set\+Debug\+Mode()}{setDebugMode()}}
+{\footnotesize\ttfamily static void set\+Debug\+Mode (\begin{DoxyParamCaption}\item[{boolean}]{enable\+Debug }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Used to enable or disable logging, and other debug features. 
+
+If true, Outputs a log when the log priority is V\+E\+R\+B\+O\+SE or higher. ~\newline
+ If false, Outputs a log when the log priority is W\+A\+RN or higher.
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em enable\+Debug} & Debug features (like logging) are enabled if true, disabled if false. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a77c9364a742c9ec00eb104e7e3b159f6}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a77c9364a742c9ec00eb104e7e3b159f6}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!set\+Display\+Language\+Code@{set\+Display\+Language\+Code}}
+\index{set\+Display\+Language\+Code@{set\+Display\+Language\+Code}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{set\+Display\+Language\+Code()}{setDisplayLanguageCode()}}
+{\footnotesize\ttfamily static void set\+Display\+Language\+Code (\begin{DoxyParamCaption}\item[{String}]{display\+Language\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a174f9e2e861ee3a4dfca710f01845da0}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_a174f9e2e861ee3a4dfca710f01845da0}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!transfer\+Account\+With\+Id\+P\+Login@{transfer\+Account\+With\+Id\+P\+Login}}
+\index{transfer\+Account\+With\+Id\+P\+Login@{transfer\+Account\+With\+Id\+P\+Login}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{transfer\+Account\+With\+Id\+P\+Login()}{transferAccountWithIdPLogin()}}
+{\footnotesize\ttfamily static void transfer\+Account\+With\+Id\+P\+Login (\begin{DoxyParamCaption}\item[{final String}]{account\+Id,  }\item[{final String}]{account\+Password,  }\item[{final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_data_callback}{Gamebase\+Data\+Callback}$<$ \hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1data_1_1_auth_token}{Auth\+Token} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Try to transfer account with transfer account id and password. 
+
+If this process is finished successfully, it proceeds login process and return Auth\+Token.
+
+\begin{DoxySince}{Since}
+Added 2.\+1.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em account\+Id} & \\
+\hline
+{\em account\+Password} & \\
+\hline
+{\em callback} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcom_1_1toast_1_1android_1_1gamebase_1_1auth_1_1transfer_1_1data_1_1_transfer_account_info_ac8b72545960400e567cb234da5b1e592}{Transfer\+Account\+Info\#account} 
+
+\hyperlink{}{Auth\+Token}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} onTransferAccount(\textcolor{keyword}{final} Activity activity, \textcolor{keyword}{final} String accountId, \textcolor{keyword}{final} String 
+      accountPassword) \{
+    Gamebase.transferAccountWithIdPLogin(accountId, accountPassword, \textcolor{keyword}{new} GamebaseDataCallback<AuthToken>() 
+      \{
+        @Override
+        \textcolor{keyword}{public} \textcolor{keywordtype}{void} onCallback(\textcolor{keyword}{final} AuthToken authToken, \textcolor{keyword}{final} GamebaseException exception) \{
+            \textcolor{keywordflow}{if} (!Gamebase.isSuccess(exception)) \{
+                \textcolor{comment}{// Transfering Account failed.}
+                \textcolor{keywordflow}{return};
+            \}
+
+            \textcolor{comment}{// Transfering Account success.}
+            \textcolor{comment}{// TODO: implements post login process}
+        \}
+    \});
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aaa0ce688f5b145c64fb3cc3ec7d496c7}\label{classcom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_aaa0ce688f5b145c64fb3cc3ec7d496c7}} 
+\index{com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}!withdraw@{withdraw}}
+\index{withdraw@{withdraw}!com\+::toast\+::android\+::gamebase\+::\+Gamebase@{com\+::toast\+::android\+::gamebase\+::\+Gamebase}}
+\subsubsection{\texorpdfstring{withdraw()}{withdraw()}}
+{\footnotesize\ttfamily static void withdraw (\begin{DoxyParamCaption}\item[{@Non\+Null final Activity}]{activity,  }\item[{@Nullable final \hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_callback}{Gamebase\+Callback}}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Withdraws the user. 
+
+\begin{DoxySince}{Since}
+Added 1.\+4.\+0. 
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em activity} & The activity which is starting the mapping process. \\
+\hline
+{\em callback} & Callbacks the result of withdraw. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacecom_1_1toast_1_1android_1_1gamebase_1_1_gamebase_callback}{com.\+toast.\+android.\+gamebase.\+Gamebase\+Callback}. 
+\end{DoxySeeAlso}
