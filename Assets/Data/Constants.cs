@@ -27,5 +27,5 @@
     public const string SPACE_ROOM_TYPE_MULTI_USER_MATCH = "SnakeRoom";
 
     public const float GAME_PLAY_TIME = 5.0f;
-    public const float LOADING_TIME = 1.0f;
+    public const float LOADING_TIME = 1.5f;
 }

@@ -60,7 +60,6 @@ public class GameLobbyUi : MonoBehaviour
         gameUser.onMatchUserDoneListeners += (UserAgent userAgent, ResultCodeMatchUserDone result, bool created, string roomId, Payload payload) =>
         {
             Debug.Log("onMatchUserDoneListeners!!!!!! " + userAgent.GetUserId());
-            UserInfo.Instance.gameState = UserInfo.GameState.Wait;
         };
 
         // 타이밍 이슈상 리스너 미리등록, 서버에서 게임룸에 두명이 모두 입장했을때 게임 설정데이터를 전송 : snake 게임 server to client

@@ -10,7 +10,6 @@ public class LoadingUi : MonoBehaviour
     public Text textMoveScene;
 
     private float elapsedDelta;
-    private string moveScene;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +17,7 @@ public class LoadingUi : MonoBehaviour
         // 로딩 시간확인
         elapsedDelta = Constants.LOADING_TIME;
 
-        moveScene = UserInfo.Instance.Scene;
-
         updateTimeUI(elapsedDelta);
-        textMoveScene.text = "Scene Lodding... move to " + moveScene;
-
-        Debug.Log(textMoveScene.text);
 
         if(UiLog.Instance != null)
         {
@@ -45,14 +39,14 @@ public class LoadingUi : MonoBehaviour
         }
         else
         {
-            if (moveScene != Constants.SCENE_GAME_TAPBIRD && moveScene != Constants.SCENE_GAME_SNAKE) {
+            if (UserInfo.Instance.Scene != Constants.SCENE_GAME_TAPBIRD && UserInfo.Instance.Scene != Constants.SCENE_GAME_SNAKE) {
                 if (UiLog.Instance != null)
                 {
                     UiLog.Instance.gameObject.SetActive(true);
                 }
             }
             // 신이동
-            SceneManager.LoadScene(moveScene);
+            SceneManager.LoadScene(UserInfo.Instance.Scene);
         }
     }
 
@@ -60,5 +54,6 @@ public class LoadingUi : MonoBehaviour
     {
         // 로딩 시간 갱신
         textTime.text = Mathf.RoundToInt(time).ToString();
+        textMoveScene.text = "Scene Lodding... move to " + UserInfo.Instance.Scene;
     }
 }
