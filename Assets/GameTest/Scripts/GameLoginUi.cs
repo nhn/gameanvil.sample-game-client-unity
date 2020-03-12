@@ -6,37 +6,35 @@ using Tardis.User;
 using TardisConnector;
 using UnityEngine;
 using UnityEngine.UI;
+using Toast.Gamebase;
 
 public class GameLoginUi : MonoBehaviour
 {
     // 화면과 연결되는 필드들
+    public Text textUUID;
+    public Button buttonGenerateUUID;
     public Text textGamebaseUserId;
     public Text textGameServerIp;
     public Text textGameServerPort;
 
-    public InputField inputFieldID;
     public Button buttonLogin;
 
     // Start is called before the first frame update
     void Start()
     {
         // 기본값 지정
+        textUUID.text = PlayerPrefs.GetString(Constants.KEY_UUID);
+        if (string.IsNullOrWhiteSpace(textUUID.text))
+        {
+            OnClickGenerateUUID();
+        }
         textGamebaseUserId.text = GamebaseInfo.Instance.GamebaseUserId;
         textGameServerIp.text = GamebaseInfo.Instance.GameServerIp;
         textGameServerPort.text = GamebaseInfo.Instance.GameServerPort;
 
-        string id = PlayerPrefs.GetString(Constants.KEY_USER_ID);
-        if (string.IsNullOrWhiteSpace(id))
-        {
-            inputFieldID.text = "SampleID";
-        }
-        else
-        {
-            inputFieldID.text = id;
-        }
-
         // 버튼 클릭에 대한 리스너등록
         buttonLogin.onClick.AddListener(() => { OnClickLogin(); });
+        buttonGenerateUUID.onClick.AddListener(() => { OnClickGenerateUUID(); });
 
         // ===========================================================================================>>> Tardis
         // 연결 끊기는 부분 처리 리스너 등록
@@ -59,8 +57,8 @@ public class GameLoginUi : MonoBehaviour
                 };
                 Debug.Log("authenticationReq " + authenticationReq);
 
-                // 서버에 인증 시도. 현재는 deviceid, id, pw 모두 uuid값으로 전달
-                ConnectHandler.Instance.GetSessionAgent().Authenticate(textGamebaseUserId.text, inputFieldID.text, inputFieldID.text, new Payload().add(new Packet(authenticationReq)));
+                // 서버에 인증 시도. 현재는 deviceid uuid, id, pw Gamebase userId 값으로 전달
+                ConnectHandler.Instance.GetSessionAgent().Authenticate(textUUID.text, textGamebaseUserId.text, textGamebaseUserId.text, new Payload().add(new Packet(authenticationReq)));
             }
             else
             {
@@ -79,8 +77,6 @@ public class GameLoginUi : MonoBehaviour
                 // 성공인 경우 다음 단계로 진행.
                 if (result == ResultCodeAuth.AUTH_SUCCESS)
                 {
-                    PlayerPrefs.SetString(Constants.KEY_USER_ID, inputFieldID.text);
-
                     // 성공시 로그인 요청
                     TardisLogin();
                 }
@@ -93,6 +89,12 @@ public class GameLoginUi : MonoBehaviour
 
             };
         // ===========================================================================================>>> Tardis
+    }
+
+    void OnClickGenerateUUID()
+    {
+        // uuid 갱신 처리
+        textUUID.text = TestHelper.GenerateUUID();
     }
 
     void OnClickLogin()
@@ -113,8 +115,8 @@ public class GameLoginUi : MonoBehaviour
             AppVersion = "0.0.1",
             AppStore = "None",
             DeviceModel = SystemInfo.deviceModel,
-            DeviceCountry = "KR",
-            DeviceLanguage = "ko"
+            DeviceCountry = Gamebase.GetCountryCodeOfDevice(),
+            DeviceLanguage = Gamebase.GetDeviceLanguageCode()
 
         };
         Debug.Log("loginReq " + loginReq);

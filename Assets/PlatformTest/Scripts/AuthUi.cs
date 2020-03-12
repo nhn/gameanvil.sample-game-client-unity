@@ -94,9 +94,7 @@ public class AuthUi : MonoBehaviour
     void OnClickGenerateUUID()
     {
         // uuid 갱신 처리
-        textUUID.text = System.Guid.NewGuid().ToString();
-        PlayerPrefs.SetString(Constants.KEY_UUID, textUUID.text);
-        Debug.Log("OnClickGenerateUUID " + textUUID.text);
+        textUUID.text = TestHelper.GenerateUUID();
     }
 
     void OnClickGetLaunching()
@@ -147,6 +145,10 @@ public class AuthUi : MonoBehaviour
         if (string.IsNullOrWhiteSpace(inputFieldID.text))
         {
             Debug.Log("ID field is empty!!!! ");
+        }
+        else if (inputFieldID.text.Length < 4)
+        {
+            Debug.Log("Please enter at least 4 digits.");
         }
         else
         {

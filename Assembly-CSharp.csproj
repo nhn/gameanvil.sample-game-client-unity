@@ -385,6 +385,7 @@
     <Compile Include="Assets\PlatformTest\Scripts\MultiSnakeGameUi.cs" />
     <Compile Include="Assets\PlatformTest\Scripts\MultiTapBirdGameUi.cs" />
     <Compile Include="Assets\PlatformTest\Scripts\SingleGameUi.cs" />
+    <Compile Include="Assets\PlatformTest\Utils\TestHelper.cs" />
     <Compile Include="Assets\PlatformTest\Utils\UiLog.cs" />
     <Compile Include="Assets\Protocols\Authentication.cs" />
     <Compile Include="Assets\Protocols\GameMulti.cs" />
