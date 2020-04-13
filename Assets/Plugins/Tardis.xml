@@ -4,32 +4,307 @@
         <name>Tardis</name>
     </assembly>
     <members>
-        <member name="M:Tardis.Agent.LvNetLogger(Tardis.Defines.NetLogLevel,System.String)">
+        <member name="T:Tardis.Agent">
             <summary>
-            로그 콜백.
+            SessionAgent 와 UserAgent 의 기본 클래스. 직접 사용하지 않는다.
             </summary>
         </member>
-        <member name="M:Tardis.Agent.Logger(Tardis.Defines.LogLevel,System.String)">
+        <member name="M:Tardis.Agent.GetServiceName">
             <summary>
-            로그 콜백.
+            Agent를 생성할때 지정한 ServiceName을 리턴한다.
             </summary>
+            <returns>ServiceName</returns>
+        </member>
+        <member name="M:Tardis.Agent.GetAccountId">
+            <summary>
+            인증 요청시 사용한 AccountId를 리턴한다.
+            인증을 하지 않았을 경우, 실패했을 경우 빈 문자열.
+            </summary>
+            <returns>AccountId</returns>
+        </member>
+        <member name="M:Tardis.Agent.GetSubId">
+            <summary>
+            UserAgent를 생성할때 지정한 ServiceName을 리턴한다.
+            SessionAgent는 빈 문자열.
+            </summary>
+            <returns>ServiceName</returns>
+        </member>
+        <member name="M:Tardis.Agent.GetUserId">
+            <summary>
+            UserId를 리턴한다. 
+            <c>AccountId:SubId</c>. SubId가 없을 경우 <c>AccountId</c>
+            </summary>
+            <returns>UserId</returns>
+        </member>
+        <member name="M:Tardis.Agent.Request(Tardis.Packet)">
+            <summary>
+            서버로 Packet을 보내고, 응답을 기다린다.
+            AddListener로 서버에서 응답으로 보낸 패킷을 처리할 listener를 등록해야 응답을 처리할 수 있다.
+            </summary>
+            <param name="packet">서버로 보낼 Packet</param>
+        </member>
+        <member name="M:Tardis.Agent.Request(System.Collections.Generic.List{Tardis.Packet})">
+            <summary>
+            서버로 Packet list를 보내고, 응답을 기다린다.
+            AddListener로 서버에서 응답으로 보낸 패킷을 처리할 listener를 등록해야 응답을 처리할 수 있다.
+            </summary>
+            <param name="packetList">서버로 보낼 Packet list</param>
+        </member>
+        <member name="M:Tardis.Agent.Send(Tardis.Packet)">
+            <summary>
+            서버로 Packet을 보낸다.
+            </summary>
+            <param name="packet">서버로 보낼 Packet</param>
+        </member>
+        <member name="M:Tardis.Agent.Send(System.Collections.Generic.List{Tardis.Packet})">
+            <summary>
+            서버로 Packet list를 보낸다.
+            </summary>
+            <param name="packetList">서버로 보낼 Packet list</param>
         </member>
         <member name="T:Tardis.AgentHelper">
             <summary>
-            
+            Agent의 확장 클래스
+            </summary>
+        </member>
+        <member name="T:Tardis.Session.Interface.ISessionOnConnect">
+            <summary>
+            SessionListener에서 Connect의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.Session.Interface.ISessionOnConnect.OnConnect(Tardis.Session.SessionAgent,Tardis.Defines.ResultCodeConnect)">
+            <summary>
+            Connect의 결과
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="result">Connect의 결과</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.DelSessionOnConnect">
+            <summary>
+            Connect의 결과
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="result">Connect의 결과</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.ISessionOnReconnectStart">
+            <summary>
+            SessionListener에서 자동 재접속 시작의 알림을 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.Session.Interface.ISessionOnReconnectStart.OnReconnectStart(Tardis.Session.SessionAgent,System.Int32)">
+            <summary>
+            자동 재접속 시작
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="reconnectNo">자동 재접속 시도 횟수</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.DelSessionOnReconnectStart">
+            <summary>
+            자동 재접속 시작
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="reconnectNo">자동 재접속 시도 횟수</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.ISessionOnReconnectFinish">
+            <summary>
+            SessionListener에서 자동 재접속 완료의 알림을 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.Session.Interface.ISessionOnReconnectFinish.OnReconnectFinish(Tardis.Session.SessionAgent,System.Int32,Tardis.Payload)">
+            <summary>
+            자동 재접속 완료
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="reconnectNo">자동 재접속 시도 횟수</param>
+            <param name="payload">추가 정보</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.DelSessionOnReconnectFinish">
+            <summary>
+            자동 재접속 완료
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="reconnectNo">자동 재접속 시도 횟수</param>
+            <param name="payload">추가 정보</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.ISessionOnAuthentication">
+            <summary>
+            SessionListener에서 Authentication의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.Session.Interface.ISessionOnAuthentication.OnAuthentication(Tardis.Session.SessionAgent,Tardis.Defines.ResultCodeAuth,System.Collections.Generic.List{Tardis.Session.SessionAgent.LoginedUserInfo},System.String,Tardis.Payload)">
+            <summary>
+            Authentication의 결과
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="result">Authentication의 결과</param>
+            <param name="loginedUserInfoList">서버에 남아있는 로그인 정보 목록</param>
+            <param name="message">서버로부터 받은 Message. 인증 실패 이유 등.</param>
+            <param name="payload">추가 정보</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.DelSessionOnAuthentication">
+            <summary>
+            Authentication의 결과
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="result">Authentication의 결과</param>
+            <param name="loginedUserInfoList">서버에 남아있는 로그인 정보 목록</param>
+            <param name="message">서버로부터 받은 Message. 인증 실패 이유 등.</param>
+            <param name="payload">추가 정보</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.ISessionOnChannelList">
+            <summary>
+            SessionListener에서 GetChannelList의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.Session.Interface.ISessionOnChannelList.OnChannelList(Tardis.Session.SessionAgent,Tardis.Defines.ResultCodeChannelList,System.Collections.Generic.List{System.String})">
+            <summary>
+            GetChannelList의 결과
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="result">GetChannelList의 결과</param>
+            <param name="channelIdList">체널 목록</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.DelSessionOnChannelList">
+            <summary>
+            GetChannelList의 결과
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="result">GetChannelList의 결과</param>
+            <param name="channelIdList">체널 목록</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.ISessionOnChannelInfo">
+            <summary>
+            SessionListener에서 GetChannelInfo의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.Session.Interface.ISessionOnChannelInfo.OnChannelInfo(Tardis.Session.SessionAgent,Tardis.Defines.ResultCodeChannelInfo,System.Collections.Generic.List{Tardis.Payload})">
+            <summary>
+            GetChannelInfo의 결과
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="result">GetChannelInfo의 결과</param>
+            <param name="channelInfoList">체널 정보 목록</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.DelSessionOnChannelInfo">
+            <summary>
+            GetChannelInfo의 결과
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="result">GetChannelInfo의 결과</param>
+            <param name="channelInfoList">체널 정보 목록</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.ISessionOnDisconnect">
+            <summary>
+            SessionListener에서 Disconnect의 결과 또는 또는 강제 접속종료 알림을 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.Session.Interface.ISessionOnDisconnect.OnDisconnect(Tardis.Session.SessionAgent,Tardis.Defines.ResultCodeDisconnect,System.Boolean,Tardis.Payload)">
+            <summary>
+            Disconnect의 결과 또는 또는 강제 접속종료 알림
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="result">Disconnect의 결과 또는 또는 강제 접속종료 알림</param>
+            <param name="force">강제 종료 여부</param>
+            <param name="payload">추가 정보</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.DelSessionOnDisconnect">
+            <summary>
+            Disconnect의 결과 또는 또는 강제 접속종료 알림
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="result">Disconnect의 결과 또는 또는 강제 접속종료 알림</param>
+            <param name="force">강제 종료 여부</param>
+            <param name="payload">추가 정보</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.ISessionOnErrorCommand">
+            <summary>
+            SessionListener에서 기본 기능 사용중 Error발생 알림을 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.Session.Interface.ISessionOnErrorCommand.OnError(Tardis.Session.SessionAgent,Tardis.Defines.ErrorCode,Tardis.Session.Defines.Commands)">
+            <summary>
+            기본 기능 사용중 Error발생
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="errorCode">에러 코드</param>
+            <param name="commands">에러가 발생한 기능</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.DelSessionOnErrorCommand">
+            <summary>
+            기본 기능 사용중 Error발생
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="errorCode">에러 코드</param>
+            <param name="commands">에러가 발생한 기능</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.ISessionOnErrorCustomCommand">
+            <summary>
+            SessionListener에서 Request, Send 전송후 Error발생 알림을 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.Session.Interface.ISessionOnErrorCustomCommand.OnError(Tardis.Session.SessionAgent,Tardis.Defines.ErrorCode,System.String)">
+            <summary>
+            Request, Send 전송후 Error발생
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="errorCode">에러 코드</param>
+            <param name="command">에러가 발생한 패킷의 MessageName</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.DelSessionOnErrorCustomCommand">
+            <summary>
+            Request, Send 전송후 Error발생
+            </summary>
+            <param name="sessionAgent">SessionAgent</param>
+            <param name="errorCode">에러 코드</param>
+            <param name="command">에러가 발생한 패킷의 MessageName</param>
+        </member>
+        <member name="T:Tardis.Session.Interface.ISessionListener">
+            <summary>
+            SessionAgent의 모든 결과 또는 알림 인터페이스
+            </summary>
+        </member>
+        <member name="T:Tardis.Session.Interface.ISessionNotificationListener">
+            <summary>
+            SessionAgent에서 서버에서 보내는 알림 인터페이스
             </summary>
         </member>
         <member name="T:Tardis.Session.SessionAgent">
             <summary>
-            SessionAgent는 Tardis Server의 Session Node와 관련된 작업을 담당합니다.<br></br>
-            접속(Connect()), 인증(Authentication()) 등 기본 세션 관리 기능 및 채널 목록 등을 제공하며, 서버 구현에 따라 채널 정보를 제공하거나 사용자 정의 기능을 추가적으로 제공할 수도 있습니다.<br></br>
-            SessionAgent는 Connector가 초기화 될 때 자동으로 생성되며 GetSessionAgent() 함수를 이용해 얻을 수 있습니다.<br></br>
-            <br></br>
-            SessionAgent의 기본 기능 사용<br></br>
-            SessionAgent가 제공하는 기본 기능은 모두 비동기 함수를 통해 제공됩니니다.<br></br>
-            그리고 각 기능의 결과를 얻기 위해 크게 나눠 2가지 방식을 제공하고 있습니다.<br></br>
-            첫째는 listener나 delegate를 미리 등록해 놓고 이를 통해 결과에 대한 알림을 받는 방법이고, 나머지는 기능을 요청 할 때 알림을 받을 delegate를 같이 전달하는 방법입니다.<br></br>
-            두가 방법을 같이 사용하는 것도 가능하고 목적에 따라 listener나 delegate는 여러개를 등록하여 사용할 수도 있습니다.
+            SessionAgent는 Tardis Server의 Session Node와 관련된 작업을 담당한다.
+            접속(Connect()), 인증(Authentication()) 등 기본 세션 관리 기능 및 채널 목록 등을 제공하며, 
+            서버 구현에 따라 채널 정보를 제공하거나 사용자 정의 기능을 추가적으로 제공할 수도 있다.
+            SessionAgent는 Connector가 초기화 될 때 자동으로 생성되며 GetSessionAgent() 함수를 이용해 얻을 수 있다.
+            
+            SessionAgent가 제공하는 기본 기능은 모두 비동기 함수를 통해 제공된다.
+            그리고 각 기능의 결과를 얻기 위해 크게 나눠 2가지 방식을 제공하고 있다.
+            첫째는 listener나 delegate를 미리 등록해 놓고 이를 통해 결과에 대한 알림을 받는 방법이고,
+            나머지는 기능을 요청 할 때 알림을 받을 delegate를 같이 전달하는 방법이다.
+            두가 방법을 같이 사용하는 것도 가능하고 목적에 따라 listener나 delegate는 여러개를 등록하여 사용할 수도 있다.
+            </summary>
+        </member>
+        <member name="T:Tardis.Session.SessionAgent.LoginedUserInfo">
+            <summary>
+            인증 성공시, 서버에 남아있는 로그인된 유저정보.
+            </summary>
+        </member>
+        <member name="P:Tardis.Session.SessionAgent.LoginedUserInfo.ServiceName">
+            <summary>
+            Service 이름
+            </summary>
+        </member>
+        <member name="P:Tardis.Session.SessionAgent.LoginedUserInfo.SubId">
+            <summary>
+            SubId
+            </summary>
+        </member>
+        <member name="P:Tardis.Session.SessionAgent.LoginedUserInfo.UserType">
+            <summary>
+            UserType
+            </summary>
+        </member>
+        <member name="P:Tardis.Session.SessionAgent.LoginedUserInfo.ChannelId">
+            <summary>
+            Channel Id
             </summary>
         </member>
         <member name="M:Tardis.Session.SessionAgent.UpdateAuthenticationPayload(Tardis.Payload)">
@@ -39,16 +314,69 @@
             </summary>
             <param name="payload"></param>
         </member>
+        <member name="M:Tardis.Session.SessionAgent.AddSessionListener(Tardis.Session.Interface.ISessionListener)">
+            <summary>
+            Interface.ISessionListener 상속받은 SessionListener 등록한다.
+            </summary>
+            <param name="listener">Interface.ISessionListener 상속받은 SessionListener</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.AddSessionNotificationListener(Tardis.Session.Interface.ISessionNotificationListener)">
+            <summary>
+            Interface.ISessionNotificationListener를 상속받은 SessionNotificationListener를 등록한다.
+            </summary>
+            <param name="listener">Interface.ISessionNotificationListener를 상속받은 SessionNotificationListener</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.AddSessionErrorListener(Tardis.Session.Interface.ISessionOnErrorCommand)">
+            <summary>
+            Interface.ISessionOnErrorCommand를 상속받은 SessionOnErrorCommandListener를 등록한다.
+            </summary>
+            <param name="listener">Interface.ISessionOnErrorCommand를 상속받은 SessionOnErrorCommandListener</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.AddSessionErrorListener(Tardis.Session.Interface.ISessionOnErrorCustomCommand)">
+            <summary>
+            Interface.ISessionOnErrorCustomCommand를 상속받은 SessionOnErrorCustomCommandListener를 등록한다.
+            </summary>
+            <param name="listener">Interface.ISessionOnErrorCustomCommand를 상속받은 SessionOnErrorCustomCommandListener</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.RemoveSessionListener(Tardis.Session.Interface.ISessionListener)">
+            <summary>
+            등록한 SessionListener를 등록 해제한다.
+            </summary>
+            <param name="listener">등록한 SessionListener</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.RemoveSessionNotificationListener(Tardis.Session.Interface.ISessionNotificationListener)">
+            <summary>
+            등록한 SessionNotificationListener를 등록 해제한다.
+            </summary>
+            <param name="listener">등록한 SessionNotificationListener</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.RemoveSessionErrorListener(Tardis.Session.Interface.ISessionOnErrorCommand)">
+            <summary>
+            등록한 SessionOnErrorCommandListener를 등록 해제한다.
+            </summary>
+            <param name="listener">등록한 SessionOnErrorCommandListener</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.RemoveSessionErrorListener(Tardis.Session.Interface.ISessionOnErrorCustomCommand)">
+            <summary>
+            등록한 SessionOnErrorCustomCommand를 등록 해제한다.
+            </summary>
+            <param name="listener">등록한 SessionOnErrorCustomCommand</param>
+        </member>
+        <member name="M:Tardis.Session.SessionAgent.RemoveAllListeners">
+            <summary>
+            등록한 모든 Listener를 등록 해제한다.
+            </summary>
+        </member>
         <member name="M:Tardis.Session.SessionAgent.Connect(System.String,System.Int32)">
             <summary>
-            Tardis Server에 연결합니다.
+            Tardis Server에 연결한다.
             </summary>
             <param name="ip">ip address</param>
             <param name="port">port</param>
         </member>
         <member name="M:Tardis.Session.SessionAgent.Connect(System.String,System.Int32,Tardis.Socket.ITardisSocket)">
             <summary>
-            Tardis Server에 연결합니다.
+            Tardis Server에 연결한다.
             </summary>
             <param name="ip">ip address</param>
             <param name="port">port</param>
@@ -56,7 +384,7 @@
         </member>
         <member name="M:Tardis.Session.SessionAgent.Connect(System.String,System.Int32,Tardis.Session.Interface.DelSessionOnConnect)">
             <summary>
-            Tardis Server에 연결합니다.
+            Tardis Server에 연결한다.
             </summary>
             <param name="ip">ip address</param>
             <param name="port">port</param>
@@ -64,7 +392,7 @@
         </member>
         <member name="M:Tardis.Session.SessionAgent.Connect(System.String,System.Int32,Tardis.Socket.ITardisSocket,Tardis.Session.Interface.DelSessionOnConnect)">
             <summary>
-            Tardis Server에 연결합니다.
+            Tardis Server에 연결한다.
             </summary>
             <param name="ip">ip address</param>
             <param name="port">port</param>
@@ -73,80 +401,80 @@
         </member>
         <member name="M:Tardis.Session.SessionAgent.Authenticate(System.String,System.String,System.String)">
             <summary>
-            Tardis Server에 인증을 요청 합니다.<br></br>
-            인증에 성공해야 Tardis Connector의 다른 기능을 사용할 수 있습니다.
+            Tardis Server에 인증을 요청한다.
+            인증에 성공해야 Tardis Connector의 다른 기능을 사용할 수 있다.
             </summary>
-            <param name="deviceId">사용자 기기를 식별 할 수 있는 고유 ID.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="deviceId">사용자 기기를 식별 할 수 있는 고유 ID.서버 구현에 따라 사용하지 않을 수 있음.</param>
             <param name="accountId">사용자 계정을 식별 할 수 있는 고유 ID.</param>
             <param name="passwd">사용자 계정의 password. 서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.Session.SessionAgent.Authenticate(System.String,System.String,System.String,Tardis.Payload)">
             <summary>
-            Tardis Server에 인증을 요청 합니다.<br></br>
-            인증에 성공해야 Tardis Connector의 다른 기능을 사용할 수 있습니다.
+            Tardis Server에 인증을 요청한다.
+            인증에 성공해야 Tardis Connector의 다른 기능을 사용할 수 있다.
             </summary>
-            <param name="deviceId">사용자 기기를 식별 할 수 있는 고유 ID.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="deviceId">사용자 기기를 식별 할 수 있는 고유 ID.서버 구현에 따라 사용하지 않을 수 있음.</param>
             <param name="accountId">사용자 계정을 식별 할 수 있는 고유 ID.</param>
             <param name="passwd">사용자 계정의 password. 서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="inPayload"></param>
+            <param name="Payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.Session.SessionAgent.Authenticate(System.String,System.String,System.String,Tardis.Session.Interface.DelSessionOnAuthentication)">
             <summary>
-            Tardis Server에 인증을 요청 합니다.<br></br>
-            인증에 성공해야 Tardis Connector의 다른 기능을 사용할 수 있습니다.
+            Tardis Server에 인증을 요청한다.
+            인증에 성공해야 Tardis Connector의 다른 기능을 사용할 수 있다.
             </summary>
-            <param name="deviceId">사용자 기기를 식별 할 수 있는 고유 ID.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="deviceId">사용자 기기를 식별 할 수 있는 고유 ID.서버 구현에 따라 사용하지 않을 수 있음.</param>
             <param name="accountId">사용자 계정을 식별 할 수 있는 고유 ID.</param>
             <param name="passwd">사용자 계정의 password. 서버 구현에 따라 사용하지 않을 수 있음.</param>
             <param name="onAuthentication">결과를 전달 받을 delegate</param>
         </member>
         <member name="M:Tardis.Session.SessionAgent.Authenticate(System.String,System.String,System.String,Tardis.Payload,Tardis.Session.Interface.DelSessionOnAuthentication)">
             <summary>
-            Tardis Server에 인증을 요청 합니다.<br></br>
-            인증에 성공해야 Tardis Connector의 다른 기능을 사용할 수 있습니다.
+            Tardis Server에 인증을 요청한다.
+            인증에 성공해야 Tardis Connector의 다른 기능을 사용할 수 있다.
             </summary>
-            <param name="deviceId">사용자 기기를 식별 할 수 있는 고유 ID.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="deviceId">사용자 기기를 식별 할 수 있는 고유 ID.서버 구현에 따라 사용하지 않을 수 있음.</param>
             <param name="accountId">사용자 계정을 식별 할 수 있는 고유 ID.</param>
             <param name="passwd">사용자 계정의 password. 서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="payload"></param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
             <param name="onAuthentication">결과를 전달 받을 delegate</param>
         </member>
         <member name="M:Tardis.Session.SessionAgent.GetChannelList(System.String)">
             <summary>
-            특정 서비스에서 사용 가능한 채널 목록을 요청합니다. 
+            특정 서비스에서 사용 가능한 채널 목록을 요청한다. 
             </summary>
-            <param name="serviceName">채널 목록을 요청할 service Id.</param>
+            <param name="serviceName">채널 정보를 요청할 서비스의 serviceName.</param>
         </member>
         <member name="M:Tardis.Session.SessionAgent.GetChannelList(System.String,Tardis.Session.Interface.DelSessionOnChannelList)">
             <summary>
-            특정 서비스에서 사용 가능한 채널 목록을 요청합니다. 
+            특정 서비스에서 사용 가능한 채널 목록을 요청한다. 
             </summary>
-            <param name="serviceName">채널 목록을 요청할 service Id.</param>
+            <param name="serviceName">채널 정보를 요청할 서비스의 serviceName.</param>
             <param name="onChannelList">결과를 전달 받을 delegate.</param>
         </member>
         <member name="M:Tardis.Session.SessionAgent.GetChannelInfo(System.String,System.String)">
             <summary>
-            특정 채널의 정보를 요청합니다.<br></br>서버에서 지원할 경우 사용할 수 있습니다.
+            특정 채널의 정보를 요청한다.서버에서 지원할 경우 사용할 수 있다.
             </summary>
-            <param name="serviceName">채널 정보를 요청할 service Id.</param>
-            <param name="channelId">채널 정보를 요청할 channel의 Id.</param>
+            <param name="serviceName">채널 정보를 요청할 서비스의 serviceName.</param>
+            <param name="channelId">채널 정보를 요청할 체널의 ChannelId.</param>
         </member>
         <member name="M:Tardis.Session.SessionAgent.GetChannelInfo(System.String,System.String,Tardis.Session.Interface.DelSessionOnChannelInfo)">
             <summary>
-            특정 채널의 정보를 요청합니다.<br></br>서버에서 지원할 경우 사용할 수 있습니다.
+            특정 채널의 정보를 요청한다.서버에서 지원할 경우 사용할 수 있다.
             </summary>
-            <param name="serviceName">채널 정보를 요청할 service Id.</param>
-            <param name="channelId">채널 정보를 요청할 channel의 Id.</param>
+            <param name="serviceName">채널 정보를 요청할 서비스의 serviceName.</param>
+            <param name="channelId">채널 정보를 요청할 체널의 ChannelId.</param>
             <param name="onChannelInfo">결과를 전달 받을 delegate.</param>
         </member>
         <member name="M:Tardis.Session.SessionAgent.Disconnect">
             <summary>
-            Tardis Server와의 연결을 해제합니다.
+            Tardis Server와의 연결을 해제한다.
             </summary>
         </member>
         <member name="M:Tardis.Session.SessionAgent.Disconnect(Tardis.Session.Interface.DelSessionOnDisconnect)">
             <summary>
-            Tardis Server와의 연결을 해제합니다.
+            Tardis Server와의 연결을 해제한다.
             </summary>
             <param name="onDisconnect">결과를 전달 받을 delegate</param>
         </member>
@@ -158,180 +486,817 @@
             <param name="connectSeq">connectSeq</param>
             <param name="del">콜백</param>
         </member>
+        <member name="T:Tardis.User.Interface.IUserOnLogin">
+            <summary>
+            UserListener에서 Login의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnLogin.OnLogin(Tardis.User.UserAgent,Tardis.Defines.ResultCodeLogin,Tardis.User.UserAgent.LoginInfo)">
+            <summary>
+            Login의 결과.
+            </summary>
+            <param name="userAgent">Login을 요청한 UserAgent 객체</param>
+            <param name="result">Login결과</param>
+            <param name="loginInfo">Login 정보</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnLogin">
+            <summary>
+            Login의 결과.
+            </summary>
+            <param name="userAgent">Login을 요청한 UserAgent객체</param>
+            <param name="result">Login결과</param>
+            <param name="loginInfo">Login 정보</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnReconnect">
+            <summary>
+            UserListener에서 자동 재접속 성공 알림을 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnReconnect.OnReconnect(Tardis.User.UserAgent,Tardis.User.UserAgent.LoginInfo)">
+            <summary>
+            자동 재접속 성공.
+            </summary>
+            <param name="userAgent">자동 재접속을 한 UserAgent 객체</param>
+            <param name="loginInfo">Login 정보</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnReconnect">
+            <summary>
+            자동 재접속 성공.
+            </summary>
+            <param name="userAgent">자동 재접속을 한 UserAgent 객체</param>
+            <param name="loginInfo">Login 정보</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnMatchRoom">
+            <summary>
+            UserListener에서 MatchRoom의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnMatchRoom.OnMatchRoom(Tardis.User.UserAgent,Tardis.Defines.ResultCodeMatchRoom,System.String,Tardis.Payload)">
+            <summary>
+            MatchRoom의 결과
+            </summary>
+            <param name="userAgent">MatchRoom을 요청한 UserAgent 객체</param>
+            <param name="result">MatchRoom 결과</param>
+            <param name="roomId">매치된 방의 RoomId</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnMatchRoom">
+            <summary>
+            MatchRoom의 결과
+            </summary>
+            <param name="userAgent">MatchRoom을 요청한 UserAgent 객체</param>
+            <param name="result">MatchRoom 결과</param>
+            <param name="roomId">매치된 방의 RoomId</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnCreateRoom">
+            <summary>
+            UserListener에서 CreateRoom의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnCreateRoom.OnCreateRoom(Tardis.User.UserAgent,Tardis.Defines.ResultCodeCreateRoom,System.String,Tardis.Payload)">
+            <summary>
+            CreateRoom의 결과
+            </summary>
+            <param name="userAgent">CreateRoom을 요청한 UserAgent 객체</param>
+            <param name="result">CreateRoom 결과</param>
+            <param name="roomId">생성된 방의 RoomId</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnCreateRoom">
+            <summary>
+            CreateRoom의 결과
+            </summary>
+            <param name="userAgent">CreateRoom을 요청한 UserAgent 객체</param>
+            <param name="result">CreateRoom 결과</param>
+            <param name="roomId">생성된 방의 RoomId</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnJoinRoom">
+            <summary>
+            UserListener에서 JoinRoom의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnJoinRoom.OnJoinRoom(Tardis.User.UserAgent,Tardis.Defines.ResultCodeJoinRoom,System.String,Tardis.Payload)">
+            <summary>
+            JoinRoom의 결과
+            </summary>
+            <param name="userAgent">JoinRoom을 요청한 UserAgent 객체</param>
+            <param name="result">JoinRoom 결과</param>
+            <param name="roomId">입장한 방의 RoomId</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnJoinRoom">
+            <summary>
+            JoinRoom의 결과
+            </summary>
+            <param name="userAgent">JoinRoom을 요청한 UserAgent 객체</param>
+            <param name="result">JoinRoom 결과</param>
+            <param name="roomId">입장한 방의 RoomId</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnNamedRoom">
+            <summary>
+            UserListener에서 NameRoom에대한 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnNamedRoom.OnNamedRoom(Tardis.User.UserAgent,Tardis.Defines.ResultCodeNamedRoom,System.String,Tardis.Payload)">
+            <summary>
+            NamedRoom의 결과
+            </summary>
+            <param name="userAgent">NamedRoom을 요청한 UserAgent 객체</param>
+            <param name="result">NamedRoom 결과</param>
+            <param name="roomId">입장한 방의 RoomId.</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnNamedRoom">
+            <summary>
+            NamedRoom의 결과
+            </summary>
+            <param name="userAgent">NamedRoom을 요청한 UserAgent 객체</param>
+            <param name="result">NamedRoom 결과</param>
+            <param name="roomId">입장한 방의 RoomId.</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnMatchUserStart">
+            <summary>
+            UserListener에서 MatchUserStart의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnMatchUserStart.OnMatchUserStart(Tardis.User.UserAgent,Tardis.Defines.ResultCodeMatchUserStart,Tardis.Payload)">
+            <summary>
+            MatchUserStart의 결과
+            </summary>
+            <param name="userAgent">MatchUserStart를 요청한 UserAgent 객체</param>
+            <param name="result">MatchUserStart 결과</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnMatchUserStart">
+            <summary>
+            MatchUserStart의 결과
+            </summary>
+            <param name="userAgent">MatchUserStart를 요청한 UserAgent 객체</param>
+            <param name="result">MatchUserStart 결과</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnMatchUserDone">
+            <summary>
+            UserListener에서 MatchUserStart, MatchPartyStart의 매칭 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnMatchUserDone.OnMatchUserDone(Tardis.User.UserAgent,Tardis.Defines.ResultCodeMatchUserDone,System.Boolean,System.String,Tardis.Payload)">
+            <summary>
+            매칭 결과
+            </summary>
+            <param name="userAgent">매칭을 요청한 UserAgent 객체</param>
+            <param name="result">매칭 결과</param>
+            <param name="created">방 생성 여부. true일 경우 매칭 요청한 UserAgent가  방을 생성한 것을 의미한다. 방장을 결정하는 용도 등으로 사용할 수 있다.</param>
+            <param name="roomId">매칭된 방의 RoomId</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnMatchUserDone">
+            <summary>
+            매칭 결과
+            </summary>
+            <param name="userAgent">매칭을 요청한 UserAgent 객체</param>
+            <param name="result">매칭 결과</param>
+            <param name="created">방 생성 여부. true일 경우 매칭 요청한 UserAgent가  방을 생성한 것을 의미한다. 방장을 결정하는 용도 등으로 사용할 수 있다.</param>
+            <param name="roomId">매칭된 방의 RoomId</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnMatchUserTimeout">
+            <summary>
+            UserListener에서 MatchUserStart, MatchPartyStart의 매칭의 Timeout 알림을 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnMatchUserTimeout.OnMatchUserTimeout(Tardis.User.UserAgent)">
+            <summary>
+            매칭 Timeout
+            </summary>
+            <param name="userAgent">매칭을 요청한 UserAgent 객체</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnMatchUserTimeout">
+            <summary>
+            매칭 Timeout
+            </summary>
+            <param name="userAgent">매칭을 요청한 UserAgent 객체</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnMatchUserCancel">
+            <summary>
+            UserListener에서 MatchUserCancel의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnMatchUserCancel.OnMatchUserCancel(Tardis.User.UserAgent,Tardis.Defines.ResultCodeMatchUserCancel)">
+            <summary>
+            MatchUserCancel의 결과
+            </summary>
+            <param name="userAgent">MatchUserCancel을 요청한 UserAgent 객체</param>
+            <param name="result">MatchUserCancel 결과</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnMatchUserCancel">
+            <summary>
+            MatchUserCancel의 결과
+            </summary>
+            <param name="userAgent">MatchUserCancel을 요청한 UserAgent 객체</param>
+            <param name="result">MatchUserCancel 결과</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnMatchPartyStart">
+            <summary>
+            UserListener에서 MatchPartyStart의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnMatchPartyStart.OnMatchPartyStart(Tardis.User.UserAgent,Tardis.Defines.ResultCodeMatchPartyStart,Tardis.Payload)">
+            <summary>
+            MatchPartyStart의 결과
+            </summary>
+            <param name="userAgent">MatchPartyStart을 요청한 UserAgent 객체</param>
+            <param name="result">MatchPartyStart 결과</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnMatchPartyStart">
+            <summary>
+            MatchPartyStart의 결과
+            </summary>
+            <param name="userAgent">MatchPartyStart을 요청한 UserAgent 객체</param>
+            <param name="result">MatchPartyStart 결과</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnMatchPartyCancel">
+            <summary>
+            UserListener에서 MatchPartyCancel의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnMatchPartyCancel.OnMatchPartyCancel(Tardis.User.UserAgent,Tardis.Defines.ResultCodeMatchPartyCancel)">
+            <summary>
+            MatchPartyCancel의 결과
+            </summary>
+            <param name="userAgent">MatchPartyCancel 을 요청한 UserAgent 객체</param>
+            <param name="result">MatchPartyCancel의 결과</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnLeaveRoom">
+            <summary>
+            UserListener에서 LeaveRoom의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnLeaveRoom.OnLeaveRoom(Tardis.User.UserAgent,Tardis.Defines.ResultCodeLeaveRoom,System.Boolean,System.String,Tardis.Payload)">
+            <summary>
+            LeaveRoom의 결과
+            </summary>
+            <param name="userAgent">방에서 퇴장한 UserAgent 객체</param>
+            <param name="result">LeaveRoom의 결과</param>
+            <param name="force">강퇴 여부</param>
+            <param name="roomId">퇴장한 방의 RoomId</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnLeaveRoom">
+            <summary>
+            LeaveRoom의 결과
+            </summary>
+            <param name="userAgent">방에서 퇴장한 UserAgent 객체</param>
+            <param name="result">LeaveRoom의 결과</param>
+            <param name="force">강퇴 여부</param>
+            <param name="roomId">퇴장한 방의 RoomId</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnMoveChannel">
+            <summary>
+            UserListener에서 MoveChannel의 결과 또는 서버에서 강제로 수행한 체널 이동 알림을 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnMoveChannel.OnMoveChannel(Tardis.User.UserAgent,Tardis.Defines.ResultCodeMoveChannel,System.Boolean,System.String,Tardis.Payload)">
+            <summary>
+            MoveChannel의 결과 또는 서버에서 강제로 수행한 체널 이동 알림
+            </summary>
+            <param name="userAgent">체널을 이동한 UserAgent 객체</param>
+            <param name="result">체널이동 결과 코드</param>
+            <param name="force">서버에서 강제로 체널을 이동했는지 여부</param>
+            <param name="channelId">이동한 체널의 ChannelId</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnMoveChannel">
+            <summary>
+            MoveChannel의 결과 또는 서버에서 강제로 수행한 체널 이동 알림
+            </summary>
+            <param name="userAgent">체널을 이동한 UserAgent 객체</param>
+            <param name="result">체널이동 결과 코드</param>
+            <param name="force">서버에서 강제로 체널을 이동했는지 여부</param>
+            <param name="channelId">이동한 체널의 ChannelId</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnMoveService">
+            <summary>
+            UserListener에서 MoveService의 결과 또는 서버에서 강제로 수행한 서비스 이동 알림을 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnMoveService.OnMoveService(Tardis.User.UserAgent,Tardis.Defines.ResultCodeMoveService,System.Boolean,System.String,System.String,System.String,Tardis.Payload,Tardis.Payload)">
+            <summary>
+            MoveService의 결과
+            </summary>
+            <param name="userAgent">서비스를 이동한 UserAgent 객체</param>
+            <param name="result">서비스 이동의 결과</param>
+            <param name="force">강제로 서비스를 이동했는지 여부</param>
+            <param name="serviceName">이동한 서비스의 ServiceName</param>
+            <param name="channelId">이동한 서비스에서의 ChannelId</param>
+            <param name="userType">이동한 서비스에서의 UserType</param>
+            <param name="payloadService">서비스 관련 추가 정보. 서버의 IUser.onMoveOutService 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="payloadChannel">체널 관련 추가 정보. 서버의 IUser.onMoveOutChannel 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnMoveService">
+            <summary>
+            MoveService의 결과
+            </summary>
+            <param name="userAgent">서비스를 이동한 UserAgent 객체</param>
+            <param name="result">서비스 이동의 결과</param>
+            <param name="force">강제로 서비스를 이동했는지 여부</param>
+            <param name="serviceName">이동한 서비스의 ServiceName</param>
+            <param name="channelId">이동한 서비스에서의 ChannelId</param>
+            <param name="userType">이동한 서비스에서의 UserType</param>
+            <param name="payloadService">서비스 관련 추가 정보. 서버의 IUser.onMoveOutService 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="payloadChannel">체널 관련 추가 정보. 서버의 IUser.onMoveOutChannel 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnSnapshot">
+            <summary>
+            UserListener에서 Snapshot의 결과를 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnSnapshot.OnSnapshot(Tardis.User.UserAgent,Tardis.Defines.ResultCodeSnapshot,Tardis.Payload)">
+            <summary>
+            Snapshot의 결과
+            </summary>
+            <param name="userAgent">Snapshot을 요청한 UserAgent 객체</param>
+            <param name="result">Snapshot의 결과</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnSnapshot">
+            <summary>
+            Snapshot의 결과
+            </summary>
+            <param name="userAgent">Snapshot을 요청한 UserAgent 객체</param>
+            <param name="result">Snapshot의 결과</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Tardis.User.Interface.IUserOnErrorCommand" -->
+        <member name="M:Tardis.User.Interface.IUserOnErrorCommand.OnError(Tardis.User.UserAgent,Tardis.Defines.ErrorCode,Tardis.User.Defines.Commands)">
+            <summary>
+            Error발생
+            </summary>
+            <param name="userAgent">Error가 발생한 UserAgent 객체</param>
+            <param name="errorCode">Error 코드</param>
+            <param name="command">Error가 발생한 기능</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnErrorCommand">
+            <summary>
+            Error발생
+            </summary>
+            <param name="userAgent">Error가 발생한 UserAgent 객체</param>
+            <param name="errorCode">Error 코드</param>
+            <param name="command">Error가 발생한 기능</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnErrorCustomCommand">
+            <summary>
+            UserListener에서 Request, Send 전송후 Error발생 알림을 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnErrorCustomCommand.OnError(Tardis.User.UserAgent,Tardis.Defines.ErrorCode,System.String)">
+            <summary>
+            Error발생
+            </summary>
+            <param name="userAgent">Error가 발생한 UserAgent 객체</param>
+            <param name="errorCode">Error 코드</param>
+            <param name="command">Error가 발생한 Message</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnErrorCustomCommand">
+            <summary>
+            Error발생
+            </summary>
+            <param name="userAgent">Error가 발생한 UserAgent 객체</param>
+            <param name="errorCode">Error 코드</param>
+            <param name="command">Error가 발생한 Message</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnLogout">
+            <summary>
+            UserListener에서 Logout 결과 또는 강제 로그아웃 알림을 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnLogout.OnLogout(Tardis.User.UserAgent,Tardis.Defines.ResultCodeLogout,System.Boolean,Tardis.Payload)">
+            <summary>
+            Logout 결과
+            </summary>
+            <param name="userAgent">Logout한 UserAgent 객체</param>
+            <param name="result">Logout 결과</param>
+            <param name="force">서버에의한 강제 로그아웃 여부</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnLogout">
+            <summary>
+            Logout 결과
+            </summary>
+            <param name="userAgent">Logout한 UserAgent 객체</param>
+            <param name="result">Logout 결과</param>
+            <param name="force">서버에의한 강제 로그아웃 여부</param>
+            <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnNotice">
+            <summary>
+            UserListener에서 Notice 알림을 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnNotice.OnNotice(Tardis.User.UserAgent,System.String)">
+            <summary>
+            Notice 알림
+            </summary>
+            <param name="userAgent">Notice 를 받은 UserAgent 객체</param>
+            <param name="message">Message</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnNotice">
+            <summary>
+            Notice 알림
+            </summary>
+            <param name="userAgent">Notice 를 받은 UserAgent 객체</param>
+            <param name="message">Notice message</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserOnAdminKickout">
+            <summary>
+            UserListener에서 AdminKickout의 알림을 위한 인터페이스
+            </summary>
+        </member>
+        <member name="M:Tardis.User.Interface.IUserOnAdminKickout.OnAdminKickout(Tardis.User.UserAgent,System.String)">
+            <summary>
+            Admin에서 Kickout한 경우 알림
+            </summary>
+            <param name="userAgent">Kickout된 UserAgent객체</param>
+            <param name="message">Admin에서 전달한 Message</param>
+        </member>
+        <member name="T:Tardis.User.Interface.DelUserOnAdminKickout">
+            <summary>
+            Admin에서 Kickout한 경우 알림
+            </summary>
+            <param name="userAgent">Kickout된 UserAgent객체</param>
+            <param name="message">Admin에서 전달한 Message</param>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserListener">
+            <summary>
+            UserAgent의 모든 결과 또는 알림 인터페이스
+            </summary>
+        </member>
+        <member name="T:Tardis.User.Interface.IUserNotificationListener">
+            <summary>
+            UserAgent에서 서버에서 보내는 알림 인터페이스
+            </summary>
+        </member>
         <member name="T:Tardis.User.UserAgent">
             <summary>
-            Tardis Server의 Space Node와 관련된 작업을 담당합니다.<br></br>
-            로그인(Login()), 로그아웃(Logout()) 및 Room 관리 등 기본 기능을 제공하며, 서버 구현에 따라 사용자 정의 기능을 추가적으로 제공할 수도 있습니다.<br></br>
-            UserAgent를 사용하기 위해서는 Connector.CreateUserAgent() 함수를 이용해 새로운 UserAgent를 생성해야 합니다.<br></br>
-            ServiceName 과 SubId로 구분되는 여러개의 UserAgent를 생성할 수 있으며 생성된 각 UserAgent는 독립적으로 사용할 수 있습니다.<br></br>
-            생성된 UserAgent는 Connector 에서 내부적으로 관리되며 Connector.GetUser()함수를 이용해 다시 사용할 수 있습니다.
-            <br></br>
-            UserAgent의 기본 기능 사용<br></br>
-            UserAgent가 제공하는 기본 기능은 모두 비동기 함수를 통해 제공됩니니다.<br></br>
-            그리고 각 기능의 결과를 얻기 위해 크게 나눠 2가지 방식을 제공하고 있습니다.<br></br>
-            첫째는 listener나 delegate를 미리 등록해 놓고 이를 통해 결과에 대한 알림을 받는 방법이고 나머지는 기능을 요청 할 때 알림을 받을 delegate를 같이 전달하는 방법입니다.<br></br>
-            두가지 방법을 같이 사용하는 것도 가능하고 목적에 따라 listener나 delegate를 여러개 등록하여 사용할 수도 있습니다.
+            Tardis Server의 Space Node와 관련된 작업을 담당한다.
+            로그인(Login()), 로그아웃(Logout()) 및 Room 관리 등 기본 기능을 제공하며, 서버 구현에 따라 사용자 정의 기능을 추가적으로 제공할 수도 있다.
+            UserAgent를 사용하기 위해서는 Connector.CreateUserAgent() 함수를 이용해 새로운 UserAgent를 생성해야 한다.
+            ServiceName 과 SubId로 구분되는 여러개의 UserAgent를 생성할 수 있으며 생성된 각 UserAgent는 독립적으로 사용할 수 있다.
+            생성된 UserAgent는 Connector 에서 내부적으로 관리되며 Connector.GetUser()함수를 이용해 다시 사용할 수 있다.
+            
+            UserAgent의 기본 기능 사용
+            UserAgent가 제공하는 기본 기능은 모두 비동기 함수를 통해 제공된다.
+            그리고 각 기능의 결과를 얻기 위해 크게 나눠 2가지 방식을 제공하고 있다.
+            첫째는 listener나 delegate를 미리 등록해 놓고 이를 통해 결과에 대한 알림을 받는 방법이고 나머지는 기능을 요청 할 때 알림을 받을 delegate를 같이 전달하는 방법이다.
+            두가지 방법을 같이 사용하는 것도 가능하고 목적에 따라 listener나 delegate를 여러개 등록하여 사용할 수도 있다.
+            </summary>
+        </member>
+        <member name="T:Tardis.User.UserAgent.LoginInfo">
+            <summary>
+            로그인한 유저정보. 
+            </summary>
+        </member>
+        <member name="P:Tardis.User.UserAgent.LoginInfo.ServiceName">
+            <summary>
+            로그인한 Service의 이름
+            </summary>
+        </member>
+        <member name="P:Tardis.User.UserAgent.LoginInfo.ChannelId">
+            <summary>
+            로그인한 Channel의 Id
+            </summary>
+        </member>
+        <member name="P:Tardis.User.UserAgent.LoginInfo.Message">
+            <summary>
+            서버로부터 받은 Message. 로그인 실패 이유 등.
+            </summary>
+        </member>
+        <member name="P:Tardis.User.UserAgent.LoginInfo.Payload">
+            <summary>
+            서버로부터 받은 추가정보.
+            </summary>
+        </member>
+        <member name="P:Tardis.User.UserAgent.LoginInfo.IsRelogined">
+            <summary>
+            재로그인 여부. 
+            </summary>
+        </member>
+        <member name="P:Tardis.User.UserAgent.LoginInfo.isJoinedRoom">
+            <summary>
+            방에 입장 여부.
+            </summary>
+        </member>
+        <member name="P:Tardis.User.UserAgent.LoginInfo.RoomId">
+            <summary>
+            입장한 방의 RoomId.
+            </summary>
+        </member>
+        <member name="P:Tardis.User.UserAgent.LoginInfo.RoomPayload">
+            <summary>
+            입장한 방에 필요한 추가정보.
+            </summary>
+        </member>
+        <member name="P:Tardis.User.UserAgent.LoginInfo.IsMatching">
+            <summary>
+            매칭을 요청한 상태인지 여부.
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onLoginListeners">
+            <summary>
+            Login 결과를 받을 delegate;
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onReconnectListeners">
+            <summary>
+            자동 재접속 성공 알림을 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onMatchRoomListeners">
+            <summary>
+            RoomMatch 결과를 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onCreateRoomListeners">
+            <summary>
+            CreateRoom 결과를 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onJoinRoomListeners">
+            <summary>
+            JoinRoom 결과를 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onNamedRoomListeners">
+            <summary>
+            NamedRoom 결과를 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onMatchPartyStartListeners">
+            <summary>
+            MatchPartyStart 결과를 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onMatchPartyCancelListeners">
+            <summary>
+            MatchPartyCancel 결과를 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onMatchUserStartListeners">
+            <summary>
+            MatchUserStart 결과를 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onMatchUserDoneListeners">
+            <summary>
+            MatchUserDone 결과를 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onMatchUserTimeoutListeners">
+            <summary>
+            nMatchUserTimeout을 전달 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onMatchUserCancelListeners">
+            <summary>
+            MatchUserCancel 결과를 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onLeaveRoomListeners">
+            <summary>
+            LeaveRoom 결과 또는 강퇴에 대한 알림을 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onMoveChannelListeners">
+            <summary>
+            MoveChannel 결과 또는 서버에서 강제로 수행한 체널 이동에 대한 알림을 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onMoveServiceListeners">
+            <summary>
+            MoveService 결과 또는 서버에서 강제로 수행한 서비스 이동에 대한 알림을 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onSnapshotListeners">
+            <summary>
+            SnapShot 결과를 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onErrorCommandListeners">
+            <summary>
+            기본 기능 사용중 Error발생시 알림을 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onErrorCustomCommandListeners">
+            <summary>
+            Request, Send 전송후 Error발생시 알림을 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onLogoutListeners">
+            <summary>
+            Logout 결과 또는 강제 로그아웃 알림을 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onNoticeListeners">
+            <summary>
+            Notice 알림을 받을 delegate
+            </summary>
+        </member>
+        <member name="F:Tardis.User.UserAgent.onAdminKickoutListeners">
+            <summary>
+            Admin에서 Kickout했을 경우 알림을 받을 delegate
             </summary>
         </member>
         <member name="M:Tardis.User.UserAgent.UpdateLoginPayload(Tardis.Payload)">
             <summary>
             Login시 사용된 payload값을 갱신할 때 사용.
-            relogin시 사용 됨.
+            자동 재접속 시 사용 됨.
             </summary>
-            <param name="payload"></param>
+            <param name="payload">업데이트할 payload</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.SetUserData(System.Object)">
+            <summary>
+            임의의 데이터를 설정한다. 
+            </summary>
+            <param name="userData">임의의 데이터</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.GetChannelId">
+            <summary>
+            로그인한 체널의 Id
+            </summary>
+            <returns>로그인한 체널의 Id</returns>
+        </member>
+        <member name="M:Tardis.User.UserAgent.GetUserData">
+            <summary>
+            SetUserData()로 설정한 임의의 데이터를 리턴한다.
+            </summary>
+            <returns>설정된 임의의 데이터</returns>
+        </member>
+        <member name="M:Tardis.User.UserAgent.GetUserType">
+            <summary>
+            로그인한 UserType을 리턴한다.
+            </summary>
+            <returns>로그인한 UserType</returns>
         </member>
         <member name="M:Tardis.User.UserAgent.CreateRoom(System.String)">
             <summary>
-            임의의 방을 생성하고 해당 방에 입장합니다.
+            임의의 방을 생성하고 해당 방에 입장한다.
             </summary>
             <param name="roomType">생성할 방의 roomType.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.CreateRoom(System.String,Tardis.Payload)">
             <summary>
-            임의의 방을 생성하고 해당 방에 입장합니다.
+            임의의 방을 생성하고 해당 방에 입장한다.
             </summary>
             <param name="roomType">생성할 방의 roomType.</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.CreateRoom(System.String,Tardis.User.Interface.DelUserOnCreateRoom)">
             <summary>
-            임의의 방을 생성하고 해당 방에 입장합니다.
+            임의의 방을 생성하고 해당 방에 입장한다.
             </summary>
             <param name="roomType">생성할 방의 roomType.</param>
-            <param name="onCreateRoom">결과를 전달 받을 delegate.</param>
+            <param name="onCreateRoom">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.CreateRoom(System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnCreateRoom)">
             <summary>
-            임의의 방을 생성하고 해당 방에 입장합니다.
+            임의의 방을 생성하고 해당 방에 입장한다.
             </summary>
             <param name="roomType">생성할 방의 roomType.</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onCreateRoom">결과를 전달 받을 delegate.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onCreateRoom">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.LeaveRoom">
             <summary>
-            현재 방에서 퇴장합니다.
+            현재 방에서 퇴장한다.
             </summary>
         </member>
         <member name="M:Tardis.User.UserAgent.LeaveRoom(Tardis.Payload)">
             <summary>
-            현재 방에서 퇴장합니다.
+            현재 방에서 퇴장한다.
             </summary>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.LeaveRoom(Tardis.User.Interface.DelUserOnLeaveRoom)">
             <summary>
-            현재 방에서 퇴장합니다.
+            현재 방에서 퇴장한다.
             </summary>
-            <param name="onLeaveRoom">결과를 전달 받을 delegate.</param>
+            <param name="onLeaveRoom">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.LeaveRoom(Tardis.Payload,Tardis.User.Interface.DelUserOnLeaveRoom)">
             <summary>
-            현재 방에서 퇴장합니다.
+            현재 방에서 퇴장한다.
             </summary>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onLeaveRoom">결과를 전달 받을 delegate.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onLeaveRoom">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean)">
             <summary>
-            자동으로 방에 입장합니다. 방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            Room 매치를 요청한다. 방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
-            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.false - 방이 없을 경우 실패</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,Tardis.User.Interface.DelUserOnMatchRoom)">
             <summary>
-            자동으로 방에 입장합니다. 방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            Room 매치를 요청한다. 방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
-            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
-            /// <param name="onMatchRoom">결과를 전달 받을 delegate.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.false - 방이 없을 경우 실패</param>
+            /// <param name="onMatchRoom">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,Tardis.Payload)">
             <summary>
-            자동으로 방에 입장합니다.<br></br>
-            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            Room 매치를 요청한다.
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
-            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.false - 방이 없을 경우 실패</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,Tardis.Payload,Tardis.User.Interface.DelUserOnMatchRoom)">
             <summary>
-            자동으로 방에 입장합니다. 방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            Room 매치를 요청한다. 방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
-            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onMatchRoom">결과를 전달 받을 delegate.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.false - 방이 없을 경우 실패</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMatchRoom">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,System.Boolean)">
             <summary>
-            자동으로 방에 입장합니다.<br></br>
-            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            Room 매치를 요청한다.
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
-            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
-            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.<br></br>false - 방에 입장한 상태에서 요청했을 경우 실패</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.false - 방이 없을 경우 실패</param>
+            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.false - 방에 입장한 상태에서 요청했을 경우 실패</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,System.Boolean,Tardis.User.Interface.DelUserOnMatchRoom)">
             <summary>
-            자동으로 방에 입장합니다.<br></br>
-            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            Room 매치를 요청한다.
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
-            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
-            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.<br></br>false - 방에 입장한 상태에서 요청했을 경우 실패</param>
-            <param name="onMatchRoom">결과를 전달 받을 delegate.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.false - 방이 없을 경우 실패</param>
+            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.false - 방에 입장한 상태에서 요청했을 경우 실패</param>
+            <param name="onMatchRoom">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,System.Boolean,Tardis.Payload)">
             <summary>
-            자동으로 방에 입장합니다.<br></br>
-            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            Room 매치를 요청한다.
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
-            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
-            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.<br></br>false - 방에 입장한 상태에서 요청했을 경우 실패</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.false - 방이 없을 경우 실패</param>
+            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.false - 방에 입장한 상태에서 요청했을 경우 실패</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,System.Boolean,Tardis.Payload,Tardis.User.Interface.DelUserOnMatchRoom)">
             <summary>
-            자동으로 방에 입장합니다.<br></br>
-            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            Room 매치를 요청한다.
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
-            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
-            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.<br></br>false - 방에 입장한 상태에서 요청했을 경우 실패</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onMatchRoom">결과를 전달 받을 delegate.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.false - 방이 없을 경우 실패</param>
+            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.false - 방에 입장한 상태에서 요청했을 경우 실패</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMatchRoom">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,System.Boolean,Tardis.Payload,Tardis.Payload)">
             <summary>
-            자동으로 방에 입장합니다.<br></br>
-            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            Room 매치를 요청한다.
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
-            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
-            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.<br></br>false - 방에 입장한 상태에서 요청했을 경우 실패</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="leaveRoomPayload">입장한 방을 떠날때 서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.false - 방이 없을 경우 실패</param>
+            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.false - 방에 입장한 상태에서 요청했을 경우 실패</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="leaveRoomPayload">입장한 방을 떠날때 서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchRoom(System.String,System.Boolean,System.Boolean,Tardis.Payload,Tardis.Payload,Tardis.User.Interface.DelUserOnMatchRoom)">
             <summary>
-            자동으로 방에 입장합니다.<br></br>
-            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있습니다.
+            Room 매치를 요청한다.
+            방이 없을 경우 임의의 방을 생성하고 해당 방에 입장할 수도 있다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
-            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.<br></br>false - 방이 없을 경우 실패</param>
-            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.<br></br>false - 방에 입장한 상태에서 요청했을 경우 실패</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="leaveRoomPayload">입장한 방을 떠날때 서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onMatchRoom">결과를 전달 받을 delegate.</param>
+            <param name="isCreateRoomIfNotJoinRoom">true - 방이 없을 경우 임의의 방을 생성.false - 방이 없을 경우 실패</param>
+            <param name="isMoveRoomIfJoinedRoom">true - 방에 입장한 상태에서 요청했을 경우 다른 방으로 이동.false - 방에 입장한 상태에서 요청했을 경우 실패</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="leaveRoomPayload">입장한 방을 떠날때 서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMatchRoom">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.NamedRoom(System.String,System.String,System.Boolean)">
             <summary>
-            지정한 이름의 방에 입장합니다.<br></br>
-            지정한 이름의 방이 없을 경우 지정한 이름의 방을 생성하고 해당 방에 입장합니다.
+            지정한 이름의 방에 입장한다.
+            지정한 이름의 방이 없을 경우 지정한 이름의 방을 생성하고 해당 방에 입장한다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
             <param name="roomName">입장하고자 하는 방의 이름.</param>
@@ -339,229 +1304,269 @@
         </member>
         <member name="M:Tardis.User.UserAgent.NamedRoom(System.String,System.String,System.Boolean,Tardis.Payload)">
             <summary>
-            지정한 이름의 방에 입장합니다.<br></br>
-            지정한 이름의 방이 없을 경우 지정한 이름의 방을 생성하고 해당 방에 입장합니다.
+            지정한 이름의 방에 입장한다.
+            지정한 이름의 방이 없을 경우 지정한 이름의 방을 생성하고 해당 방에 입장한다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
             <param name="roomName">입장하고자 하는 방의 이름.</param>
             <param name="isParty"></param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.NamedRoom(System.String,System.String,System.Boolean,Tardis.Payload,Tardis.User.Interface.DelUserOnNamedRoom)">
             <summary>
-            지정한 이름의 방에 입장합니다.<br></br>
-            지정한 이름의 방이 없을 경우 지정한 이름의 방을 생성하고 해당 방에 입장합니다.
+            지정한 이름의 방에 입장한다.
+            지정한 이름의 방이 없을 경우 지정한 이름의 방을 생성하고 해당 방에 입장한다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
             <param name="roomName">입장하고자 하는 방의 이름.</param>
             <param name="isParty"></param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onNamedRoom">결과를 전달 받을 delegate</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onNamedRoom">결과를 받을 delegate</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchUserStart(System.String)">
             <summary>
-            매치를 요청합니다.<br></br>
-            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있습니다.<br></br>
-            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있습니다.
+            UserMatch를 요청한다.
+            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있다.
+            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있다.
             </summary>
             <param name="roomType">매치를 요청할 roomType.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchUserStart(System.String,Tardis.Payload)">
             <summary>
-            매치를 요청합니다.<br></br>
-            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있습니다.<br></br>
-            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있습니다.
+            UserMatch를 요청한다.
+            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있다.
+            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있다.
             </summary>
             <param name="roomType">매치를 요청할 roomType.</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchUserStart(System.String,Tardis.User.Interface.DelUserOnMatchUserStart)">
             <summary>
-            매치를 요청합니다.<br></br>
-            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있습니다.<br></br>
-            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있습니다.
+            UserMatch를 요청한다.
+            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있다.
+            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있다.
             </summary>
             <param name="roomType">매치를 요청할 roomType.</param>
-            <param name="onMatchUserStart">결과를 전달 받을 delegate</param>
+            <param name="onMatchUserStart">결과를 받을 delegate</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchUserStart(System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnMatchUserStart)">
             <summary>
-            매치를 요청합니다.<br></br>
-            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있습니다.<br></br>
-            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있습니다.
+            UserMatch를 요청한다.
+            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있다.
+            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있다.
             </summary>
             <param name="roomType">매치를 요청할 roomType.</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onMatchUserStart">결과를 전달 받을 delegate</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMatchUserStart">결과를 받을 delegate</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchUserCancel(System.String)">
             <summary>
-            매치 요청을 취소합니다.<br></br>
-            이미 매칭이 성공했거나 Timeout이 발생했을 경우 실패할 수 있습니다.
+            UserMatch 요청을 취소한다.
+            매치 요청중이 아닌경우, 이미 매칭이 성공했거나 Timeout이 발생했을 경우 실패할 수 있다.
             </summary>
-            <param name="roomType">매치를 요청할 roomType.</param>
+            <param name="roomType">매치를 요청한 roomType.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MatchUserCancel(System.String,Tardis.User.Interface.DelUserOnMatchUserCancel)">
             <summary>
-            매치 요청을 취소합니다.<br></br>
-            이미 매칭이 성공했거나 Timeout이 발생했을 경우 실패할 수 있습니다.
+            UserMatch 요청을 취소한다.
+            매치 요청중이 아닌경우, 이미 매칭이 성공했거나 Timeout이 발생했을 경우 실패할 수 있다.
+            </summary>
+            <param name="roomType">매치를 요청한 roomType.</param>
+            <param name="onMatchUserCancel">결과를 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchPartyStart(System.String,Tardis.Payload)">
+            <summary>
+            PartyMatch를 요청한다.
+            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있다.
+            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있다.
             </summary>
             <param name="roomType">매치를 요청할 roomType.</param>
-            <param name="onMatchUserCancel">결과를 전달 받을 delegate</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchPartyStart(System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnMatchPartyStart)">
+            <summary>
+            PartyMatch를 요청한다.
+            이미 방에 입장한 경우 등 서버의 조건에 따라 요청이 실패할 수 있다.
+            매칭이 성공한 경우 OnMatchUserDone을 통해 알림을 받을 수 있다.
+            </summary>
+            <param name="roomType">매치를 요청할 roomType.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMatchPartyStart">결과를 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchPartyCancel(System.String)">
+            <summary>
+            PartyMatch 요청을 취소한다.
+            매치 요청중이 아닌경우, 이미 매칭이 성공했거나 Timeout이 발생했을 경우 실패할 수 있다.
+            </summary>
+            <param name="roomType">매치를 요청한 roomType.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.MatchPartyCancel(System.String,Tardis.User.Interface.DelUserOnMatchPartyCancel)">
+            <summary>
+            PartyMatch 요청을 취소한다.
+            매치 요청중이 아닌경우, 이미 매칭이 성공했거나 Timeout이 발생했을 경우 실패할 수 있다.
+            </summary>
+            <param name="roomType">매치를 요청한 roomType.</param>
+            <param name="onMatchPartyCancel">결과를 받을 delegate</param>
         </member>
         <member name="M:Tardis.User.UserAgent.JoinRoom(System.String,System.String)">
             <summary>
-            지정한 id의 방에 입장합니다.<br></br>지정한 id의 방이 없을 경우 실패합니다.
+            지정한 id의 방에 입장한다.지정한 id의 방이 없을 경우 실패한다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
             <param name="roomId">입장하고자 하는 방의 id.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.JoinRoom(System.String,System.String,Tardis.Payload)">
             <summary>
-            지정한 id의 방에 입장합니다.<br></br>지정한 id의 방이 없을 경우 실패합니다.
+            지정한 id의 방에 입장한다.지정한 id의 방이 없을 경우 실패한다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
             <param name="roomId">입장하고자 하는 방의 id.</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.JoinRoom(System.String,System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnJoinRoom)">
             <summary>
-            지정한 id의 방에 입장합니다.<br></br>지정한 id의 방이 없을 경우 실패합니다.
+            지정한 id의 방에 입장한다.지정한 id의 방이 없을 경우 실패한다.
             </summary>
             <param name="roomType">입장할 방의 roomType.</param>
             <param name="roomId">입장하고자 하는 방의 id.</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onJoinRoom">결과를 전달 받을 delegate.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onJoinRoom">결과를 받을 delegate.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.IsJoinedRoom">
+            <summary>
+            방에 입장했는지 여부를 리턴한다.
+            </summary>
+            <returns>방에 입장했을 경우 true, 아닐경우 false</returns>
         </member>
         <member name="M:Tardis.User.UserAgent.Snapshot">
             <summary>
-            현재 user의 snapshot을 얻어옵니다.<br></br>
-            재접속 등 user의 모든 정보를 갱싱해야 할 필요가 있을때 사용할 수 있습니다.<br></br>
-            서버 구현에 따라 내용이 달라집니다.
+            현재 user의 snapshot을 얻어온다.
+            재접속 등 user의 모든 정보를 갱싱해야 할 필요가 있을때 사용할 수 있다.
+            서버 구현에 따라 내용이 달라진다.
             </summary>
         </member>
         <member name="M:Tardis.User.UserAgent.Snapshot(Tardis.Payload)">
             <summary>
-            현재 user의 snapshot을 얻어옵니다.<br></br>
-            재접속 등 user의 모든 정보를 갱싱해야 할 필요가 있을때 사용할 수 있습니다.<br></br>
-            서버 구현에 따라 내용이 달라집니다.
+            현재 user의 snapshot을 얻어온다.
+            재접속 등 user의 모든 정보를 갱싱해야 할 필요가 있을때 사용할 수 있다.
+            서버 구현에 따라 내용이 달라진다.
             </summary>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.Snapshot(Tardis.Payload,Tardis.User.Interface.DelUserOnSnapshot)">
             <summary>
-            현재 user의 snapshot을 얻어옵니다.<br></br>
-            재접속 등 user의 모든 정보를 갱싱해야 할 필요가 있을때 사용할 수 있습니다.<br></br>
+            현재 user의 snapshot을 얻어온다.
+            재접속 등 user의 모든 정보를 갱싱해야 할 필요가 있을때 사용할 수 있다.
             서버 구현에 따라 내용이 달라집니다.
             </summary>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onSnapshot">결과를 전달 받을 delegate.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onSnapshot">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MoveChannel(System.String)">
             <summary>
-            지정한 채널로 이동합니다.
+            지정한 채널로 이동한다.
             </summary>
             <param name="channelId">이동할 channel의 id.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MoveChannel(System.String,Tardis.Payload)">
             <summary>
-            지정한 채널로 이동합니다.
+            지정한 채널로 이동한다.
             </summary>
             <param name="channelId">이동할 channel의 id.</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MoveChannel(System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnMoveChannel)">
             <summary>
-            지정한 채널로 이동합니다.
+            지정한 채널로 이동한다.
             </summary>
             <param name="channelId">이동할 channel의 id.</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onMoveChannel">결과를 전달 받을 delegate.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMoveChannel">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String)">
             <summary>
-            지정한 서비스로 이동합니다.
+            지정한 서비스로 이동한다.
             </summary>
-            <param name="serviceName">이동할 service의 id.</param>
+            <param name="serviceName">이동할 service의 ServiceName.</param>
             <param name="userType">이동할 service에서 사용할 userType.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,Tardis.User.Interface.DelUserOnMoveService)">
             <summary>
-            지정한 서비스로 이동합니다.
+            지정한 서비스로 이동한다.
             </summary>
-            <param name="serviceName">이동할 service의 id.</param>
+            <param name="serviceName">이동할 service의 ServiceName.</param>
             <param name="userType">이동할 service에서 사용할 userType.</param>
-            <param name="onMoveService">결과를 전달 받을 delegate.</param>
+            <param name="onMoveService">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,Tardis.Payload)">
             <summary>
-            지정한 채널로 이동합니다.
+            지정한 서비스로 이동한다.
             </summary>
-            <param name="serviceName">이동할 service의 id.</param>
+            <param name="serviceName">이동할 service의 ServiceName.</param>
             <param name="userType">이동할 service에서 사용할 userType.</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnMoveService)">
             <summary>
-            지정한 채널로 이동합니다.
+            지정한 서비스로 이동한다.
             </summary>
-            <param name="serviceName">이동할 service의 id.</param>
+            <param name="serviceName">이동할 service의 ServiceName.</param>
             <param name="userType">이동할 service에서 사용할 userType.</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onMoveService">결과를 전달 받을 delegate.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMoveService">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,System.String)">
             <summary>
-            지정한 서비스로 이동합니다.
+            지정한 서비스로 이동한다.
             </summary>
-            <param name="serviceName">이동할 service의 id.</param>
+            <param name="serviceName">이동할 service의 ServiceName.</param>
             <param name="userType">이동할 service에서 사용할 userType.</param>
             <param name="channelId">이동할 service에서 사용할 channelId.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,System.String,Tardis.User.Interface.DelUserOnMoveService)">
             <summary>
-            지정한 서비스로 이동합니다.
+            지정한 서비스로 이동한다.
             </summary>
-            <param name="serviceName">이동할 service의 id.</param>
+            <param name="serviceName">이동할 service의 ServiceName.</param>
             <param name="userType">이동할 service에서 사용할 userType.</param>
             <param name="channelId">이동할 service에서 사용할 channelId.</param>
-            <param name="onMoveService">결과를 전달 받을 delegate.</param>
+            <param name="onMoveService">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,System.String,Tardis.Payload)">
             <summary>
-            지정한 서비스로 이동합니다.
+            지정한 서비스로 이동한다.
             </summary>
-            <param name="serviceName">이동할 service의 id.</param>
+            <param name="serviceName">이동할 service의 ServiceName.</param>
             <param name="userType">이동할 service에서 사용할 userType.</param>
             <param name="channelId">이동할 service에서 사용할 channelId.</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.MoveService(System.String,System.String,System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnMoveService)">
             <summary>
-            지정한 채널로 이동합니다.
+            지정한 서비스로 이동한다.
             </summary>
-            <param name="serviceName">이동할 service의 id.</param>
+            <param name="serviceName">이동할 service의 ServiceName.</param>
             <param name="userType">이동할 service에서 사용할 userType.</param>
             <param name="channelId">이동할 service에서 사용할 channelId.</param>
-            <param name="payload">서버에 전달할 추가 정보.<br></br>서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onMoveService">결과를 전달 받을 delegate.</param>
+            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="onMoveService">결과를 받을 delegate.</param>
         </member>
         <member name="M:Tardis.User.UserAgent.Login(System.String)">
             <summary>
-            지정한 채널에 로그인합니다.
+            서비스에 로그인한다.
             </summary>
             <param name="userType">User의 타입. </param>
         </member>
         <member name="M:Tardis.User.UserAgent.Login(System.String,Tardis.User.Interface.DelUserOnLogin)">
             <summary>
-            지정한 채널에 로그인합니다.
+            서비스에 로그인한다.
             </summary>
             <param name="userType">User의 타입. </param>
-            <param name="onLogin">결과를 전달 받을 delegate</param>
+            <param name="onLogin">결과를 받을 delegate</param>
         </member>
         <member name="M:Tardis.User.UserAgent.Login(System.String,System.String,Tardis.Payload)">
             <summary>
-            지정한 채널에 로그인합니다.
+            서비스에 로그인한다.
             </summary>
             <param name="userType">User의 타입. </param>
             <param name="payload">버에 전달할 추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
@@ -569,23 +1574,103 @@
         </member>
         <member name="M:Tardis.User.UserAgent.Login(System.String,System.String,Tardis.Payload,Tardis.User.Interface.DelUserOnLogin)">
             <summary>
-            지정한 채널에 로그인합니다.
+            서비스에 로그인한다.
             </summary>
             <param name="userType">User의 타입. </param>
             <param name="payload">버에 전달할 추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
             <param name="channelId">로그인할 channel의 id. 서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onLogin">결과를 전달 받을 delegate</param>
+            <param name="onLogin">결과를 받을 delegate</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.IsLoggedIn">
+            <summary>
+            로그인 여부를 확인한다.
+            </summary>
+            <returns>로그인 한경우 true, 아닐경우 false</returns>
         </member>
         <member name="M:Tardis.User.UserAgent.Logout">
             <summary>
-            현재 채널에서 로그아웃 합니다.
+            현재 서비스에서 로그아웃 한다.
             </summary>
         </member>
         <member name="M:Tardis.User.UserAgent.Logout(Tardis.User.Interface.DelUserOnLogout)">
             <summary>
-            현재 채널에서 로그아웃 합니다.
+            현재 서비스에서 로그아웃 한다.
             </summary>
             <param name="onLogout">로그아웃 콜백.</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.AddUserListener(Tardis.User.Interface.IUserListener)">
+            <summary>
+            Interface.IUserListener를 상속받은 UserListener를 등록한다.
+            UserListener는 UserAgent에서 사용하는 모든 listener를 
+            </summary>
+            <param name="listener">Interface.IUserListener를 상속받은 UserListener</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.AddUserNotificationListener(Tardis.User.Interface.IUserNotificationListener)">
+            <summary>
+            Interface.IUserNotificationListener 상속받은 UserNotificationListener를 등록한다.
+            </summary>
+            <param name="listener">Interface.IUserNotificationListener를 상속받은 UserNotificationListener</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.AddUserErrorListener(Tardis.User.Interface.IUserOnErrorCommand)">
+            <summary>
+            Interface.IUserOnErrorCommand를 상속받은 UserOnErrorCommandListener를 등록한다.
+            </summary>
+            <param name="listener">Interface.IUserOnErrorCommand 상속받은 UserErrorListener</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.AddUserErrorListener(Tardis.User.Interface.IUserOnErrorCustomCommand)">
+            <summary>
+            Interface.IUserOnErrorCustomCommand를 상속받은 UserOnErrorCustomCommandListener를 등록한다.
+            </summary>
+            <param name="listener">Interface.IUserOnErrorCommand 상속받은 UserOnErrorCustomCommandListener</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.RemoveUserListener(Tardis.User.Interface.IUserListener)">
+            <summary>
+            등록한 UserListener를 등록 해제한다.
+            </summary>
+            <param name="listener">등록한 UserListener</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.RemoveUserNotificationListener(Tardis.User.Interface.IUserNotificationListener)">
+            <summary>
+            등록한 UserNotificationListener를 등록 해제한다.
+            </summary>
+            <param name="listener">등록한 UserNotificationListener</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.RemoveUserErrorListener(Tardis.User.Interface.IUserOnErrorCommand)">
+            <summary>
+            등록한 UserOnErrorCommandListener를 등록 해제한다.
+            </summary>
+            <param name="listener">등록한 UserOnErrorCommandListener</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.RemoveUserErrorListener(Tardis.User.Interface.IUserOnErrorCustomCommand)">
+            <summary>
+            등록한 UserOnErrorCustomCommandListener를 등록 해제한다.
+            </summary>
+            <param name="listener">등록한 UserOnErrorCustomCommandListener</param>
+        </member>
+        <member name="M:Tardis.User.UserAgent.RemoveAllListeners">
+            <summary>
+            등록한 모든 Listener를 등록 해제한다.
+            </summary>
+        </member>
+        <member name="T:Tardis.Exceptions.InvalidServiceName">
+            <summary>
+            서버에 등록되지 않은 ServiceName을 사용하는 경우 발생
+            </summary>
+        </member>
+        <member name="T:Tardis.Exceptions.InvalidServeiceId">
+            <summary>
+            알 수 없는 ServiceId를 전달받은 경우 발생
+            </summary>
+        </member>
+        <member name="T:Tardis.Exceptions.InvalidProtocol">
+            <summary>
+            등록하지 않은 프로토콜을 사용하는 경우 발생
+            </summary>
+        </member>
+        <member name="T:Tardis.Exceptions.InvalidProtocolId">
+            <summary>
+            프로토콜 Id가 사용가능한 범위 밖일 경우 발생
+            </summary>
         </member>
         <member name="M:Tardis.Internal.AgentManager.CreateUserAgent(System.String,System.String)">
             <summary>
@@ -665,24 +1750,91 @@
             <param name="packet"></param>
             <returns></returns>
         </member>
+        <member name="T:Tardis.Socket.TardisTcpSocket">
+            <summary>
+            Connector에서 사용하는 TcpSocket 소켓. TCP 연결이 필요할 경우 사용한다.
+            Default로 사용하는 소켓.
+            </summary>
+        </member>
+        <member name="T:Tardis.Socket.TardisSocket">
+            <summary>
+            Connector 내부적으로 사용하는 클래스. 사용하면 안된다.
+            </summary>
+        </member>
+        <member name="T:Tardis.Socket.TardisTcpSecureSocket">
+            <summary>
+            Connector에서 사용하는 TcpSecureSocket 소켓. TCP SSL 연결이 필요할 경우 사용한다.
+            </summary>
+        </member>
+        <member name="T:Tardis.Socket.TardisWebSocket">
+            <summary>
+            Connector에서 사용하는 WebSocket 소켓. WebSocket 연결이 필요할 경우 사용한다.
+            </summary>
+        </member>
         <member name="T:Tardis.PacketHelper">
             <summary>
-            
+            Packet의 확장 클래스. 
             </summary>
         </member>
         <member name="M:Tardis.PacketHelper.GetMessage``1(Tardis.Packet)">
             <summary>
-            Packet으로부터 메세지를 가져온다.
+            Packet으로부터 Message를 가져온다.
             </summary>
-            <typeparam name="T">메세지 타입:IMessage</typeparam>
+            <typeparam name="T">Message의 Type : IMessage</typeparam>
             <param name="packet">패킷</param>
-            <returns>T타입 메세지</returns>
+            <returns>IMessage를 상속받은 T 타입 메세지</returns>
+        </member>
+        <member name="M:Tardis.PacketHelper.GetMessageName(Tardis.Packet)">
+            <summary>
+            Packet에 담긴 Message의 이름을 가져온다. 
+            </summary>
+            <param name="packet">패킷</param>
+            <returns>Message의 이름. </returns>
+        </member>
+        <member name="T:Tardis.ProtocolManager">
+            <summary>
+            Connector에서 사용할 프로토콜을 관리한다.
+            ProtoBuf를 지원하며 서버와 주고받는 모든 프로토콜은 미리 등록해야한다.
+            </summary>
+        </member>
+        <member name="M:Tardis.ProtocolManager.getInstance">
+            <summary>
+            ProtocolManager의 싱글턴 인스턴스를 리턴한다.
+            </summary>
+            <returns>ProtocolManager의 싱글턴 인스턴스.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Tardis.ProtocolManager.RegisterProtocol(System.UInt16,Google.Protobuf.Reflection.FileDescriptor)" -->
+        <member name="M:Tardis.ProtocolManager.UnregisterProtocol(System.UInt16)">
+            <summary>
+            등록한 프로토콜을 등록 해제한다. 
+            </summary>
+            <param name="protocolId">등록 해제할 프로토콜의 Id</param>
+        </member>
+        <member name="M:Tardis.ProtocolManager.GetProtocolId(Google.Protobuf.Reflection.MessageDescriptor)">
+            <summary>
+            Message의 프로토콜 Id를 리턴한다.
+            </summary>
+            <param name="descriptor">확인하고자 하는 Message의 MessageDescriptor</param>
+            <returns></returns>
+        </member>
+        <member name="T:Tardis.PayloadHelper">
+            <summary>
+            Payload의 확장 클래스. 
+            </summary>
+        </member>
+        <member name="M:Tardis.PayloadHelper.GetMessage``1(Tardis.Payload)">
+            <summary>
+            Payload에 담긴 Packet으로부터 Message를 가져온다.
+            </summary>
+            <typeparam name="T">Message의 Type : IMessage</typeparam>
+            <param name="packet">패킷</param>
+            <returns>IMessage를 상속받은 T 타입 메세지</returns>
         </member>
         <member name="T:Tardis.Connector">
             <summary>
-            Connector는 Tardis Connector를 사용하기 위한 기본 모듈입니다.<br></br>
-            기본 설정과 Agent의 관리를 담당합니다.<br></br>
-            또 내부 동작과 관련된 로그를 볼수 있도록 delegate를 등록할 수 있습니다.<br></br>
+            Connector는 Tardis Connector를 사용하기 위한 기본 클래스다.
+            기본 설정과 Agent의 관리를 담당한다.
+            또 내부 동작과 관련된 로그를 볼수 있도록 delegate를 등록할 수 있다.
             </summary>
         </member>
         <member name="T:Tardis.Connector.Config">
@@ -743,12 +1895,17 @@
         </member>
         <member name="F:Tardis.Connector.LvNetLogger">
             <summary>
-            로그 콜백.
+            네트워크 로그 콜백.
             </summary>
         </member>
         <member name="F:Tardis.Connector.Logger">
             <summary>
             로그 콜백.
+            </summary>
+        </member>
+        <member name="P:Tardis.Connector.TardisSocket">
+            <summary>
+            UnityWebGL을 위한 임시 공개. 임의로 사용하면 안된다.
             </summary>
         </member>
         <member name="M:Tardis.Connector.#ctor">
@@ -767,7 +1924,7 @@
             유저 에이전트 생성.
             </summary>
             <param name="serviceName">UserAgent가 사용할 serviceName. </param>
-            <param name="subId">서비스별 UserAgent식별 할 수 있는 고유 ID. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="subId">서비스별 UserAgent를 식별 할 수 있는 고유 ID. 서버 구현에 따라 사용하지 않을 수 있음.</param>
             <returns>생성된 유저 에이전트.</returns>
         </member>
         <member name="M:Tardis.Connector.GetUserAgent(System.String,System.String)">
@@ -775,7 +1932,7 @@
             유저 에이전트를 찾아 가져온다.
             </summary>
             <param name="serviceName">UserAgent가 사용할 serviceName. </param>
-            <param name="subId">서비스별 UserAgent식별 할 수 있는 고유 ID. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <param name="subId">서비스별 UserAgent를 식별 할 수 있는 고유 ID. 서버 구현에 따라 사용하지 않을 수 있음.</param>
             <returns>해당 유저 에이전트, 없으면 null</returns>
         </member>
         <member name="M:Tardis.Connector.GetUserAgents">
@@ -794,6 +1951,78 @@
             <summary>
             소켓 종료.
             </summary>
+        </member>
+        <member name="M:Tardis.Connector.Update">
+            <summary>
+            메세지의 처리를 위한 함수. 주기적으로 호출해주어야 한다.
+            </summary>
+        </member>
+        <member name="M:Tardis.Connector.IsConnected">
+            <summary>
+            접속 여부를 확인한다.
+            </summary>
+            <returns>접속되었으면 true, 아니면 false</returns>
+        </member>
+        <member name="M:Tardis.Connector.IsReconnecting">
+            <summary>
+            자동 재접속 중인지 확인한다.
+            </summary>
+            <returns>재접속 중이면 true, 아니면 false</returns>
+        </member>
+        <member name="M:Tardis.Connector.IsAuthenticate">
+            <summary>
+            인증되었는지 확인한다.
+            </summary>
+            <returns>인증되었으면 true, 아니면 false</returns>
+        </member>
+        <member name="M:Tardis.Connector.IsLoggedIn(System.String,System.String)">
+            <summary>
+            Service에 로그인 되었는지 확인한다.
+            </summary>
+            <param name="serviceName">확인할 Service의 이름. </param>
+            <param name="subId">확인할 SubId. 서버 구현에 따라 사용하지 않을 수 있음.</param>
+            <returns>해당 Service에 subId로 로그인되어있으면 true, 아니면 false</returns>
+        </member>
+        <member name="T:Tardis.Payload">
+            <summary>
+            여러개의 Packet 을 담기 위한 Class.
+            </summary>
+        </member>
+        <member name="M:Tardis.Payload.add(Tardis.Packet)">
+            <summary>
+            Packet을 추가한다.
+            </summary>
+            <param name="packet"> 추가할 Packet </param>
+            <returns>메서드 체인을 지원하기위해 Payload 을 리턴한다.</returns>
+        </member>
+        <member name="M:Tardis.Payload.addAll(System.Collections.Generic.ICollection{Tardis.Packet})">
+            <summary>
+            Packet 의 콜랙션을 추가한다.
+            </summary>
+            <param name="packets"> 추가할 Packet 의 콜랙션 </param>
+            <returns>메서드 체인을 지원하기위해 Payload 을 리턴한다.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Tardis.Payload.getPacket``1" -->
+        <member name="M:Tardis.Payload.getPacket(System.Int32)">
+            <summary>
+            임의의 Id와 byte[] 를 담은 Packet 을 리턴한다. 없을 경우 null을 리턴한다.
+            </summary>
+            <param name="customMsgId"> Packet 에 지정한 Id </param>
+            <returns>임의의 Id와 byte[]를 담은 Packet. 없을 경우 null.</returns>
+        </member>
+        <member name="M:Tardis.Payload.values">
+            <summary>
+            Payload 에 담긴 모든 패킷을 ICollection에 담아 리턴한다.
+            </summary>
+            <returns>모든 패킷을 담은 ICollection</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Tardis.Payload.contains``1" -->
+        <member name="M:Tardis.Payload.contains(System.Int32)">
+            <summary>
+            임의의 Id와 byte[]를 담은 Packet 이 있는지 확인한다.
+            </summary>
+            <param name="customMsgId"> Packet 에 지정한 Id </param>
+            <returns>있으면 true, 없으면 false</returns>
         </member>
         <member name="T:Tardis.Defines.ErrorCode">
             <summary>
@@ -1315,15 +2544,72 @@
             소켓 에러가 발생하여 연결을 끊음
             </summary>
         </member>
-        <member name="T:Tardis.Defines.ChannelStatus">
-            <summary>
-            deprecated. 삭제 예정.
-            </summary>
-        </member>
         <member name="T:Tardis.Packet">
             <summary>
-            서버와 주고 받는 모든 패킷은 Packet 모듈에 실려서 처리 되며 Packet 모듈이 제공하는 인터페이스를 이용하게 됩니다.
+            서버와 주고 받는 모든 Message은 Packet에 실려서 처리 되며 Packet이 제공하는 인터페이스를 이용하게 된다.
             </summary>
+        </member>
+        <member name="M:Tardis.Packet.CompareTo(Tardis.Packet)">
+            <summary>
+            Packet간의 우선순위(Priority)를 비교한다.
+            </summary>
+            <param name="other">비교할 다른 Packet </param>
+            <returns>우선 순위가 낮으면 -1, 같으면 0, 크면 1</returns>
+        </member>
+        <member name="M:Tardis.Packet.CreateWithCustomMsg(System.Int32,System.Byte[])">
+            <summary>
+            임의의 Id와 byte[]를 이용해 Packet을 생성한다.
+            </summary>
+            <param name="customMsgId">Packet을 구분하기위한 Id. 서버와 약속된 값이어야 한다.</param>
+            <param name="buffer">Packet에 담을 byte[]</param>
+        </member>
+        <member name="M:Tardis.Packet.#ctor(Google.Protobuf.IMessage)">
+            <summary>
+            프로토콜 버퍼의 Message를 이용해 Packet을 생성한다.
+            </summary>
+            <param name="message">프로토콜 버퍼의 Message 객체 </param>
+        </member>
+        <member name="M:Tardis.Packet.compress">
+            <summary>
+            패킷을 압축한다.
+            </summary>
+            <returns>메서드 체인을 지원하기위해 Packet을 리턴한다.</returns>
+        </member>
+        <member name="M:Tardis.Packet.decompress">
+            <summary>
+            패킷을 압축한다.
+            </summary>
+            <returns>메서드 체인을 지원하기위해 Packet을 리턴한다.</returns>
+        </member>
+        <member name="M:Tardis.Packet.isCompress">
+            <summary>
+            패킷을 압축 여부를 리턴한다.
+            </summary>
+            <returns>압축되어있다면 true, 아니면 false</returns>
+        </member>
+        <member name="M:Tardis.Packet.GetBytes">
+            <summary>
+            패킷에 담긴 byte[]를 리턴한다.
+            </summary>
+            <returns>byte[]</returns>
+        </member>
+        <member name="M:Tardis.Packet.getUnCompressSize">
+            <summary>
+            Packet의 압축 해제시의 크기. 
+            </summary>
+            <returns>Packet의 압축 해제시의 크기. 압축되지 않았을 경우 0.</returns>
+        </member>
+        <member name="M:Tardis.Packet.getPriority">
+            <summary>
+            Packet의 우선순위(Priority)를 리턴한다.
+            </summary>
+            <returns>Packet의 우선순위</returns>
+        </member>
+        <member name="M:Tardis.Packet.setPriority(System.Int32)">
+            <summary>
+            Packet의 우선순위(Priority)를 설정한다.
+            </summary>
+            <param name="priority">Packet의 우선순위</param>
         </member>
         <member name="T:Com.Nhnent.Tardis.Common.Protocol.BaseReflection">
             <summary>Holder for reflection information generated from base.proto</summary>
