@@ -23,7 +23,8 @@ public class GameLoginUi : MonoBehaviour
     void Start()
     {
         // 기본값 지정
-        textUUID.text = PlayerPrefs.GetString(Constants.KEY_UUID);
+//        textUUID.text = PlayerPrefs.GetString(Constants.KEY_UUID);
+        textUUID.text = "123456789999";
         if (string.IsNullOrWhiteSpace(textUUID.text))
         {
             OnClickGenerateUUID();
@@ -150,7 +151,32 @@ public class GameLoginUi : MonoBehaviour
 
                         // 신전환신 버튼 리스너 모두 해재
                         buttonLogin.onClick.RemoveAllListeners();
+
                         UserInfo.Instance.MoveScene(Constants.SCENE_GAME_LOBBY);
+
+                        if (loginInfo.isJoinedRoom)
+                        {
+                            if (loginInfo.RoomPayload.contains<Com.Nhn.Tardis.Sample.Protocol.RoomInfoMsg>())
+                            {
+                                Com.Nhn.Tardis.Sample.Protocol.RoomInfoMsg roomInfoMsg = Com.Nhn.Tardis.Sample.Protocol.RoomInfoMsg.Parser.ParseFrom(loginInfo.RoomPayload.getPacket<Com.Nhn.Tardis.Sample.Protocol.RoomInfoMsg>().GetBytes());
+                                Debug.Log("RoomInfoMsg " + roomInfoMsg.RoomType.ToString());
+                                if (roomInfoMsg.RoomType == Com.Nhn.Tardis.Sample.Protocol.RoomType.RoomSingle)
+                                {
+                                    UserInfo.Instance.MoveScene(Constants.SCENE_GAME_TAPBIRD); // 싱글
+                                }
+                                else if (roomInfoMsg.RoomType == Com.Nhn.Tardis.Sample.Protocol.RoomType.RoomSnake)
+                                {
+                                    UserInfo.Instance.gameState = UserInfo.GameState.Wait;
+                                    UserInfo.Instance.MoveScene(Constants.SCENE_GAME_SNAKE); // 유저매치 
+                                }
+                                else if (roomInfoMsg.RoomType == Com.Nhn.Tardis.Sample.Protocol.RoomType.RoomTap)
+                                {
+                                    UserInfo.Instance.IsMulti = true;
+                                    UserInfo.Instance.MoveScene(Constants.SCENE_GAME_TAPBIRD);    // 룸 매치
+                                }
+
+                            }
+                        }
                     }
                 }
                 else

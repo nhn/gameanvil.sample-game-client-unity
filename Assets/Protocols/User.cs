@@ -37,17 +37,21 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
             "aWNrbmFtZVJlcRIQCghuaWNrbmFtZRgBIAEoCSKOAQoRQ2hhbmdlTmlja25h",
             "bWVSZXMSPQoKcmVzdWx0Q29kZRgBIAEoDjIpLmNvbS5uaG4udGFyZGlzLnNh",
             "bXBsZS5wcm90b2NvbC5FcnJvckNvZGUSOgoIdXNlckRhdGEYAiABKAsyKC5j",
-            "b20ubmhuLnRhcmRpcy5zYW1wbGUucHJvdG9jb2wuVXNlckRhdGEqRwoMQ3Vy",
-            "cmVuY3lUeXBlEhEKDUNVUlJFTkNZX05PTkUQABIRCg1DVVJSRU5DWV9DT0lO",
-            "EAESEQoNQ1VSUkVOQ1lfUlVCWRACYgZwcm90bzM="));
+            "b20ubmhuLnRhcmRpcy5zYW1wbGUucHJvdG9jb2wuVXNlckRhdGEiSQoLUm9v",
+            "bUluZm9Nc2cSOgoIcm9vbVR5cGUYASABKA4yKC5jb20ubmhuLnRhcmRpcy5z",
+            "YW1wbGUucHJvdG9jb2wuUm9vbVR5cGUqRwoMQ3VycmVuY3lUeXBlEhEKDUNV",
+            "UlJFTkNZX05PTkUQABIRCg1DVVJSRU5DWV9DT0lOEAESEQoNQ1VSUkVOQ1lf",
+            "UlVCWRACKjkKCFJvb21UeXBlEg8KC1JPT01fU0lOR0xFEAASDAoIUk9PTV9U",
+            "QVAQARIOCgpST09NX1NOQUtFEAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Com.Nhn.Tardis.Sample.Protocol.ResultReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Com.Nhn.Tardis.Sample.Protocol.CurrencyType), }, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Com.Nhn.Tardis.Sample.Protocol.CurrencyType), typeof(global::Com.Nhn.Tardis.Sample.Protocol.RoomType), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.UserData), global::Com.Nhn.Tardis.Sample.Protocol.UserData.Parser, new[]{ "Nickname", "Heart", "Coin", "Ruby", "Level", "Exp", "HighScore", "CurrentDeck" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.ShuffleDeckReq), global::Com.Nhn.Tardis.Sample.Protocol.ShuffleDeckReq.Parser, new[]{ "CurrencyType", "Usage" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.ShuffleDeckRes), global::Com.Nhn.Tardis.Sample.Protocol.ShuffleDeckRes.Parser, new[]{ "ResultCode", "Deck", "BalanceCoin", "BalanceRuby" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.ChangeNicknameReq), global::Com.Nhn.Tardis.Sample.Protocol.ChangeNicknameReq.Parser, new[]{ "Nickname" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.ChangeNicknameRes), global::Com.Nhn.Tardis.Sample.Protocol.ChangeNicknameRes.Parser, new[]{ "ResultCode", "UserData" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.ChangeNicknameRes), global::Com.Nhn.Tardis.Sample.Protocol.ChangeNicknameRes.Parser, new[]{ "ResultCode", "UserData" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.RoomInfoMsg), global::Com.Nhn.Tardis.Sample.Protocol.RoomInfoMsg.Parser, new[]{ "RoomType" }, null, null, null)
           }));
     }
     #endregion
@@ -58,6 +62,12 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
     [pbr::OriginalName("CURRENCY_NONE")] CurrencyNone = 0,
     [pbr::OriginalName("CURRENCY_COIN")] CurrencyCoin = 1,
     [pbr::OriginalName("CURRENCY_RUBY")] CurrencyRuby = 2,
+  }
+
+  public enum RoomType {
+    [pbr::OriginalName("ROOM_SINGLE")] RoomSingle = 0,
+    [pbr::OriginalName("ROOM_TAP")] RoomTap = 1,
+    [pbr::OriginalName("ROOM_SNAKE")] RoomSnake = 2,
   }
 
   #endregion
@@ -1045,6 +1055,135 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
               userData_ = new global::Com.Nhn.Tardis.Sample.Protocol.UserData();
             }
             input.ReadMessage(userData_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class RoomInfoMsg : pb::IMessage<RoomInfoMsg> {
+    private static readonly pb::MessageParser<RoomInfoMsg> _parser = new pb::MessageParser<RoomInfoMsg>(() => new RoomInfoMsg());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RoomInfoMsg> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Com.Nhn.Tardis.Sample.Protocol.UserReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoomInfoMsg() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoomInfoMsg(RoomInfoMsg other) : this() {
+      roomType_ = other.roomType_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoomInfoMsg Clone() {
+      return new RoomInfoMsg(this);
+    }
+
+    /// <summary>Field number for the "roomType" field.</summary>
+    public const int RoomTypeFieldNumber = 1;
+    private global::Com.Nhn.Tardis.Sample.Protocol.RoomType roomType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Com.Nhn.Tardis.Sample.Protocol.RoomType RoomType {
+      get { return roomType_; }
+      set {
+        roomType_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RoomInfoMsg);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RoomInfoMsg other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RoomType != other.RoomType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RoomType != 0) hash ^= RoomType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (RoomType != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) RoomType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (RoomType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RoomType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RoomInfoMsg other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RoomType != 0) {
+        RoomType = other.RoomType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            roomType_ = (global::Com.Nhn.Tardis.Sample.Protocol.RoomType) input.ReadEnum();
             break;
           }
         }

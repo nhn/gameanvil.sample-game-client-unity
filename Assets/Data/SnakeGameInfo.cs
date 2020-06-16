@@ -30,8 +30,7 @@ public class SnakeGameInfo : MonoBehaviour
         if(snakeGameInfo != null)
         {
             Destroy(this.gameObject);
-            return;
-        }
+       }
 
         DontDestroyOnLoad(this.gameObject);
         snakeGameInfo = this;
