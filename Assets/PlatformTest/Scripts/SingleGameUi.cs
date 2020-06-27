@@ -1,7 +1,7 @@
-﻿using Tardis;
-using Tardis.Defines;
-using Tardis.User;
-using TardisConnector;
+﻿using Gameflex;
+using Gameflex.Defines;
+using Gameflex.User;
+using GameflexConnector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,10 +35,10 @@ public class SingleGameUi : MonoBehaviour
         // 종료버튼 숨김
         buttonGameEnd.gameObject.SetActive(false);
 
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
         // 게임 유저 얻기
-        tapBirdUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, string.Empty);
-        // ===========================================================================================>>> Tardis
+        tapBirdUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, Constants.userSubId);
+        // ===========================================================================================>>> Gameflex
     }
 
     // Update is called once per frame
@@ -76,7 +76,7 @@ public class SingleGameUi : MonoBehaviour
         Debug.Log("OnClickBack!!!!!! : " + tapCount);
 
         // 게임 룸에서 나가기
-        OnLeaveRoom(Com.Nhn.Tardis.Sample.Protocol.EndType.GameEndGiveUp);
+        OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType.GameEndGiveUp);
     }
     void OnClickTap()
     {
@@ -85,17 +85,17 @@ public class SingleGameUi : MonoBehaviour
         Debug.Log("Tap!!!!!! : " + tapCount);
 
         // 전송할 패킷
-        var tapMsg = new Com.Nhn.Tardis.Sample.Protocol.TapMsg
+        var tapMsg = new Com.Nhn.Gameflex.Sample.Protocol.TapMsg
         {
             Combo = tapCount,
             SelectCardName = UserInfo.Instance.CurrentDeck + "_0" + 1,
             TapScore = 100
         };
 
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
         // 응답없이 서버로 데이터 성으로 전달하는 패킷
         tapBirdUser.Send(new Packet(tapMsg));
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
     }
 
     void OnClickGameEnd()
@@ -104,29 +104,29 @@ public class SingleGameUi : MonoBehaviour
         Debug.Log("OnClickGameEnd!!!!!! : " + tapCount);
 
         // 게임 나가기
-        OnLeaveRoom(Com.Nhn.Tardis.Sample.Protocol.EndType.GameEndTimeUp);
+        OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType.GameEndTimeUp);
 
     }
 
-    void OnLeaveRoom(Com.Nhn.Tardis.Sample.Protocol.EndType gameEndType)
+    void OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType gameEndType)
     {
         // 게임종료 프로토콜 정의
-        var endGameReq = new Com.Nhn.Tardis.Sample.Protocol.EndGameReq
+        var endGameReq = new Com.Nhn.Gameflex.Sample.Protocol.EndGameReq
         {
             EndType = gameEndType
         };
 
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
         // 게임룸 나가는 요청
-        tapBirdUser.LeaveRoom(new Payload().add(new Packet(endGameReq)), (UserAgent userAgent, ResultCodeLeaveRoom result, bool force, string roomId, Payload payload) =>
+        tapBirdUser.LeaveRoom(new Payload().add(new Packet(endGameReq)), (UserAgent userAgent, ResultCodeLeaveRoom result, bool force, int roomId, Payload payload) =>
         {
             Debug.Log("LeaveRoom " + result);
 
             if (result == ResultCodeLeaveRoom.LEAVE_ROOM_SUCCESS)
             {
-                if (payload.contains<Com.Nhn.Tardis.Sample.Protocol.EndGameRes>())
+                if (payload.contains<Com.Nhn.Gameflex.Sample.Protocol.EndGameRes>())
                 {
-                    Com.Nhn.Tardis.Sample.Protocol.EndGameRes endGameRes = Com.Nhn.Tardis.Sample.Protocol.EndGameRes.Parser.ParseFrom(payload.getPacket<Com.Nhn.Tardis.Sample.Protocol.EndGameRes>().GetBytes());
+                    Com.Nhn.Gameflex.Sample.Protocol.EndGameRes endGameRes = Com.Nhn.Gameflex.Sample.Protocol.EndGameRes.Parser.ParseFrom(payload.getPacket<Com.Nhn.Gameflex.Sample.Protocol.EndGameRes>().GetBytes());
 
                     UserInfo.Instance.Heart = endGameRes.UserData.Heart;
                     UserInfo.Instance.TotalScore = endGameRes.TotalScore;
@@ -151,7 +151,7 @@ public class SingleGameUi : MonoBehaviour
                 // 실패시 처리
             }
         });
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
     }
 
     void OnGUI()

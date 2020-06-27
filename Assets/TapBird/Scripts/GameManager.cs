@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Tardis;
-using Tardis.Defines;
-using Tardis.User;
-using TardisConnector;
+using Gameflex;
+using Gameflex.Defines;
+using Gameflex.User;
+using GameflexConnector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,10 +41,10 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
 
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
         // 게임 유저 얻기
-        tapBirdGameUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, string.Empty);
-        // ===========================================================================================>>> Tardis
+        tapBirdGameUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, Constants.userSubId);
+        // ===========================================================================================>>> Gameflex
 
         SendScore();
 
@@ -58,8 +58,8 @@ public class GameManager : MonoBehaviour
 
         if (UserInfo.Instance.IsMulti)
         {
-            // ===========================================================================================>>> Tardis
-            tapBirdGameUser.AddListener((UserAgent userAgent, Com.Nhn.Tardis.Sample.Protocol.BroadcastTapBirdMsg msg) =>
+            // ===========================================================================================>>> Gameflex
+            tapBirdGameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameflex.Sample.Protocol.BroadcastTapBirdMsg msg) =>
             {
                 if (msg != null)
                 {
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
                     userInfoText.text = roomData;
                 }
             });
-            // ===========================================================================================>>> Tardis
+            // ===========================================================================================>>> Gameflex
         }
     }
 
@@ -117,16 +117,16 @@ public class GameManager : MonoBehaviour
         else
         {
             // 전송할 패킷
-            var tapMsg = new Com.Nhn.Tardis.Sample.Protocol.TapMsg
+            var tapMsg = new Com.Nhn.Gameflex.Sample.Protocol.TapMsg
             {
                 Combo = score,
                 SelectCardName = UserInfo.Instance.CurrentDeck + "_0" + 1,
                 TapScore = 100
             };
-            // ===========================================================================================>>> Tardis
+            // ===========================================================================================>>> Gameflex
             // 응답없이 서버로 데이터 성으로 전달하는 패킷
             tapBirdGameUser.Send(new Packet(tapMsg));
-            // ===========================================================================================>>> Tardis
+            // ===========================================================================================>>> Gameflex
         }
     }
 
@@ -184,21 +184,21 @@ public class GameManager : MonoBehaviour
     public void OnClickGameEnd()
     {
         // 게임종료 프로토콜 정의
-        var endGameReq = new Com.Nhn.Tardis.Sample.Protocol.EndGameReq
+        var endGameReq = new Com.Nhn.Gameflex.Sample.Protocol.EndGameReq
         {
-            EndType = Com.Nhn.Tardis.Sample.Protocol.EndType.GameEndGiveUp
+            EndType = Com.Nhn.Gameflex.Sample.Protocol.EndType.GameEndGiveUp
         };
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
         // 게임룸 나가는 요청
-        tapBirdGameUser.LeaveRoom(new Payload().add(new Packet(endGameReq)), (UserAgent userAgent, ResultCodeLeaveRoom result, bool force, string roomId, Payload payload) =>
+        tapBirdGameUser.LeaveRoom(new Payload().add(new Packet(endGameReq)), (UserAgent userAgent, ResultCodeLeaveRoom result, bool force, int roomId, Payload payload) =>
         {
             Debug.Log("LeaveRoom " + result);
 
             if (result == ResultCodeLeaveRoom.LEAVE_ROOM_SUCCESS)
             {
-                if (payload.contains<Com.Nhn.Tardis.Sample.Protocol.EndGameRes>())
+                if (payload.contains<Com.Nhn.Gameflex.Sample.Protocol.EndGameRes>())
                 {
-                    Com.Nhn.Tardis.Sample.Protocol.EndGameRes endGameRes = Com.Nhn.Tardis.Sample.Protocol.EndGameRes.Parser.ParseFrom(payload.getPacket<Com.Nhn.Tardis.Sample.Protocol.EndGameRes>().GetBytes());
+                    Com.Nhn.Gameflex.Sample.Protocol.EndGameRes endGameRes = Com.Nhn.Gameflex.Sample.Protocol.EndGameRes.Parser.ParseFrom(payload.getPacket<Com.Nhn.Gameflex.Sample.Protocol.EndGameRes>().GetBytes());
 
                     UserInfo.Instance.Heart = endGameRes.UserData.Heart;
                     UserInfo.Instance.TotalScore = endGameRes.TotalScore;
@@ -223,20 +223,20 @@ public class GameManager : MonoBehaviour
                 // 실패시 처리
             }
         });
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
     }
 
     void SendScore()
     {
         // 전송할 패킷
-        var scoreUp = new Com.Nhn.Tardis.Sample.Protocol.ScoreUpMsg
+        var scoreUp = new Com.Nhn.Gameflex.Sample.Protocol.ScoreUpMsg
         {
             Score = score
         };
 
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
         // 응답없이 서버로 데이터 성으로 전달하는 패킷
         tapBirdGameUser.Send(new Packet(scoreUp));
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
     }
 }

@@ -1,4 +1,4 @@
 <linker>
-	<assembly fullname="Tardis" preserve="all"/>
+	<assembly fullname="Gameflex" preserve="all"/>
     <assembly fullname="Google.Protobuf" preserve="all"/>
 </linker>

@@ -1,5 +1,6 @@
 ﻿public static class Constants 
 {
+    public const int userSubId = 1;
     // 게임에서 사용 하는 상수정의
     public const string KEY_UUID = "uuid";                          // 플랫폼 테스트에 사용
     public const string KEY_LAUNCHING = "launching";

@@ -397,7 +397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.59999084, y: -0.025024414}
+  m_AnchoredPosition: {x: -0.5999756, y: -0.025024414}
   m_SizeDelta: {x: -19.399963, y: -13.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &546584055
@@ -1030,7 +1030,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Game Test Start
 
-    [ Snake Game, TapBird Game With Tardis & Gamebase Auth ]'
+    [ Snake Game, TapBird Game With Gameflex & Gamebase Auth ]'
 --- !u!222 &1036562113
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1280,7 +1280,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TARDIS Game Server Engine Team
+  m_Text: Gameflex - Game Server Engine Team
 --- !u!222 &1468799327
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1522,7 +1522,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Platform Test Start
 
-    [ Only Tardis API Test ]'
+    [ Only Gameflex API Test ]'
 --- !u!222 &1688981267
 CanvasRenderer:
   m_ObjectHideFlags: 0

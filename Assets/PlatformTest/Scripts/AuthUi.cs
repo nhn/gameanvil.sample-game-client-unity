@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Tardis;
-using Tardis.Defines;
-using Tardis.Session;
-using Tardis.User;
-using TardisConnector;
+using Gameflex;
+using Gameflex.Defines;
+using Gameflex.Session;
+using Gameflex.User;
+using GameflexConnector;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -69,14 +69,14 @@ public class AuthUi : MonoBehaviour
 
         Debug.Log("Initialize complete!!!! " + textUUID.text);
 
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
         // 연결 끊기는 부분 처리 리스너 등록
         ConnectHandler.Instance.GetSessionAgent().onDisconnectListeners += (SessionAgent sessionAgent, ResultCodeDisconnect result, bool force, Payload payload) =>
         {
             Debug.LogFormat("onDisconnect - {0}", result);
             UserInfo.Instance.MoveScene(Constants.SCENE_AUTH);
         };
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
     }
 
 
@@ -117,7 +117,7 @@ public class AuthUi : MonoBehaviour
         // 다중 클릭 막음
         buttonConnect.interactable = false;
 
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
         // 서버에 접속 시도.
         ConnectHandler.Instance.GetSessionAgent().Connect(textIP.text, int.Parse(textPort.text),
             (SessionAgent sessionAgent, ResultCodeConnect result) =>
@@ -138,7 +138,7 @@ public class AuthUi : MonoBehaviour
                 buttonConnect.interactable = true;
             }
         );
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
     }
 
     void OnClickAuth()
@@ -159,13 +159,13 @@ public class AuthUi : MonoBehaviour
             buttonAuth.interactable = false;
 
             // 인증에 필요한 프로토콜 데이터 설정
-            var authenticationReq = new Com.Nhn.Tardis.Sample.Protocol.AuthenticationReq
+            var authenticationReq = new Com.Nhn.Gameflex.Sample.Protocol.AuthenticationReq
             {
                 AccessToken = Constants.AUTH_ACCESS_TOKEN
             };
             Debug.Log("authenticationReq " + authenticationReq);
 
-            // ===========================================================================================>>> Tardis
+            // ===========================================================================================>>> Gameflex
             // 서버에 인증 시도. 현재는 deviceid, id, pw 모두 uuid값으로 전달
             ConnectHandler.Instance.GetSessionAgent().Authenticate(textUUID.text, inputFieldID.text, inputFieldID.text, new Payload().add(new Packet(authenticationReq)),
                 (SessionAgent sessionAgent, ResultCodeAuth result, List<SessionAgent.LoginedUserInfo> loginedUserInfoList, string message, Payload payload) =>
@@ -187,7 +187,7 @@ public class AuthUi : MonoBehaviour
                     buttonAuth.interactable = true;
                 }
             );
-            // ===========================================================================================>>> Tardis
+            // ===========================================================================================>>> Gameflex
         }
     }
 
@@ -197,11 +197,11 @@ public class AuthUi : MonoBehaviour
         buttonLogin.interactable = false;
 
         // 로그인에 필요한 프로토콜 데이터 설정
-        var loginReq = new Com.Nhn.Tardis.Sample.Protocol.LoginReq
+        var loginReq = new Com.Nhn.Gameflex.Sample.Protocol.LoginReq
         {
             // 임의로 필요한 데이터 설정
             Uuid = textUUID.text,
-            LoginType = Com.Nhn.Tardis.Sample.Protocol.LoginType.LoginGuest,
+            LoginType = Com.Nhn.Gameflex.Sample.Protocol.LoginType.LoginGuest,
             AppVersion = "0.0.1",
             AppStore = "None",
             DeviceModel = SystemInfo.deviceModel,
@@ -211,9 +211,9 @@ public class AuthUi : MonoBehaviour
         };
         Debug.Log("loginReq " + loginReq);
 
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
         // 서버에 로그인
-        ConnectHandler.Instance.CreateUserAgent(Constants.GAME_SPACE_NAME, string.Empty).Login(Constants.SPACE_USER_TYPE, string.Empty, new Payload().add(new Packet(loginReq)),
+        ConnectHandler.Instance.CreateUserAgent(Constants.GAME_SPACE_NAME, Constants.userSubId).Login(Constants.SPACE_USER_TYPE, string.Empty, new Payload().add(new Packet(loginReq)),
             (UserAgent userAgent, ResultCodeLogin result, UserAgent.LoginInfo loginInfo) =>
             {
                 Debug.Log("Login " + result + ", " + loginInfo);
@@ -221,10 +221,10 @@ public class AuthUi : MonoBehaviour
                 // 성공시 다음 단계.
                 if (result == ResultCodeLogin.LOGIN_SUCCESS)
                 {
-                    if (loginInfo.Payload.contains<Com.Nhn.Tardis.Sample.Protocol.LoginRes>())
+                    if (loginInfo.Payload.contains<Com.Nhn.Gameflex.Sample.Protocol.LoginRes>())
                     {
                         // 로그인 응답 프로토콜 처리
-                        Com.Nhn.Tardis.Sample.Protocol.LoginRes loginRes = Com.Nhn.Tardis.Sample.Protocol.LoginRes.Parser.ParseFrom(loginInfo.Payload.getPacket<Com.Nhn.Tardis.Sample.Protocol.LoginRes>().GetBytes());
+                        Com.Nhn.Gameflex.Sample.Protocol.LoginRes loginRes = Com.Nhn.Gameflex.Sample.Protocol.LoginRes.Parser.ParseFrom(loginInfo.Payload.getPacket<Com.Nhn.Gameflex.Sample.Protocol.LoginRes>().GetBytes());
                         Debug.Log("LoginRes " + loginRes);
 
                         // 서버에서 받은 게임 데이터 설정
@@ -249,20 +249,20 @@ public class AuthUi : MonoBehaviour
 
                         if (loginInfo.isJoinedRoom)
                         {
-                            if (loginInfo.RoomPayload.contains<Com.Nhn.Tardis.Sample.Protocol.RoomInfoMsg>())
+                            if (loginInfo.RoomPayload.contains<Com.Nhn.Gameflex.Sample.Protocol.RoomInfoMsg>())
                             {
-                                Com.Nhn.Tardis.Sample.Protocol.RoomInfoMsg roomInfoMsg = Com.Nhn.Tardis.Sample.Protocol.RoomInfoMsg.Parser.ParseFrom(loginInfo.RoomPayload.getPacket<Com.Nhn.Tardis.Sample.Protocol.RoomInfoMsg>().GetBytes());
+                                Com.Nhn.Gameflex.Sample.Protocol.RoomInfoMsg roomInfoMsg = Com.Nhn.Gameflex.Sample.Protocol.RoomInfoMsg.Parser.ParseFrom(loginInfo.RoomPayload.getPacket<Com.Nhn.Gameflex.Sample.Protocol.RoomInfoMsg>().GetBytes());
                                 Debug.Log("RoomInfoMsg " + roomInfoMsg.RoomType.ToString());
-                                if (roomInfoMsg.RoomType == Com.Nhn.Tardis.Sample.Protocol.RoomType.RoomSingle)
+                                if (roomInfoMsg.RoomType == Com.Nhn.Gameflex.Sample.Protocol.RoomType.RoomSingle)
                                 {
                                     UserInfo.Instance.MoveScene(Constants.SCENE_GAME_SINGLE); // 싱글
                                 }
-                                else if (roomInfoMsg.RoomType == Com.Nhn.Tardis.Sample.Protocol.RoomType.RoomSnake)
+                                else if (roomInfoMsg.RoomType == Com.Nhn.Gameflex.Sample.Protocol.RoomType.RoomSnake)
                                 {
                                     UserInfo.Instance.gameState = UserInfo.GameState.Wait;
                                     UserInfo.Instance.MoveScene(Constants.SCENE_GAME_MULTI_SNAKE); // 유저매치 
                                 }
-                                else if (roomInfoMsg.RoomType == Com.Nhn.Tardis.Sample.Protocol.RoomType.RoomTap)
+                                else if (roomInfoMsg.RoomType == Com.Nhn.Gameflex.Sample.Protocol.RoomType.RoomTap)
                                 {
                                     UserInfo.Instance.MoveScene(Constants.SCENE_GAME_MULTI_TAPBIRD);    // 룸 매치
                                 }
@@ -278,7 +278,7 @@ public class AuthUi : MonoBehaviour
                 buttonLogin.interactable = true;
             }
        );
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
     }
 
     IEnumerator GetRequestLaunching(string url)

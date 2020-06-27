@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Tardis;
-using Tardis.User;
-using TardisConnector;
+using Gameflex;
+using Gameflex.User;
+using GameflexConnector;
 using UnityEngine;
 
 // 게임 유저 스크립트
@@ -22,10 +22,10 @@ public class Snake : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
         // 게임 유저 얻기
-        snakeUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, string.Empty);
-        // ===========================================================================================>>> Tardis
+        snakeUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, Constants.userSubId);
+        // ===========================================================================================>>> Gameflex
 
         InvokeRepeating("Move", 0.3f, 0.3f);
     }
@@ -54,9 +54,9 @@ public class Snake : MonoBehaviour
             Vector2 v = transform.position;
             transform.Translate(dir);
 
-            List<Com.Nhn.Tardis.Sample.Protocol.SnakePositionData> userPositionList = new List<Com.Nhn.Tardis.Sample.Protocol.SnakePositionData>();
+            List<Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData> userPositionList = new List<Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData>();
             // 유저 snake 위치 저장
-            var userPosition = new Com.Nhn.Tardis.Sample.Protocol.SnakePositionData
+            var userPosition = new Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData
             {
                 Idx = 0,
                 X = (int)transform.position.x,
@@ -83,7 +83,7 @@ public class Snake : MonoBehaviour
             // 꼬리들의 위치 저장 - 전송 프로코록 만듬
             foreach (var tailObject in tail)
             {
-                var tailPosition = new Com.Nhn.Tardis.Sample.Protocol.SnakePositionData
+                var tailPosition = new Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData
                 {
                     Idx = 0,
                     X = (int)tailObject.position.x,
@@ -94,22 +94,22 @@ public class Snake : MonoBehaviour
 
             // 전송할 데이터 만듬
             var baseData = SnakeGameInfo.Instance.GetBaseUserDataByProto(UserInfo.Instance.Uuid);
-            var snakeUserData = new Com.Nhn.Tardis.Sample.Protocol.SnakeUserData
+            var snakeUserData = new Com.Nhn.Gameflex.Sample.Protocol.SnakeUserData
             {
                 BaseData = baseData
 
             };
             snakeUserData.UserPositionListData.AddRange(userPositionList);
 
-            var SnakeUserMsg = new Com.Nhn.Tardis.Sample.Protocol.SnakeUserMsg
+            var SnakeUserMsg = new Com.Nhn.Gameflex.Sample.Protocol.SnakeUserMsg
             {
                 UserData = snakeUserData
             };
 
-            // ===========================================================================================>>> Tardis
+            // ===========================================================================================>>> Gameflex
             // 응답없이 서버로 데이터 성으로 전달하는 패킷
             snakeUser.Send(new Packet(SnakeUserMsg));
-            // ===========================================================================================>>> Tardis
+            // ===========================================================================================>>> Gameflex
 
         }
     }
@@ -130,23 +130,23 @@ public class Snake : MonoBehaviour
                 {
                     SnakeGameInfo.Instance.FoodList.Remove(food);
 
-                    var removeFoodMsg = new Com.Nhn.Tardis.Sample.Protocol.SnakePositionData
+                    var removeFoodMsg = new Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData
                     {
                         Idx = (int)food.transform.position.z,
                         X = (int)food.transform.position.x,
                         Y = (int)food.transform.position.x
                     };
 
-                    var snakeRemoveFoodMsg = new Com.Nhn.Tardis.Sample.Protocol.SnakeFoodMsg
+                    var snakeRemoveFoodMsg = new Com.Nhn.Gameflex.Sample.Protocol.SnakeFoodMsg
                     {
                         IsDelete = true,
                         FoodData = removeFoodMsg
                     };
 
-                    // ===========================================================================================>>> Tardis
+                    // ===========================================================================================>>> Gameflex
                     // 응답없이 서버로 데이터 성으로 전달하는 패킷
                     snakeUser.Send(new Packet(snakeRemoveFoodMsg));
-                    // ===========================================================================================>>> Tardis
+                    // ===========================================================================================>>> Gameflex
                 }
             }
 

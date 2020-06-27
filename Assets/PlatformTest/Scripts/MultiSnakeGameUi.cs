@@ -1,7 +1,7 @@
-﻿using Tardis;
-using Tardis.Defines;
-using Tardis.User;
-using TardisConnector;
+﻿using Gameflex;
+using Gameflex.Defines;
+using Gameflex.User;
+using GameflexConnector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,16 +22,16 @@ public class MultiSnakeGameUi : MonoBehaviour
 
     void Start()
     {
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
         // 게임 유저 얻기
-        snakeGameUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, string.Empty);
-        // ===========================================================================================>>> Tardis
+        snakeGameUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, Constants.userSubId);
+        // ===========================================================================================>>> Gameflex
 
         // 버튼 동작 리스너 연결
         buttonBack.onClick.AddListener(() => { OnClickBack(); });
         buttonGameEnd.onClick.AddListener(() => { OnClickGameEnd(); });
 
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
         // 유저 매치 요청 타임 아웃 리스너
         snakeGameUser.onMatchUserTimeoutListeners += (UserAgent userAgent) =>
         {
@@ -44,14 +44,14 @@ public class MultiSnakeGameUi : MonoBehaviour
         };
 
         // 사용자가 방을 나갈때 처리 되는 리스너 - 서버에서 강제로 내보내는 처리
-        snakeGameUser.onLeaveRoomListeners += (UserAgent userAgent, ResultCodeLeaveRoom result, bool force, string roomId, Payload payload) =>
+        snakeGameUser.onLeaveRoomListeners += (UserAgent userAgent, ResultCodeLeaveRoom result, bool force, int roomId, Payload payload) =>
         {
             Debug.Log("onLeaveRoomListeners!!!!!! " + userAgent.GetUserId() + "isForce : " + force);
             // 게임 나가기
-            OnLeaveRoom(Com.Nhn.Tardis.Sample.Protocol.EndType.GameEndTimeUp);
+            OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType.GameEndTimeUp);
         };
 
-        snakeGameUser.AddListener((UserAgent userAgent, Com.Nhn.Tardis.Sample.Protocol.SnakeFoodMsg msg) =>
+        snakeGameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameflex.Sample.Protocol.SnakeFoodMsg msg) =>
         {
             if (msg != null)
             {
@@ -77,7 +77,7 @@ public class MultiSnakeGameUi : MonoBehaviour
                 }
             }
         });
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
     }
 
     // Update is called once per frame
@@ -128,7 +128,7 @@ public class MultiSnakeGameUi : MonoBehaviour
         Debug.Log("OnClickBack!!!!!! ");
 
         // 게임 나가기
-        OnLeaveRoom(Com.Nhn.Tardis.Sample.Protocol.EndType.GameEndGiveUp);
+        OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType.GameEndGiveUp);
     }
 
     void OnClickGameEnd()
@@ -137,23 +137,23 @@ public class MultiSnakeGameUi : MonoBehaviour
         Debug.Log("OnClickGameEnd!!!!!!");
 
         // 게임 나가기
-        OnLeaveRoom(Com.Nhn.Tardis.Sample.Protocol.EndType.GameEndTimeUp);
+        OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType.GameEndTimeUp);
 
     }
 
-    void OnLeaveRoom(Com.Nhn.Tardis.Sample.Protocol.EndType gameEndType)
+    void OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType gameEndType)
     {
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
         // 게임룸 나가는 요청
-        snakeGameUser.LeaveRoom((UserAgent userAgent, ResultCodeLeaveRoom result, bool force, string roomId, Payload payload) =>
+        snakeGameUser.LeaveRoom((UserAgent userAgent, ResultCodeLeaveRoom result, bool force, int roomId, Payload payload) =>
         {
             Debug.Log("LeaveRoom " + result);
 
             if (result == ResultCodeLeaveRoom.LEAVE_ROOM_SUCCESS)
             {
-                if (payload.contains<Com.Nhn.Tardis.Sample.Protocol.EndGameRes>())
+                if (payload.contains<Com.Nhn.Gameflex.Sample.Protocol.EndGameRes>())
                 {
-                    Com.Nhn.Tardis.Sample.Protocol.EndGameRes endGameRes = Com.Nhn.Tardis.Sample.Protocol.EndGameRes.Parser.ParseFrom(payload.getPacket<Com.Nhn.Tardis.Sample.Protocol.EndGameRes>().GetBytes());
+                    Com.Nhn.Gameflex.Sample.Protocol.EndGameRes endGameRes = Com.Nhn.Gameflex.Sample.Protocol.EndGameRes.Parser.ParseFrom(payload.getPacket<Com.Nhn.Gameflex.Sample.Protocol.EndGameRes>().GetBytes());
 
                     UserInfo.Instance.Heart = endGameRes.UserData.Heart;
                     UserInfo.Instance.TotalScore = endGameRes.TotalScore;
@@ -173,6 +173,6 @@ public class MultiSnakeGameUi : MonoBehaviour
                 // 실패시 처리
             }
         });
-        // ===========================================================================================>>> Tardis
+        // ===========================================================================================>>> Gameflex
     }
 }

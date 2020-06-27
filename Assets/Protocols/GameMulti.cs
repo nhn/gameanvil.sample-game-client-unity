@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Com.Nhn.Tardis.Sample.Protocol {
+namespace Com.Nhn.Gameflex.Sample.Protocol {
 
   /// <summary>Holder for reflection information generated from GameMulti.proto</summary>
   public static partial class GameMultiReflection {
@@ -24,38 +24,39 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
     static GameMultiReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9HYW1lTXVsdGkucHJvdG8SHmNvbS5uaG4udGFyZGlzLnNhbXBsZS5wcm90",
-            "b2NvbCI7CgxSb29tVXNlckRhdGESCgoCaWQYASABKAkSEAoIbmlja05hbWUY",
-            "AiABKAkSDQoFc2NvcmUYAyABKAMiUQoPVGFwQmlyZFVzZXJEYXRhEj4KCHVz",
-            "ZXJEYXRhGAEgASgLMiwuY29tLm5obi50YXJkaXMuc2FtcGxlLnByb3RvY29s",
-            "LlJvb21Vc2VyRGF0YSIbCgpTY29yZVVwTXNnEg0KBXNjb3JlGAEgASgDIlsK",
-            "E0Jyb2FkY2FzdFRhcEJpcmRNc2cSRAoLdGFwQmlyZERhdGEYASADKAsyLy5j",
-            "b20ubmhuLnRhcmRpcy5zYW1wbGUucHJvdG9jb2wuVGFwQmlyZFVzZXJEYXRh",
-            "IjYKEVNuYWtlUG9zaXRpb25EYXRhEgsKA2lkeBgBIAEoBRIJCgF4GAIgASgF",
-            "EgkKAXkYAyABKAUioAEKDVNuYWtlVXNlckRhdGESPgoIYmFzZURhdGEYASAB",
-            "KAsyLC5jb20ubmhuLnRhcmRpcy5zYW1wbGUucHJvdG9jb2wuUm9vbVVzZXJE",
-            "YXRhEk8KFHVzZXJQb3NpdGlvbkxpc3REYXRhGAIgAygLMjEuY29tLm5obi50",
-            "YXJkaXMuc2FtcGxlLnByb3RvY29sLlNuYWtlUG9zaXRpb25EYXRhIqYBChBT",
-            "bmFrZUdhbWVJbmZvTXNnEhMKC2JvYXJkZXJMZWZ0GAEgASgFEhQKDGJvYXJk",
-            "ZXJSaWdodBgCIAEoBRIVCg1ib2FyZGVyQm90dG9tGAMgASgFEhIKCmJvYXJk",
-            "ZXJUb3AYBCABKAUSPAoFdXNlcnMYBSADKAsyLS5jb20ubmhuLnRhcmRpcy5z",
-            "YW1wbGUucHJvdG9jb2wuU25ha2VVc2VyRGF0YSJlCgxTbmFrZUZvb2RNc2cS",
-            "EAoIaXNEZWxldGUYASABKAgSQwoIZm9vZERhdGEYAiABKAsyMS5jb20ubmhu",
-            "LnRhcmRpcy5zYW1wbGUucHJvdG9jb2wuU25ha2VQb3NpdGlvbkRhdGEiTwoM",
-            "U25ha2VVc2VyTXNnEj8KCHVzZXJEYXRhGAEgASgLMi0uY29tLm5obi50YXJk",
-            "aXMuc2FtcGxlLnByb3RvY29sLlNuYWtlVXNlckRhdGFiBnByb3RvMw=="));
+            "Cg9HYW1lTXVsdGkucHJvdG8SIGNvbS5uaG4uZ2FtZWZsZXguc2FtcGxlLnBy",
+            "b3RvY29sIjsKDFJvb21Vc2VyRGF0YRIKCgJpZBgBIAEoCRIQCghuaWNrTmFt",
+            "ZRgCIAEoCRINCgVzY29yZRgDIAEoAyJTCg9UYXBCaXJkVXNlckRhdGESQAoI",
+            "dXNlckRhdGEYASABKAsyLi5jb20ubmhuLmdhbWVmbGV4LnNhbXBsZS5wcm90",
+            "b2NvbC5Sb29tVXNlckRhdGEiGwoKU2NvcmVVcE1zZxINCgVzY29yZRgBIAEo",
+            "AyJdChNCcm9hZGNhc3RUYXBCaXJkTXNnEkYKC3RhcEJpcmREYXRhGAEgAygL",
+            "MjEuY29tLm5obi5nYW1lZmxleC5zYW1wbGUucHJvdG9jb2wuVGFwQmlyZFVz",
+            "ZXJEYXRhIjYKEVNuYWtlUG9zaXRpb25EYXRhEgsKA2lkeBgBIAEoBRIJCgF4",
+            "GAIgASgFEgkKAXkYAyABKAUipAEKDVNuYWtlVXNlckRhdGESQAoIYmFzZURh",
+            "dGEYASABKAsyLi5jb20ubmhuLmdhbWVmbGV4LnNhbXBsZS5wcm90b2NvbC5S",
+            "b29tVXNlckRhdGESUQoUdXNlclBvc2l0aW9uTGlzdERhdGEYAiADKAsyMy5j",
+            "b20ubmhuLmdhbWVmbGV4LnNhbXBsZS5wcm90b2NvbC5TbmFrZVBvc2l0aW9u",
+            "RGF0YSKoAQoQU25ha2VHYW1lSW5mb01zZxITCgtib2FyZGVyTGVmdBgBIAEo",
+            "BRIUCgxib2FyZGVyUmlnaHQYAiABKAUSFQoNYm9hcmRlckJvdHRvbRgDIAEo",
+            "BRISCgpib2FyZGVyVG9wGAQgASgFEj4KBXVzZXJzGAUgAygLMi8uY29tLm5o",
+            "bi5nYW1lZmxleC5zYW1wbGUucHJvdG9jb2wuU25ha2VVc2VyRGF0YSJnCgxT",
+            "bmFrZUZvb2RNc2cSEAoIaXNEZWxldGUYASABKAgSRQoIZm9vZERhdGEYAiAB",
+            "KAsyMy5jb20ubmhuLmdhbWVmbGV4LnNhbXBsZS5wcm90b2NvbC5TbmFrZVBv",
+            "c2l0aW9uRGF0YSJRCgxTbmFrZVVzZXJNc2cSQQoIdXNlckRhdGEYASABKAsy",
+            "Ly5jb20ubmhuLmdhbWVmbGV4LnNhbXBsZS5wcm90b2NvbC5TbmFrZVVzZXJE",
+            "YXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.RoomUserData), global::Com.Nhn.Tardis.Sample.Protocol.RoomUserData.Parser, new[]{ "Id", "NickName", "Score" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.TapBirdUserData), global::Com.Nhn.Tardis.Sample.Protocol.TapBirdUserData.Parser, new[]{ "UserData" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.ScoreUpMsg), global::Com.Nhn.Tardis.Sample.Protocol.ScoreUpMsg.Parser, new[]{ "Score" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.BroadcastTapBirdMsg), global::Com.Nhn.Tardis.Sample.Protocol.BroadcastTapBirdMsg.Parser, new[]{ "TapBirdData" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.SnakePositionData), global::Com.Nhn.Tardis.Sample.Protocol.SnakePositionData.Parser, new[]{ "Idx", "X", "Y" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.SnakeUserData), global::Com.Nhn.Tardis.Sample.Protocol.SnakeUserData.Parser, new[]{ "BaseData", "UserPositionListData" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.SnakeGameInfoMsg), global::Com.Nhn.Tardis.Sample.Protocol.SnakeGameInfoMsg.Parser, new[]{ "BoarderLeft", "BoarderRight", "BoarderBottom", "BoarderTop", "Users" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.SnakeFoodMsg), global::Com.Nhn.Tardis.Sample.Protocol.SnakeFoodMsg.Parser, new[]{ "IsDelete", "FoodData" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Tardis.Sample.Protocol.SnakeUserMsg), global::Com.Nhn.Tardis.Sample.Protocol.SnakeUserMsg.Parser, new[]{ "UserData" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.RoomUserData), global::Com.Nhn.Gameflex.Sample.Protocol.RoomUserData.Parser, new[]{ "Id", "NickName", "Score" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.TapBirdUserData), global::Com.Nhn.Gameflex.Sample.Protocol.TapBirdUserData.Parser, new[]{ "UserData" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.ScoreUpMsg), global::Com.Nhn.Gameflex.Sample.Protocol.ScoreUpMsg.Parser, new[]{ "Score" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.BroadcastTapBirdMsg), global::Com.Nhn.Gameflex.Sample.Protocol.BroadcastTapBirdMsg.Parser, new[]{ "TapBirdData" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData), global::Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData.Parser, new[]{ "Idx", "X", "Y" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.SnakeUserData), global::Com.Nhn.Gameflex.Sample.Protocol.SnakeUserData.Parser, new[]{ "BaseData", "UserPositionListData" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.SnakeGameInfoMsg), global::Com.Nhn.Gameflex.Sample.Protocol.SnakeGameInfoMsg.Parser, new[]{ "BoarderLeft", "BoarderRight", "BoarderBottom", "BoarderTop", "Users" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.SnakeFoodMsg), global::Com.Nhn.Gameflex.Sample.Protocol.SnakeFoodMsg.Parser, new[]{ "IsDelete", "FoodData" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.SnakeUserMsg), global::Com.Nhn.Gameflex.Sample.Protocol.SnakeUserMsg.Parser, new[]{ "UserData" }, null, null, null)
           }));
     }
     #endregion
@@ -70,7 +71,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Tardis.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Com.Nhn.Gameflex.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -258,7 +259,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Tardis.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Com.Nhn.Gameflex.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -286,9 +287,9 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     /// <summary>Field number for the "userData" field.</summary>
     public const int UserDataFieldNumber = 1;
-    private global::Com.Nhn.Tardis.Sample.Protocol.RoomUserData userData_;
+    private global::Com.Nhn.Gameflex.Sample.Protocol.RoomUserData userData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Com.Nhn.Tardis.Sample.Protocol.RoomUserData UserData {
+    public global::Com.Nhn.Gameflex.Sample.Protocol.RoomUserData UserData {
       get { return userData_; }
       set {
         userData_ = value;
@@ -357,7 +358,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
       }
       if (other.userData_ != null) {
         if (userData_ == null) {
-          userData_ = new global::Com.Nhn.Tardis.Sample.Protocol.RoomUserData();
+          userData_ = new global::Com.Nhn.Gameflex.Sample.Protocol.RoomUserData();
         }
         UserData.MergeFrom(other.UserData);
       }
@@ -374,7 +375,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
             break;
           case 10: {
             if (userData_ == null) {
-              userData_ = new global::Com.Nhn.Tardis.Sample.Protocol.RoomUserData();
+              userData_ = new global::Com.Nhn.Gameflex.Sample.Protocol.RoomUserData();
             }
             input.ReadMessage(userData_);
             break;
@@ -393,7 +394,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Tardis.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Com.Nhn.Gameflex.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -522,7 +523,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Tardis.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Com.Nhn.Gameflex.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -550,11 +551,11 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     /// <summary>Field number for the "tapBirdData" field.</summary>
     public const int TapBirdDataFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Com.Nhn.Tardis.Sample.Protocol.TapBirdUserData> _repeated_tapBirdData_codec
-        = pb::FieldCodec.ForMessage(10, global::Com.Nhn.Tardis.Sample.Protocol.TapBirdUserData.Parser);
-    private readonly pbc::RepeatedField<global::Com.Nhn.Tardis.Sample.Protocol.TapBirdUserData> tapBirdData_ = new pbc::RepeatedField<global::Com.Nhn.Tardis.Sample.Protocol.TapBirdUserData>();
+    private static readonly pb::FieldCodec<global::Com.Nhn.Gameflex.Sample.Protocol.TapBirdUserData> _repeated_tapBirdData_codec
+        = pb::FieldCodec.ForMessage(10, global::Com.Nhn.Gameflex.Sample.Protocol.TapBirdUserData.Parser);
+    private readonly pbc::RepeatedField<global::Com.Nhn.Gameflex.Sample.Protocol.TapBirdUserData> tapBirdData_ = new pbc::RepeatedField<global::Com.Nhn.Gameflex.Sample.Protocol.TapBirdUserData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Com.Nhn.Tardis.Sample.Protocol.TapBirdUserData> TapBirdData {
+    public pbc::RepeatedField<global::Com.Nhn.Gameflex.Sample.Protocol.TapBirdUserData> TapBirdData {
       get { return tapBirdData_; }
     }
 
@@ -647,7 +648,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Tardis.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Com.Nhn.Gameflex.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -835,7 +836,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Tardis.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Com.Nhn.Gameflex.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -864,9 +865,9 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     /// <summary>Field number for the "baseData" field.</summary>
     public const int BaseDataFieldNumber = 1;
-    private global::Com.Nhn.Tardis.Sample.Protocol.RoomUserData baseData_;
+    private global::Com.Nhn.Gameflex.Sample.Protocol.RoomUserData baseData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Com.Nhn.Tardis.Sample.Protocol.RoomUserData BaseData {
+    public global::Com.Nhn.Gameflex.Sample.Protocol.RoomUserData BaseData {
       get { return baseData_; }
       set {
         baseData_ = value;
@@ -875,11 +876,11 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     /// <summary>Field number for the "userPositionListData" field.</summary>
     public const int UserPositionListDataFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Com.Nhn.Tardis.Sample.Protocol.SnakePositionData> _repeated_userPositionListData_codec
-        = pb::FieldCodec.ForMessage(18, global::Com.Nhn.Tardis.Sample.Protocol.SnakePositionData.Parser);
-    private readonly pbc::RepeatedField<global::Com.Nhn.Tardis.Sample.Protocol.SnakePositionData> userPositionListData_ = new pbc::RepeatedField<global::Com.Nhn.Tardis.Sample.Protocol.SnakePositionData>();
+    private static readonly pb::FieldCodec<global::Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData> _repeated_userPositionListData_codec
+        = pb::FieldCodec.ForMessage(18, global::Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData.Parser);
+    private readonly pbc::RepeatedField<global::Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData> userPositionListData_ = new pbc::RepeatedField<global::Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Com.Nhn.Tardis.Sample.Protocol.SnakePositionData> UserPositionListData {
+    public pbc::RepeatedField<global::Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData> UserPositionListData {
       get { return userPositionListData_; }
     }
 
@@ -949,7 +950,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
       }
       if (other.baseData_ != null) {
         if (baseData_ == null) {
-          baseData_ = new global::Com.Nhn.Tardis.Sample.Protocol.RoomUserData();
+          baseData_ = new global::Com.Nhn.Gameflex.Sample.Protocol.RoomUserData();
         }
         BaseData.MergeFrom(other.BaseData);
       }
@@ -967,7 +968,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
             break;
           case 10: {
             if (baseData_ == null) {
-              baseData_ = new global::Com.Nhn.Tardis.Sample.Protocol.RoomUserData();
+              baseData_ = new global::Com.Nhn.Gameflex.Sample.Protocol.RoomUserData();
             }
             input.ReadMessage(baseData_);
             break;
@@ -993,7 +994,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Tardis.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Com.Nhn.Gameflex.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1069,11 +1070,11 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     /// <summary>Field number for the "users" field.</summary>
     public const int UsersFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Com.Nhn.Tardis.Sample.Protocol.SnakeUserData> _repeated_users_codec
-        = pb::FieldCodec.ForMessage(42, global::Com.Nhn.Tardis.Sample.Protocol.SnakeUserData.Parser);
-    private readonly pbc::RepeatedField<global::Com.Nhn.Tardis.Sample.Protocol.SnakeUserData> users_ = new pbc::RepeatedField<global::Com.Nhn.Tardis.Sample.Protocol.SnakeUserData>();
+    private static readonly pb::FieldCodec<global::Com.Nhn.Gameflex.Sample.Protocol.SnakeUserData> _repeated_users_codec
+        = pb::FieldCodec.ForMessage(42, global::Com.Nhn.Gameflex.Sample.Protocol.SnakeUserData.Parser);
+    private readonly pbc::RepeatedField<global::Com.Nhn.Gameflex.Sample.Protocol.SnakeUserData> users_ = new pbc::RepeatedField<global::Com.Nhn.Gameflex.Sample.Protocol.SnakeUserData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Com.Nhn.Tardis.Sample.Protocol.SnakeUserData> Users {
+    public pbc::RepeatedField<global::Com.Nhn.Gameflex.Sample.Protocol.SnakeUserData> Users {
       get { return users_; }
     }
 
@@ -1226,7 +1227,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Tardis.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Com.Nhn.Gameflex.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1266,9 +1267,9 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     /// <summary>Field number for the "foodData" field.</summary>
     public const int FoodDataFieldNumber = 2;
-    private global::Com.Nhn.Tardis.Sample.Protocol.SnakePositionData foodData_;
+    private global::Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData foodData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Com.Nhn.Tardis.Sample.Protocol.SnakePositionData FoodData {
+    public global::Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData FoodData {
       get { return foodData_; }
       set {
         foodData_ = value;
@@ -1349,7 +1350,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
       }
       if (other.foodData_ != null) {
         if (foodData_ == null) {
-          foodData_ = new global::Com.Nhn.Tardis.Sample.Protocol.SnakePositionData();
+          foodData_ = new global::Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData();
         }
         FoodData.MergeFrom(other.FoodData);
       }
@@ -1370,7 +1371,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
           }
           case 18: {
             if (foodData_ == null) {
-              foodData_ = new global::Com.Nhn.Tardis.Sample.Protocol.SnakePositionData();
+              foodData_ = new global::Com.Nhn.Gameflex.Sample.Protocol.SnakePositionData();
             }
             input.ReadMessage(foodData_);
             break;
@@ -1392,7 +1393,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Tardis.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Com.Nhn.Gameflex.Sample.Protocol.GameMultiReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1420,9 +1421,9 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
 
     /// <summary>Field number for the "userData" field.</summary>
     public const int UserDataFieldNumber = 1;
-    private global::Com.Nhn.Tardis.Sample.Protocol.SnakeUserData userData_;
+    private global::Com.Nhn.Gameflex.Sample.Protocol.SnakeUserData userData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Com.Nhn.Tardis.Sample.Protocol.SnakeUserData UserData {
+    public global::Com.Nhn.Gameflex.Sample.Protocol.SnakeUserData UserData {
       get { return userData_; }
       set {
         userData_ = value;
@@ -1491,7 +1492,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
       }
       if (other.userData_ != null) {
         if (userData_ == null) {
-          userData_ = new global::Com.Nhn.Tardis.Sample.Protocol.SnakeUserData();
+          userData_ = new global::Com.Nhn.Gameflex.Sample.Protocol.SnakeUserData();
         }
         UserData.MergeFrom(other.UserData);
       }
@@ -1508,7 +1509,7 @@ namespace Com.Nhn.Tardis.Sample.Protocol {
             break;
           case 10: {
             if (userData_ == null) {
-              userData_ = new global::Com.Nhn.Tardis.Sample.Protocol.SnakeUserData();
+              userData_ = new global::Com.Nhn.Gameflex.Sample.Protocol.SnakeUserData();
             }
             input.ReadMessage(userData_);
             break;

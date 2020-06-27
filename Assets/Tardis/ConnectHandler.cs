@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-// Tardis connector 
-namespace TardisConnector
+// Gameflex connector 
+namespace GameflexConnector
 {
     public class ConnectHandler : MonoBehaviour
     {
-        private static Tardis.Connector connector = null;
-        public static Tardis.Connector Instance
+        private static Gameflex.Connector connector = null;
+        public static Gameflex.Connector Instance
         {
             get
             {
@@ -15,7 +15,7 @@ namespace TardisConnector
         }
         
         [SerializeField]
-        public Tardis.Connector.Config config;
+        public Gameflex.Connector.Config config;
         private void Awake()
         {
             if (connector != null)
@@ -25,7 +25,7 @@ namespace TardisConnector
             }
 
             DontDestroyOnLoad(this.gameObject);
-            connector = new Tardis.Connector(config);
+            connector = new Gameflex.Connector(config);
             // 커넥터 로그 추가
             connector.Logger += (level, log) =>
             {
@@ -37,11 +37,11 @@ namespace TardisConnector
             };
 
             // 서버와 같은 순서로 프로토콜 등록
-            Tardis.ProtocolManager.getInstance().RegisterProtocol(0, Com.Nhn.Tardis.Sample.Protocol.AuthenticationReflection.Descriptor);
-            Tardis.ProtocolManager.getInstance().RegisterProtocol(1, Com.Nhn.Tardis.Sample.Protocol.GameMultiReflection.Descriptor);
-            Tardis.ProtocolManager.getInstance().RegisterProtocol(2, Com.Nhn.Tardis.Sample.Protocol.GameSingleReflection.Descriptor);
-            Tardis.ProtocolManager.getInstance().RegisterProtocol(3, Com.Nhn.Tardis.Sample.Protocol.ResultReflection.Descriptor);
-            Tardis.ProtocolManager.getInstance().RegisterProtocol(4, Com.Nhn.Tardis.Sample.Protocol.UserReflection.Descriptor);
+            Gameflex.ProtocolManager.getInstance().RegisterProtocol(0, Com.Nhn.Gameflex.Sample.Protocol.AuthenticationReflection.Descriptor);
+            Gameflex.ProtocolManager.getInstance().RegisterProtocol(1, Com.Nhn.Gameflex.Sample.Protocol.GameMultiReflection.Descriptor);
+            Gameflex.ProtocolManager.getInstance().RegisterProtocol(2, Com.Nhn.Gameflex.Sample.Protocol.GameSingleReflection.Descriptor);
+            Gameflex.ProtocolManager.getInstance().RegisterProtocol(3, Com.Nhn.Gameflex.Sample.Protocol.ResultReflection.Descriptor);
+            Gameflex.ProtocolManager.getInstance().RegisterProtocol(4, Com.Nhn.Gameflex.Sample.Protocol.UserReflection.Descriptor);
         }
 
         private void Update()
