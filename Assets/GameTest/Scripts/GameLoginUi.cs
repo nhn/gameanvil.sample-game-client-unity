@@ -113,7 +113,7 @@ public class GameLoginUi : MonoBehaviour
         {
             Uuid = textGamebaseUserId.text,
             LoginType = Com.Nhn.Gameflex.Sample.Protocol.LoginType.LoginGuest,
-            AppVersion = "0.0.1",
+            AppVersion = Application.version,
             AppStore = "None",
             DeviceModel = SystemInfo.deviceModel,
             DeviceCountry = Gamebase.GetCountryCodeOfDevice(),

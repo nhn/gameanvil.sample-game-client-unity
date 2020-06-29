@@ -13,7 +13,7 @@ using UnityEngine.UI;
 public class AuthUi : MonoBehaviour
 {
     // 화면과 연결되는 필드들
-    public Text textUUID;
+    public InputField inputFieldUUID;
     public Button buttonGenerateUUID;
     public InputField inputFieldLaunching;
     public Button buttonGetLaunching;
@@ -29,9 +29,8 @@ public class AuthUi : MonoBehaviour
     void Start()
     {
         // 기본값 지정
-//        textUUID.text = PlayerPrefs.GetString(Constants.KEY_UUID);
-        textUUID.text = "1234567890";
-        if (string.IsNullOrWhiteSpace(textUUID.text))
+        inputFieldUUID.text = PlayerPrefs.GetString(Constants.KEY_UUID);
+        if (string.IsNullOrWhiteSpace(inputFieldUUID.text))
         {
             OnClickGenerateUUID();
         }
@@ -67,7 +66,7 @@ public class AuthUi : MonoBehaviour
 
         GamebaseInfo.Instance.SetActive(false);
 
-        Debug.Log("Initialize complete!!!! " + textUUID.text);
+        Debug.Log("Initialize complete!!!! " + inputFieldUUID.text);
 
         // ===========================================================================================>>> Gameflex
         // 연결 끊기는 부분 처리 리스너 등록
@@ -95,7 +94,7 @@ public class AuthUi : MonoBehaviour
     void OnClickGenerateUUID()
     {
         // uuid 갱신 처리
-        textUUID.text = TestHelper.GenerateUUID();
+        inputFieldUUID.text = TestHelper.GenerateUUID();
     }
 
     void OnClickGetLaunching()
@@ -107,7 +106,7 @@ public class AuthUi : MonoBehaviour
 
         string url = inputFieldLaunching.text;
         PlayerPrefs.SetString(Constants.KEY_LAUNCHING, url);
-        url += "/launching?platform=" + Application.platform + "&appStore=NONE&appVersion=" + Application.version + "&deviceId=" + textUUID.text;
+        url += "/launching?platform=" + Application.platform + "&appStore=NONE&appVersion=" + Application.version + "&deviceId=" + inputFieldUUID.text;
 
         StartCoroutine(GetRequestLaunching(url));
     }
@@ -154,6 +153,7 @@ public class AuthUi : MonoBehaviour
         else
         {
             PlayerPrefs.SetString(Constants.KEY_USER_ID, inputFieldID.text);
+            PlayerPrefs.SetString(Constants.KEY_UUID, inputFieldUUID.text);
 
             // 다중 클릭 막음
             buttonAuth.interactable = false;
@@ -167,7 +167,7 @@ public class AuthUi : MonoBehaviour
 
             // ===========================================================================================>>> Gameflex
             // 서버에 인증 시도. 현재는 deviceid, id, pw 모두 uuid값으로 전달
-            ConnectHandler.Instance.GetConnectionAgent().Authenticate(textUUID.text, inputFieldID.text, inputFieldID.text, new Payload().add(new Packet(authenticationReq)),
+            ConnectHandler.Instance.GetConnectionAgent().Authenticate(inputFieldUUID.text, inputFieldID.text, inputFieldID.text, new Payload().add(new Packet(authenticationReq)),
                 (ConnectionAgent connectionAgent, ResultCodeAuth result, List<ConnectionAgent.LoginedUserInfo> loginedUserInfoList, string message, Payload payload) =>
                 {
                     Debug.Log("Auth " + result);
@@ -200,9 +200,9 @@ public class AuthUi : MonoBehaviour
         var loginReq = new Com.Nhn.Gameflex.Sample.Protocol.LoginReq
         {
             // 임의로 필요한 데이터 설정
-            Uuid = textUUID.text,
+            Uuid = inputFieldUUID.text,
             LoginType = Com.Nhn.Gameflex.Sample.Protocol.LoginType.LoginGuest,
-            AppVersion = "0.0.1",
+            AppVersion = Application.version,
             AppStore = "None",
             DeviceModel = SystemInfo.deviceModel,
             DeviceCountry = "KR",
@@ -228,7 +228,7 @@ public class AuthUi : MonoBehaviour
                         Debug.Log("LoginRes " + loginRes);
 
                         // 서버에서 받은 게임 데이터 설정
-                        UserInfo.Instance.Uuid = textUUID.text;
+                        UserInfo.Instance.Uuid = inputFieldUUID.text;
                         UserInfo.Instance.Nickname = loginRes.Userdata.Nickname;
                         UserInfo.Instance.Heart = loginRes.Userdata.Heart;
                         UserInfo.Instance.Coin = loginRes.Userdata.Coin;
