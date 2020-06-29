@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Gameflex;
 using Gameflex.Defines;
-using Gameflex.Session;
+using Gameflex.Connection;
 using Gameflex.User;
 using GameflexConnector;
 using UnityEngine;
@@ -71,7 +71,7 @@ public class AuthUi : MonoBehaviour
 
         // ===========================================================================================>>> Gameflex
         // 연결 끊기는 부분 처리 리스너 등록
-        ConnectHandler.Instance.GetSessionAgent().onDisconnectListeners += (SessionAgent sessionAgent, ResultCodeDisconnect result, bool force, Payload payload) =>
+        ConnectHandler.Instance.GetConnectionAgent().onDisconnectListeners += (ConnectionAgent connectionAgent, ResultCodeDisconnect result, bool force, Payload payload) =>
         {
             Debug.LogFormat("onDisconnect - {0}", result);
             UserInfo.Instance.MoveScene(Constants.SCENE_AUTH);
@@ -119,8 +119,8 @@ public class AuthUi : MonoBehaviour
 
         // ===========================================================================================>>> Gameflex
         // 서버에 접속 시도.
-        ConnectHandler.Instance.GetSessionAgent().Connect(textIP.text, int.Parse(textPort.text),
-            (SessionAgent sessionAgent, ResultCodeConnect result) =>
+        ConnectHandler.Instance.GetConnectionAgent().Connect(textIP.text, int.Parse(textPort.text),
+            (ConnectionAgent connectionAgent, ResultCodeConnect result) =>
             {
                 Debug.Log("Connect " + textID.text + ":" + textPort.text + " " + result);
 
@@ -167,8 +167,8 @@ public class AuthUi : MonoBehaviour
 
             // ===========================================================================================>>> Gameflex
             // 서버에 인증 시도. 현재는 deviceid, id, pw 모두 uuid값으로 전달
-            ConnectHandler.Instance.GetSessionAgent().Authenticate(textUUID.text, inputFieldID.text, inputFieldID.text, new Payload().add(new Packet(authenticationReq)),
-                (SessionAgent sessionAgent, ResultCodeAuth result, List<SessionAgent.LoginedUserInfo> loginedUserInfoList, string message, Payload payload) =>
+            ConnectHandler.Instance.GetConnectionAgent().Authenticate(textUUID.text, inputFieldID.text, inputFieldID.text, new Payload().add(new Packet(authenticationReq)),
+                (ConnectionAgent connectionAgent, ResultCodeAuth result, List<ConnectionAgent.LoginedUserInfo> loginedUserInfoList, string message, Payload payload) =>
                 {
                     Debug.Log("Auth " + result);
 

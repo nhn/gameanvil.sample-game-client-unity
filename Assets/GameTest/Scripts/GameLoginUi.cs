@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Gameflex;
 using Gameflex.Defines;
-using Gameflex.Session;
+using Gameflex.Connection;
 using Gameflex.User;
 using GameflexConnector;
 using UnityEngine;
@@ -39,7 +39,7 @@ public class GameLoginUi : MonoBehaviour
 
         // ===========================================================================================>>> Gameflex
         // 연결 끊기는 부분 처리 리스너 등록
-        ConnectHandler.Instance.GetSessionAgent().onDisconnectListeners += (SessionAgent sessionAgent, ResultCodeDisconnect result, bool force, Payload payload) =>
+        ConnectHandler.Instance.GetConnectionAgent().onDisconnectListeners += (ConnectionAgent connectionAgent, ResultCodeDisconnect result, bool force, Payload payload) =>
         {
             Debug.LogFormat("onDisconnect - {0}", result);
             MessageUi.Instance.SetTextMessage("onDisconnect..... " + result);
@@ -47,7 +47,7 @@ public class GameLoginUi : MonoBehaviour
         };
 
         // 세션 연결 리스너
-        ConnectHandler.Instance.GetSessionAgent().onConnectListeners += (SessionAgent sessionAgent, ResultCodeConnect result) =>
+        ConnectHandler.Instance.GetConnectionAgent().onConnectListeners += (ConnectionAgent connectionAgent, ResultCodeConnect result) =>
         {
             if (result == ResultCodeConnect.CONNECT_SUCCESS)
             {
@@ -59,7 +59,7 @@ public class GameLoginUi : MonoBehaviour
                 Debug.Log("authenticationReq " + authenticationReq);
 
                 // 서버에 인증 시도. 현재는 deviceid uuid, id, pw Gamebase userId 값으로 전달
-                ConnectHandler.Instance.GetSessionAgent().Authenticate(textUUID.text, textGamebaseUserId.text, textGamebaseUserId.text, new Payload().add(new Packet(authenticationReq)));
+                ConnectHandler.Instance.GetConnectionAgent().Authenticate(textUUID.text, textGamebaseUserId.text, textGamebaseUserId.text, new Payload().add(new Packet(authenticationReq)));
             }
             else
             {
@@ -70,8 +70,8 @@ public class GameLoginUi : MonoBehaviour
         };
 
         // 인증 리스너
-        ConnectHandler.Instance.GetSessionAgent().onAuthenticationListeners +=
-            (SessionAgent sessionAgent, ResultCodeAuth result, List<SessionAgent.LoginedUserInfo> loginedUserInfoList, string message, Payload payload) =>
+        ConnectHandler.Instance.GetConnectionAgent().onAuthenticationListeners +=
+            (ConnectionAgent connectionAgent, ResultCodeAuth result, List<ConnectionAgent.LoginedUserInfo> loginedUserInfoList, string message, Payload payload) =>
             {
                 Debug.Log("Auth " + result);
 
@@ -102,7 +102,7 @@ public class GameLoginUi : MonoBehaviour
     {
         // ===========================================================================================>>> Gameflex
         // 런칭 정보로 tcp connect요청
-        ConnectHandler.Instance.GetSessionAgent().Connect(GamebaseInfo.Instance.GameServerIp, int.Parse(GamebaseInfo.Instance.GameServerPort));
+        ConnectHandler.Instance.GetConnectionAgent().Connect(GamebaseInfo.Instance.GameServerIp, int.Parse(GamebaseInfo.Instance.GameServerPort));
         // ===========================================================================================>>> Gameflex
     }
 

@@ -8,7 +8,7 @@ using WebSocket4Net;
 
 namespace Gameflex
 {
-    public class WebglSocket : MonoBehaviour, IGameflexSocket
+    public class WebglSocket : MonoBehaviour, ISocket
     {
 #if UNITY_WEBGL
         private int webGLSocket = -1;
