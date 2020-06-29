@@ -311,6 +311,11 @@
             Channel Id
             </summary>
         </member>
+        <member name="P:Gameflex.Session.SessionAgent.LoginedUserInfo.payload">
+            <summary>
+            payload
+            </summary>
+        </member>
         <member name="M:Gameflex.Session.SessionAgent.UpdateAuthenticationPayload(Gameflex.Payload)">
             <summary>
             Auth에서 사용된 payload 값을 갱신할 때 사용.
@@ -535,7 +540,7 @@
             UserListener에서 MatchRoom의 결과를 위한 인터페이스
             </summary>
         </member>
-        <member name="M:Gameflex.User.Interface.IUserOnMatchRoom.OnMatchRoom(Gameflex.User.UserAgent,Gameflex.Defines.ResultCodeMatchRoom,System.Int32,System.String,Gameflex.Payload)">
+        <member name="M:Gameflex.User.Interface.IUserOnMatchRoom.OnMatchRoom(Gameflex.User.UserAgent,Gameflex.Defines.ResultCodeMatchRoom,System.Int32,System.String,System.Boolean,Gameflex.Payload)">
             <summary>
             MatchRoom의 결과
             </summary>
@@ -543,6 +548,7 @@
             <param name="result">MatchRoom 결과</param>
             <param name="roomId">매치된 방의 RoomId</param>
             <param name="roomName">매치된 방의 이름</param>
+            <param name="created">매치된 방의 생성 여부(방장 여부)</param>
             <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="T:Gameflex.User.Interface.DelUserOnMatchRoom">
@@ -553,6 +559,7 @@
             <param name="result">MatchRoom 결과</param>
             <param name="roomId">매치된 방의 RoomId</param>
             <param name="roomName">매치된 방의 이름</param>
+            <param name="created">매치된 방의 생성 여부(방장 여부)</param>
             <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="T:Gameflex.User.Interface.IUserOnCreateRoom">
@@ -610,7 +617,7 @@
             UserListener에서 NameRoom에대한 결과를 위한 인터페이스
             </summary>
         </member>
-        <member name="M:Gameflex.User.Interface.IUserOnNamedRoom.OnNamedRoom(Gameflex.User.UserAgent,Gameflex.Defines.ResultCodeNamedRoom,System.Int32,System.String,Gameflex.Payload)">
+        <member name="M:Gameflex.User.Interface.IUserOnNamedRoom.OnNamedRoom(Gameflex.User.UserAgent,Gameflex.Defines.ResultCodeNamedRoom,System.Int32,System.String,System.Boolean,Gameflex.Payload)">
             <summary>
             NamedRoom의 결과
             </summary>
@@ -618,6 +625,7 @@
             <param name="result">NamedRoom 결과</param>
             <param name="roomName">방 이름</param>
             <param name="roomId">입장한 방의 RoomId.</param>
+            <param name="created">입장한 방의 생성 여부(방장 여부)</param>
             <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="T:Gameflex.User.Interface.DelUserOnNamedRoom">
@@ -628,6 +636,7 @@
             <param name="result">NamedRoom 결과</param>
             <param name="roomName">방 이름</param>
             <param name="roomId">입장한 방의 RoomId.</param>
+            <param name="created">입장한 방의 생성 여부(방장 여부)</param>
             <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
         <member name="T:Gameflex.User.Interface.IUserOnMatchUserStart">

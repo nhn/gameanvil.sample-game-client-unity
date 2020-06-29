@@ -149,7 +149,7 @@ public class LobbyUi : MonoBehaviour
 
         // ===========================================================================================>>> Gameflex
         // 만들어 져있는 방에 들어가는 룸매치 요청 - 혼자서도 플레이가 가능하다. 최대 인원수 까지 모두 입장
-        gameUser.MatchRoom(Constants.SPACE_ROOM_TYPE_MULTI_ROOM_MATCH, true, false, (UserAgent userAgent, ResultCodeMatchRoom result, int roomId, string roomName, Payload payload) =>
+        gameUser.MatchRoom(Constants.SPACE_ROOM_TYPE_MULTI_ROOM_MATCH, true, false, (UserAgent userAgent, ResultCodeMatchRoom result, int roomId, string roomName, bool created, Payload payload) =>
         {
             Debug.Log("MatchRoom " + result);
             if (result == ResultCodeMatchRoom.MATCH_ROOM_SUCCESS)
