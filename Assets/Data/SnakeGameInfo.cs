@@ -81,13 +81,13 @@ public class SnakeGameInfo : MonoBehaviour
     }
 
     // 전달할 프로토콜 생성
-    public Com.Nhn.Gameflex.Sample.Protocol.RoomUserData GetBaseUserDataByProto(string findId)
+    public Com.Nhn.Gameanvil.Sample.Protocol.RoomUserData GetBaseUserDataByProto(string findId)
     {
         foreach (var snakeGameUser in UserMapInfo.Values)
         {
             if (findId.Equals(snakeGameUser.Id))
             {
-                var baseData = new Com.Nhn.Gameflex.Sample.Protocol.RoomUserData
+                var baseData = new Com.Nhn.Gameanvil.Sample.Protocol.RoomUserData
                 {
                     Id = snakeGameUser.Id,
                     NickName = snakeGameUser.Nickname,

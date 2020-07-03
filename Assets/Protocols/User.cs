@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Com.Nhn.Gameflex.Sample.Protocol {
+namespace Com.Nhn.Gameanvil.Sample.Protocol {
 
   /// <summary>Holder for reflection information generated from User.proto</summary>
   public static partial class UserReflection {
@@ -24,34 +24,35 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
     static UserReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgpVc2VyLnByb3RvEiBjb20ubmhuLmdhbWVmbGV4LnNhbXBsZS5wcm90b2Nv",
-            "bBoMUmVzdWx0LnByb3RvIosBCghVc2VyRGF0YRIQCghuaWNrbmFtZRgBIAEo",
-            "CRINCgVoZWFydBgCIAEoBRIMCgRjb2luGAMgASgDEgwKBHJ1YnkYBCABKAMS",
-            "DQoFbGV2ZWwYBSABKAUSCwoDZXhwGAYgASgDEhEKCWhpZ2hTY29yZRgHIAEo",
-            "AxITCgtjdXJyZW50RGVjaxgIIAEoCSJlCg5TaHVmZmxlRGVja1JlcRJECgxj",
-            "dXJyZW5jeVR5cGUYASABKA4yLi5jb20ubmhuLmdhbWVmbGV4LnNhbXBsZS5w",
-            "cm90b2NvbC5DdXJyZW5jeVR5cGUSDQoFdXNhZ2UYAiABKAMiiQEKDlNodWZm",
-            "bGVEZWNrUmVzEj8KCnJlc3VsdENvZGUYASABKA4yKy5jb20ubmhuLmdhbWVm",
-            "bGV4LnNhbXBsZS5wcm90b2NvbC5FcnJvckNvZGUSDAoEZGVjaxgCIAEoCRIT",
-            "CgtiYWxhbmNlQ29pbhgDIAEoAxITCgtiYWxhbmNlUnVieRgEIAEoAyIlChFD",
-            "aGFuZ2VOaWNrbmFtZVJlcRIQCghuaWNrbmFtZRgBIAEoCSKSAQoRQ2hhbmdl",
-            "Tmlja25hbWVSZXMSPwoKcmVzdWx0Q29kZRgBIAEoDjIrLmNvbS5uaG4uZ2Ft",
-            "ZWZsZXguc2FtcGxlLnByb3RvY29sLkVycm9yQ29kZRI8Cgh1c2VyRGF0YRgC",
-            "IAEoCzIqLmNvbS5uaG4uZ2FtZWZsZXguc2FtcGxlLnByb3RvY29sLlVzZXJE",
-            "YXRhIksKC1Jvb21JbmZvTXNnEjwKCHJvb21UeXBlGAEgASgOMiouY29tLm5o",
-            "bi5nYW1lZmxleC5zYW1wbGUucHJvdG9jb2wuUm9vbVR5cGUqRwoMQ3VycmVu",
-            "Y3lUeXBlEhEKDUNVUlJFTkNZX05PTkUQABIRCg1DVVJSRU5DWV9DT0lOEAES",
-            "EQoNQ1VSUkVOQ1lfUlVCWRACKjkKCFJvb21UeXBlEg8KC1JPT01fU0lOR0xF",
-            "EAASDAoIUk9PTV9UQVAQARIOCgpST09NX1NOQUtFEAJiBnByb3RvMw=="));
+            "CgpVc2VyLnByb3RvEiFjb20ubmhuLmdhbWVhbnZpbC5zYW1wbGUucHJvdG9j",
+            "b2waDFJlc3VsdC5wcm90byKLAQoIVXNlckRhdGESEAoIbmlja25hbWUYASAB",
+            "KAkSDQoFaGVhcnQYAiABKAUSDAoEY29pbhgDIAEoAxIMCgRydWJ5GAQgASgD",
+            "Eg0KBWxldmVsGAUgASgFEgsKA2V4cBgGIAEoAxIRCgloaWdoU2NvcmUYByAB",
+            "KAMSEwoLY3VycmVudERlY2sYCCABKAkiZgoOU2h1ZmZsZURlY2tSZXESRQoM",
+            "Y3VycmVuY3lUeXBlGAEgASgOMi8uY29tLm5obi5nYW1lYW52aWwuc2FtcGxl",
+            "LnByb3RvY29sLkN1cnJlbmN5VHlwZRINCgV1c2FnZRgCIAEoAyKKAQoOU2h1",
+            "ZmZsZURlY2tSZXMSQAoKcmVzdWx0Q29kZRgBIAEoDjIsLmNvbS5uaG4uZ2Ft",
+            "ZWFudmlsLnNhbXBsZS5wcm90b2NvbC5FcnJvckNvZGUSDAoEZGVjaxgCIAEo",
+            "CRITCgtiYWxhbmNlQ29pbhgDIAEoAxITCgtiYWxhbmNlUnVieRgEIAEoAyIl",
+            "ChFDaGFuZ2VOaWNrbmFtZVJlcRIQCghuaWNrbmFtZRgBIAEoCSKUAQoRQ2hh",
+            "bmdlTmlja25hbWVSZXMSQAoKcmVzdWx0Q29kZRgBIAEoDjIsLmNvbS5uaG4u",
+            "Z2FtZWFudmlsLnNhbXBsZS5wcm90b2NvbC5FcnJvckNvZGUSPQoIdXNlckRh",
+            "dGEYAiABKAsyKy5jb20ubmhuLmdhbWVhbnZpbC5zYW1wbGUucHJvdG9jb2wu",
+            "VXNlckRhdGEiTAoLUm9vbUluZm9Nc2cSPQoIcm9vbVR5cGUYASABKA4yKy5j",
+            "b20ubmhuLmdhbWVhbnZpbC5zYW1wbGUucHJvdG9jb2wuUm9vbVR5cGUqRwoM",
+            "Q3VycmVuY3lUeXBlEhEKDUNVUlJFTkNZX05PTkUQABIRCg1DVVJSRU5DWV9D",
+            "T0lOEAESEQoNQ1VSUkVOQ1lfUlVCWRACKjkKCFJvb21UeXBlEg8KC1JPT01f",
+            "U0lOR0xFEAASDAoIUk9PTV9UQVAQARIOCgpST09NX1NOQUtFEAJiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Com.Nhn.Gameflex.Sample.Protocol.ResultReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Com.Nhn.Gameflex.Sample.Protocol.CurrencyType), typeof(global::Com.Nhn.Gameflex.Sample.Protocol.RoomType), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.UserData), global::Com.Nhn.Gameflex.Sample.Protocol.UserData.Parser, new[]{ "Nickname", "Heart", "Coin", "Ruby", "Level", "Exp", "HighScore", "CurrentDeck" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.ShuffleDeckReq), global::Com.Nhn.Gameflex.Sample.Protocol.ShuffleDeckReq.Parser, new[]{ "CurrencyType", "Usage" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.ShuffleDeckRes), global::Com.Nhn.Gameflex.Sample.Protocol.ShuffleDeckRes.Parser, new[]{ "ResultCode", "Deck", "BalanceCoin", "BalanceRuby" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.ChangeNicknameReq), global::Com.Nhn.Gameflex.Sample.Protocol.ChangeNicknameReq.Parser, new[]{ "Nickname" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.ChangeNicknameRes), global::Com.Nhn.Gameflex.Sample.Protocol.ChangeNicknameRes.Parser, new[]{ "ResultCode", "UserData" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.RoomInfoMsg), global::Com.Nhn.Gameflex.Sample.Protocol.RoomInfoMsg.Parser, new[]{ "RoomType" }, null, null, null)
+          new pbr::FileDescriptor[] { global::Com.Nhn.Gameanvil.Sample.Protocol.ResultReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.CurrencyType), typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.RoomType), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.UserData), global::Com.Nhn.Gameanvil.Sample.Protocol.UserData.Parser, new[]{ "Nickname", "Heart", "Coin", "Ruby", "Level", "Exp", "HighScore", "CurrentDeck" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.ShuffleDeckReq), global::Com.Nhn.Gameanvil.Sample.Protocol.ShuffleDeckReq.Parser, new[]{ "CurrencyType", "Usage" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.ShuffleDeckRes), global::Com.Nhn.Gameanvil.Sample.Protocol.ShuffleDeckRes.Parser, new[]{ "ResultCode", "Deck", "BalanceCoin", "BalanceRuby" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.ChangeNicknameReq), global::Com.Nhn.Gameanvil.Sample.Protocol.ChangeNicknameReq.Parser, new[]{ "Nickname" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.ChangeNicknameRes), global::Com.Nhn.Gameanvil.Sample.Protocol.ChangeNicknameRes.Parser, new[]{ "ResultCode", "UserData" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg), global::Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg.Parser, new[]{ "RoomType" }, null, null, null)
           }));
     }
     #endregion
@@ -84,7 +85,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Gameflex.Sample.Protocol.UserReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Com.Nhn.Gameanvil.Sample.Protocol.UserReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -409,7 +410,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Gameflex.Sample.Protocol.UserReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Com.Nhn.Gameanvil.Sample.Protocol.UserReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -438,9 +439,9 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     /// <summary>Field number for the "currencyType" field.</summary>
     public const int CurrencyTypeFieldNumber = 1;
-    private global::Com.Nhn.Gameflex.Sample.Protocol.CurrencyType currencyType_ = 0;
+    private global::Com.Nhn.Gameanvil.Sample.Protocol.CurrencyType currencyType_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Com.Nhn.Gameflex.Sample.Protocol.CurrencyType CurrencyType {
+    public global::Com.Nhn.Gameanvil.Sample.Protocol.CurrencyType CurrencyType {
       get { return currencyType_; }
       set {
         currencyType_ = value;
@@ -545,7 +546,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            currencyType_ = (global::Com.Nhn.Gameflex.Sample.Protocol.CurrencyType) input.ReadEnum();
+            currencyType_ = (global::Com.Nhn.Gameanvil.Sample.Protocol.CurrencyType) input.ReadEnum();
             break;
           }
           case 16: {
@@ -566,7 +567,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Gameflex.Sample.Protocol.UserReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Com.Nhn.Gameanvil.Sample.Protocol.UserReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -597,9 +598,9 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     /// <summary>Field number for the "resultCode" field.</summary>
     public const int ResultCodeFieldNumber = 1;
-    private global::Com.Nhn.Gameflex.Sample.Protocol.ErrorCode resultCode_ = 0;
+    private global::Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode resultCode_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Com.Nhn.Gameflex.Sample.Protocol.ErrorCode ResultCode {
+    public global::Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode ResultCode {
       get { return resultCode_; }
       set {
         resultCode_ = value;
@@ -750,7 +751,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            resultCode_ = (global::Com.Nhn.Gameflex.Sample.Protocol.ErrorCode) input.ReadEnum();
+            resultCode_ = (global::Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode) input.ReadEnum();
             break;
           }
           case 18: {
@@ -779,7 +780,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Gameflex.Sample.Protocol.UserReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Com.Nhn.Gameanvil.Sample.Protocol.UserReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -908,7 +909,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Gameflex.Sample.Protocol.UserReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Com.Nhn.Gameanvil.Sample.Protocol.UserReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -937,9 +938,9 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     /// <summary>Field number for the "resultCode" field.</summary>
     public const int ResultCodeFieldNumber = 1;
-    private global::Com.Nhn.Gameflex.Sample.Protocol.ErrorCode resultCode_ = 0;
+    private global::Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode resultCode_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Com.Nhn.Gameflex.Sample.Protocol.ErrorCode ResultCode {
+    public global::Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode ResultCode {
       get { return resultCode_; }
       set {
         resultCode_ = value;
@@ -948,9 +949,9 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     /// <summary>Field number for the "userData" field.</summary>
     public const int UserDataFieldNumber = 2;
-    private global::Com.Nhn.Gameflex.Sample.Protocol.UserData userData_;
+    private global::Com.Nhn.Gameanvil.Sample.Protocol.UserData userData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Com.Nhn.Gameflex.Sample.Protocol.UserData UserData {
+    public global::Com.Nhn.Gameanvil.Sample.Protocol.UserData UserData {
       get { return userData_; }
       set {
         userData_ = value;
@@ -1031,7 +1032,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
       }
       if (other.userData_ != null) {
         if (userData_ == null) {
-          userData_ = new global::Com.Nhn.Gameflex.Sample.Protocol.UserData();
+          userData_ = new global::Com.Nhn.Gameanvil.Sample.Protocol.UserData();
         }
         UserData.MergeFrom(other.UserData);
       }
@@ -1047,12 +1048,12 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            resultCode_ = (global::Com.Nhn.Gameflex.Sample.Protocol.ErrorCode) input.ReadEnum();
+            resultCode_ = (global::Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode) input.ReadEnum();
             break;
           }
           case 18: {
             if (userData_ == null) {
-              userData_ = new global::Com.Nhn.Gameflex.Sample.Protocol.UserData();
+              userData_ = new global::Com.Nhn.Gameanvil.Sample.Protocol.UserData();
             }
             input.ReadMessage(userData_);
             break;
@@ -1071,7 +1072,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Gameflex.Sample.Protocol.UserReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Com.Nhn.Gameanvil.Sample.Protocol.UserReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1099,9 +1100,9 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     /// <summary>Field number for the "roomType" field.</summary>
     public const int RoomTypeFieldNumber = 1;
-    private global::Com.Nhn.Gameflex.Sample.Protocol.RoomType roomType_ = 0;
+    private global::Com.Nhn.Gameanvil.Sample.Protocol.RoomType roomType_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Com.Nhn.Gameflex.Sample.Protocol.RoomType RoomType {
+    public global::Com.Nhn.Gameanvil.Sample.Protocol.RoomType RoomType {
       get { return roomType_; }
       set {
         roomType_ = value;
@@ -1183,7 +1184,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            roomType_ = (global::Com.Nhn.Gameflex.Sample.Protocol.RoomType) input.ReadEnum();
+            roomType_ = (global::Com.Nhn.Gameanvil.Sample.Protocol.RoomType) input.ReadEnum();
             break;
           }
         }

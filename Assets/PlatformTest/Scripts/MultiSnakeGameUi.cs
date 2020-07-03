@@ -1,7 +1,7 @@
-﻿using Gameflex;
-using Gameflex.Defines;
-using Gameflex.User;
-using GameflexConnector;
+﻿using GameAnvil;
+using GameAnvil.Defines;
+using GameAnvil.User;
+using GameAnvilConnector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,16 +22,16 @@ public class MultiSnakeGameUi : MonoBehaviour
 
     void Start()
     {
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 게임 유저 얻기
         snakeGameUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, Constants.userSubId);
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
 
         // 버튼 동작 리스너 연결
         buttonBack.onClick.AddListener(() => { OnClickBack(); });
         buttonGameEnd.onClick.AddListener(() => { OnClickGameEnd(); });
 
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 유저 매치 요청 타임 아웃 리스너
         snakeGameUser.onMatchUserTimeoutListeners += (UserAgent userAgent) =>
         {
@@ -48,10 +48,10 @@ public class MultiSnakeGameUi : MonoBehaviour
         {
             Debug.Log("onLeaveRoomListeners!!!!!! " + userAgent.GetUserId() + "isForce : " + force);
             // 게임 나가기
-            OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType.GameEndTimeUp);
+            OnLeaveRoom(Com.Nhn.Gameanvil.Sample.Protocol.EndType.GameEndTimeUp);
         };
 
-        snakeGameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameflex.Sample.Protocol.SnakeFoodMsg msg) =>
+        snakeGameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameanvil.Sample.Protocol.SnakeFoodMsg msg) =>
         {
             if (msg != null)
             {
@@ -77,7 +77,7 @@ public class MultiSnakeGameUi : MonoBehaviour
                 }
             }
         });
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
     }
 
     // Update is called once per frame
@@ -128,7 +128,7 @@ public class MultiSnakeGameUi : MonoBehaviour
         Debug.Log("OnClickBack!!!!!! ");
 
         // 게임 나가기
-        OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType.GameEndGiveUp);
+        OnLeaveRoom(Com.Nhn.Gameanvil.Sample.Protocol.EndType.GameEndGiveUp);
     }
 
     void OnClickGameEnd()
@@ -137,13 +137,13 @@ public class MultiSnakeGameUi : MonoBehaviour
         Debug.Log("OnClickGameEnd!!!!!!");
 
         // 게임 나가기
-        OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType.GameEndTimeUp);
+        OnLeaveRoom(Com.Nhn.Gameanvil.Sample.Protocol.EndType.GameEndTimeUp);
 
     }
 
-    void OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType gameEndType)
+    void OnLeaveRoom(Com.Nhn.Gameanvil.Sample.Protocol.EndType gameEndType)
     {
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 게임룸 나가는 요청
         snakeGameUser.LeaveRoom((UserAgent userAgent, ResultCodeLeaveRoom result, bool force, int roomId, Payload payload) =>
         {
@@ -151,9 +151,9 @@ public class MultiSnakeGameUi : MonoBehaviour
 
             if (result == ResultCodeLeaveRoom.LEAVE_ROOM_SUCCESS)
             {
-                if (payload.contains<Com.Nhn.Gameflex.Sample.Protocol.EndGameRes>())
+                if (payload.contains<Com.Nhn.Gameanvil.Sample.Protocol.EndGameRes>())
                 {
-                    Com.Nhn.Gameflex.Sample.Protocol.EndGameRes endGameRes = Com.Nhn.Gameflex.Sample.Protocol.EndGameRes.Parser.ParseFrom(payload.getPacket<Com.Nhn.Gameflex.Sample.Protocol.EndGameRes>().GetBytes());
+                    Com.Nhn.Gameanvil.Sample.Protocol.EndGameRes endGameRes = Com.Nhn.Gameanvil.Sample.Protocol.EndGameRes.Parser.ParseFrom(payload.getPacket<Com.Nhn.Gameanvil.Sample.Protocol.EndGameRes>().GetBytes());
 
                     UserInfo.Instance.Heart = endGameRes.UserData.Heart;
                     UserInfo.Instance.TotalScore = endGameRes.TotalScore;
@@ -173,6 +173,6 @@ public class MultiSnakeGameUi : MonoBehaviour
                 // 실패시 처리
             }
         });
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
     }
 }

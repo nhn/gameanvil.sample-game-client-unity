@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Gameflex;
-using Gameflex.Defines;
-using Gameflex.Connection;
-using Gameflex.User;
-using GameflexConnector;
+using GameAnvil;
+using GameAnvil.Defines;
+using GameAnvil.Connection;
+using GameAnvil.User;
+using GameAnvilConnector;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -68,14 +68,14 @@ public class AuthUi : MonoBehaviour
 
         Debug.Log("Initialize complete!!!! " + inputFieldUUID.text);
 
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 연결 끊기는 부분 처리 리스너 등록
         ConnectHandler.Instance.GetConnectionAgent().onDisconnectListeners += (ConnectionAgent connectionAgent, ResultCodeDisconnect result, bool force, Payload payload) =>
         {
             Debug.LogFormat("onDisconnect - {0}", result);
             UserInfo.Instance.MoveScene(Constants.SCENE_AUTH);
         };
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
     }
 
 
@@ -116,7 +116,7 @@ public class AuthUi : MonoBehaviour
         // 다중 클릭 막음
         buttonConnect.interactable = false;
 
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 서버에 접속 시도.
         ConnectHandler.Instance.GetConnectionAgent().Connect(textIP.text, int.Parse(textPort.text),
             (ConnectionAgent connectionAgent, ResultCodeConnect result) =>
@@ -137,7 +137,7 @@ public class AuthUi : MonoBehaviour
                 buttonConnect.interactable = true;
             }
         );
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
     }
 
     void OnClickAuth()
@@ -159,13 +159,13 @@ public class AuthUi : MonoBehaviour
             buttonAuth.interactable = false;
 
             // 인증에 필요한 프로토콜 데이터 설정
-            var authenticationReq = new Com.Nhn.Gameflex.Sample.Protocol.AuthenticationReq
+            var authenticationReq = new Com.Nhn.Gameanvil.Sample.Protocol.AuthenticationReq
             {
                 AccessToken = Constants.AUTH_ACCESS_TOKEN
             };
             Debug.Log("authenticationReq " + authenticationReq);
 
-            // ===========================================================================================>>> Gameflex
+            // ===========================================================================================>>> GameAnvil
             // 서버에 인증 시도. 현재는 deviceid, id, pw 모두 uuid값으로 전달
             ConnectHandler.Instance.GetConnectionAgent().Authenticate(inputFieldUUID.text, inputFieldID.text, inputFieldID.text, new Payload().add(new Packet(authenticationReq)),
                 (ConnectionAgent connectionAgent, ResultCodeAuth result, List<ConnectionAgent.LoginedUserInfo> loginedUserInfoList, string message, Payload payload) =>
@@ -187,7 +187,7 @@ public class AuthUi : MonoBehaviour
                     buttonAuth.interactable = true;
                 }
             );
-            // ===========================================================================================>>> Gameflex
+            // ===========================================================================================>>> GameAnvil
         }
     }
 
@@ -197,11 +197,11 @@ public class AuthUi : MonoBehaviour
         buttonLogin.interactable = false;
 
         // 로그인에 필요한 프로토콜 데이터 설정
-        var loginReq = new Com.Nhn.Gameflex.Sample.Protocol.LoginReq
+        var loginReq = new Com.Nhn.Gameanvil.Sample.Protocol.LoginReq
         {
             // 임의로 필요한 데이터 설정
             Uuid = inputFieldUUID.text,
-            LoginType = Com.Nhn.Gameflex.Sample.Protocol.LoginType.LoginGuest,
+            LoginType = Com.Nhn.Gameanvil.Sample.Protocol.LoginType.LoginGuest,
             AppVersion = Application.version,
             AppStore = "None",
             DeviceModel = SystemInfo.deviceModel,
@@ -211,7 +211,7 @@ public class AuthUi : MonoBehaviour
         };
         Debug.Log("loginReq " + loginReq);
 
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 서버에 로그인
         ConnectHandler.Instance.CreateUserAgent(Constants.GAME_SPACE_NAME, Constants.userSubId).Login(Constants.SPACE_USER_TYPE, string.Empty, new Payload().add(new Packet(loginReq)),
             (UserAgent userAgent, ResultCodeLogin result, UserAgent.LoginInfo loginInfo) =>
@@ -221,10 +221,10 @@ public class AuthUi : MonoBehaviour
                 // 성공시 다음 단계.
                 if (result == ResultCodeLogin.LOGIN_SUCCESS)
                 {
-                    if (loginInfo.Payload.contains<Com.Nhn.Gameflex.Sample.Protocol.LoginRes>())
+                    if (loginInfo.Payload.contains<Com.Nhn.Gameanvil.Sample.Protocol.LoginRes>())
                     {
                         // 로그인 응답 프로토콜 처리
-                        Com.Nhn.Gameflex.Sample.Protocol.LoginRes loginRes = Com.Nhn.Gameflex.Sample.Protocol.LoginRes.Parser.ParseFrom(loginInfo.Payload.getPacket<Com.Nhn.Gameflex.Sample.Protocol.LoginRes>().GetBytes());
+                        Com.Nhn.Gameanvil.Sample.Protocol.LoginRes loginRes = Com.Nhn.Gameanvil.Sample.Protocol.LoginRes.Parser.ParseFrom(loginInfo.Payload.getPacket<Com.Nhn.Gameanvil.Sample.Protocol.LoginRes>().GetBytes());
                         Debug.Log("LoginRes " + loginRes);
 
                         // 서버에서 받은 게임 데이터 설정
@@ -249,20 +249,20 @@ public class AuthUi : MonoBehaviour
 
                         if (loginInfo.isJoinedRoom)
                         {
-                            if (loginInfo.RoomPayload.contains<Com.Nhn.Gameflex.Sample.Protocol.RoomInfoMsg>())
+                            if (loginInfo.RoomPayload.contains<Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg>())
                             {
-                                Com.Nhn.Gameflex.Sample.Protocol.RoomInfoMsg roomInfoMsg = Com.Nhn.Gameflex.Sample.Protocol.RoomInfoMsg.Parser.ParseFrom(loginInfo.RoomPayload.getPacket<Com.Nhn.Gameflex.Sample.Protocol.RoomInfoMsg>().GetBytes());
+                                Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg roomInfoMsg = Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg.Parser.ParseFrom(loginInfo.RoomPayload.getPacket<Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg>().GetBytes());
                                 Debug.Log("RoomInfoMsg " + roomInfoMsg.RoomType.ToString());
-                                if (roomInfoMsg.RoomType == Com.Nhn.Gameflex.Sample.Protocol.RoomType.RoomSingle)
+                                if (roomInfoMsg.RoomType == Com.Nhn.Gameanvil.Sample.Protocol.RoomType.RoomSingle)
                                 {
                                     UserInfo.Instance.MoveScene(Constants.SCENE_GAME_SINGLE); // 싱글
                                 }
-                                else if (roomInfoMsg.RoomType == Com.Nhn.Gameflex.Sample.Protocol.RoomType.RoomSnake)
+                                else if (roomInfoMsg.RoomType == Com.Nhn.Gameanvil.Sample.Protocol.RoomType.RoomSnake)
                                 {
                                     UserInfo.Instance.gameState = UserInfo.GameState.Wait;
                                     UserInfo.Instance.MoveScene(Constants.SCENE_GAME_MULTI_SNAKE); // 유저매치 
                                 }
-                                else if (roomInfoMsg.RoomType == Com.Nhn.Gameflex.Sample.Protocol.RoomType.RoomTap)
+                                else if (roomInfoMsg.RoomType == Com.Nhn.Gameanvil.Sample.Protocol.RoomType.RoomTap)
                                 {
                                     UserInfo.Instance.MoveScene(Constants.SCENE_GAME_MULTI_TAPBIRD);    // 룸 매치
                                 }
@@ -278,7 +278,7 @@ public class AuthUi : MonoBehaviour
                 buttonLogin.interactable = true;
             }
        );
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
     }
 
     IEnumerator GetRequestLaunching(string url)

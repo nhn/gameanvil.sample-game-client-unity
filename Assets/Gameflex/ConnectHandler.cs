@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-// Gameflex connector 
-namespace GameflexConnector
+// GameAnvil connector 
+namespace GameAnvilConnector
 {
     public class ConnectHandler : MonoBehaviour
     {
-        private static Gameflex.Connector connector = null;
-        public static Gameflex.Connector Instance
+        private static GameAnvil.Connector connector = null;
+        public static GameAnvil.Connector Instance
         {
             get
             {
@@ -15,7 +15,7 @@ namespace GameflexConnector
         }
         
         [SerializeField]
-        public Gameflex.Connector.Config config;
+        public GameAnvil.Connector.Config config;
         private void Awake()
         {
             if (connector != null)
@@ -25,7 +25,7 @@ namespace GameflexConnector
             }
 
             DontDestroyOnLoad(this.gameObject);
-            connector = new Gameflex.Connector(config);
+            connector = new GameAnvil.Connector(config);
             // 커넥터 로그 추가
             connector.Logger += (level, log) =>
             {
@@ -37,11 +37,11 @@ namespace GameflexConnector
             };
 
             // 서버와 같은 순서로 프로토콜 등록
-            Gameflex.ProtocolManager.getInstance().RegisterProtocol(0, Com.Nhn.Gameflex.Sample.Protocol.AuthenticationReflection.Descriptor);
-            Gameflex.ProtocolManager.getInstance().RegisterProtocol(1, Com.Nhn.Gameflex.Sample.Protocol.GameMultiReflection.Descriptor);
-            Gameflex.ProtocolManager.getInstance().RegisterProtocol(2, Com.Nhn.Gameflex.Sample.Protocol.GameSingleReflection.Descriptor);
-            Gameflex.ProtocolManager.getInstance().RegisterProtocol(3, Com.Nhn.Gameflex.Sample.Protocol.ResultReflection.Descriptor);
-            Gameflex.ProtocolManager.getInstance().RegisterProtocol(4, Com.Nhn.Gameflex.Sample.Protocol.UserReflection.Descriptor);
+            GameAnvil.ProtocolManager.getInstance().RegisterProtocol(0, Com.Nhn.Gameanvil.Sample.Protocol.AuthenticationReflection.Descriptor);
+            GameAnvil.ProtocolManager.getInstance().RegisterProtocol(1, Com.Nhn.Gameanvil.Sample.Protocol.GameMultiReflection.Descriptor);
+            GameAnvil.ProtocolManager.getInstance().RegisterProtocol(2, Com.Nhn.Gameanvil.Sample.Protocol.GameSingleReflection.Descriptor);
+            GameAnvil.ProtocolManager.getInstance().RegisterProtocol(3, Com.Nhn.Gameanvil.Sample.Protocol.ResultReflection.Descriptor);
+            GameAnvil.ProtocolManager.getInstance().RegisterProtocol(4, Com.Nhn.Gameanvil.Sample.Protocol.UserReflection.Descriptor);
         }
 
         private void Update()

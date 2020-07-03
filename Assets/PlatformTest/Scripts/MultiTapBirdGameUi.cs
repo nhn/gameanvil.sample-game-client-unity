@@ -1,7 +1,7 @@
-﻿using Gameflex;
-using Gameflex.Defines;
-using Gameflex.User;
-using GameflexConnector;
+﻿using GameAnvil;
+using GameAnvil.Defines;
+using GameAnvil.User;
+using GameAnvilConnector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,11 +28,11 @@ public class MultiTapBirdGameUi : MonoBehaviour
         buttonTap.onClick.AddListener(() => { OnClickTap(); });
         buttonGameEnd.onClick.AddListener(() => { OnClickGameEnd(); });
 
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 게임 유저 얻기
         tapBirdUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, Constants.userSubId);
         // 유저 점수 동기 처리
-        tapBirdUser.AddListener((UserAgent userAgent, Com.Nhn.Gameflex.Sample.Protocol.BroadcastTapBirdMsg msg) =>
+        tapBirdUser.AddListener((UserAgent userAgent, Com.Nhn.Gameanvil.Sample.Protocol.BroadcastTapBirdMsg msg) =>
             {
                 if (msg != null)
                 {
@@ -51,7 +51,7 @@ public class MultiTapBirdGameUi : MonoBehaviour
                 }
             }
         );
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
 
         UpdateMyInfo(tapCount);
     }
@@ -77,7 +77,7 @@ public class MultiTapBirdGameUi : MonoBehaviour
         Debug.Log("OnClickBack!!!!!! : " + tapCount);
 
         // 게임 나가기
-        OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType.GameEndGiveUp);
+        OnLeaveRoom(Com.Nhn.Gameanvil.Sample.Protocol.EndType.GameEndGiveUp);
     }
 
     void OnClickTap()
@@ -88,15 +88,15 @@ public class MultiTapBirdGameUi : MonoBehaviour
         Debug.Log("Tap!!!!!! : " + tapCount);
 
         // 전송할 패킷
-        var scoreUp = new Com.Nhn.Gameflex.Sample.Protocol.ScoreUpMsg
+        var scoreUp = new Com.Nhn.Gameanvil.Sample.Protocol.ScoreUpMsg
         {
             Score = tapCount
         };
 
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 응답없이 서버로 데이터 성으로 전달하는 패킷
         tapBirdUser.Send(new Packet(scoreUp));
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
     }
 
     void OnClickGameEnd()
@@ -105,13 +105,13 @@ public class MultiTapBirdGameUi : MonoBehaviour
         Debug.Log("OnClickGameEnd!!!!!! : " + tapCount);
 
         // 게임 나가기
-        OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType.GameEndTimeUp);
+        OnLeaveRoom(Com.Nhn.Gameanvil.Sample.Protocol.EndType.GameEndTimeUp);
 
     }
 
-    void OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType gameEndType)
+    void OnLeaveRoom(Com.Nhn.Gameanvil.Sample.Protocol.EndType gameEndType)
     {
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 게임룸 나가는 요청
         tapBirdUser.LeaveRoom((UserAgent userAgent, ResultCodeLeaveRoom result, bool force, int roomId, Payload payload) =>
         {
@@ -119,9 +119,9 @@ public class MultiTapBirdGameUi : MonoBehaviour
 
             if (result == ResultCodeLeaveRoom.LEAVE_ROOM_SUCCESS)
             {
-                if (payload.contains<Com.Nhn.Gameflex.Sample.Protocol.EndGameRes>())
+                if (payload.contains<Com.Nhn.Gameanvil.Sample.Protocol.EndGameRes>())
                 {
-                    Com.Nhn.Gameflex.Sample.Protocol.EndGameRes endGameRes = Com.Nhn.Gameflex.Sample.Protocol.EndGameRes.Parser.ParseFrom(payload.getPacket<Com.Nhn.Gameflex.Sample.Protocol.EndGameRes>().GetBytes());
+                    Com.Nhn.Gameanvil.Sample.Protocol.EndGameRes endGameRes = Com.Nhn.Gameanvil.Sample.Protocol.EndGameRes.Parser.ParseFrom(payload.getPacket<Com.Nhn.Gameanvil.Sample.Protocol.EndGameRes>().GetBytes());
 
                     UserInfo.Instance.Heart = endGameRes.UserData.Heart;
                     UserInfo.Instance.TotalScore = endGameRes.TotalScore;
@@ -139,6 +139,6 @@ public class MultiTapBirdGameUi : MonoBehaviour
                 // 실패시 처리
             }
         });
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
     }
 }

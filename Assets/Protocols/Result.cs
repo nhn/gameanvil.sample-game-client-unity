@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Com.Nhn.Gameflex.Sample.Protocol {
+namespace Com.Nhn.Gameanvil.Sample.Protocol {
 
   /// <summary>Holder for reflection information generated from Result.proto</summary>
   public static partial class ResultReflection {
@@ -24,16 +24,16 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
     static ResultReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgxSZXN1bHQucHJvdG8SIGNvbS5uaG4uZ2FtZWZsZXguc2FtcGxlLnByb3Rv",
-            "Y29sKtgBCglFcnJvckNvZGUSCAoETk9ORRAAEhcKElBBUkFNRVRFUl9JU19F",
-            "TVBUWRDpBxITCg5UT0tFTl9JU19FTVBUWRDqBxIYChNUT0tFTl9OT1RfVkFM",
-            "SURBVEVEEOsHEhkKFFBBU1NXT1JEX05PVF9NQVRDSEVEEOwHEhQKD05PVF9F",
-            "Tk9VR0hfQ09JThDRDxIUCg9OT1RfRU5PVUdIX1JVQlkQ0g8SFQoQTk9UX0VO",
-            "T1VHSF9IRUFSVBC5FxINCghEQl9FUlJPUhChHxIMCgdVTktOT1dOEI9OYgZw",
-            "cm90bzM="));
+            "CgxSZXN1bHQucHJvdG8SIWNvbS5uaG4uZ2FtZWFudmlsLnNhbXBsZS5wcm90",
+            "b2NvbCrYAQoJRXJyb3JDb2RlEggKBE5PTkUQABIXChJQQVJBTUVURVJfSVNf",
+            "RU1QVFkQ6QcSEwoOVE9LRU5fSVNfRU1QVFkQ6gcSGAoTVE9LRU5fTk9UX1ZB",
+            "TElEQVRFRBDrBxIZChRQQVNTV09SRF9OT1RfTUFUQ0hFRBDsBxIUCg9OT1Rf",
+            "RU5PVUdIX0NPSU4Q0Q8SFAoPTk9UX0VOT1VHSF9SVUJZENIPEhUKEE5PVF9F",
+            "Tk9VR0hfSEVBUlQQuRcSDQoIREJfRVJST1IQoR8SDAoHVU5LTk9XThCPTmIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Com.Nhn.Gameflex.Sample.Protocol.ErrorCode), }, null));
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode), }, null));
     }
     #endregion
 

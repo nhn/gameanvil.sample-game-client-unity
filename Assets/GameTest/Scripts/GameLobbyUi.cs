@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Gameflex;
-using Gameflex.Defines;
-using Gameflex.User;
-using GameflexConnector;
+using GameAnvil;
+using GameAnvil.Defines;
+using GameAnvil.User;
+using GameAnvilConnector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -46,16 +46,16 @@ public class GameLobbyUi : MonoBehaviour
         buttonSingleRanking.onClick.AddListener(() => { OnClickSingleRanking(); });
         buttonUserInfo.onClick.AddListener(() => { OnClickUserInfo(); });
 
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 커넥터로 부터 유저 객체 저장
         gameUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, Constants.userSubId);
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
 
         // 유저 게임 정보 초기화
         UserInfo.Instance.IsMulti = false;
         UserInfo.Instance.gameState = UserInfo.GameState.None;
 
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 타이밍 이슈상 리스너를 미리 등록, 유저 매치가 되었을때 불리는 리스너  : snake 게임 server to client
         gameUser.onMatchUserDoneListeners += (UserAgent userAgent, ResultCodeMatchUserDone result, bool created, int roomId, Payload payload) =>
         {
@@ -63,7 +63,7 @@ public class GameLobbyUi : MonoBehaviour
         };
 
         // 타이밍 이슈상 리스너 미리등록, 서버에서 게임룸에 두명이 모두 입장했을때 게임 설정데이터를 전송 : snake 게임 server to client
-        gameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameflex.Sample.Protocol.SnakeGameInfoMsg msg) =>
+        gameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameanvil.Sample.Protocol.SnakeGameInfoMsg msg) =>
         {
             if (msg != null)
             {
@@ -104,7 +104,7 @@ public class GameLobbyUi : MonoBehaviour
                 UserInfo.Instance.gameState = UserInfo.GameState.Wait;
             }
         });
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
     }
 
     void RemoveAllListeners()
@@ -123,19 +123,19 @@ public class GameLobbyUi : MonoBehaviour
         buttonNicknameChange.interactable = false;
 
         // 닉네임변경 요청 프로토콜
-        var changeNicknameReq = new Com.Nhn.Gameflex.Sample.Protocol.ChangeNicknameReq
+        var changeNicknameReq = new Com.Nhn.Gameanvil.Sample.Protocol.ChangeNicknameReq
         {
             Nickname = inputFieldNickname.text
         };
         Debug.Log("changeNicknameReq " + changeNicknameReq);
 
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 게임유저가 서버로 request로 response를 받아 처리 한다.
-        gameUser.Request<Com.Nhn.Gameflex.Sample.Protocol.ChangeNicknameRes>(changeNicknameReq, (userAgent, changeNicknameRes) =>
+        gameUser.Request<Com.Nhn.Gameanvil.Sample.Protocol.ChangeNicknameRes>(changeNicknameReq, (userAgent, changeNicknameRes) =>
         {
             Debug.Log("changeNicknameRes" + changeNicknameRes);
 
-            if (changeNicknameRes.ResultCode == Com.Nhn.Gameflex.Sample.Protocol.ErrorCode.None)
+            if (changeNicknameRes.ResultCode == Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode.None)
             {
                 // 서버에 닉네임 변경 후 성공 하고 응답값 갱신
                 UserInfo.Instance.Nickname = changeNicknameRes.UserData.Nickname;
@@ -153,7 +153,7 @@ public class GameLobbyUi : MonoBehaviour
             }
             buttonNicknameChange.interactable = true;
         });
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
     }
 
     void OnClickTapBirdGame()
@@ -161,12 +161,12 @@ public class GameLobbyUi : MonoBehaviour
         // 다중클릭 막음
         buttonTapBirdGame.interactable = false;
 
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 게임 시작 프로토콜 데이터 정의
-        var startGameReq = new Com.Nhn.Gameflex.Sample.Protocol.StartGameReq
+        var startGameReq = new Com.Nhn.Gameanvil.Sample.Protocol.StartGameReq
         {
             Deck = UserInfo.Instance.CurrentDeck,
-            Difficulty = Com.Nhn.Gameflex.Sample.Protocol.DifficultyType.DifficultyNormal
+            Difficulty = Com.Nhn.Gameanvil.Sample.Protocol.DifficultyType.DifficultyNormal
         };
         Debug.Log("startGameReq" + startGameReq);
         gameUser.CreateRoom(Constants.SPACE_ROOM_TYPE_SINGLE, new Payload().add(new Packet(startGameReq)), (UserAgent userAgent, ResultCodeCreateRoom result, int roomId, string roomName, Payload payload) =>
@@ -185,7 +185,7 @@ public class GameLobbyUi : MonoBehaviour
                 MessageUi.Instance.SetTextMessage("onCreateRoom Fail..... " + result);
             }
         });
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
 
         buttonTapBirdGame.interactable = true;
     }
@@ -195,7 +195,7 @@ public class GameLobbyUi : MonoBehaviour
         // 다중클릭 막음
         buttonMultiTapBirdGame.interactable = false;
 
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 만들어 져있는 방에 들어가는 룸매치 요청 - 혼자서도 플레이가 가능하다. 최대 인원수 까지 모두 입장
         gameUser.MatchRoom(Constants.SPACE_ROOM_TYPE_MULTI_ROOM_MATCH, true, false, (UserAgent userAgent, ResultCodeMatchRoom result, int roomId, string roomName, bool created, Payload payload) =>
         {
@@ -213,7 +213,7 @@ public class GameLobbyUi : MonoBehaviour
                 MessageUi.Instance.SetTextMessage("onMatchRoom Fail..... " + result);
             }
         });
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
 
         buttonMultiTapBirdGame.interactable = true;
     }
@@ -242,7 +242,7 @@ public class GameLobbyUi : MonoBehaviour
                 MessageUi.Instance.SetTextMessage("onMatchUserStart Fail..... " + result);
             }
         });
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
 
         buttonMultiSnakeGame.interactable = true;
     }
@@ -252,20 +252,20 @@ public class GameLobbyUi : MonoBehaviour
         // 다중 클릭 막음
         buttonSingleRanking.interactable = false;
 
-        var singleRankingReq = new Com.Nhn.Gameflex.Sample.Protocol.ScoreRankingReq
+        var singleRankingReq = new Com.Nhn.Gameanvil.Sample.Protocol.ScoreRankingReq
         {
             Start = 1,
             End = 100
         };
         Debug.Log("singleRankingReq " + singleRankingReq);
 
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 게임에서 등록한 랭킹 리스트 요청
-        gameUser.Request<Com.Nhn.Gameflex.Sample.Protocol.ScoreRankingRes>(singleRankingReq, (userAgent, singleRankingRes) =>
+        gameUser.Request<Com.Nhn.Gameanvil.Sample.Protocol.ScoreRankingRes>(singleRankingReq, (userAgent, singleRankingRes) =>
         {
             Debug.Log("singleRankingRes" + singleRankingRes);
 
-            if (singleRankingRes.ResultCode == Com.Nhn.Gameflex.Sample.Protocol.ErrorCode.None)
+            if (singleRankingRes.ResultCode == Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode.None)
             {
                 var rankings = singleRankingRes.Rankings;
 
@@ -285,7 +285,7 @@ public class GameLobbyUi : MonoBehaviour
             }
             buttonSingleRanking.interactable = true;
         });
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
 
     }
 

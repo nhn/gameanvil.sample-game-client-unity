@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Gameflex;
-using Gameflex.Defines;
-using Gameflex.User;
-using GameflexConnector;
+using GameAnvil;
+using GameAnvil.Defines;
+using GameAnvil.User;
+using GameAnvilConnector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,10 +30,10 @@ public class SnakeGameManager : MonoBehaviour
 
     void Awake()
     {
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 게임 유저 얻기
         snakeGameUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, Constants.userSubId);
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
     }
 
     void Start()
@@ -47,7 +47,7 @@ public class SnakeGameManager : MonoBehaviour
 
         playerScoreText.text = UserInfo.Instance.Nickname + " : 0";
 
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 유저 매치 요청 타임 아웃 리스너
         snakeGameUser.onMatchUserTimeoutListeners += (UserAgent userAgent) =>
         {
@@ -66,7 +66,7 @@ public class SnakeGameManager : MonoBehaviour
         };
 
         // 상대편 유저 데이터 처리
-        snakeGameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameflex.Sample.Protocol.SnakeUserMsg msg) =>
+        snakeGameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameanvil.Sample.Protocol.SnakeUserMsg msg) =>
         {
             Debug.Log("<<<< SnakeUserMsg!!!!!! : " + msg);
             if (msg != null)
@@ -91,7 +91,7 @@ public class SnakeGameManager : MonoBehaviour
         });
 
         // 서버에서 전달 받은 food 상태 처리
-        snakeGameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameflex.Sample.Protocol.SnakeFoodMsg msg) =>
+        snakeGameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameanvil.Sample.Protocol.SnakeFoodMsg msg) =>
         {
             if (msg != null)
             {
@@ -118,7 +118,7 @@ public class SnakeGameManager : MonoBehaviour
                 }
             }
         });
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
     }
 
     void Update()
@@ -191,9 +191,9 @@ public class SnakeGameManager : MonoBehaviour
         snakeGameUser.RemoveAllListeners();
     }
 
-    void OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType gameEndType)
+    void OnLeaveRoom(Com.Nhn.Gameanvil.Sample.Protocol.EndType gameEndType)
     {
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
         // 게임룸 나가는 요청
         snakeGameUser.LeaveRoom((UserAgent userAgent, ResultCodeLeaveRoom result, bool force, int roomId, Payload payload) =>
         {
@@ -201,9 +201,9 @@ public class SnakeGameManager : MonoBehaviour
 
             if (result == ResultCodeLeaveRoom.LEAVE_ROOM_SUCCESS)
             {
-                if (payload.contains<Com.Nhn.Gameflex.Sample.Protocol.EndGameRes>())
+                if (payload.contains<Com.Nhn.Gameanvil.Sample.Protocol.EndGameRes>())
                 {
-                    Com.Nhn.Gameflex.Sample.Protocol.EndGameRes endGameRes = Com.Nhn.Gameflex.Sample.Protocol.EndGameRes.Parser.ParseFrom(payload.getPacket<Com.Nhn.Gameflex.Sample.Protocol.EndGameRes>().GetBytes());
+                    Com.Nhn.Gameanvil.Sample.Protocol.EndGameRes endGameRes = Com.Nhn.Gameanvil.Sample.Protocol.EndGameRes.Parser.ParseFrom(payload.getPacket<Com.Nhn.Gameanvil.Sample.Protocol.EndGameRes>().GetBytes());
 
                     UserInfo.Instance.Heart = endGameRes.UserData.Heart;
                     UserInfo.Instance.TotalScore = endGameRes.TotalScore;
@@ -221,7 +221,7 @@ public class SnakeGameManager : MonoBehaviour
                 // 실패시 처리
             }
         });
-        // ===========================================================================================>>> Gameflex
+        // ===========================================================================================>>> GameAnvil
     }
 
     public void OnClickGameEnd()
@@ -230,6 +230,6 @@ public class SnakeGameManager : MonoBehaviour
         Debug.Log("OnClickBack!!!!!! ");
 
         // 게임 나가기
-        OnLeaveRoom(Com.Nhn.Gameflex.Sample.Protocol.EndType.GameEndGiveUp);
+        OnLeaveRoom(Com.Nhn.Gameanvil.Sample.Protocol.EndType.GameEndGiveUp);
     }
 }

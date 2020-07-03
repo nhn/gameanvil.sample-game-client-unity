@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Com.Nhn.Gameflex.Sample.Protocol {
+namespace Com.Nhn.Gameanvil.Sample.Protocol {
 
   /// <summary>Holder for reflection information generated from Authentication.proto</summary>
   public static partial class AuthenticationReflection {
@@ -24,27 +24,27 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
     static AuthenticationReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRBdXRoZW50aWNhdGlvbi5wcm90bxIgY29tLm5obi5nYW1lZmxleC5zYW1w",
-            "bGUucHJvdG9jb2waDFJlc3VsdC5wcm90bxoKVXNlci5wcm90byIoChFBdXRo",
-            "ZW50aWNhdGlvblJlcRITCgthY2Nlc3NUb2tlbhgBIAEoCSJTChFBdXRoZW50",
-            "aWNhdGlvblJlcxI+CgllcnJvckNvZGUYASABKA4yKy5jb20ubmhuLmdhbWVm",
-            "bGV4LnNhbXBsZS5wcm90b2NvbC5FcnJvckNvZGUiwgEKCExvZ2luUmVxEgwK",
-            "BHV1aWQYASABKAkSPgoJbG9naW5UeXBlGAIgASgOMisuY29tLm5obi5nYW1l",
-            "ZmxleC5zYW1wbGUucHJvdG9jb2wuTG9naW5UeXBlEhIKCmFwcFZlcnNpb24Y",
-            "AyABKAkSEAoIYXBwU3RvcmUYBCABKAkSEwoLZGV2aWNlTW9kZWwYBSABKAkS",
-            "FQoNZGV2aWNlQ291bnRyeRgGIAEoCRIWCg5kZXZpY2VMYW5ndWFnZRgHIAEo",
-            "CSKIAQoITG9naW5SZXMSPgoJZXJyb3JDb2RlGAEgASgOMisuY29tLm5obi5n",
-            "YW1lZmxleC5zYW1wbGUucHJvdG9jb2wuRXJyb3JDb2RlEjwKCHVzZXJkYXRh",
-            "GAIgASgLMiouY29tLm5obi5nYW1lZmxleC5zYW1wbGUucHJvdG9jb2wuVXNl",
-            "ckRhdGEqLAoJTG9naW5UeXBlEg4KCkxPR0lOX05PTkUQABIPCgtMT0dJTl9H",
-            "VUVTVBABYgZwcm90bzM="));
+            "ChRBdXRoZW50aWNhdGlvbi5wcm90bxIhY29tLm5obi5nYW1lYW52aWwuc2Ft",
+            "cGxlLnByb3RvY29sGgxSZXN1bHQucHJvdG8aClVzZXIucHJvdG8iKAoRQXV0",
+            "aGVudGljYXRpb25SZXESEwoLYWNjZXNzVG9rZW4YASABKAkiVAoRQXV0aGVu",
+            "dGljYXRpb25SZXMSPwoJZXJyb3JDb2RlGAEgASgOMiwuY29tLm5obi5nYW1l",
+            "YW52aWwuc2FtcGxlLnByb3RvY29sLkVycm9yQ29kZSLDAQoITG9naW5SZXES",
+            "DAoEdXVpZBgBIAEoCRI/Cglsb2dpblR5cGUYAiABKA4yLC5jb20ubmhuLmdh",
+            "bWVhbnZpbC5zYW1wbGUucHJvdG9jb2wuTG9naW5UeXBlEhIKCmFwcFZlcnNp",
+            "b24YAyABKAkSEAoIYXBwU3RvcmUYBCABKAkSEwoLZGV2aWNlTW9kZWwYBSAB",
+            "KAkSFQoNZGV2aWNlQ291bnRyeRgGIAEoCRIWCg5kZXZpY2VMYW5ndWFnZRgH",
+            "IAEoCSKKAQoITG9naW5SZXMSPwoJZXJyb3JDb2RlGAEgASgOMiwuY29tLm5o",
+            "bi5nYW1lYW52aWwuc2FtcGxlLnByb3RvY29sLkVycm9yQ29kZRI9Cgh1c2Vy",
+            "ZGF0YRgCIAEoCzIrLmNvbS5uaG4uZ2FtZWFudmlsLnNhbXBsZS5wcm90b2Nv",
+            "bC5Vc2VyRGF0YSosCglMb2dpblR5cGUSDgoKTE9HSU5fTk9ORRAAEg8KC0xP",
+            "R0lOX0dVRVNUEAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Com.Nhn.Gameflex.Sample.Protocol.ResultReflection.Descriptor, global::Com.Nhn.Gameflex.Sample.Protocol.UserReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Com.Nhn.Gameflex.Sample.Protocol.LoginType), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.AuthenticationReq), global::Com.Nhn.Gameflex.Sample.Protocol.AuthenticationReq.Parser, new[]{ "AccessToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.AuthenticationRes), global::Com.Nhn.Gameflex.Sample.Protocol.AuthenticationRes.Parser, new[]{ "ErrorCode" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.LoginReq), global::Com.Nhn.Gameflex.Sample.Protocol.LoginReq.Parser, new[]{ "Uuid", "LoginType", "AppVersion", "AppStore", "DeviceModel", "DeviceCountry", "DeviceLanguage" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameflex.Sample.Protocol.LoginRes), global::Com.Nhn.Gameflex.Sample.Protocol.LoginRes.Parser, new[]{ "ErrorCode", "Userdata" }, null, null, null)
+          new pbr::FileDescriptor[] { global::Com.Nhn.Gameanvil.Sample.Protocol.ResultReflection.Descriptor, global::Com.Nhn.Gameanvil.Sample.Protocol.UserReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.LoginType), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.AuthenticationReq), global::Com.Nhn.Gameanvil.Sample.Protocol.AuthenticationReq.Parser, new[]{ "AccessToken" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.AuthenticationRes), global::Com.Nhn.Gameanvil.Sample.Protocol.AuthenticationRes.Parser, new[]{ "ErrorCode" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.LoginReq), global::Com.Nhn.Gameanvil.Sample.Protocol.LoginReq.Parser, new[]{ "Uuid", "LoginType", "AppVersion", "AppStore", "DeviceModel", "DeviceCountry", "DeviceLanguage" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Nhn.Gameanvil.Sample.Protocol.LoginRes), global::Com.Nhn.Gameanvil.Sample.Protocol.LoginRes.Parser, new[]{ "ErrorCode", "Userdata" }, null, null, null)
           }));
     }
     #endregion
@@ -73,7 +73,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Gameflex.Sample.Protocol.AuthenticationReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Com.Nhn.Gameanvil.Sample.Protocol.AuthenticationReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -202,7 +202,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Gameflex.Sample.Protocol.AuthenticationReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Com.Nhn.Gameanvil.Sample.Protocol.AuthenticationReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -230,9 +230,9 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     /// <summary>Field number for the "errorCode" field.</summary>
     public const int ErrorCodeFieldNumber = 1;
-    private global::Com.Nhn.Gameflex.Sample.Protocol.ErrorCode errorCode_ = 0;
+    private global::Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode errorCode_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Com.Nhn.Gameflex.Sample.Protocol.ErrorCode ErrorCode {
+    public global::Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode ErrorCode {
       get { return errorCode_; }
       set {
         errorCode_ = value;
@@ -314,7 +314,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            errorCode_ = (global::Com.Nhn.Gameflex.Sample.Protocol.ErrorCode) input.ReadEnum();
+            errorCode_ = (global::Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode) input.ReadEnum();
             break;
           }
         }
@@ -334,7 +334,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Gameflex.Sample.Protocol.AuthenticationReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Com.Nhn.Gameanvil.Sample.Protocol.AuthenticationReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -379,9 +379,9 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     /// <summary>Field number for the "loginType" field.</summary>
     public const int LoginTypeFieldNumber = 2;
-    private global::Com.Nhn.Gameflex.Sample.Protocol.LoginType loginType_ = 0;
+    private global::Com.Nhn.Gameanvil.Sample.Protocol.LoginType loginType_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Com.Nhn.Gameflex.Sample.Protocol.LoginType LoginType {
+    public global::Com.Nhn.Gameanvil.Sample.Protocol.LoginType LoginType {
       get { return loginType_; }
       set {
         loginType_ = value;
@@ -594,7 +594,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
             break;
           }
           case 16: {
-            loginType_ = (global::Com.Nhn.Gameflex.Sample.Protocol.LoginType) input.ReadEnum();
+            loginType_ = (global::Com.Nhn.Gameanvil.Sample.Protocol.LoginType) input.ReadEnum();
             break;
           }
           case 26: {
@@ -634,7 +634,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Com.Nhn.Gameflex.Sample.Protocol.AuthenticationReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Com.Nhn.Gameanvil.Sample.Protocol.AuthenticationReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -663,9 +663,9 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     /// <summary>Field number for the "errorCode" field.</summary>
     public const int ErrorCodeFieldNumber = 1;
-    private global::Com.Nhn.Gameflex.Sample.Protocol.ErrorCode errorCode_ = 0;
+    private global::Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode errorCode_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Com.Nhn.Gameflex.Sample.Protocol.ErrorCode ErrorCode {
+    public global::Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode ErrorCode {
       get { return errorCode_; }
       set {
         errorCode_ = value;
@@ -674,9 +674,9 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
 
     /// <summary>Field number for the "userdata" field.</summary>
     public const int UserdataFieldNumber = 2;
-    private global::Com.Nhn.Gameflex.Sample.Protocol.UserData userdata_;
+    private global::Com.Nhn.Gameanvil.Sample.Protocol.UserData userdata_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Com.Nhn.Gameflex.Sample.Protocol.UserData Userdata {
+    public global::Com.Nhn.Gameanvil.Sample.Protocol.UserData Userdata {
       get { return userdata_; }
       set {
         userdata_ = value;
@@ -757,7 +757,7 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
       }
       if (other.userdata_ != null) {
         if (userdata_ == null) {
-          userdata_ = new global::Com.Nhn.Gameflex.Sample.Protocol.UserData();
+          userdata_ = new global::Com.Nhn.Gameanvil.Sample.Protocol.UserData();
         }
         Userdata.MergeFrom(other.Userdata);
       }
@@ -773,12 +773,12 @@ namespace Com.Nhn.Gameflex.Sample.Protocol {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            errorCode_ = (global::Com.Nhn.Gameflex.Sample.Protocol.ErrorCode) input.ReadEnum();
+            errorCode_ = (global::Com.Nhn.Gameanvil.Sample.Protocol.ErrorCode) input.ReadEnum();
             break;
           }
           case 18: {
             if (userdata_ == null) {
-              userdata_ = new global::Com.Nhn.Gameflex.Sample.Protocol.UserData();
+              userdata_ = new global::Com.Nhn.Gameanvil.Sample.Protocol.UserData();
             }
             input.ReadMessage(userdata_);
             break;
