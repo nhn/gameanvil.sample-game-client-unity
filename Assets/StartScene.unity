@@ -1030,7 +1030,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Game Test Start
 
-    [ Snake Game, TapBird Game With Gameflex & Gamebase Auth ]'
+    [ Snake Game, TapBird Game With GameAnvil & Gamebase Auth ]'
 --- !u!222 &1036562113
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1168,7 +1168,7 @@ GameObject:
   - component: {fileID: 1242586359}
   - component: {fileID: 1242586358}
   m_Layer: 0
-  m_Name: GameflexConnector
+  m_Name: GameAnvilConnector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1280,7 +1280,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gameflex - Game Server Engine Team
+  m_Text: GameAnvil - Game Server Engine Team
 --- !u!222 &1468799327
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1522,7 +1522,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Platform Test Start
 
-    [ Only Gameflex API Test ]'
+    [ Only GameAnvil API Test ]'
 --- !u!222 &1688981267
 CanvasRenderer:
   m_ObjectHideFlags: 0
