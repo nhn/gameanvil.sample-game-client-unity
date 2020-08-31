@@ -85,46 +85,6 @@
             <param name="connectionAgent">ConnectionAgent</param>
             <param name="result">Connect의 결과</param>
         </member>
-        <member name="T:GameAnvil.Connection.Interface.IConnectionOnReconnectStart">
-            <summary>
-            ConnectionListener에서 자동 재접속 시작의 알림을 위한 인터페이스
-            </summary>
-        </member>
-        <member name="M:GameAnvil.Connection.Interface.IConnectionOnReconnectStart.OnReconnectStart(GameAnvil.Connection.ConnectionAgent,System.Int32)">
-            <summary>
-            자동 재접속 시작
-            </summary>
-            <param name="connectionAgent">ConnectionAgent</param>
-            <param name="reconnectNo">자동 재접속 시도 횟수</param>
-        </member>
-        <member name="T:GameAnvil.Connection.Interface.DelConnectionOnReconnectStart">
-            <summary>
-            자동 재접속 시작
-            </summary>
-            <param name="connectionAgent">ConnectionAgent</param>
-            <param name="reconnectNo">자동 재접속 시도 횟수</param>
-        </member>
-        <member name="T:GameAnvil.Connection.Interface.IConnectionOnReconnectFinish">
-            <summary>
-            ConnectionListener에서 자동 재접속 완료의 알림을 위한 인터페이스
-            </summary>
-        </member>
-        <member name="M:GameAnvil.Connection.Interface.IConnectionOnReconnectFinish.OnReconnectFinish(GameAnvil.Connection.ConnectionAgent,System.Int32,GameAnvil.Payload)">
-            <summary>
-            자동 재접속 완료
-            </summary>
-            <param name="connectionAgent">ConnectionAgent</param>
-            <param name="reconnectNo">자동 재접속 시도 횟수</param>
-            <param name="payload">추가 정보</param>
-        </member>
-        <member name="T:GameAnvil.Connection.Interface.DelConnectionOnReconnectFinish">
-            <summary>
-            자동 재접속 완료
-            </summary>
-            <param name="connectionAgent">ConnectionAgent</param>
-            <param name="reconnectNo">자동 재접속 시도 횟수</param>
-            <param name="payload">추가 정보</param>
-        </member>
         <member name="T:GameAnvil.Connection.Interface.IConnectionOnAuthentication">
             <summary>
             ConnectionListener에서 Authentication의 결과를 위한 인터페이스
@@ -315,13 +275,6 @@
             <summary>
             payload
             </summary>
-        </member>
-        <member name="M:GameAnvil.Connection.ConnectionAgent.UpdateAuthenticationPayload(GameAnvil.Payload)">
-            <summary>
-            Auth에서 사용된 payload 값을 갱신할 때 사용.
-            ex) 주기적 인증정보 갱신시, OnReconnectStart 발생시 호출
-            </summary>
-            <param name="payload"></param>
         </member>
         <member name="M:GameAnvil.Connection.ConnectionAgent.AddConnectionListener(GameAnvil.Connection.Interface.IConnectionListener)">
             <summary>
@@ -520,25 +473,6 @@
             </summary>
             <param name="userAgent">Login을 요청한 UserAgent객체</param>
             <param name="result">Login결과</param>
-            <param name="loginInfo">Login 정보</param>
-        </member>
-        <member name="T:GameAnvil.User.Interface.IUserOnReconnect">
-            <summary>
-            UserListener에서 자동 재접속 성공 알림을 위한 인터페이스
-            </summary>
-        </member>
-        <member name="M:GameAnvil.User.Interface.IUserOnReconnect.OnReconnect(GameAnvil.User.UserAgent,GameAnvil.User.UserAgent.LoginInfo)">
-            <summary>
-            자동 재접속 성공.
-            </summary>
-            <param name="userAgent">자동 재접속을 한 UserAgent 객체</param>
-            <param name="loginInfo">Login 정보</param>
-        </member>
-        <member name="T:GameAnvil.User.Interface.DelUserOnReconnect">
-            <summary>
-            자동 재접속 성공.
-            </summary>
-            <param name="userAgent">자동 재접속을 한 UserAgent 객체</param>
             <param name="loginInfo">Login 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnMatchRoom">
@@ -810,37 +744,6 @@
             <param name="channelId">이동한 체널의 ChannelId</param>
             <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
-        <member name="T:GameAnvil.User.Interface.IUserOnMoveService">
-            <summary>
-            UserListener에서 MoveService의 결과 또는 서버에서 강제로 수행한 서비스 이동 알림을 위한 인터페이스
-            </summary>
-        </member>
-        <member name="M:GameAnvil.User.Interface.IUserOnMoveService.OnMoveService(GameAnvil.User.UserAgent,GameAnvil.Defines.ResultCodeMoveService,System.Boolean,System.String,System.String,System.String,GameAnvil.Payload,GameAnvil.Payload)">
-            <summary>
-            MoveService의 결과
-            </summary>
-            <param name="userAgent">서비스를 이동한 UserAgent 객체</param>
-            <param name="result">서비스 이동의 결과</param>
-            <param name="force">강제로 서비스를 이동했는지 여부</param>
-            <param name="serviceName">이동한 서비스의 ServiceName</param>
-            <param name="channelId">이동한 서비스에서의 ChannelId</param>
-            <param name="userType">이동한 서비스에서의 UserType</param>
-            <param name="payloadService">서비스 관련 추가 정보. 서버의 IUser.onMoveOutService 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="payloadChannel">체널 관련 추가 정보. 서버의 IUser.onMoveOutChannel 구현에 따라 사용하지 않을 수 있음.</param>
-        </member>
-        <member name="T:GameAnvil.User.Interface.DelUserOnMoveService">
-            <summary>
-            MoveService의 결과
-            </summary>
-            <param name="userAgent">서비스를 이동한 UserAgent 객체</param>
-            <param name="result">서비스 이동의 결과</param>
-            <param name="force">강제로 서비스를 이동했는지 여부</param>
-            <param name="serviceName">이동한 서비스의 ServiceName</param>
-            <param name="channelId">이동한 서비스에서의 ChannelId</param>
-            <param name="userType">이동한 서비스에서의 UserType</param>
-            <param name="payloadService">서비스 관련 추가 정보. 서버의 IUser.onMoveOutService 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="payloadChannel">체널 관련 추가 정보. 서버의 IUser.onMoveOutChannel 구현에 따라 사용하지 않을 수 있음.</param>
-        </member>
         <member name="T:GameAnvil.User.Interface.IUserOnSnapshot">
             <summary>
             UserListener에서 Snapshot의 결과를 위한 인터페이스
@@ -862,7 +765,11 @@
             <param name="result">Snapshot의 결과</param>
             <param name="payload">추가 정보. 서버 구현에 따라 사용하지 않을 수 있음.</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:GameAnvil.User.Interface.IUserOnErrorCommand" -->
+        <member name="T:GameAnvil.User.Interface.IUserOnErrorCommand">
+            <summary>
+            UserListener에서 기본 기능 사용중 Error발생 알림을 위한 인터페이스
+            </summary>
+        </member>
         <member name="M:GameAnvil.User.Interface.IUserOnErrorCommand.OnError(GameAnvil.User.UserAgent,GameAnvil.Defines.ErrorCode,GameAnvil.User.Defines.Commands)">
             <summary>
             Error발생
@@ -1056,11 +963,6 @@
             Login 결과를 받을 delegate;
             </summary>
         </member>
-        <member name="F:GameAnvil.User.UserAgent.onReconnectListeners">
-            <summary>
-            자동 재접속 성공 알림을 받을 delegate
-            </summary>
-        </member>
         <member name="F:GameAnvil.User.UserAgent.onMatchRoomListeners">
             <summary>
             RoomMatch 결과를 받을 delegate
@@ -1121,11 +1023,6 @@
             MoveChannel 결과 또는 서버에서 강제로 수행한 체널 이동에 대한 알림을 받을 delegate
             </summary>
         </member>
-        <member name="F:GameAnvil.User.UserAgent.onMoveServiceListeners">
-            <summary>
-            MoveService 결과 또는 서버에서 강제로 수행한 서비스 이동에 대한 알림을 받을 delegate
-            </summary>
-        </member>
         <member name="F:GameAnvil.User.UserAgent.onSnapshotListeners">
             <summary>
             SnapShot 결과를 받을 delegate
@@ -1155,13 +1052,6 @@
             <summary>
             Admin에서 Kickout했을 경우 알림을 받을 delegate
             </summary>
-        </member>
-        <member name="M:GameAnvil.User.UserAgent.UpdateLoginPayload(GameAnvil.Payload)">
-            <summary>
-            Login시 사용된 payload값을 갱신할 때 사용.
-            자동 재접속 시 사용 됨.
-            </summary>
-            <param name="payload">업데이트할 payload</param>
         </member>
         <member name="M:GameAnvil.User.UserAgent.SetUserData(System.Object)">
             <summary>
@@ -1242,6 +1132,7 @@
             <summary>
             임의의 방을 생성하고 해당 방에 입장한다.
             </summary>
+            <param name="roomName">생성할 방의 roomName.</param>
             <param name="roomType">생성할 방의 roomType.</param>
             <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
             <param name="onCreateRoom">결과를 받을 delegate.</param>
@@ -1556,74 +1447,6 @@
             <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
             <param name="onMoveChannel">결과를 받을 delegate.</param>
         </member>
-        <member name="M:GameAnvil.User.UserAgent.MoveService(System.String,System.String)">
-            <summary>
-            지정한 서비스로 이동한다.
-            </summary>
-            <param name="serviceName">이동할 service의 ServiceName.</param>
-            <param name="userType">이동할 service에서 사용할 userType.</param>
-        </member>
-        <member name="M:GameAnvil.User.UserAgent.MoveService(System.String,System.String,GameAnvil.User.Interface.DelUserOnMoveService)">
-            <summary>
-            지정한 서비스로 이동한다.
-            </summary>
-            <param name="serviceName">이동할 service의 ServiceName.</param>
-            <param name="userType">이동할 service에서 사용할 userType.</param>
-            <param name="onMoveService">결과를 받을 delegate.</param>
-        </member>
-        <member name="M:GameAnvil.User.UserAgent.MoveService(System.String,System.String,GameAnvil.Payload)">
-            <summary>
-            지정한 서비스로 이동한다.
-            </summary>
-            <param name="serviceName">이동할 service의 ServiceName.</param>
-            <param name="userType">이동할 service에서 사용할 userType.</param>
-            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
-        </member>
-        <member name="M:GameAnvil.User.UserAgent.MoveService(System.String,System.String,GameAnvil.Payload,GameAnvil.User.Interface.DelUserOnMoveService)">
-            <summary>
-            지정한 서비스로 이동한다.
-            </summary>
-            <param name="serviceName">이동할 service의 ServiceName.</param>
-            <param name="userType">이동할 service에서 사용할 userType.</param>
-            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onMoveService">결과를 받을 delegate.</param>
-        </member>
-        <member name="M:GameAnvil.User.UserAgent.MoveService(System.String,System.String,System.String)">
-            <summary>
-            지정한 서비스로 이동한다.
-            </summary>
-            <param name="serviceName">이동할 service의 ServiceName.</param>
-            <param name="userType">이동할 service에서 사용할 userType.</param>
-            <param name="channelId">이동할 service에서 사용할 channelId.</param>
-        </member>
-        <member name="M:GameAnvil.User.UserAgent.MoveService(System.String,System.String,System.String,GameAnvil.User.Interface.DelUserOnMoveService)">
-            <summary>
-            지정한 서비스로 이동한다.
-            </summary>
-            <param name="serviceName">이동할 service의 ServiceName.</param>
-            <param name="userType">이동할 service에서 사용할 userType.</param>
-            <param name="channelId">이동할 service에서 사용할 channelId.</param>
-            <param name="onMoveService">결과를 받을 delegate.</param>
-        </member>
-        <member name="M:GameAnvil.User.UserAgent.MoveService(System.String,System.String,System.String,GameAnvil.Payload)">
-            <summary>
-            지정한 서비스로 이동한다.
-            </summary>
-            <param name="serviceName">이동할 service의 ServiceName.</param>
-            <param name="userType">이동할 service에서 사용할 userType.</param>
-            <param name="channelId">이동할 service에서 사용할 channelId.</param>
-            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
-        </member>
-        <member name="M:GameAnvil.User.UserAgent.MoveService(System.String,System.String,System.String,GameAnvil.Payload,GameAnvil.User.Interface.DelUserOnMoveService)">
-            <summary>
-            지정한 서비스로 이동한다.
-            </summary>
-            <param name="serviceName">이동할 service의 ServiceName.</param>
-            <param name="userType">이동할 service에서 사용할 userType.</param>
-            <param name="channelId">이동할 service에서 사용할 channelId.</param>
-            <param name="payload">서버에 전달할 추가 정보.서버 구현에 따라 사용하지 않을 수 있음.</param>
-            <param name="onMoveService">결과를 받을 delegate.</param>
-        </member>
         <member name="M:GameAnvil.User.UserAgent.Login(System.String)">
             <summary>
             서비스에 로그인한다.
@@ -1868,6 +1691,14 @@
             <param name="packet">패킷</param>
             <returns>IMessage를 상속받은 T 타입 메세지</returns>
         </member>
+        <member name="M:GameAnvil.PacketHelper.GetMessage(GameAnvil.Packet,System.Type)">
+            <summary>
+            Packet으로부터 Message를 가져온다.
+            </summary>
+            <param name="packet">패킷</param>
+            <param name="type">Message의 Type : IMessage</param>
+            <returns>IMessage</returns>
+        </member>
         <member name="M:GameAnvil.PacketHelper.GetMessageName(GameAnvil.Packet)">
             <summary>
             Packet에 담긴 Message의 이름을 가져온다. 
@@ -1887,7 +1718,13 @@
             </summary>
             <returns>ProtocolManager의 싱글턴 인스턴스.</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:GameAnvil.ProtocolManager.RegisterProtocol(System.UInt16,Google.Protobuf.Reflection.FileDescriptor)" -->
+        <member name="M:GameAnvil.ProtocolManager.RegisterProtocol(System.UInt16,Google.Protobuf.Reflection.FileDescriptor)">
+            <summary>
+            사용할 프로토콜을 등록한다.
+            </summary>
+            <param name="protocolId">등록할 프로토콜의 Id. 서버와 같은 값을 사용해야 한다. ( protocolId >= 0 &amp;&amp; protocolId &lt;= 510 )</param>
+            <param name="descriptor">등록할 프로토콜.</param>
+        </member>
         <member name="M:GameAnvil.ProtocolManager.UnregisterProtocol(System.UInt16)">
             <summary>
             등록한 프로토콜을 등록 해제한다. 
@@ -1911,7 +1748,7 @@
             Payload에 담긴 Packet으로부터 Message를 가져온다.
             </summary>
             <typeparam name="T">Message의 Type : IMessage</typeparam>
-            <param name="packet">패킷</param>
+            <param name="payload">Payload</param>
             <returns>IMessage를 상속받은 T 타입 메세지</returns>
         </member>
         <member name="T:GameAnvil.Connector">
@@ -1931,11 +1768,6 @@
             TimeOut 기본 대기시간 설정(단위 : sec, 기본값 15).
             </summary>
         </member>
-        <member name="F:GameAnvil.Connector.Config.defaultRetryCount">
-            <summary>
-            TimeOut시 재시도 횟수(기본값 : 0).
-            </summary>
-        </member>
         <member name="F:GameAnvil.Connector.Config.packetTimeout">
             <summary>
             패킷이 지정된 시간안에 업데이트 되지 않으면, disconnect 되었다고 판단된다.
@@ -1945,21 +1777,6 @@
         <member name="F:GameAnvil.Connector.Config.pingInterval">
             <summary>
             서버와의 연결을 확인하기 위한 ping 주기 설정(단위 : sec, 0일 경우 사용 안함, 기본값 3).
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Connector.Config.autoReconnectCount">
-            <summary>
-            접속이 끈겼을 경우 재접속 시도 횟수(기본값 : 0).
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Connector.Config.autoReconnectDelay">
-            <summary>
-            재접속 실패시 다음 재접속 시도까지 대기시간(단위 : sec, 기본값 : 3).
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Connector.Config.autoReconnectTimeout">
-            <summary>
-            재접속시 연결 대기시간 (단위 : sec, 기본값 : 15).
             </summary>
         </member>
         <member name="F:GameAnvil.Connector.Config.useIPv6">
@@ -2047,12 +1864,6 @@
             </summary>
             <returns>접속되었으면 true, 아니면 false</returns>
         </member>
-        <member name="M:GameAnvil.Connector.IsReconnecting">
-            <summary>
-            자동 재접속 중인지 확인한다.
-            </summary>
-            <returns>재접속 중이면 true, 아니면 false</returns>
-        </member>
         <member name="M:GameAnvil.Connector.IsAuthenticate">
             <summary>
             인증되었는지 확인한다.
@@ -2086,7 +1897,13 @@
             <param name="packets"> 추가할 Packet 의 콜랙션 </param>
             <returns>메서드 체인을 지원하기위해 Payload 을 리턴한다.</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:GameAnvil.Payload.getPacket``1" -->
+        <member name="M:GameAnvil.Payload.getPacket``1">
+            <summary>
+            T를 담은 Packet 을 리턴한다. 없을 경우 null을 리턴한다.
+            </summary>
+            <typeparam name="T"> 프로토콜 버퍼의 IMessage 를 상속받은 Type </typeparam>
+            <returns>T가 담긴 Packet. 없을 경우 null.</returns>
+        </member>
         <member name="M:GameAnvil.Payload.getPacket(System.Int32)">
             <summary>
             임의의 Id와 byte[] 를 담은 Packet 을 리턴한다. 없을 경우 null을 리턴한다.
@@ -2100,7 +1917,13 @@
             </summary>
             <returns>모든 패킷을 담은 ICollection</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:GameAnvil.Payload.contains``1" -->
+        <member name="M:GameAnvil.Payload.contains``1">
+            <summary>
+            T를 담은 Packet이 있는지 확인한다.
+            </summary>
+            <typeparam name="T"> 프로토콜 버퍼의 IMessage 를 상속받은 Type </typeparam>
+            <returns>있으면 true, 없으면 false</returns>
+        </member>
         <member name="M:GameAnvil.Payload.contains(System.Int32)">
             <summary>
             임의의 Id와 byte[]를 담은 Packet 이 있는지 확인한다.
@@ -2171,6 +1994,11 @@
         <member name="F:GameAnvil.Defines.ResultCodeAuth.AUTH_FAIL_MAINTENANCE">
             <summary>
             실패. 점검중.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeAuth.AUTH_FAIL_INVALID_ACCOUNT_ID">
+            <summary>
+            실패. 잘못된 AccountId.
             </summary>
         </member>
         <member name="T:GameAnvil.Defines.ResultCodeCreateRoom">
@@ -2278,36 +2106,6 @@
             실패. 컨텐츠에서 거부됨.
             </summary>
         </member>
-        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_LOGINED_OTHER_SERVICE">
-            <summary>
-            실패. 다른 서비스에 로그인 되어있음.
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_LOGINED_SAME_SERVICE">
-            <summary>
-            실패. 같은 서비스에 로그인 되어있음(Sub 아이디가 다른경우 발생).
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_INVALID_SERVICEID">
-            <summary>
-            실패. 잘못된 서비스 아이디.
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_INVALID_USERTYPE">
-            <summary>
-            실패. 잘못된 유저 타입.
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_EMPTY_SUB_ID">
-            <summary>
-            실패. 잘못된 SubId.
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_LOGINED_OTHER_CHANNEL">
-            <summary>
-            실패. 다른 채널에 로그인 되어있음.
-            </summary>
-        </member>
         <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_NOT_EXIST_NODE">
             <summary>
             실패. 노드가 존재하지 않음.
@@ -2321,6 +2119,46 @@
         <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_TIMEOUT_GAME_SERVER">
             <summary>
             실패. 게임서버가 응답하지 않음.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_INVALID_SERVICEID">
+            <summary>
+            실패. 잘못된 서비스 아이디.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_INVALID_USERTYPE">
+            <summary>
+            실패. 잘못된 유저 타입.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_INVALID_USERID">
+            <summary>
+            실패. 잘못된 유저 아이디.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_INVALID_SUB_ID">
+            <summary>
+            실패. 잘못된 SubId.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_LOGINED_OTHER_SERVICE">
+            <summary>
+            실패. 다른 서비스에 로그인 되어있음.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_LOGINED_OTHER_CHANNEL">
+            <summary>
+            실패. 다른 채널에 로그인 되어있음.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_LOGINED_OTHER_USER_TYPE">
+            <summary>
+            실패. 동일 Account 아이디로 다른 UserType이 로그인 되어있음.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_LOGINED_OTHER_DEVICE">
+            <summary>
+            실패. 동일 Account 아이디로 다른 DeviceId가 로그인 되어있음.
             </summary>
         </member>
         <member name="T:GameAnvil.Defines.ResultCodeLogout">
@@ -2358,11 +2196,6 @@
             실패. 이미 매칭이 이루어짐.
             </summary>
         </member>
-        <member name="F:GameAnvil.Defines.ResultCodeMatchUserCancel.MATCH_USER_CANCEL_FAIL_MATCH_UNKNOWN_ERROR">
-            <summary>
-            실패. 알 수 없는 에러 발생.
-            </summary>
-        </member>
         <member name="T:GameAnvil.Defines.ResultCodeMatchPartyStart">
             <summary>
             MatchPartyStart 결과 코드.
@@ -2376,11 +2209,6 @@
         <member name="F:GameAnvil.Defines.ResultCodeMatchPartyStart.MATCH_PARTY_START_FAIL_CONTENT">
             <summary>
             실패. 컨텐츠에서 거부됨.
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Defines.ResultCodeMatchPartyStart.MATCH_PARTY_START_FAIL_MATCH_UNKNOWN_ERROR">
-            <summary>
-            실패. 알 수 없는 에러 발생.
             </summary>
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeMatchPartyStart.MATCH_PARTY_START_FAIL_PARTY_MATCH_WEIRD">
@@ -2423,11 +2251,6 @@
             실패. 이미 매치 매이킹이 진행중인 경우.
             </summary>
         </member>
-        <member name="F:GameAnvil.Defines.ResultCodeMatchRoom.MATCH_ROOM_FAIL_UNKNOWN_ERROR">
-            <summary>
-            실패. 알 수 없는 에러 발생.
-            </summary>
-        </member>
         <member name="F:GameAnvil.Defines.ResultCodeMatchRoom.MATCH_ROOM_FAIL_MATCHED_ROOM_DOES_NOT_EXIST">
             <summary>
             실패. 조건에 맞는 방을 찾아 방에 참가 시키는 도중, 방이 사라짐.
@@ -2446,11 +2269,6 @@
         <member name="F:GameAnvil.Defines.ResultCodeMatchPartyCancel.MATCH_PARTY_CANCEL_FAIL_CONTENT">
             <summary>
             실패. 컨텐츠에서 거부됨
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Defines.ResultCodeMatchPartyCancel.MATCH_PARTY_CANCEL_FAIL_MATCH_UNKNOWN_ERROR">
-            <summary>
-            실패. 알 수 없는 에러 발생.
             </summary>
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeMatchPartyCancel.MATCH_PARTY_CANCEL_FAIL_PARTY_MATCH_WEIRD">
@@ -2498,11 +2316,6 @@
             실패. 이미 방에 들어가 있음.
             </summary>
         </member>
-        <member name="F:GameAnvil.Defines.ResultCodeMatchUserStart.MATCH_USER_START_FAIL_MATCH_UNKNOWN_ERROR">
-            <summary>
-            실패. 알 수 없는 에러 발생.
-            </summary>
-        </member>
         <member name="T:GameAnvil.Defines.ResultCodeMoveChannel">
             <summary>
             MoveChannel 결과 코드.
@@ -2533,36 +2346,6 @@
             실패. 이미 방에 입장하여 체널 이동을 할 수 없음.
             </summary>
         </member>
-        <member name="T:GameAnvil.Defines.ResultCodeMoveService">
-            <summary>
-            MoveService 결과 코드.
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Defines.ResultCodeMoveService.MOVE_SERVICE_SUCCESS">
-            <summary>
-            성공.
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Defines.ResultCodeMoveService.MOVE_SERVICE_FAIL_CONTENT">
-            <summary>
-            실패. 컨텐츠에서 거부됨.
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Defines.ResultCodeMoveService.MOVE_SERVICE_FAIL_ALREADY_JOINED_ROOM">
-            <summary>
-            실패. 이미 방에 들어가 있음.
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Defines.ResultCodeMoveService.MOVE_SERVICE_FAIL_ALREADY_JOINED_SERVICE">
-            <summary>
-            실패. 이미 서비스에 들어가 있음.
-            </summary>
-        </member>
-        <member name="F:GameAnvil.Defines.ResultCodeMoveService.MOVE_SERVICE_FAIL_SERVICE_DOES_NOT_EXIST">
-            <summary>
-            실패. 해당 서비스가 존재하지 않음.
-            </summary>
-        </member>
         <member name="T:GameAnvil.Defines.ResultCodeNamedRoom">
             <summary>
             NamedRoom 결과 코드.
@@ -2588,6 +2371,11 @@
             실패. 이미 방에 들어가 있음.
             </summary>
         </member>
+        <member name="F:GameAnvil.Defines.ResultCodeNamedRoom.NAMED_ROOM_FAIL_INVALID_ROOM_NAME">
+            <summary>
+            실패. 잘못된 방 이름을 보냈을 경우.
+            </summary>
+        </member>
         <member name="T:GameAnvil.Defines.ResultCodeSnapshot">
             <summary>
             Snapshot 결과 코드.
@@ -2608,34 +2396,80 @@
             Disconnect가 된 이유
             </summary>
         </member>
-        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_SYSTEM">
+        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_SYSTEM_ERROR">
             <summary>
-            시스템 오류로 인한 강제 종료. 일반적으로 발생하지 않으며 발생 할 경우 문의주세요.
+            시스템 오류로 인한 강제 종료. 
+            일반적으로 클라이언트에서 이 코드를 받을 일은 거의 없으며, 이 코드를 받았다면 GameAnvil 개발팀에 문의 바람.
             </summary>
         </member>
-        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_CONTENT">
+        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_BASE_CONNECTION">
             <summary>
-            컨텐츠에서 강제 종료
+            서버에서 BaseConnection의 close() 호출
             </summary>
         </member>
-        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_DUPLICATE_LOGIN">
+        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_BASE_USER">
             <summary>
-            중복접속으로 인한 강제 종료
+            서버에서 BaseUser의 closeConnection() 호출
             </summary>
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_ADMIN_KICK">
             <summary>
-            Admin에서 강제 종료
+            Admin에서 강제 종료.
             </summary>
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_MAINTENANCE">
             <summary>
-            서버 점검으로 인한 강제 종료
+            서버 점검으로 인한 강제 종료.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_INVALID_NODE">
+            <summary>
+            GameNode가 invalid 상태로 변경된 경우.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_USER_TRANSFER_FAIL">
+            <summary>
+            유저 트렌스퍼가 실패한 경우.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_USER_TRANSFER_ERROR">
+            <summary>
+            유저 트렌스퍼중 시스템 에러가 발생한 경우.
             </summary>
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_AUTHENTICATION_FAIL">
             <summary>
-            인증 실패로 인한 강제 종료
+            인증 실패로 인한 강제 종료.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_DUPLICATE_LOGIN">
+            <summary>
+            중복접속으로 인한 강제 종료.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_BY_NEW_CONNECTION">
+            <summary>
+            같은 계정 정보로 새로운 로그인 요청이 들어온 경우. 
+            네트워크 순단 등으로 재접속을 하면 이전의 접속을 종료하면서 이 코드를 사용한다. 
+            일반적으로 클라이언트에서 이 코드를 받을 일은 거의 없으며, 이 코드를 받았다면 GameAnvil 개발팀에 문의 바람.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_DISCONNECT_ALARM">
+            <summary>
+            세션 정보를 찾을 수 없는 경우.
+            일반적으로 클라이언트에서 이 코드를 받을 일은 거의 없으며, 이 코드를 받았다면 GameAnvil 개발팀에 문의 바람.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_CHECK_CLIENT_STATE_FAIL">
+            <summary>
+            클라이언트가 서버의 상태 체크에 응답을 하지 않은 경우.
+            일반적으로 클라이언트에서 이 코드를 받을 일은 거의 없으며, 이 코드를 받았다면 GameAnvil 개발팀에 문의 바람.
+            </summary>
+        </member>
+        <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_GHOST_USER">
+            <summary>
+            고스트 유저인 경우.
+            일반적으로 클라이언트에서 이 코드를 받을 일은 거의 없으며, 이 코드를 받았다면 GameAnvil 개발팀에 문의 바람.
             </summary>
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeDisconnect.SOCKET_DISCONNECT">
@@ -2720,6 +2554,297 @@
             </summary>
             <param name="priority">Packet의 우선순위</param>
         </member>
+        <member name="T:Com.Nhn.Gameanvilcore.Protocol.ErrorReflection">
+            <summary>Holder for reflection information generated from error.proto</summary>
+        </member>
+        <member name="P:Com.Nhn.Gameanvilcore.Protocol.ErrorReflection.Descriptor">
+            <summary>File descriptor for error.proto</summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.AuthSuccess">
+            <summary>
+            Authentication
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LoginSuccess">
+            <summary>
+            Login
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LoginFailNotExistNode">
+            <summary>
+            서비스 중인 노드가 없을 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LoginFailMaintenance">
+            <summary>
+            점검 중일 경우
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LoginFailTimeoutGameServer">
+            <summary>
+            GameServer가 응답하지 않을 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LoginFailInvalidServiceid">
+            <summary>
+            잘못된 ServiceId가 사용될 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LoginFailInvalidUsertype">
+            <summary>
+            잘못된 UserType이 사용될 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LoginFailInvalidUserId">
+            <summary>
+            잘못된 UserId를 보냈을 경우
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LoginFailInvalidSubId">
+            <summary>
+            잘못된 SubId를 보냈을 경우
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LoginFailLoginedOtherService">
+            <summary>
+            동일 Account 아이디로 다른 서비스에 로그인 되어있음.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LoginFailLoginedOtherChannel">
+            <summary>
+            동일 Account 아이디로 다른 채널에 로그인 되어있음.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LoginFailLoginedOtherUserType">
+            <summary>
+            동일 Account 아이디로 다른 UserType이 로그인 되어있음.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LoginFailLoginedOtherDevice">
+            <summary>
+            동일 Account 아이디로 다른 DeviceId가 로그인 되어있음.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LogoutSuccess">
+            <summary>
+            Logout
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.SnapshotSuccess">
+            <summary>
+            Snapshot
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.CreateRoomSuccess">
+            <summary>
+            CreateRoom
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.CreateRoomFailAlreadyJoinedRoom">
+            <summary>
+            이미 룸에 들어가있는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.JoinRoomSuccess">
+            <summary>
+            JoinRoom
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.JoinRoomFailRoomDoesNotExist">
+            <summary>
+            룸이 존재하지 않는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.JoinRoomFailAlreadyJoinedRoom">
+            <summary>
+            이미 룸에 들어가있는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.LeaveRoomSuccess">
+            <summary>
+            LeaveRoom
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchRoomSuccess">
+            <summary>
+            MatchRoom
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchRoomFailRoomDoesNotExist">
+            <summary>
+            룸이 존재하지 않는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchRoomFailAlreadyJoinedRoom">
+            <summary>
+            이미 룸에 들어가있는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchRoomFailLeaveRoom">
+            <summary>
+            방 이동 기능으로 매칭시킬 때, 기존방에서 나가기가 실패한 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchRoomFailInProgress">
+            <summary>
+            이미 매치 매이킹이 진행중인 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchRoomFailMatchedRoomDoesNotExist">
+            <summary>
+            매칭은 되었으나 해당 방이 존재하지 않는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.NamedRoomSuccess">
+            <summary>
+            NamedRoom
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.NamedRoomFailRoomDoesNotExist">
+            <summary>
+            룸이 존재하지 않는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.NamedRoomFailAlreadyJoinedRoom">
+            <summary>
+            이미 룸에 들어가있는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.NamedRoomFailInvalidRoomName">
+            <summary>
+            잘못된 룸 이름을 보냈을 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchUserStartSuccess">
+            <summary>
+            MatchUserStart
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchUserStartFailAlreadyJoinedRoom">
+            <summary>
+            이미 룸에 들어가있는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchUserCancelSuccess">
+            <summary>
+            MatchUserCancel
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchUserCancelFailAlreadyJoinedRoom">
+            <summary>
+            이미 룸에 들어가있는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchPartyStartSuccess">
+            <summary>
+            MatchPartyStart
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchPartyStartFailPartyMatchWeird">
+            <summary>
+            Party Room이 아닌 방으로부터 파티 매칭 요청
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchPartyCancelSuccess">
+            <summary>
+            MatchPartyCancel
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchPartyCancelFailPartyMatchWeird">
+            <summary>
+            Party Room이 아닌 방으로부터 파티 매칭 요청
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchUserDoneSuccess">
+            <summary>
+            MatchUserDone
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MatchUserDoneFailRoomDoesNotExist">
+            <summary>
+            룸이 존재하지 않는 경우.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.MoveChannelSuccess">
+            <summary>
+            MoveChannel
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ChannelListSuccess">
+            <summary>
+            ChannelList
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ChannelInfoSuccess">
+            <summary>
+            ChannelInfo
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ForceCloseSystemError">
+            <summary>
+            Disconnect
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ForceCloseBaseConnection">
+            <summary>
+            Disconnect by content
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ForceCloseBaseUser">
+            <summary>
+            BaseUser의 closeConnection() 호출
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ForceCloseAdminKick">
+            <summary>
+            Admin에서 kick
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ForceCloseMaintenance">
+            <summary>
+            Disconnect by server state
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ForceCloseInvalidNode">
+            <summary>
+            GameNode 상태가 Invalid 로 변경되었을 경우
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ForceCloseAuthenticationFail">
+            <summary>
+            Disconnect by client
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ForceCloseDuplicateLogin">
+            <summary>
+            중복 로그인
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ForceCloseByNewConnection">
+            <summary>
+            Disconnect by server state. client can't receive.
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ForceCloseDisconnectAlarm">
+            <summary>
+            Session을 찾을 수 없는 경우
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ForceCloseCheckClientStateFail">
+            <summary>
+            클라이언트가 CHECK_CLIENT_STATE에 응답하지 않을 경우
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.ForceCloseGhostUser">
+            <summary>
+            GhostUser
+            </summary>
+        </member>
+        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ErrorCode.SocketDisconnect">
+            <summary>
+            Disconnect by socket state. used by client only.
+            </summary>
+        </member>
         <member name="T:Com.Nhn.Gameanvilcore.Protocol.BaseReflection">
             <summary>Holder for reflection information generated from base.proto</summary>
         </member>
@@ -2739,161 +2864,6 @@
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.TargetType.GatewaySession">
             <summary>
             Gateway. user
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeLogin.LoginFailLoginedOtherService">
-            <summary>
-            동일 Account 아이디로 다른 서비스에 로그인 되어있음.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeLogin.LoginFailLoginedSameService">
-            <summary>
-            동일 Account 아이디로 현재 서비스에 이미 로그인 되어있음. (Sub 아이디가 다른경우 발생)
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeLogin.LoginFailInvalidServiceid">
-            <summary>
-            잘못된 ServiceId가 사용될 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeLogin.LoginFailInvalidUsertype">
-            <summary>
-            잘못된 UserType이 사용될 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeLogin.LoginFailEmptySubId">
-            <summary>
-            SubId를 0으로 보냈을 경우
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeLogin.LoginFailLoginedOtherChannel">
-            <summary>
-            동일 Account 아이디로 다른 채널에 로그인 되어있음.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeLogin.LoginFailNotExistNode">
-            <summary>
-            서비스 중인 노드가 없을 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeLogin.LoginFailMaintenance">
-            <summary>
-            점검 중일 경우
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeLogin.LoginFailTimeoutGameServer">
-            <summary>
-            GameServer가 응답하지 않을 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeCreateRoom.CreateRoomFailAlreadyJoinedRoom">
-            <summary>
-            이미 룸에 들어가있는 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeJoinRoom.JoinRoomFailRoomDoesNotExist">
-            <summary>
-            룸이 존재하지 않는 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeJoinRoom.JoinRoomFailAlreadyJoinedRoom">
-            <summary>
-            이미 룸에 들어가있는 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchRoom.MatchRoomFailRoomDoesNotExist">
-            <summary>
-            룸이 존재하지 않는 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchRoom.MatchRoomFailAlreadyJoinedRoom">
-            <summary>
-            이미 룸에 들어가있는 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchRoom.MatchRoomFailLeaveRoom">
-            <summary>
-            방 이동 기능으로 매칭시킬 때, 기존방에서 나가기가 실패한 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchRoom.MatchRoomFailInProgress">
-            <summary>
-            이미 매치 매이킹이 진행중인 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchRoom.MatchRoomFailUnknownError">
-            <summary>
-            매칭 과정에서 알 수 없는 예외 발생
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchRoom.MatchRoomFailMatchedRoomDoesNotExist">
-            <summary>
-            매칭은 되었으나 해당 방이 존재하지 않는 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeNamedRoom.NamedRoomFailRoomDoesNotExist">
-            <summary>
-            룸이 존재하지 않는 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeNamedRoom.NamedRoomFailAlreadyJoinedRoom">
-            <summary>
-            이미 룸에 들어가있는 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchUserStart.MatchUserStartFailAlreadyJoinedRoom">
-            <summary>
-            이미 룸에 들어가있는 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchUserStart.MatchUserStartFailMatchUnknownError">
-            <summary>
-            매칭 과정에서 Timeout을 제외한 알 수 없는 예외 발생
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchPartyStart.MatchPartyStartFailMatchUnknownError">
-            <summary>
-            매칭 과정에서 Timeout을 제외한 알 수 없는 예외 발생
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchPartyStart.MatchPartyStartFailPartyMatchWeird">
-            <summary>
-            Party Room이 아닌 방으로부터 파티 매칭 요청
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchPartyCancel.MatchPartyCancelFailMatchUnknownError">
-            <summary>
-            매칭 과정에서 Timeout을 제외한 알 수 없는 예외 발생
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchPartyCancel.MatchPartyCancelFailPartyMatchWeird">
-            <summary>
-            Party Room이 아닌 방으로부터 파티 매칭 요청
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchUserDone.MatchUserDoneFailRoomDoesNotExist">
-            <summary>
-            룸이 존재하지 않는 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchUserCancel.MatchUserCancelFailAlreadyJoinedRoom">
-            <summary>
-            이미 룸에 들어가있는 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeMatchUserCancel.MatchUserCancelFailMatchUnknownError">
-            <summary>
-            매칭 과정에서 Timeout을 제외한 알 수 없는 예외 발생
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeChannelList.ChannelListFailInvalidServiceid">
-            <summary>
-            잘못된 ServiceId가 사용될 경우.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ResultCodeChannelInfo.ChannelInfoFailInvalidServiceid">
-            <summary>
-            잘못된 ServiceId가 사용될 경우.
             </summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.Header.ErrorCodeFieldNumber">
@@ -2959,9 +2929,6 @@
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.AuthenticationReq.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
         </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.AuthenticationRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
-        </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.AuthenticationRes.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
         </member>
@@ -2990,9 +2957,6 @@
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.LoginReq.UserTypeFieldNumber">
             <summary>Field number for the "user_type" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.LoginRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.LoginRes.UserIdFieldNumber">
             <summary>Field number for the "user_id" field.</summary>
@@ -3060,115 +3024,17 @@
             to onLogin or onReLogin.
             </summary>
         </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectResultInfo.SubIdFieldNumber">
-            <summary>Field number for the "sub_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectResultInfo.ServiceIdFieldNumber">
-            <summary>Field number for the "service_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectResultInfo.UserIdFieldNumber">
-            <summary>Field number for the "user_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectResultInfo.UserTypeFieldNumber">
-            <summary>Field number for the "user_type" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectResultInfo.ChannelIdFieldNumber">
-            <summary>Field number for the "channel_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectResultInfo.RoomIdFieldNumber">
-            <summary>Field number for the "room_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectResultInfo.RoomNameFieldNumber">
-            <summary>Field number for the "room_name" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectResultInfo.PayloadFieldNumber">
-            <summary>Field number for the "payload" field.</summary>
-        </member>
-        <member name="P:Com.Nhn.Gameanvilcore.Protocol.ReconnectResultInfo.Payload">
-            <summary>
-            from onReLogin.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectResultInfo.RoomPayloadFieldNumber">
-            <summary>Field number for the "room_payload" field.</summary>
-        </member>
-        <member name="P:Com.Nhn.Gameanvilcore.Protocol.ReconnectResultInfo.RoomPayload">
-            <summary>
-            from onReJoinRoom.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectResultInfo.IsUserMatchingFieldNumber">
-            <summary>Field number for the "is_user_matching" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectReq.AccountIdFieldNumber">
-            <summary>Field number for the "account_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectReq.PasswordFieldNumber">
-            <summary>Field number for the "password" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectReq.DeviceIdFieldNumber">
-            <summary>Field number for the "device_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectReq.PayloadFieldNumber">
-            <summary>Field number for the "payload" field.</summary>
-        </member>
-        <member name="P:Com.Nhn.Gameanvilcore.Protocol.ReconnectReq.Payload">
-            <summary>
-            to onAuth.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectReq.UserListFieldNumber">
-            <summary>Field number for the "user_list" field.</summary>
-        </member>
-        <member name="P:Com.Nhn.Gameanvilcore.Protocol.ReconnectReq.UserList">
-            <summary>
-            재접속 하려는 유저 목록.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectRes.ResultListFieldNumber">
-            <summary>Field number for the "result_list" field.</summary>
-        </member>
-        <member name="P:Com.Nhn.Gameanvilcore.Protocol.ReconnectRes.ResultList">
-            <summary>
-            재접속 완료 목록.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectRes.PayloadFieldNumber">
-            <summary>Field number for the "payload" field.</summary>
-        </member>
-        <member name="P:Com.Nhn.Gameanvilcore.Protocol.ReconnectRes.Payload">
-            <summary>
-            from onAuth.
-            </summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ReconnectRes.ServiceIdsFieldNumber">
-            <summary>Field number for the "service_ids" field.</summary>
-        </member>
-        <member name="P:Com.Nhn.Gameanvilcore.Protocol.ReconnectRes.ServiceIds">
-            <summary>
-            &lt;serviceName, serviceId>
-            </summary>
-        </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.LogoutReq.SubIdFieldNumber">
             <summary>Field number for the "sub_id" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.LogoutReq.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
         </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.LogoutRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
-        </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.LogoutRes.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.SnapshotReq.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.SnapshotRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.SnapshotRes.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
@@ -3181,9 +3047,6 @@
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.CreateRoomReq.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.CreateRoomRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.CreateRoomRes.RoomIdFieldNumber">
             <summary>Field number for the "room_id" field.</summary>
@@ -3203,9 +3066,6 @@
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.JoinRoomReq.RoomTypeFieldNumber">
             <summary>Field number for the "room_type" field.</summary>
         </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.JoinRoomRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
-        </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.JoinRoomRes.RoomIdFieldNumber">
             <summary>Field number for the "room_id" field.</summary>
         </member>
@@ -3217,9 +3077,6 @@
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.LeaveRoomReq.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.LeaveRoomRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.LeaveRoomRes.RoomIdFieldNumber">
             <summary>Field number for the "room_id" field.</summary>
@@ -3244,9 +3101,6 @@
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchRoomReq.LeaveRoomPayloadFieldNumber">
             <summary>Field number for the "leave_room_payload" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchRoomRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchRoomRes.CreatedFieldNumber">
             <summary>Field number for the "created" field.</summary>
@@ -3277,9 +3131,6 @@
             Party matchmaking을 위한 방인가?
             </summary>
         </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.NamedRoomRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
-        </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.NamedRoomRes.CreatedFieldNumber">
             <summary>Field number for the "created" field.</summary>
         </member>
@@ -3298,9 +3149,6 @@
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchUserStartReq.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
         </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchUserStartRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
-        </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchUserStartRes.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
         </member>
@@ -3310,20 +3158,11 @@
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchPartyStartReq.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
         </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchPartyStartResOrNoti.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
-        </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchPartyStartResOrNoti.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchPartyCancelReq.RoomTypeFieldNumber">
             <summary>Field number for the "room_type" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchPartyCancelResOrNoti.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchUserDone.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchUserDone.CreatedFieldNumber">
             <summary>Field number for the "created" field.</summary>
@@ -3337,17 +3176,11 @@
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchUserCancelReq.RoomTypeFieldNumber">
             <summary>Field number for the "room_type" field.</summary>
         </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MatchUserCancelRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
-        </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveChannelReq.ChannelIdFieldNumber">
             <summary>Field number for the "channel_id" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveChannelReq.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveChannelRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveChannelRes.ChannelIdFieldNumber">
             <summary>Field number for the "channel_id" field.</summary>
@@ -3355,44 +3188,8 @@
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveChannelRes.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
         </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceReq.ServiceIdFieldNumber">
-            <summary>Field number for the "service_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceReq.ChannelIdFieldNumber">
-            <summary>Field number for the "channel_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceReq.UserTypeFieldNumber">
-            <summary>Field number for the "user_type" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceReq.PayloadFieldNumber">
-            <summary>Field number for the "payload" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceRes.ServiceIdFieldNumber">
-            <summary>Field number for the "service_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceRes.ChannelIdFieldNumber">
-            <summary>Field number for the "channel_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceRes.UserTypeFieldNumber">
-            <summary>Field number for the "user_type" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceRes.PayloadChannelFieldNumber">
-            <summary>Field number for the "payload_channel" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceRes.PayloadServiceFieldNumber">
-            <summary>Field number for the "payload_service" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceRes.PrevServiceIdFieldNumber">
-            <summary>Field number for the "prev_service_id" field.</summary>
-        </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.GetChannelListReq.ServiceIdFieldNumber">
             <summary>Field number for the "service_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.GetChannelListRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.GetChannelListRes.ChannelListFieldNumber">
             <summary>Field number for the "channel_list" field.</summary>
@@ -3408,17 +3205,11 @@
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.GetChannelInfoReq.ChannelIdFieldNumber">
             <summary>Field number for the "channel_id" field.</summary>
         </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.GetChannelInfoRes.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
-        </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.GetChannelInfoRes.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.ForceLogoutNoti.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.ForceCloseNoti.ResultCodeFieldNumber">
-            <summary>Field number for the "result_code" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.ForceCloseNoti.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
@@ -3434,24 +3225,6 @@
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveChannelNoti.PayloadFieldNumber">
             <summary>Field number for the "payload" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceNoti.ServiceIdFieldNumber">
-            <summary>Field number for the "service_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceNoti.ChannelIdFieldNumber">
-            <summary>Field number for the "channel_id" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceNoti.UserTypeFieldNumber">
-            <summary>Field number for the "user_type" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceNoti.PayloadChannelFieldNumber">
-            <summary>Field number for the "payload_channel" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceNoti.PayloadServiceFieldNumber">
-            <summary>Field number for the "payload_service" field.</summary>
-        </member>
-        <member name="F:Com.Nhn.Gameanvilcore.Protocol.MoveServiceNoti.PrevServiceIdFieldNumber">
-            <summary>Field number for the "prev_service_id" field.</summary>
         </member>
         <member name="F:Com.Nhn.Gameanvilcore.Protocol.Notice.MessageFieldNumber">
             <summary>Field number for the "message" field.</summary>
