@@ -53,7 +53,7 @@ namespace GameAnvilConnector
         {
             if (connector.IsConnected())
             {
-                connector.CloseSocket();
+                //connector.CloseSocket();
             }
         }
     }

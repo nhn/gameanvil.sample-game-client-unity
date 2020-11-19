@@ -1,4 +1,4 @@
 <linker>
-	<assembly fullname="Gameflex" preserve="all"/>
+	<assembly fullname="GameAnvil" preserve="all"/>
     <assembly fullname="Google.Protobuf" preserve="all"/>
 </linker>
