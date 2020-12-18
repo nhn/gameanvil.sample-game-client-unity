@@ -1,4 +1,0 @@
-<linker>
-	<assembly fullname="GameAnvil" preserve="all"/>
-    <assembly fullname="Google.Protobuf" preserve="all"/>
-</linker>
