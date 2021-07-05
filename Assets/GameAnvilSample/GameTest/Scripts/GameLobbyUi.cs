@@ -169,7 +169,7 @@ public class GameLobbyUi : MonoBehaviour
             Difficulty = Com.Nhn.Gameanvil.Sample.Protocol.DifficultyType.DifficultyNormal
         };
         Debug.Log("startGameReq" + startGameReq);
-        gameUser.CreateRoom(Constants.SPACE_ROOM_TYPE_SINGLE, new Payload().add(new Packet(startGameReq)), (UserAgent userAgent, ResultCodeCreateRoom result, int roomId, string roomName, Payload payload) =>
+        gameUser.CreateRoom(Constants.SPACE_ROOM_TYPE_SINGLE, new Payload().Add(new Packet(startGameReq)), (UserAgent userAgent, ResultCodeCreateRoom result, int roomId, string roomName, Payload payload) =>
         {
             Debug.Log("CreateRoom " + result);
 
@@ -197,7 +197,7 @@ public class GameLobbyUi : MonoBehaviour
 
         // ===========================================================================================>>> GameAnvil
         // 만들어 져있는 방에 들어가는 룸매치 요청 - 혼자서도 플레이가 가능하다. 최대 인원수 까지 모두 입장
-        gameUser.MatchRoom(Constants.SPACE_ROOM_TYPE_MULTI_ROOM_MATCH, true, false, (UserAgent userAgent, ResultCodeMatchRoom result, int roomId, string roomName, bool created, Payload payload) =>
+        gameUser.MatchRoom(Constants.SPACE_ROOM_TYPE_MULTI_ROOM_MATCH, "UNLIMITED_TAP", true, false, (UserAgent userAgent, ResultCodeMatchRoom result, int resultCode, int roomId, string roomName, bool created, Payload payload) =>
         {
             Debug.Log("MatchRoom " + result);
             if (result == ResultCodeMatchRoom.MATCH_ROOM_SUCCESS)
@@ -224,7 +224,7 @@ public class GameLobbyUi : MonoBehaviour
         buttonMultiSnakeGame.interactable = false;
 
         // 유저 매치 두명이서 방을 만들어서 동시에 입장해서 게임진행
-        gameUser.MatchUserStart(Constants.SPACE_ROOM_TYPE_MULTI_USER_MATCH, (UserAgent userAgent, ResultCodeMatchUserStart result, Payload payload) =>
+        gameUser.MatchUserStart(Constants.SPACE_ROOM_TYPE_MULTI_USER_MATCH, "SNAKE", (UserAgent userAgent, ResultCodeMatchUserStart result, Payload payload) =>
         {
             Debug.Log("MatchUser " + result);
             if (result == ResultCodeMatchUserStart.MATCH_USER_START_SUCCESS)

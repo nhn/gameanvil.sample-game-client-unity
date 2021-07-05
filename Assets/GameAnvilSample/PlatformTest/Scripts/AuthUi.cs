@@ -38,7 +38,7 @@ public class AuthUi : MonoBehaviour
         string launching = PlayerPrefs.GetString(Constants.KEY_LAUNCHING);
         if (string.IsNullOrWhiteSpace(launching))
         {
-            inputFieldLaunching.text = "http://127.0.0.1:10080";
+            inputFieldLaunching.text = "http://127.0.0.1:18600";
         }
         else
         {
@@ -102,7 +102,7 @@ public class AuthUi : MonoBehaviour
         // 다중 클릭 막음
         buttonGetLaunching.interactable = false;
 
-        // sample url "http://10.77.35.47:10080/launching?platform=Editor&appStore=GOOGLE&appVersion=1.2.0&deviceId=4D34C127-9C56-5BAB-A3C2-D8F18C0B7B6E";
+        // sample url "http://10.77.35.47:18600/launching?platform=Editor&appStore=GOOGLE&appVersion=1.2.0&deviceId=4D34C127-9C56-5BAB-A3C2-D8F18C0B7B6E";
 
         string url = inputFieldLaunching.text;
         PlayerPrefs.SetString(Constants.KEY_LAUNCHING, url);
@@ -167,7 +167,7 @@ public class AuthUi : MonoBehaviour
 
             // ===========================================================================================>>> GameAnvil
             // 서버에 인증 시도. 현재는 deviceid, id, pw 모두 uuid값으로 전달
-            ConnectHandler.Instance.GetConnectionAgent().Authenticate(inputFieldUUID.text, inputFieldID.text, inputFieldID.text, new Payload().add(new Packet(authenticationReq)),
+            ConnectHandler.Instance.GetConnectionAgent().Authenticate(inputFieldUUID.text, inputFieldID.text, inputFieldID.text, new Payload().Add(new Packet(authenticationReq)),
                 (ConnectionAgent connectionAgent, ResultCodeAuth result, List<ConnectionAgent.LoginedUserInfo> loginedUserInfoList, string message, Payload payload) =>
                 {
                     Debug.Log("Auth " + result);
@@ -213,7 +213,7 @@ public class AuthUi : MonoBehaviour
 
         // ===========================================================================================>>> GameAnvil
         // 서버에 로그인
-        ConnectHandler.Instance.CreateUserAgent(Constants.GAME_SPACE_NAME, Constants.userSubId).Login(Constants.SPACE_USER_TYPE, string.Empty, new Payload().add(new Packet(loginReq)),
+        ConnectHandler.Instance.CreateUserAgent(Constants.GAME_SPACE_NAME, Constants.userSubId).Login(Constants.SPACE_USER_TYPE, string.Empty, new Payload().Add(new Packet(loginReq)),
             (UserAgent userAgent, ResultCodeLogin result, UserAgent.LoginInfo loginInfo) =>
             {
                 Debug.Log("Login " + result + ", " + loginInfo);
@@ -221,10 +221,10 @@ public class AuthUi : MonoBehaviour
                 // 성공시 다음 단계.
                 if (result == ResultCodeLogin.LOGIN_SUCCESS)
                 {
-                    if (loginInfo.Payload.contains<Com.Nhn.Gameanvil.Sample.Protocol.LoginRes>())
+                    if (loginInfo.Payload.Contains<Com.Nhn.Gameanvil.Sample.Protocol.LoginRes>())
                     {
                         // 로그인 응답 프로토콜 처리
-                        Com.Nhn.Gameanvil.Sample.Protocol.LoginRes loginRes = Com.Nhn.Gameanvil.Sample.Protocol.LoginRes.Parser.ParseFrom(loginInfo.Payload.getPacket<Com.Nhn.Gameanvil.Sample.Protocol.LoginRes>().GetBytes());
+                        Com.Nhn.Gameanvil.Sample.Protocol.LoginRes loginRes = Com.Nhn.Gameanvil.Sample.Protocol.LoginRes.Parser.ParseFrom(loginInfo.Payload.GetPacket<Com.Nhn.Gameanvil.Sample.Protocol.LoginRes>().GetBytes());
                         Debug.Log("LoginRes " + loginRes);
 
                         // 서버에서 받은 게임 데이터 설정
@@ -238,7 +238,7 @@ public class AuthUi : MonoBehaviour
                         UserInfo.Instance.HighScore = loginRes.Userdata.HighScore;
                         UserInfo.Instance.CurrentDeck = loginRes.Userdata.CurrentDeck;
 
-                        // 신전환신 버튼 리스너 모두 해재
+                        // 신전환시 버튼 리스너 모두 해재
                         buttonConnect.onClick.RemoveAllListeners();
                         buttonGenerateUUID.onClick.RemoveAllListeners();
                         buttonAuth.onClick.RemoveAllListeners();
@@ -247,11 +247,11 @@ public class AuthUi : MonoBehaviour
                         // 기본으로 로비 설정
                         UserInfo.Instance.MoveScene(Constants.SCENE_LOBBY);
 
-                        if (loginInfo.isJoinedRoom)
+                        if (loginInfo.IsJoinedRoom)
                         {
-                            if (loginInfo.RoomPayload.contains<Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg>())
+                            if (loginInfo.RoomPayload.Contains<Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg>())
                             {
-                                Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg roomInfoMsg = Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg.Parser.ParseFrom(loginInfo.RoomPayload.getPacket<Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg>().GetBytes());
+                                Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg roomInfoMsg = Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg.Parser.ParseFrom(loginInfo.RoomPayload.GetPacket<Com.Nhn.Gameanvil.Sample.Protocol.RoomInfoMsg>().GetBytes());
                                 Debug.Log("RoomInfoMsg " + roomInfoMsg.RoomType.ToString());
                                 if (roomInfoMsg.RoomType == Com.Nhn.Gameanvil.Sample.Protocol.RoomType.RoomSingle)
                                 {
