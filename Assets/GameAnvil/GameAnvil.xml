@@ -226,33 +226,33 @@
         </member>
         <member name="M:GameAnvil.AgentHelper.RemoveListener``1(GameAnvil.User.UserAgent,System.Action{GameAnvil.User.UserAgent,``0})">
             <summary>
-            유저 에이전트에 등록된 리스너 제거
+            유저 에이전트에 등록된 리스너 해제
             </summary>
             <typeparam name="T">프로토 버프 타입 메세지</typeparam>
-            <param name="agent">제거할 유저 에이전트</param>
-            <param name="listener">제거할 리스너</param>
+            <param name="agent">해제할 유저 에이전트</param>
+            <param name="listener">해제할 리스너</param>
         </member>
         <member name="M:GameAnvil.AgentHelper.RemoveListener(GameAnvil.User.UserAgent,System.Int32,System.Action{GameAnvil.User.UserAgent,GameAnvil.Packet})">
             <summary>
-            유저 에이전트에 등록된 리스너 제거
+            유저 에이전트에 등록된 리스너 해제
             </summary>
-            <param name="agent">제거할 유저 에이전트</param>
-            <param name="customMsgId">제거할 커스텀 메세지 아이디</param>
-            <param name="listener">제거할 리스너</param>
+            <param name="agent">해제할 유저 에이전트</param>
+            <param name="customMsgId">해제할 커스텀 메세지 아이디</param>
+            <param name="listener">해제할 리스너</param>
         </member>
         <member name="M:GameAnvil.AgentHelper.RemoveAllListenersForMsg``1(GameAnvil.User.UserAgent)">
             <summary>
-            유저 에이전트에 등록된 모든 메세지 제거
+            유저 에이전트에 등록된 모든 메세지 해제
             </summary>
             <typeparam name="T">프로토 버프 메세지</typeparam>
-            <param name="agent">제거 할 유저 에이전트</param>
+            <param name="agent">해제 할 유저 에이전트</param>
         </member>
         <member name="M:GameAnvil.AgentHelper.RemoveAllListenersForCustomMsg(GameAnvil.User.UserAgent,System.Int32)">
             <summary>
-            유저 에이전트에 등록된 모든 커스텀 메세지 제거
+            유저 에이전트에 등록된 모든 커스텀 메세지 해제
             </summary>
-            <param name="agent">제거할 유저 에이전트</param>
-            <param name="customMsgId">제거할 커스텀 메세지</param>
+            <param name="agent">해제할 유저 에이전트</param>
+            <param name="customMsgId">해제할 커스텀 메세지</param>
         </member>
         <member name="M:GameAnvil.AgentHelper.AddListener``1(GameAnvil.Connection.ConnectionAgent,System.Action{GameAnvil.Connection.ConnectionAgent,``0})">
             <summary>
@@ -306,33 +306,33 @@
         </member>
         <member name="M:GameAnvil.AgentHelper.RemoveListener``1(GameAnvil.Connection.ConnectionAgent,System.Action{GameAnvil.Connection.ConnectionAgent,``0})">
             <summary>
-            커넥션 에이전트에 등록 되어 있는 리스너 제거
+            커넥션 에이전트에 등록 되어 있는 리스너 해제
             </summary>
             <typeparam name="T">프로토 버프 메시지 타입</typeparam>
             <param name="agent">제거할 커넥션 에이전트</param>
-            <param name="listener">제거할 리스너</param>
+            <param name="listener">해제할 리스너</param>
         </member>
         <member name="M:GameAnvil.AgentHelper.RemoveListener(GameAnvil.Connection.ConnectionAgent,System.Int32,System.Action{GameAnvil.Connection.ConnectionAgent,GameAnvil.Packet})">
             <summary>
-            커넥션 리스너에 등록 되어 있는 리스너 제거
+            커넥션 리스너에 등록 되어 있는 리스너 해제
             </summary>
-            <param name="agent">제거 할 커넥션 에이전트</param>
-            <param name="customMsgId">제거 할 커스텀 메세지 아이디</param>
-            <param name="listener">제거 할 리스너</param>
+            <param name="agent">해제 할 커넥션 에이전트</param>
+            <param name="customMsgId">해제 할 커스텀 메세지 아이디</param>
+            <param name="listener">해제 할 리스너</param>
         </member>
         <member name="M:GameAnvil.AgentHelper.RemoveAllListenersForMsg``1(GameAnvil.Connection.ConnectionAgent)">
             <summary>
-            커넥션 리스너에 등록된 모든 리스너 제거
+            커넥션 리스너에 등록된 모든 리스너 해제
             </summary>
             <typeparam name="T">프로토 버프 타입 메세지</typeparam>
-            <param name="agent">제거할 커넥션 에이전트</param>
+            <param name="agent">해제 할 커넥션 에이전트</param>
         </member>
         <member name="M:GameAnvil.AgentHelper.RemoveAllListenersForCustomMsg(GameAnvil.Connection.ConnectionAgent,System.Int32)">
             <summary>
-            커넥션 이스너에 등록된 모든 리스너 제거
+            커넥션 이스너에 등록된 모든 리스너 해제
             </summary>
-            <param name="agent">제거할 커넥션 에이전트</param>
-            <param name="customMsgId">제거할 커스텀 메세지 아이디</param>
+            <param name="agent">해제 할 커넥션 에이전트</param>
+            <param name="customMsgId">해제 할 커스텀 메세지 아이디</param>
         </member>
         <member name="T:GameAnvil.Connection.Defines.Commands">
             <summary>
@@ -341,21 +341,21 @@
         </member>
         <member name="T:GameAnvil.Connection.Interface.IConnectionOnConnect">
             <summary>
-            커넥션 리스너의 연결 요청 결과 인터페이스
+            커넥션 리스너의 Connect() 요청 결과 인터페이스
             </summary>
         </member>
         <member name="M:GameAnvil.Connection.Interface.IConnectionOnConnect.OnConnect(GameAnvil.Connection.ConnectionAgent,GameAnvil.Defines.ResultCodeConnect)">
             <summary>
             Connect()의 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">Connect()를 요청한 커넥션 에이전트</param>
             <param name="result">Connect()의 결과</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.DelConnectionOnConnect">
             <summary>
             Connect() 요청 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">Connect()를 요청한 커넥션 에이전트</param>
             <param name="result">Connect() 요청 결과 코드</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.IConnectionOnAuthentication">
@@ -367,21 +367,21 @@
             <summary>
             Authentication() 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">Authentication()울 요청한 커넥션 에이전트</param>
             <param name="result">Authentication() 요청 결과</param>
             <param name="loginedUserInfoList">서버에 남아있는 로그인 정보 목록</param>
             <param name="message">서버로부터 받은 메시지</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버로부터 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.DelConnectionOnAuthentication">
             <summary>
             Authentication() 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">Authentication()를 요청한 커넥션 에이전트</param>
             <param name="result">Authentication() 요청 결과</param>
             <param name="loginedUserInfoList">서버에 남아있는 로그인 정보 목록</param>
             <param name="message">서버로부터 받은 메시지</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버로부터 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.IConnectionOnChannelList">
             <summary>
@@ -392,38 +392,38 @@
             <summary>
             GetChannelList() 요청 결과 
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">GetChannelList()를 요청한 커넥션 에이전트</param>
             <param name="result">GetChannelList() 요청 결과</param>
-            <param name="channelIdList">채널 목록</param>
+            <param name="channelIdList">서버에서 받은 채널 목록</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.DelConnectionOnChannelList">
             <summary>
             GetChannelList() 요청 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">GetChannelList()를 요청한 커넥션 에이전트</param>
             <param name="result">GetChannelList() 요청 결과</param>
-            <param name="channelIdList">체널 목록</param>
+            <param name="channelIdList">서버에서 받은 체널 목록</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.IConnectionOnChannelInfo">
             <summary>
-            커넥션 리스너의 GetChannelInfo의() 요청 결과 인터페이스
+            커넥션 리스너의 GetChannelInfo() 요청 결과 인터페이스
             </summary>
         </member>
         <member name="M:GameAnvil.Connection.Interface.IConnectionOnChannelInfo.OnChannelInfo(GameAnvil.Connection.ConnectionAgent,GameAnvil.Defines.ResultCodeChannelInfo,GameAnvil.Payload)">
             <summary>
             GetChannelInfo() 요청 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">GetChannelInfo()를 요청한 커넥션 에이전트</param>
             <param name="result">GetChannelInfo() 요청 결과</param>
-            <param name="channelInfo">체널 정보</param>
+            <param name="channelInfo">서버에서 받은 체널 정보</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.DelConnectionOnChannelInfo">
             <summary>
             GetChannelInfo() 요청 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">GetChannelInfo()를 요청한 커넥션 에이전트</param>
             <param name="result">GetChannelInfo() 요청 결과</param>
-            <param name="channelInfo">체널 정보</param>
+            <param name="channelInfo">서버에서 받은 체널 정보</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.IConnectionOnAllChannelInfo">
             <summary>
@@ -434,17 +434,17 @@
             <summary>
             모든 채널 정보 요청 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">GetAllChannelInfo()를 요청한 커넥션 에이전트</param>
             <param name="result">GetAllChannelInfo() 요청의 결과</param>
-            <param name="channelInfo">체널 정보 목록</param>
+            <param name="channelInfo">서버에서 받은 체널 정보</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.DelConnectionOnAllChannelInfo">
             <summary>
             GetAllChannelInfo() 요청 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent"> GetAllChannelInfo()를 요청한 커넥션 에이전트</param>
             <param name="result">GetAllChannelInfo() 요청의 결과</param>
-            <param name="channelInfo">체널 정보 목록</param>
+            <param name="channelInfo">서버에서 받은 체널 정보 목록</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.IConnectionOnChannelCountInfo">
             <summary>
@@ -455,17 +455,17 @@
             <summary>
             GetChannelCountInfo() 요청 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">GetChannelCountInfo()를 요청한 커넥션 에이전트</param>
             <param name="result">GetChannelCountInfo() 요청 결과</param>
-            <param name="channelCountInfo">채널의 유저 수와 방 개수 정보</param>
+            <param name="channelCountInfo">서버에서 받은 채널의 유저 수와 방 개수 정보</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.DelConnectionOnChannelCountInfo">
             <summary>
             GetChannelCountInfo() 요청 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">GetChannelCountInfo()를 요청한 커넥션 에이전트</param>
             <param name="result">GetChannelCountInfo() 요청 결과</param>
-            <param name="channelCountInfo">채널의 유저 수와 방 개수 정보</param>
+            <param name="channelCountInfo">서버에서 받은 채널의 유저 수와 방 개수 정보</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.IConnectionOnAllChannelCountInfo">
             <summary>
@@ -476,17 +476,17 @@
             <summary>
             GetAllChannelCountInfo() 정보 요청 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">GetAllChannelCountInfo()를 요청한 커넥션 에이전트</param>
             <param name="result">GetAllChannelCountInfo() 요청 결과</param>
-            <param name="channelCountInfo">채널의 유저 수와 방 개수 정보들</param>
+            <param name="channelCountInfo">서버에서 받은 채널의 유저 수와 방 개수 정보들</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.DelConnectionOnAllChannelCountInfo">
             <summary>
             GetAllChannelCountInfo() 요청 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">GetAllChannelCountInfo()를 요청한 커넥션 에이전트</param>
             <param name="result">GetAllChannelCountInfo() 요청 결과</param>
-            <param name="channelCountInfo">채널의 유저 수와 방 개수 정보들</param>
+            <param name="channelCountInfo">서버에서 받은 채널의 유저 수와 방 개수 정보들</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.IConnectionOnDisconnect">
             <summary>
@@ -497,25 +497,25 @@
             <summary>
             Disconnect() 또는 강제 접속 종료 결과 알림
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">Disconnect()발생한 커넥션 에이전트</param>
             <param name="result">Disconnect() 결과 또는 강제 접속 종료 이유</param>
             <param name="force">종료 강제 여부</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버로부터 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.DelConnectionOnDisconnect">
             <summary>
             Disconnect() 알림
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">Disconnect()발생한 커넥션 에이전트</param>
             <param name="result">>Disconnect() 이유</param>
             <param name="force">강제 종료 여부</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버로부터 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.DelOnDisconnect">
             <summary>
             >Disconnect() 결과
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">Disconnect()발생한 커넥션 에이전트</param>
             <param name="result">>Disconnect() 결과</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.IConnectionOnErrorCommand">
@@ -525,17 +525,17 @@
         </member>
         <member name="M:GameAnvil.Connection.Interface.IConnectionOnErrorCommand.OnError(GameAnvil.Connection.ConnectionAgent,GameAnvil.Defines.ErrorCode,GameAnvil.Connection.Defines.Commands)">
             <summary>
-            기본 기능 사용중 오류 발생
+            커넥션의 기본 기능 사용중 오류 발생
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">오류 발생한 커넥션 에이전트</param>
             <param name="errorCode">오류 코드</param>
             <param name="commands">오류 발생 기능</param>
         </member>
         <member name="T:GameAnvil.Connection.Interface.DelConnectionOnErrorCommand">
             <summary>
-            기본 기능 사용중 오류 발생
+            커넥션의 기본 기능 사용중 오류 발생
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">오류 발생한 커넥션 에이전트</param>
             <param name="errorCode">오류 코드</param>
             <param name="commands">오류 발생 기능</param>
         </member>
@@ -548,7 +548,7 @@
             <summary>
             패킷 전송 후 오류 발생
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">처리를 요청할 커넥션 에이전트</param>
             <param name="errorCode">오류 코드</param>
             <param name="command">패킷의 메시지 이름</param>
         </member>
@@ -556,7 +556,7 @@
             <summary>
             패킷 전송 후 오류 발생
             </summary>
-            <param name="connectionAgent">커넥션 에이전트</param>
+            <param name="connectionAgent">처리를 요청할 커넥션 에이전트</param>
             <param name="errorCode">오류 코드</param>
             <param name="command">패킷의 메시지 이름</param>
         </member>
@@ -586,6 +586,16 @@
             인증 성공 시점에 서버에 남아있는 로그인된 유저정보
             </summary>
         </member>
+        <member name="M:GameAnvil.Connection.ConnectionAgent.LoginedUserInfo.#ctor(System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            로그인 유저 정보 생성
+            </summary>
+            <param name="serviceName">서비스 이름</param>
+            <param name="userId">유저 아이디</param>
+            <param name="subId">서브 아이디</param>
+            <param name="userType">유저 타입</param>
+            <param name="channelId">채널 아이디</param>
+        </member>
         <member name="P:GameAnvil.Connection.ConnectionAgent.LoginedUserInfo.ServiceName">
             <summary>
             서버에서 설정한 서비스 이름
@@ -609,11 +619,6 @@
         <member name="P:GameAnvil.Connection.ConnectionAgent.LoginedUserInfo.ChannelId">
             <summary>
             채널 아이디
-            </summary>
-        </member>
-        <member name="P:GameAnvil.Connection.ConnectionAgent.LoginedUserInfo.Payload">
-            <summary>
-            추가 페이로드
             </summary>
         </member>
         <member name="M:GameAnvil.Connection.ConnectionAgent.IsConnected">
@@ -758,7 +763,7 @@
         </member>
         <member name="M:GameAnvil.Connection.ConnectionAgent.Authenticate(System.String,System.String,System.String,GameAnvil.Payload)">
             <summary>
-            GameAnvil 서버에 인증 요청<para></para>
+            GameAnvil 서버에 인증 요청<para></para> 
             인증 성공 후 커넥터 사용 가능
             </summary>
             <param name="deviceId">사용자 기기 식별용 고유 아이디. 서버 구현에 따라 사용하지 않는 경우 빈 문자열 전달</param>
@@ -968,7 +973,7 @@
             <param name="roomId">매치된 방의 아이디</param>
             <param name="roomName">매치된 방의 이름</param>
             <param name="created">매치된 방의 신설 여부</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnMatchRoom">
             <summary>
@@ -980,7 +985,7 @@
             <param name="roomId">매치된 방의 아이디</param>
             <param name="roomName">매치된 방의 이름</param>
             <param name="created">매치된 방의 신설 여부</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnCreateRoom">
             <summary>
@@ -995,7 +1000,7 @@
             <param name="result">CreateRoom() 요청 결과</param>
             <param name="roomId">생성된 방의 아이디</param>
             <param name="roomName">생성된 방의 이름</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnCreateRoom">
             <summary>
@@ -1005,7 +1010,7 @@
             <param name="result"> CreateRoom() 요청 요청 결과</param>
             <param name="roomName">생성된 방의 이름</param>
             <param name="roomId">생성된 방의 아이디</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnJoinRoom">
             <summary>
@@ -1020,7 +1025,7 @@
             <param name="result">JoinRoom() 요청 결과</param>
             <param name="roomId">입장한 방의 아이디</param>
             <param name="roomName">입장한 방의 이름</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnJoinRoom">
             <summary>
@@ -1030,7 +1035,7 @@
             <param name="result">JoinRoom() 요청 결과</param>
             <param name="roomId">입장한 방의 아이디</param>
             <param name="roomName">입장한 방의 이름</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnNamedRoom">
             <summary>
@@ -1046,7 +1051,7 @@
             <param name="roomName">방 이름</param>
             <param name="roomId">입장한 방의 아이디</param>
             <param name="created">입장한 방의 신설 여부</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnNamedRoom">
             <summary>
@@ -1057,7 +1062,7 @@
             <param name="roomName">방 이름</param>
             <param name="roomId">입장한 방의 아이디</param>
             <param name="created">입장한 방의 신설 여부</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnMatchUserStart">
             <summary>
@@ -1070,7 +1075,7 @@
             </summary>
             <param name="userAgent">MatchUserStart()를 요청한 유저 에이전트</param>
             <param name="result">MatchUserStart() 요청 결과</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnMatchUserStart">
             <summary>
@@ -1078,7 +1083,7 @@
             </summary>
             <param name="userAgent">MatchUserStart()를 요청한 유저 에이전트</param>
             <param name="result">MatchUserStart() 요청 결과</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnMatchUserDone">
             <summary>
@@ -1093,7 +1098,7 @@
             <param name="result">MatchUserStart()나 MatchPartyStart() 요청 결과</param>
             <param name="created">방 신설 여부</param>
             <param name="roomId">매칭된 방의 아이디</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnMatchUserDone">
             <summary>
@@ -1103,7 +1108,7 @@
             <param name="result">MatchUserStart()나 MatchPartyStart() 요청 결과</param>
             <param name="created">방 신설 여부</param>
             <param name="roomId">매칭된 방의 아이디</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnMatchUserTimeout">
             <summary>
@@ -1152,7 +1157,7 @@
             </summary>
             <param name="userAgent">MatchPartyStart()을 요청한 유저 에이전트</param>
             <param name="result">MatchPartyStart() 요청 결과</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnMatchPartyStart">
             <summary>
@@ -1160,7 +1165,7 @@
             </summary>
             <param name="userAgent">MatchPartyStart()을 요청한 유저 에이전트</param>
             <param name="result">MatchPartyStart() 요청 결과</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnMatchPartyCancel">
             <summary>
@@ -1187,7 +1192,7 @@
             <param name="result">LeaveRoom() 요청 결과</param>
             <param name="force">강제 퇴장 여부</param>
             <param name="roomId">퇴장한 방의 아이디</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnLeaveRoom">
             <summary>
@@ -1197,7 +1202,7 @@
             <param name="result">LeaveRoom() 요청 결과</param>
             <param name="force">강제 퇴장 여부</param>
             <param name="roomId">퇴장한 방의 아이디</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnChannelInfo">
             <summary>
@@ -1210,7 +1215,7 @@
             </summary>
             <param name="userAgent">GetChannelInfo()를 요청한 유저 에이전트</param>
             <param name="result">GetChannelInfo() 요청 결과</param>
-            <param name="channelInfo">채널 정보</param>
+            <param name="channelInfo">서버에서 받은 채널 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnChannelInfo">
             <summary>
@@ -1218,7 +1223,7 @@
             </summary>
             <param name="userAgent">GetChannelInfo()를 용청한 유저 에이전트</param>
             <param name="result">GetChannelInfo() 요청 결과</param>
-            <param name="channelInfo">채널 정보</param>
+            <param name="channelInfo">서버에서 받은 채널 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnAllChannelInfo">
             <summary>
@@ -1231,7 +1236,7 @@
             </summary>
             <param name="userAgent">GeAllChannelInfo()를 요청한 유저 에이전트</param>
             <param name="result">GeAllChannelInfo() 정보 요청 결과</param>
-            <param name="channelInfo">채널 정보 목록</param>
+            <param name="channelInfo">서버에서 받은 채널 정보 목록</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnAllChannelInfo">
             <summary>
@@ -1239,7 +1244,7 @@
             </summary>
             <param name="userAgent">GeAllChannelInfo()를 요청한 유저 에이전트</param>
             <param name="result">GeAllChannelInfo() 정보 요청 결과</param>
-            <param name="channelInfo">채널 정보 목록</param>
+            <param name="channelInfo">서버에서 받은 채널 정보 목록</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnChannelCountInfo">
             <summary>
@@ -1252,7 +1257,7 @@
             </summary>
             <param name="userAgent">GetChannelCountInfo()를 요청한 유저 에이전트</param>
             <param name="result">GetChannelCountInfo() 요청 결과</param>
-            <param name="channelCountInfo">채널의 유저 수와 방 개수 정보</param>
+            <param name="channelCountInfo">서버에서 받은채널의 유저 수와 방 개수 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnChannelCountInfo">
             <summary>
@@ -1260,7 +1265,7 @@
             </summary>
             <param name="userAgent">GetChannelCountInfo()를 요청한 유저 에이전트</param>
             <param name="result">GetChannelCountInfo() 요청 결과</param>
-            <param name="channelCountInfo">채널의 유저 수와 방 개수 정보</param>
+            <param name="channelCountInfo">서버에서 받은 채널의 유저 수와 방 개수 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnAllChannelCountInfo">
             <summary>
@@ -1273,7 +1278,7 @@
             </summary>
             <param name="userAgent">GetAllChannelCountInfo()를 요청한 유저 에이전트</param>
             <param name="result">GetAllChannelCountInfo() 요청 결과</param>
-            <param name="channelCountInfo">채널의 유저 수와 방 개수 정보 목록</param>
+            <param name="channelCountInfo">서버에서 받은 채널의 유저 수와 방 개수 정보 목록</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnAllChannelCountInfo">
             <summary>
@@ -1281,7 +1286,7 @@
             </summary>
             <param name="userAgent">GetAllChannelCountInfo()를 요청한 유저 에이전트</param>
             <param name="result">GetAllChannelCountInfo() 요청 결과</param>
-            <param name="channelCountInfo">채널의 유저 수와 방 개수 정보 목록</param>
+            <param name="channelCountInfo">서버에서 받은 채널의 유저 수와 방 개수 정보 목록</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnMoveChannel">
             <summary>
@@ -1296,7 +1301,7 @@
             <param name="result">MoveChannel() 결과 코드</param>
             <param name="force">서버에서 강제로 체널을 이동했는지 여부</param>
             <param name="channelId">이동한 체널의 아이디</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnMoveChannel">
             <summary>
@@ -1306,7 +1311,7 @@
             <param name="result">MoveChannel() 결과 코드</param>
             <param name="force">서버에서 강제로 채널을 이동했는지 여부</param>
             <param name="channelId">이동한 채널의 아이디</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnSnapshot">
             <summary>
@@ -1319,7 +1324,7 @@
             </summary>
             <param name="userAgent">Snapshot() 요청한 유저 에이전트</param>
             <param name="result">Snapshot() 요청 결과</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnSnapshot">
             <summary>
@@ -1327,7 +1332,7 @@
             </summary>
             <param name="userAgent">Snapshot()한 유저 에이전트</param>
             <param name="result">Snapshot() 요청 결과</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnErrorCommand">
             <summary>
@@ -1383,16 +1388,16 @@
             <param name="userAgent">Logout()을 요청한 유저 에이전트</param>
             <param name="result">Logout() 결과</param>
             <param name="force">서버에 의한 강제 여부</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnLogout">
             <summary>
             Logout() 결과
             </summary>
-            <param name="userAgent">Logout()을 요청한 유저 에이전트 객체</param>
+            <param name="userAgent">Logout()을 요청한 유저 에이전트</param>
             <param name="result">Logout() 결과</param>
             <param name="force">서버에 의한 강제 여부</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserOnNotice">
             <summary>
@@ -1445,7 +1450,7 @@
             </summary>
             <param name="userAgent">세션이 닫힌 유저 에이전트</param>
             <param name="result">세션이 닫힌 이유</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.DelUserOnSessionClose">
             <summary>
@@ -1454,7 +1459,7 @@
             </summary>
             <param name="userAgent">세션이 닫힌 유저 에이전트</param>
             <param name="result">세션이 닫힌 이유</param>
-            <param name="payload">추가 정보</param>
+            <param name="payload">서버에서 받은 추가 정보</param>
         </member>
         <member name="T:GameAnvil.User.Interface.IUserListener">
             <summary>
@@ -1486,12 +1491,12 @@
         </member>
         <member name="P:GameAnvil.User.UserAgent.LoginInfo.UserId">
             <summary>
-            유저의 아이디
+            로그인한 유저의 아이디
             </summary>
         </member>
         <member name="P:GameAnvil.User.UserAgent.LoginInfo.UserType">
             <summary>
-            유저의 타입
+            로그인한 유저의 타입
             </summary>
         </member>
         <member name="P:GameAnvil.User.UserAgent.LoginInfo.ServiceName">
@@ -1502,11 +1507,6 @@
         <member name="P:GameAnvil.User.UserAgent.LoginInfo.ChannelId">
             <summary>
             로그인한 채널의 아이디
-            </summary>
-        </member>
-        <member name="P:GameAnvil.User.UserAgent.LoginInfo.Message">
-            <summary>
-            서버로부터 받은 메시지
             </summary>
         </member>
         <member name="P:GameAnvil.User.UserAgent.LoginInfo.Payload">
@@ -2006,7 +2006,7 @@
             <param name="isMoveRoomIfJoinedRoom">방 이동 허용</param>
             <param name="payload">서버에 전달할 추가 정보</param>
             <param name="leaveRoomPayload">입장한 방을 떠날때 서버에 전달할 추가 정보</param>
-            <param name="onMatchRoom">결과를 받을 대리ㅈ</param>
+            <param name="onMatchRoom">결과를 받을 대리자</param>
         </member>
         <member name="M:GameAnvil.User.UserAgent.NamedRoom(System.String,System.String,System.Boolean)">
             <summary>
@@ -2413,7 +2413,7 @@
             <summary>
             현재 서비스에서 로그아웃 
             </summary>
-            <param name="onLogout">로그아웃 콜백</param>
+            <param name="onLogout">로그아웃 다리자</param>
         </member>
         <member name="M:GameAnvil.User.UserAgent.Request(GameAnvil.Packet)">
             <summary>
@@ -2632,7 +2632,7 @@
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeAuth.AUTH_FAIL_INVALID_ACCOUNT_ID">
             <summary>
-            실패. 잘못된 어카운트 아이디
+            실패. 잘못된 인증 계정 아이디
             </summary>
         </member>
         <member name="T:GameAnvil.Defines.ResultCodeCreateRoom">
@@ -2897,12 +2897,12 @@
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_LOGINED_OTHER_USER_TYPE">
             <summary>
-            실패. 동일 어카운트 아이디로 다른 유저타입이 로그인 되어있음
+            실패. 동일 계정 아이디로 다른 유저타입이 로그인 되어있음
             </summary>
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeLogin.LOGIN_FAIL_LOGINED_OTHER_DEVICE">
             <summary>
-            실패. 동일 어카운트 아이디로 다른 디바이스아이디가 로그인 되어있음
+            실패. 동일 계정 아이디로 다른 기기 식별용 고유 아이디가 로그인 되어있음
             </summary>
         </member>
         <member name="T:GameAnvil.Defines.ResultCodeLogout">
@@ -3047,12 +3047,12 @@
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeMatchRoom.MATCH_ROOM_FAIL_BASE_ROOM_MATCH_FORM_NULL">
             <summary>
-            실패. 매칭 신청서가 NULL 일 경우
+            실패. 매칭 신청서가 널 일 경우
             </summary>
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeMatchRoom.MATCH_ROOM_FAIL_BASE_ROOM_MATCH_INFO_NULL">
             <summary>
-            실패. 매칭 정보가 NULL 일 경우
+            실패. 매칭 정보가 널 일 경우
             </summary>
         </member>
         <member name="T:GameAnvil.Defines.ResultCodeMatchPartyCancel">
@@ -3228,7 +3228,7 @@
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_ADMIN_KICK">
             <summary>
-            Admin에서 강제 종료
+            어드민에서 강제 종료
             </summary>
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_INVALID_NODE">
@@ -3253,7 +3253,7 @@
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_AUTHENTICATION_FAIL_EMPTY_ACCOUNT_ID">
             <summary>
-            인증 실패로 인한 강제 종료 - 어카운트 아이디가 없을 경우
+            인증 실패로 인한 강제 종료 - 계정 아이디가 없을 경우
             </summary>
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeDisconnect.FORCE_CLOSE_DUPLICATE_LOGIN">
@@ -3319,7 +3319,7 @@
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeSessionClose.SESSION_CLOSE_ADMIN_KICK">
             <summary>
-            Admin에서 강제 종료
+            어드민에서 강제 종료
             </summary>
         </member>
         <member name="F:GameAnvil.Defines.ResultCodeSessionClose.SESSION_CLOSE_DUPLICATE_LOGIN">
@@ -3666,7 +3666,7 @@
             <summary>
             페이로드에 담긴 패킷으로부터 메세지를 반환
             </summary>
-            <typeparam name="T"> 프로토콜 버퍼의 IMessage 를 상속받은 타입</typeparam>
+            <typeparam name="T">프로토콜 버퍼의 IMessage 를 상속받은 타입</typeparam>
             <param name="payload">정보가 담긴 페이로드</param>
             <returns>IMessage를 상속받은 메세지</returns>
         </member>
@@ -3759,7 +3759,7 @@
             </summary>
             <param name="serviceName">유저에이전트가 사용할 서비스 이름</param>
             <param name="subId">서비스별 유저에이전트를 식별 할 수 있는 고유 아이디</param>
-            <returns>해당 유저 에이전트, 없으면 null</returns>
+            <returns>해당 유저 에이전트, 없으면 널</returns>
         </member>
         <member name="M:GameAnvil.Connector.GetUserAgents">
             <summary>
@@ -3825,8 +3825,7 @@
         </member>
         <member name="M:GameAnvil.Payload.GetPacket``1">
             <summary>
-            저장한 패킷을 반환<para></para>
-            없을 경우 널을 반환
+            저장한 패킷을 반환, 없을 경우 널을 반환
             </summary>
             <typeparam name="T"> 프로토콜 버퍼의 IMessage 를 상속받은 타입</typeparam>
             <returns>T가 담긴 패킷, 없을 경우 널</returns>
