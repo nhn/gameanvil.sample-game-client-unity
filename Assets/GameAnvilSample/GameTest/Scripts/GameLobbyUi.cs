@@ -63,7 +63,7 @@ public class GameLobbyUi : MonoBehaviour
         };
 
         // 타이밍 이슈상 리스너 미리등록, 서버에서 게임룸에 두명이 모두 입장했을때 게임 설정데이터를 전송 : snake 게임 server to client
-        gameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameanvil.Sample.Protocol.SnakeGameInfoMsg msg) =>
+        gameUser.AddListener((UserAgent userAgent, ResultCode resultCode, Com.Nhn.Gameanvil.Sample.Protocol.SnakeGameInfoMsg msg) =>
         {
             if (msg != null)
             {
@@ -131,7 +131,7 @@ public class GameLobbyUi : MonoBehaviour
 
         // ===========================================================================================>>> GameAnvil
         // 게임유저가 서버로 request로 response를 받아 처리 한다.
-        gameUser.Request<Com.Nhn.Gameanvil.Sample.Protocol.ChangeNicknameRes>(changeNicknameReq, (userAgent, changeNicknameRes) =>
+        gameUser.Request<Com.Nhn.Gameanvil.Sample.Protocol.ChangeNicknameRes>(changeNicknameReq, (userAgent, resultCode, changeNicknameRes) =>
         {
             Debug.Log("changeNicknameRes" + changeNicknameRes);
 
@@ -261,7 +261,7 @@ public class GameLobbyUi : MonoBehaviour
 
         // ===========================================================================================>>> GameAnvil
         // 게임에서 등록한 랭킹 리스트 요청
-        gameUser.Request<Com.Nhn.Gameanvil.Sample.Protocol.ScoreRankingRes>(singleRankingReq, (userAgent, singleRankingRes) =>
+        gameUser.Request<Com.Nhn.Gameanvil.Sample.Protocol.ScoreRankingRes>(singleRankingReq, (userAgent, resultCode, singleRankingRes) =>
         {
             Debug.Log("singleRankingRes" + singleRankingRes);
 

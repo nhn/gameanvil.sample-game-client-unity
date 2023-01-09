@@ -112,7 +112,9 @@ namespace Toast.GamebaseTools.Util
                 {
                     if (200 == www.responseCode)
                     {
-#if UNITY_2017_2_OR_NEWER
+#if UNITY_2020_3_OR_NEWER
+                        if (www.result == UnityWebRequest.Result.ConnectionError)
+#elif UNITY_2017_2_OR_NEWER
                         if (true == www.isNetworkError)
 #else
                         if (true == www.isError)
@@ -145,7 +147,9 @@ namespace Toast.GamebaseTools.Util
                                 }
                             default:
                                 {
-#if UNITY_2017_2_OR_NEWER
+#if UNITY_2020_3_OR_NEWER
+                                    if (www.result == UnityWebRequest.Result.ConnectionError)
+#elif UNITY_2017_2_OR_NEWER                      
                                     if (true == www.isNetworkError)
 #else
                                     if (true == www.isError)

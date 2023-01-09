@@ -32,7 +32,7 @@ public class MultiTapBirdGameUi : MonoBehaviour
         // 게임 유저 얻기
         tapBirdUser = ConnectHandler.Instance.GetUserAgent(Constants.GAME_SPACE_NAME, Constants.userSubId);
         // 유저 점수 동기 처리
-        tapBirdUser.AddListener((UserAgent userAgent, Com.Nhn.Gameanvil.Sample.Protocol.BroadcastTapBirdMsg msg) =>
+        tapBirdUser.AddListener<Com.Nhn.Gameanvil.Sample.Protocol.BroadcastTapBirdMsg>((UserAgent userAgent, ResultCode resultCode, Com.Nhn.Gameanvil.Sample.Protocol.BroadcastTapBirdMsg msg) =>
             {
                 if (msg != null)
                 {

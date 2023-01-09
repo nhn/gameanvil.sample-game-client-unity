@@ -66,7 +66,7 @@ public class SnakeGameManager : MonoBehaviour
         };
 
         // 상대편 유저 데이터 처리
-        snakeGameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameanvil.Sample.Protocol.SnakeUserMsg msg) =>
+        snakeGameUser.AddListener((UserAgent userAgent, ResultCode resultCode, Com.Nhn.Gameanvil.Sample.Protocol.SnakeUserMsg msg) =>
         {
             Debug.Log("<<<< SnakeUserMsg!!!!!! : " + msg);
             if (msg != null)
@@ -91,7 +91,7 @@ public class SnakeGameManager : MonoBehaviour
         });
 
         // 서버에서 전달 받은 food 상태 처리
-        snakeGameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameanvil.Sample.Protocol.SnakeFoodMsg msg) =>
+        snakeGameUser.AddListener((UserAgent userAgent, ResultCode resultCode, Com.Nhn.Gameanvil.Sample.Protocol.SnakeFoodMsg msg) =>
         {
             if (msg != null)
             {

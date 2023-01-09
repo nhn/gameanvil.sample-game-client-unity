@@ -91,7 +91,11 @@ namespace Toast.Logger
 
                 yield return request.SendWebRequest();
                 errorString = request.error;
+#if UNITY_2020_3_OR_NEWER
+                if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+#else
                 if (request.isNetworkError || request.isHttpError)
+#endif
                 {
                     isTimeout = true;
                 }

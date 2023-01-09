@@ -43,7 +43,9 @@ namespace Toast.GamebaseTools.Util
                 return false;
             }
 
-#if UNITY_2017_1_OR_NEWER
+#if UNITY_2020_3_OR_NEWER
+            if (request.result == UnityWebRequest.Result.ProtocolError)
+#elif UNITY_2017_1_OR_NEWER
             if (request.isNetworkError == true)
 #else
             if (request.isError == true)

@@ -17,7 +17,9 @@ namespace Toast.Gamebase.Internal
 
             public static bool IsError(UnityEngine.Networking.UnityWebRequest request)
             {
-#if UNITY_2017_1_OR_NEWER
+#if UNITY_2020_3_OR_NEWER
+                return request.result == UnityEngine.Networking.UnityWebRequest.Result.ConnectionError;
+#elif UNITY_2017_1_OR_NEWER
                 return request.isNetworkError;
 #else
                 return request.isError;

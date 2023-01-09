@@ -221,7 +221,9 @@ namespace Toast.GamebaseTools.Util.Multilanguage.Internal
                     yield return null;
                 }
 
-#if UNITY_2017_1_OR_NEWER
+#if UNITY_2020_3_OR_NEWER
+                if (request.result == UnityWebRequest.Result.ConnectionError)
+#elif UNITY_2017_1_OR_NEWER
                 if (request.isNetworkError == true)
 #else
                 if (request.isError == true)

@@ -51,7 +51,7 @@ public class MultiSnakeGameUi : MonoBehaviour
             OnLeaveRoom(Com.Nhn.Gameanvil.Sample.Protocol.EndType.GameEndTimeUp);
         };
 
-        snakeGameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameanvil.Sample.Protocol.SnakeFoodMsg msg) =>
+        snakeGameUser.AddListener((UserAgent userAgent, ResultCode resultCode, Com.Nhn.Gameanvil.Sample.Protocol.SnakeFoodMsg msg) =>
         {
             if (msg != null)
             {

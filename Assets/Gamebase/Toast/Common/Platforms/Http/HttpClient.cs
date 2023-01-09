@@ -35,7 +35,11 @@ namespace Toast.Internal
                     yield return request.SendWebRequest();
 
                     errorString = request.error;
+#if UNITY_2020_3_OR_NEWER
+                    if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+#else
                     if (request.isNetworkError || request.isHttpError)
+#endif
                     {
                         isTimeout = true;
                     }
@@ -61,7 +65,11 @@ namespace Toast.Internal
                     yield return request.SendWebRequest();
 
                     errorString = request.error;
+#if UNITY_2020_3_OR_NEWER
+                    if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+#else
                     if (request.isNetworkError || request.isHttpError)
+#endif
                     {
                         isTimeout = true;
                     }
@@ -107,7 +115,7 @@ namespace Toast.Internal
             }
 #endif  // UNITY_2017_2_OR_NEWER
 
-            callback(isTimeout, errorString, jsonString);
+                        callback(isTimeout, errorString, jsonString);
         }
     }
 

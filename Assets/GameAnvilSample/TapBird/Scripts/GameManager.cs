@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
         if (UserInfo.Instance.IsMulti)
         {
             // ===========================================================================================>>> GameAnvil
-            tapBirdGameUser.AddListener((UserAgent userAgent, Com.Nhn.Gameanvil.Sample.Protocol.BroadcastTapBirdMsg msg) =>
+            tapBirdGameUser.AddListener((UserAgent userAgent, ResultCode resultCode, Com.Nhn.Gameanvil.Sample.Protocol.BroadcastTapBirdMsg msg) =>
             {
                 if (msg != null)
                 {

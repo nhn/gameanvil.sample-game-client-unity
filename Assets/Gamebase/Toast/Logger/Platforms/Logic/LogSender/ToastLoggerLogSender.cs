@@ -96,8 +96,13 @@ namespace Toast.Logger
                 yield return request.SendWebRequest();
 
                 errorString = request.error;
+#if UNITY_2020_3_OR_NEWER
+                if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+#else
                 if (request.isNetworkError || request.isHttpError)
+#endif
                 {
+
                     isTimeout = true;
                 }
                 else
@@ -138,7 +143,7 @@ namespace Toast.Logger
 #endif  // UNITY_2017_2_OR_NEWER
 
 #if UNITY_STANDALONE || UNITY_EDITOR
-            if (isTimeout == false && string.IsNullOrEmpty(errorString)) // success
+                    if (isTimeout == false && string.IsNullOrEmpty(errorString)) // success
             {
                 if (ToastFileManager.FileCheck(ToastLoggerCommonLogic.AppKey, createTime, transactionId))
                 {

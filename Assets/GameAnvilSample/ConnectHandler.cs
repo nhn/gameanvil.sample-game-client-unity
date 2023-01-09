@@ -27,14 +27,10 @@ namespace GameAnvilConnector
             DontDestroyOnLoad(this.gameObject);
             connector = new GameAnvil.Connector(config);
             // 커넥터 로그 추가
-            connector.Logger += (level, log) =>
+            connector.AddLogListener((log) =>
             {
-                Debug.Log(string.Format("Log[{0}]:{1}", level, log));
-            };
-            connector.LvNetLogger += (level, log) =>
-            {
-                Debug.Log(string.Format("Net[{0}]:{1}", level, log));
-            };
+                Debug.Log(log);
+            });
 
             // 서버와 같은 순서로 프로토콜 등록
             GameAnvil.ProtocolManager.GetInstance().RegisterProtocol(0, Com.Nhn.Gameanvil.Sample.Protocol.AuthenticationReflection.Descriptor);
