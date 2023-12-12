@@ -6,14 +6,13 @@ using GameAnvil.User;
 using GameAnvilConnector;
 using UnityEngine;
 using UnityEngine.UI;
-using Toast.Gamebase;
 
 public class GameLoginUi : MonoBehaviour
 {
     // 화면과 연결되는 필드들
     public Text textUUID;
     public Button buttonGenerateUUID;
-    public Text textGamebaseUserId;
+    public Text textGameUserId;
     public Text textGameServerIp;
     public Text textGameServerPort;
 
@@ -23,15 +22,14 @@ public class GameLoginUi : MonoBehaviour
     void Start()
     {
         // 기본값 지정
-//        textUUID.text = PlayerPrefs.GetString(Constants.KEY_UUID);
-        textUUID.text = "123456789999";
+        textUUID.text = PlayerPrefs.GetString(Constants.KEY_UUID);
         if (string.IsNullOrWhiteSpace(textUUID.text))
         {
             OnClickGenerateUUID();
         }
-        textGamebaseUserId.text = GamebaseInfo.Instance.GamebaseUserId;
-        textGameServerIp.text = GamebaseInfo.Instance.GameServerIp;
-        textGameServerPort.text = GamebaseInfo.Instance.GameServerPort;
+        textGameUserId.text = "GameAnvil_" + Random.Range(0, 1000);
+        textGameServerIp.text = "127.0.0.1";
+        textGameServerPort.text = "18200";
 
         // 버튼 클릭에 대한 리스너등록
         buttonLogin.onClick.AddListener(() => { OnClickLogin(); });
@@ -54,12 +52,12 @@ public class GameLoginUi : MonoBehaviour
                 // 인증에 필요한 프로토콜 데이터 설정
                 var authenticationReq = new Com.Nhn.Gameanvil.Sample.Protocol.AuthenticationReq
                 {
-                    AccessToken = GamebaseInfo.Instance.GamebaseToken
+                    AccessToken = "TapTap_AccessToken" // 테스트 토큰 지
                 };
                 Debug.Log("authenticationReq " + authenticationReq);
 
-                // 서버에 인증 시도. 현재는 deviceid uuid, id, pw Gamebase userId 값으로 전달
-                ConnectHandler.Instance.GetConnectionAgent().Authenticate(textUUID.text, textGamebaseUserId.text, textGamebaseUserId.text, new Payload().Add(new Packet(authenticationReq)));
+                // 서버에 인증 시도. 현재는 deviceid uuid, id, pw, userId 값으로 전달
+                ConnectHandler.Instance.GetConnectionAgent().Authenticate(textUUID.text, textGameUserId.text, textGameUserId.text, new Payload().Add(new Packet(authenticationReq)));
             }
             else
             {
@@ -101,8 +99,8 @@ public class GameLoginUi : MonoBehaviour
     void OnClickLogin()
     {
         // ===========================================================================================>>> GameAnvil
-        // 런칭 정보로 tcp connect요청
-        ConnectHandler.Instance.GetConnectionAgent().Connect(GamebaseInfo.Instance.GameServerIp, int.Parse(GamebaseInfo.Instance.GameServerPort));
+        // 게임서 정보로 tcp connect요청
+        ConnectHandler.Instance.GetConnectionAgent().Connect(textGameServerIp.text, int.Parse(textGameServerPort.text));
         // ===========================================================================================>>> GameAnvil
     }
 
@@ -111,13 +109,13 @@ public class GameLoginUi : MonoBehaviour
         // 로그인에 필요한 프로토콜 데이터 설정
         var loginReq = new Com.Nhn.Gameanvil.Sample.Protocol.LoginReq
         {
-            Uuid = textGamebaseUserId.text,
+            Uuid = textGameUserId.text,
             LoginType = Com.Nhn.Gameanvil.Sample.Protocol.LoginType.LoginGuest,
             AppVersion = Application.version,
             AppStore = "None",
             DeviceModel = SystemInfo.deviceModel,
-            DeviceCountry = Gamebase.GetCountryCodeOfDevice(),
-            DeviceLanguage = Gamebase.GetDeviceLanguageCode()
+            DeviceCountry = "KR",
+            DeviceLanguage = "ko"
 
         };
         Debug.Log("loginReq " + loginReq);
@@ -139,7 +137,7 @@ public class GameLoginUi : MonoBehaviour
                         Debug.Log("LoginRes " + loginRes);
 
                         // 서버에서 받은 게임 데이터 설정
-                        UserInfo.Instance.Uuid = textGamebaseUserId.text;
+                        UserInfo.Instance.Uuid = textGameUserId.text;
                         UserInfo.Instance.Nickname = loginRes.Userdata.Nickname;
                         UserInfo.Instance.Heart = loginRes.Userdata.Heart;
                         UserInfo.Instance.Coin = loginRes.Userdata.Coin;

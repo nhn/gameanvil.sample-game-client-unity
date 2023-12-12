@@ -64,8 +64,6 @@ public class AuthUi : MonoBehaviour
 
         UiReset();
 
-        GamebaseInfo.Instance.SetActive(false);
-
         Debug.Log("Initialize complete!!!! " + inputFieldUUID.text);
 
         // ===========================================================================================>>> GameAnvil

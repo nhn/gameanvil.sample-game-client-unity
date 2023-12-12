@@ -70,3 +70,7 @@ crashlytics-build.properties
 Library/
 
 obj/
+
+.DS_Store
+
+test-sample.app/
